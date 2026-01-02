@@ -8,9 +8,17 @@
 
 @Language.en-US
 @Summary
-다음에 생성될 유닛의 주소를 반환합니다
+Returns the address of the next unit to be generated.
 @Group
-구조오프셋
+Structural offset
+
+
+@Language.zh-CN
+@Summary
+返回下一个将要生成的单位的首地址
+到由前一个 SetNextUnitPtr 设定的 [ptr]
+@Group
+结构偏移
 ]================================]
 function ReadNextUnitPtr()
     echo("cunitread_epd(EPD(0x628438))")
@@ -26,9 +34,17 @@ end
 
 @Language.en-US
 @Summary
-다음에 생성될 유닛의 EPD를 반환합니다
+Returns the EPD of the next unit to be generated.
 @Group
-구조오프셋
+Structural offset
+
+
+@Language.zh-CN
+@Summary
+返回下一个将要生成的单位的 EPD
+到由前一个 SetNextUnitEpd 设定的 [epd]
+@Group
+结构偏移
 ]================================]
 function ReadNextUnitEpd()
     echo("cunitepdread_epd(EPD(0x628438))[[1]]")
@@ -44,9 +60,17 @@ end
 
 @Language.en-US
 @Summary
-다음에 생성될 유닛을 ptr, epd로 반환합니다.
+Returns the next unit to be generated as ptr and epd.
 @Group
-구조오프셋
+Structural offset
+
+
+@Language.zh-CN
+@Summary
+返回下一个将要生成的单位的 PTR 和 EPD。
+到由前一个 SetNextUnitPtrEpd 设定的 [ptr] 和 [epd]
+@Group
+结构偏移
 ]================================]
 function ReadNextUnitPtrEpd()
     echo("cunitepdread_epd(EPD(0x628438))")
@@ -64,11 +88,20 @@ ptr이 저장될 변수입니다.
 
 @Language.en-US
 @Summary
-[ptr]에 다음에 생성될 유닛의 주소를 반환합니다
+Returns the address of the unit to be created next at [ptr]
 @Group
-구조오프셋
+Structural offset
 @param.ptr.Variable
-ptr이 저장될 변수입니다.
+ptr is the variable where the pointer will be stored.
+
+
+@Language.zh-CN
+@Summary
+返回下一个将要生成的单位的首地址到 [ptr]
+@Group
+结构偏移
+@param.ptr.Variable
+ptr 变量将用于存储该单位的首地址。
 ]================================]
 function SetNextUnitPtr(ptr)
     echo(ptr .. " = cunitread_epd(EPD(0x628438))")
@@ -86,11 +119,20 @@ epd가 저장될 변수입니다.
 
 @Language.en-US
 @Summary
-[epd]에 다음에 생성될 유닛의 EPD를 반환합니다
+Returns the EPD of the unit to be created next in [epd]
 @Group
-구조오프셋
+Structural offset
 @param.epd.Variable
-epd가 저장될 변수입니다.
+epd is the variable where the EPD of the unit will be stored.
+
+
+@Language.zh-CN
+@Summary
+返回下一个将要生成的单位的 EPD 到 [epd]
+@Group
+结构偏移
+@param.epd.Variable
+epd 变量将用于存储该单位的 EPD 值
 ]================================]
 function SetNextUnitEpd(epd)
     echo(epd .. " = cunitepdread_epd(EPD(0x628438))[[1]]")
@@ -110,13 +152,25 @@ epd가 저장될 변수입니다.
 
 @Language.en-US
 @Summary
-[ptr]에 다음에 생성될 유닛의 PTR을, [epd]에 EPD를 반환합니다
+Returns the PTR of the next unit to be created at [ptr] and the EPD at [epd]
 @Group
-구조오프셋
+Structural offset
 @param.ptr.Variable
-ptr가 저장될 변수입니다.
+ptr is the variable where the pointer will be stored.
 @param.epd.Variable
-epd가 저장될 변수입니다.
+epd is the variable where the EPD of the unit will be stored.
+
+
+@Language.zh-CN
+@Summary
+返回下一个将要生成的单位的两个值，
+其中，首地址 PTR 赋值到 [ptr]，EPD 赋值到 [epd]
+@Group
+结构偏移
+@param.ptr.Variable
+ptr 变量将用于存储该单位的首地址。
+@param.epd.Variable
+epd 变量将用于存储该单位的 EPD 值
 ]================================]
 function SetNextUnitPtrEpd(ptr, epd)
     echo(ptr .. ", " .. epd .. " = cunitepdread_epd(EPD(0x628438))")

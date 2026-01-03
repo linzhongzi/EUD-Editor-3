@@ -16,7 +16,6 @@ Structural offset
 @Language.zh-CN
 @Summary
 返回下一个将要生成的单位的首地址
-到由前一个 SetNextUnitPtr 设定的 [ptr]
 @Group
 结构偏移
 ]================================]
@@ -42,7 +41,6 @@ Structural offset
 @Language.zh-CN
 @Summary
 返回下一个将要生成的单位的 EPD
-到由前一个 SetNextUnitEpd 设定的 [epd]
 @Group
 结构偏移
 ]================================]
@@ -68,7 +66,6 @@ Structural offset
 @Language.zh-CN
 @Summary
 返回下一个将要生成的单位的 PTR 和 EPD。
-到由前一个 SetNextUnitPtrEpd 设定的 [ptr] 和 [epd]
 @Group
 结构偏移
 ]================================]
@@ -565,7 +562,7 @@ Offset: 指定单位子项的名称(String)。
 @param.Value.Number
 Value: 修改后的新值
 @param.Modifier.TrgModifier
-Modifier: 修饰方法
+Modifier: 修改方法
 ]================================]
 function SetCUnitptr(ptr, Offset, Value, Modifier)
 	Modifier = ParseModifier(Modifier)
@@ -651,7 +648,7 @@ Offset: 指定单位子项的名称(String)。
 @param.Value.Number
 Value: 修改后的新值
 @param.Modifier.TrgModifier
-Modifier: 修饰方法
+Modifier: 修改方法
 ]================================]
 function SetCUnitepd(epd, Offset, Value, Modifier) --구조오프셋/Variable,CUnitOffset,Number,TrgModifier/[epd]의 [Offset]을 [Value]만큼 [Modifier]합니다.
 	Modifier = ParseModifier(Modifier)

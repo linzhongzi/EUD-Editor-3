@@ -4,11 +4,13 @@
 </span>
 
 StarCraft: Remastered UMS Make Tool
+
 星际争霸: 重制版 UMS 制作工具
 
 
 
 > The current project is a test version. Save files may not be compatible with the full version.
+
 > 当前版本只是个测试版本。保存的文件可能与完整版不兼容。
 
 

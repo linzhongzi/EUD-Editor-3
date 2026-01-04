@@ -2547,7 +2547,7 @@ function UnitProperty() { }
  * 
  * @Summary.zh-CN
  * 条件为Always的触发器。默认情况下已保存。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function DoActions(actions, preserved) { }
@@ -2609,7 +2609,7 @@ function DoActions(actions, preserved) { }
  * * 当赋值给另一个模块的变量时，使用module.v = value;会导致bug。
  * 这种情况下应该使用SetVariables。(参考phu54321/epScript#3)
  * 
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SetVariables(srclist, dstlist, mdtlist) { }
@@ -2629,7 +2629,7 @@ function SetVariables(srclist, dstlist, mdtlist) { }
  * 
  * @Summary.zh-CN
  * 如果条件满足则进行EUDJump。像EUDJump一样，ontrue/onfalse可以是变量。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDJumpIf(conditions, ontrue) { }
@@ -2649,7 +2649,7 @@ function EUDJumpIf(conditions, ontrue) { }
  * 
  * @Summary.zh-CN
  * 如果条件满足则进行EUDJump。像EUDJump一样，ontrue/onfalse可以是变量。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDJumpIfNot(conditions, onfalse) { }
@@ -2721,7 +2721,7 @@ function EUDSetContinuePoint() { }
  * 
  * @Summary.zh-CN
  * 跳转到nextptr。nextptr可以是RawTrigger，或者指向RawTrigger的Forward或EUDVariable。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDJump(nextptr) { }
@@ -2885,7 +2885,7 @@ function epdread_epd(epd) { }
  * 将dword拆分为word/byte单位的函数。dwbreak2保持word/byte所乘的值。
  * 例如，dwbreak(0x12345678)[[2]]是0x12，但dwbreak2(0x10000000)[[2]]是0x12000000。
  * 当只需要更改dword的特定byte或word时，无需将dwbreak的结果再次乘以0x100000等值。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dwbreak(number) { }
@@ -3101,7 +3101,7 @@ function EUDByteWriter() { }
  * 
  * @Summary.zh-CN
  * 计算(a//b, a%b)
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function div(a, b) { }
@@ -3358,7 +3358,7 @@ function bitrshift(a, b) { }
  * .. note::
  *     如果在dbstr_print中放入变量，将以十进制输出。要像dbstr_addptr一样以十六进制输出，
  *     请放入hptr(数字)。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dbstr_print(dst, arguments) { }
@@ -3387,7 +3387,7 @@ function dbstr_print(dst, arguments) { }
  * .. note::
  *     如果在dbstr_print中放入变量，将以十进制输出。要像dbstr_addptr一样以十六进制输出，
  *     请放入hptr(数字)。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function sprintf(dst, formatstring /*FormatText*/, *args) { }
@@ -3416,7 +3416,7 @@ function sprintf(dst, formatstring /*FormatText*/, *args) { }
  * .. note::
  *     如果在dbstr_print中放入变量，将以十进制输出。要像dbstr_addptr一样以十六进制输出，
  *     请放入hptr(数字)。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function sprintf_cp(formatstring /*FormatText*/, *args) { }
@@ -3478,7 +3478,7 @@ function randomize() { }
  * 
  * @Summary.zh-CN
  * 随机相关
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function srand(seed) { }
@@ -3689,7 +3689,7 @@ function QueueGameCommand_RightClick(xy) { }
  * 
  * @Summary.zh-CN
  * 仅在UDP/战网等环境下工作。检查玩家是否存在。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function playerexist(player: TrgPlayer) { }
@@ -3869,7 +3869,7 @@ function EncodePortrait(portraitname /*Portrait*/) { }
  * 
  * @Summary.zh-CN
  * Python3的bytes和str之间的相互转换。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function b2u(b) { }
@@ -3889,7 +3889,7 @@ function b2u(b) { }
  * 
  * @Summary.zh-CN
  * Python3的bytes和str之间的相互转换。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function u2b(s) { }
@@ -3912,7 +3912,7 @@ function u2b(s) { }
  * @Summary.zh-CN
  * 将int转换为Little Endian并进行反向转换的函数。在b2i?函数中，可以通过index
  * 确定将b的哪个范围转换为int。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function b2i1(b, index) { }
@@ -3935,7 +3935,7 @@ function b2i1(b, index) { }
  * @Summary.zh-CN
  * 将int转换为Little Endian并进行反向转换的函数。在b2i?函数中，可以通过index
  * 确定将b的哪个范围转换为int。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function b2i2(b, index) { }
@@ -3958,7 +3958,7 @@ function b2i2(b, index) { }
  * @Summary.zh-CN
  * 将int转换为Little Endian并进行反向转换的函数。在b2i?函数中，可以通过index
  * 确定将b的哪个范围转换为int。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function b2i4(b, index) { }
@@ -3981,7 +3981,7 @@ function b2i4(b, index) { }
  * @Summary.zh-CN
  * 将int转换为Little Endian并进行反向转换的函数。在b2i?函数中，可以通过index
  * 确定将b的哪个范围转换为int。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function i2b1(i) { }
@@ -4004,7 +4004,7 @@ function i2b1(i) { }
  * @Summary.zh-CN
  * 将int转换为Little Endian并进行反向转换的函数。在b2i?函数中，可以通过index
  * 确定将b的哪个范围转换为int。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function i2b2(i) { }
@@ -4027,7 +4027,7 @@ function i2b2(i) { }
  * @Summary.zh-CN
  * 将int转换为Little Endian并进行反向转换的函数。在b2i?函数中，可以通过index
  * 确定将b的哪个范围转换为int。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function i2b4(i) { }
@@ -4047,7 +4047,7 @@ function i2b4(i) { }
  * 
  * @Summary.zh-CN
  * 解析scmdraft2格式的文本。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SCMD2Text(s) { }
@@ -4067,7 +4067,7 @@ function SCMD2Text(s) { }
  * 
  * @Summary.zh-CN
  * 在解析STR段落或.tbl文件时使用很好。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function TBL(content) { }
@@ -4087,7 +4087,7 @@ function TBL(content) { }
  * 
  * @Summary.zh-CN
  * 用于将二进制数据加载到内存中。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function Db(b) { }
@@ -4107,7 +4107,7 @@ function Db(b) { }
  * 
  * @Summary.zh-CN
  * 用于简单的EUD数组。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDArray(initval) { }
@@ -4163,7 +4163,7 @@ function list(arg*) { }
  *  # 可以使用SetNextPtr(a, ~)等修改nextptr。
  *  b = Trigger(~)  # Trigger没有地址值，因此无法进行此类利用
  * 
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function RawTrigger(prevptr, nextptr, conditions, actions) { }
@@ -4183,7 +4183,7 @@ function RawTrigger(prevptr, nextptr, conditions, actions) { }
  * 
  * @Summary.zh-CN
  * 检查偏移量的值。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function Memory(dest, cmptype: TrgComparison, value) { }
@@ -4203,7 +4203,7 @@ function Memory(dest, cmptype: TrgComparison, value) { }
  * 
  * @Summary.zh-CN
  * 修改内存值。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SetMemory(dest, modtype: TrgModifier, value) { }
@@ -4226,7 +4226,7 @@ function SetMemory(dest, modtype: TrgModifier, value) { }
  * @Summary.zh-CN
  * 修改触发器的nextptr值。详情请参考教程。
  * http://blog.naver.com/whyask37
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SetNextPtr(trg, dest) { }
@@ -4246,7 +4246,7 @@ function SetNextPtr(trg, dest) { }
  * 
  * @Summary.zh-CN
  * u2b的utf-8版本。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function u2utf8(s) { }
@@ -4266,7 +4266,7 @@ function u2utf8(s) { }
  * 
  * @Summary.zh-CN
  * 与Memory相同，但dest是偏移量的EPD值。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function MemoryEPD(dest, cmptype: TrgComparison, value) { }
@@ -4286,7 +4286,7 @@ function MemoryEPD(dest, cmptype: TrgComparison, value) { }
  * 
  * @Summary.zh-CN
  * EUDX条件
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function DeathsX(Player: TrgPlayer, Comparison: TrgComparison, Number, Unit: TrgUnit, Mask) { }
@@ -4306,7 +4306,7 @@ function DeathsX(Player: TrgPlayer, Comparison: TrgComparison, Number, Unit: Trg
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function MemoryX(dest, cmptype: TrgComparison, value, mask) { }
@@ -4326,7 +4326,7 @@ function MemoryX(dest, cmptype: TrgComparison, value, mask) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function MemoryXEPD(dest, cmptype: TrgComparison, value, mask) { }
@@ -4346,7 +4346,7 @@ function MemoryXEPD(dest, cmptype: TrgComparison, value, mask) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SetMemoryEPD(dest, modtype: TrgModifier, value) { }
@@ -4366,7 +4366,7 @@ function SetMemoryEPD(dest, modtype: TrgModifier, value) { }
  * 
  * @Summary.zh-CN
  * 阿斯那瓦博
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SetDeathsX(Player: TrgPlayer, Modifier: TrgModifier, Number, Unit: TrgUnit, Mask) { }
@@ -4386,7 +4386,7 @@ function SetDeathsX(Player: TrgPlayer, Modifier: TrgModifier, Number, Unit: TrgU
  * 
  * @Summary.zh-CN
  * 阿斯那瓦博
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SetMemoryX(dest, modtype: TrgModifier, value, mask) { }
@@ -4406,7 +4406,7 @@ function SetMemoryX(dest, modtype: TrgModifier, value, mask) { }
  * 
  * @Summary.zh-CN
  * 阿斯那瓦博
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SetMemoryXEPD(dest, modtype: TrgModifier, value, mask) { }
@@ -4426,7 +4426,7 @@ function SetMemoryXEPD(dest, modtype: TrgModifier, value, mask) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SetKills(Player: TrgPlayer, Modifier: TrgModifier, Number, Unit: TrgUnit) { }
@@ -4460,7 +4460,7 @@ function GetChkTokenized() { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function GetPlayerInfo(player: TrgPlayer) { }
@@ -4480,7 +4480,7 @@ function GetPlayerInfo(player: TrgPlayer) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function VProc(v, actions) { }
@@ -4500,7 +4500,7 @@ function VProc(v, actions) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDLightVariable(initval) { }
@@ -4520,7 +4520,7 @@ function EUDLightVariable(initval) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDXVariable(initval, mask) { }
@@ -4552,7 +4552,7 @@ function EUDXVariable(initval, mask) { }
  * 示例
  * const_for_artanis = EUDVArray(4)(list(1, 2, 3, 4));
  * 
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDVArray(size, initvals) { }
@@ -4599,7 +4599,7 @@ function EUDVArray(size, initvals) { }
  *  a.setFunc(f_mul)  # 将指针设置为另一个乘法函数（假设存在）
  *  a(1, 2)  # 返回2
  * 
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDFuncPtr(argn, retn) { }
@@ -4619,7 +4619,7 @@ function EUDFuncPtr(argn, retn) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function setloc(locID, x, y) { }
@@ -4639,7 +4639,7 @@ function setloc(locID, x, y) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function addloc(locID, x, y) { }
@@ -4659,7 +4659,7 @@ function addloc(locID, x, y) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dilateloc(locID, x, y) { }
@@ -4679,7 +4679,7 @@ function dilateloc(locID, x, y) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function getlocTL(locID) { }
@@ -4699,7 +4699,7 @@ function getlocTL(locID) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function setloc_epd(locID, epd) { }
@@ -4719,7 +4719,7 @@ function setloc_epd(locID, epd) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function wwrite_epd(epd, subp, w) { }
@@ -4739,7 +4739,7 @@ function wwrite_epd(epd, subp, w) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function bwrite_epd(epd, subp, b) { }
@@ -4759,7 +4759,7 @@ function bwrite_epd(epd, subp, b) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function wread_epd(epd, subp) { }
@@ -4779,7 +4779,7 @@ function wread_epd(epd, subp) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function bread_epd(epd, subp) { }
@@ -4799,7 +4799,7 @@ function bread_epd(epd, subp) { }
  * 
  * @Summary.zh-CN
  * 当需要以位为单位读取dword或分割dword时使用。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function flagread_epd(targetplayer) { }
@@ -4822,7 +4822,7 @@ function flagread_epd(targetplayer) { }
  * @Summary.zh-CN
  * 基于当前玩家的函数。比带_epd的函数快2倍。
  * cpo表示要读取的内存距离当前玩家有多远。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dwepdread_cp(cpo) { }
@@ -4845,7 +4845,7 @@ function dwepdread_cp(cpo) { }
  * @Summary.zh-CN
  * 基于当前玩家的函数。比带_epd的函数快2倍。
  * cpo表示要读取的内存距离当前玩家有多远。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dwread_cp(cpo) { }
@@ -4868,7 +4868,7 @@ function dwread_cp(cpo) { }
  * @Summary.zh-CN
  * 基于当前玩家的函数。比带_epd的函数快2倍。
  * cpo表示要读取的内存距离当前玩家有多远。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function epdread_cp(cpo) { }
@@ -4888,7 +4888,7 @@ function epdread_cp(cpo) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function wread_cp(cpo, subp) { }
@@ -4908,7 +4908,7 @@ function wread_cp(cpo, subp) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function bread_cp(cpo, subp) { }
@@ -4931,7 +4931,7 @@ function bread_cp(cpo, subp) { }
  * @Summary.zh-CN
  * 执行write、add、subtract而不是read。当然，比read类函数快约32倍。
  * 与简单的SetMemory速度相同。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dwwrite_cp(cpo, value) { }
@@ -4954,7 +4954,7 @@ function dwwrite_cp(cpo, value) { }
  * @Summary.zh-CN
  * 执行write、add、subtract而不是read。当然，比read类函数快约32倍。
  * 与简单的SetMemory速度相同。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dwadd_cp(cpo, value) { }
@@ -4977,7 +4977,7 @@ function dwadd_cp(cpo, value) { }
  * @Summary.zh-CN
  * 执行write、add、subtract而不是read。当然，比read类函数快约32倍。
  * 与简单的SetMemory速度相同。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dwsubtract_cp(cpo, value) { }
@@ -4997,7 +4997,7 @@ function dwsubtract_cp(cpo, value) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function wwrite_cp(cpoffset, subp, w) { }
@@ -5017,7 +5017,7 @@ function wwrite_cp(cpoffset, subp, w) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function bwrite_cp(cpoffset, subp, b) { }
@@ -5037,7 +5037,7 @@ function bwrite_cp(cpoffset, subp, b) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dwwrite(ptr, dw) { }
@@ -5057,7 +5057,7 @@ function dwwrite(ptr, dw) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function wwrite(ptr, w) { }
@@ -5077,7 +5077,7 @@ function wwrite(ptr, w) { }
  * 
  * @Summary.zh-CN
  * ^^;
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function bwrite(ptr, b) { }
@@ -5100,7 +5100,7 @@ function bwrite(ptr, b) { }
  * @Summary.zh-CN
  * ptr读取函数
  * 因为需要计算EPD而进行除法，所以很慢，所以使用dwread_epd ㅡㅡ
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dwread(ptr) { }
@@ -5129,7 +5129,7 @@ function dwread(ptr) { }
  * 因为需要计算EPD而进行除法，所以很慢，所以使用wread_epd ㅡㅡ
  * 但有时也需要，不过读取连续地址时EUDByteStream更好
  * 很难
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function wread(ptr) { }
@@ -5158,7 +5158,7 @@ function wread(ptr) { }
  * 因为需要计算EPD而进行除法，所以很慢，所以使用bread_epd ㅡㅡ
  * 但有时也需要，不过读取连续地址时EUDByteStream更好
  * 不是面包 ㅎ
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function bread(ptr) { }
@@ -5208,7 +5208,7 @@ function bread(ptr) { }
  * 从开头第一个不同的字节，
  * 如果该值在[buf1]中更大，则返回大于0的值，否则返回小于0的值。
  * 
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function memcmp(buf1, buf2, count) { }
@@ -5228,7 +5228,7 @@ function memcmp(buf1, buf2, count) { }
  * 
  * @Summary.zh-CN
  * 创建自定义读取函数的函数
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function readgen_epd(mask, args) { }
@@ -5248,7 +5248,7 @@ function readgen_epd(mask, args) { }
  * 
  * @Summary.zh-CN
  * 创建自定义读取函数的函数
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function readgen_cp(mask, args) { }
@@ -5268,7 +5268,7 @@ function readgen_cp(mask, args) { }
  * 
  * @Summary.zh-CN
  * 从[epd]地址读取CUnit值并作为ptr返回。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function cunitread_epd(epd) { }
@@ -5288,7 +5288,7 @@ function cunitread_epd(epd) { }
  * 
  * @Summary.zh-CN
  * 从CurrentPlayer+[cpoffset]地址读取CUnit值并作为ptr返回。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function cunitread_cp(cpoffset) { }
@@ -5308,7 +5308,7 @@ function cunitread_cp(cpoffset) { }
  * 
  * @Summary.zh-CN
  * 从[epd]地址读取CUnit值并作为ptr、epd返回。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function cunitepdread_epd(epd) { }
@@ -5328,7 +5328,7 @@ function cunitepdread_epd(epd) { }
  * 
  * @Summary.zh-CN
  * 从CurrentPlayer+[cpoffset]地址读取CUnit值并作为ptr、epd返回。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function cunitepdread_cp(cpoffset) { }
@@ -5348,7 +5348,7 @@ function cunitepdread_cp(cpoffset) { }
  * 
  * @Summary.zh-CN
  * 从[targetplayer]地址仅读取bit[mask]中的位并返回。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function maskread_epd(targetplayer, mask) { }
@@ -5368,7 +5368,7 @@ function maskread_epd(targetplayer, mask) { }
  * 
  * @Summary.zh-CN
  * 从CurrentPlayer+[cpoffset]地址仅读取bit[mask]中的位并返回。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function maskread_cp(cpoffset, mask) { }
@@ -5391,7 +5391,7 @@ function maskread_cp(cpoffset, mask) { }
  * @Summary.zh-CN
  * 读取[epd]地址的Position格式值并作为x、y返回。
  * * Position: 地图坐标值 (65536 * y) + x
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function posread_epd(epd) { }
@@ -5414,7 +5414,7 @@ function posread_epd(epd) { }
  * @Summary.zh-CN
  * 读取CurrentPlayer+[cpoffset]地址的Position格式值并作为x、y返回。
  * * Position: 地图坐标值 (65536 * y) + x
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function posread_cp(cpoffset) { }
@@ -5451,7 +5451,7 @@ function EUDVArrayReader() { }
  * 
  * @Summary.zh-CN
  * 返回字符串[strId]的地址。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function GetMapStringAddr(strId: TrgString) { }
@@ -5485,7 +5485,7 @@ function gettextptr() { }
  * 
  * @Summary.zh-CN
  * 字符串比较函数。如果需要长度限制，请使用memcmp。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function strcmp(s1, s2) { }
@@ -5505,7 +5505,7 @@ function strcmp(s1, s2) { }
  * 
  * @Summary.zh-CN
  * 获取[ptr]地址的字符串长度。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function strlen(ptr) { }
@@ -5525,7 +5525,7 @@ function strlen(ptr) { }
  * 
  * @Summary.zh-CN
  * 获取[epd]地址的字符串长度。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function strlen_epd(epd) { }
@@ -5545,7 +5545,7 @@ function strlen_epd(epd) { }
  * 
  * @Summary.zh-CN
  * 在字符串中搜索字符串。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function strnstr(string, substring, count) { }
@@ -5565,7 +5565,7 @@ function strnstr(string, substring, count) { }
  * 
  * @Summary.zh-CN
  * 连接[ptr]地址的字符串。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function ptr2s(ptr) { }
@@ -5585,7 +5585,7 @@ function ptr2s(ptr) { }
  * 
  * @Summary.zh-CN
  * 连接[epd]地址的字符串。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function epd2s(epd) { }
@@ -5605,7 +5605,7 @@ function epd2s(epd) { }
  * 
  * @Summary.zh-CN
  * 十六进制输出
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function hptr(value) { }
@@ -5625,7 +5625,7 @@ function hptr(value) { }
  * 
  * @Summary.zh-CN
  * 获取[player]编号的默认玩家颜色。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function PColor(player: TrgPlayer) { }
@@ -5645,7 +5645,7 @@ function PColor(player: TrgPlayer) { }
  * 
  * @Summary.zh-CN
  * 获取[player]的名称。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function PName(player: TrgPlayer) { }
@@ -5685,7 +5685,7 @@ function SetPNamef(player: TrgPlayer, formatstring /*FormatText*/, *args) { }
  * 
  * @Summary.zh-CN
  * 获取stat_txt.tbl地址。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function GetTBLAddr(tblId) { }
@@ -5846,7 +5846,7 @@ function EUDLoopPlayer(ptype, force, race) { }
  * @Summary.zh-CN
  * 遍历双向链表。header_offset是指向第一个列表项的指针，
  * 当ptr跟随next到达break_offset时，LoopList结束。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDLoopList(header_offset, break_offset) { }
@@ -6030,7 +6030,7 @@ function QueueGameCommand_RestartGame() { }
  * 
  * @Summary.zh-CN
  * 离开房间。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function QueueGameCommand_LeaveGame(type_) { }
@@ -6050,7 +6050,7 @@ function QueueGameCommand_LeaveGame(type_) { }
  * 
  * @Summary.zh-CN
  * 激活作弊码。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function QueueGameCommand_UseCheat(flags) { }
@@ -6070,7 +6070,7 @@ function QueueGameCommand_UseCheat(flags) { }
  * 
  * @Summary.zh-CN
  * 向选中的单位下达单位生产命令。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function QueueGameCommand_TrainUnit(unit: TrgUnit) { }
@@ -6118,7 +6118,7 @@ function QueueGameCommand_MergeArchon() { }
  * 
  * @Summary.zh-CN
  * 计算反正切（360度）
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function atan2(y, x) { }
@@ -6138,7 +6138,7 @@ function atan2(y, x) { }
  * 
  * @Summary.zh-CN
  * 计算平方根。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function sqrt(x) { }
@@ -6167,7 +6167,7 @@ function sqrt(x) { }
  * 
  * 方法：push, pop, empty
  * 
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDStack(size, basetype) { }
@@ -6289,7 +6289,7 @@ function CPString(content) { }
  * 严格来说，这不是一个EUD函数，我只是把它放在这里。对于每个满足条件的cond(x)，
  * 在[minv, maxv]中找到最大x和最小x。
  * 
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDBinaryMax(cond, minv, maxv) { }
@@ -6315,7 +6315,7 @@ function EUDBinaryMax(cond, minv, maxv) { }
  * 严格来说，这不是一个EUD函数，我只是把它放在这里。对于每个满足条件的cond(x)，
  * 在[minv, maxv]中找到最大x和最小x。
  * 
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function EUDBinaryMin(cond, minv, maxv) { }
@@ -6543,7 +6543,7 @@ function QueueGameCommand_QueuedRightClick(xy) { }
  * 
  * @Summary.zh-CN
  * 出于优化目的，可以直接调用此函数
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function SetNextTrigger(trg) { }
@@ -6567,7 +6567,7 @@ function SetNextTrigger(trg) { }
  * @Summary.zh-CN
  * 用于在stat_txt.tbl等地方添加文本效果而不是字符串。懒得写解释
  * 马斯特巴彬博
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function TextFX_FadeIn(args, color, wait, reset, tag, encoding) { }
@@ -6591,7 +6591,7 @@ function TextFX_FadeIn(args, color, wait, reset, tag, encoding) { }
  * @Summary.zh-CN
  * 用于在stat_txt.tbl等地方添加文本效果而不是字符串。懒得写解释
  * 马斯特巴彬博
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function TextFX_FadeOut(args, color, wait, reset, tag, encoding) { }
@@ -6618,7 +6618,7 @@ function TextFX_FadeOut(args, color, wait, reset, tag, encoding) { }
  * 读写当前玩家值的函数。由于当前玩家始终由eudplib管理，
  * 使用f_getcurpl函数比直接读取0x6509B0的值快约32倍。
  * 适合与_cp类函数结合使用。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function addcurpl(cp) { }
@@ -6670,7 +6670,7 @@ function cpstr_print(*args, EOS, encoding) { }
  * 将dword拆分为word/byte单位的函数。dwbreak2保持word/byte所乘的值。
  * 例如，dwbreak(0x12345678)[[2]]是0x12，但dwbreak2(0x10000000)[[2]]是0x12000000。
  * 当只需要更改dword的特定byte或word时，无需将f_dwbreak的结果再次乘以0x100000等值。
- * @param.参数名称.zh-CN
+ * @param.parameterName.zh-CN
  * 参数说明
 ***/
 function dwbreak2(number) { }

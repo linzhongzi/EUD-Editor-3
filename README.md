@@ -39,8 +39,8 @@ https://github.com/linzhongzi/BingsuCodeEditor/tree/0.19.6
 --------------------------------------------------------------------------------
 
 ## Tag 版本
-0.19.6.0	首次创建，未修改任何代码与配置。基于 Master 2025.05.27(8af35b1) 的提交创建分支。
-0.19.6.1	统一Nuget包位置。尚未翻译中文为韩文。修正编译错误。
+* 0.19.6.0:	首次创建，未修改任何代码与配置。基于 EUD-Editor-3 Master 2025.05.27(8af35b1) 的提交创建分支。
+* 0.19.6.1:	统一Nuget包位置。尚未翻译中文为韩文。修正编译错误。
 
 --------------------------------------------------------------------------------
 
@@ -52,14 +52,17 @@ https://www.bilibili.com/video/BV1SmmGYLEY8/?vd_source=3a5440c76763b1446854d8958
 ## 工程目录结构:
 
 ```
-EUD-Editor-3-0.19.6.1-kor Source\
-├── packages\                          ← 所有 NuGet 包统一放此
+EUD-Editor-3-0.19.6.1 Source\
 ├── BingsuCodeEditor\
-│   ├── NuGet.Config                   ← 指定还原 NuGet 包时的位置为: packages
 │   ├── BingsuBlocklyEpsEditor\
 │   ├── BingsuCodeEditor\ 
-│   └── BingsuCodeEditorTest\
-└── EUD-Editor-3\
+│   ├── BingsuCodeEditorTest\
+│   └── NuGet.Config                   ← 指定还原 NuGet 包时的位置为: packages
+├── EUD-Editor-3\
+│   ├── EUD Editor 3\
+│   ├── EUD Editor 3.sln
+│   └── NuGet.Config                   ← 指定还原 NuGet 包时的位置为: packages
+└── packages\                          ← 所有 NuGet 包统一放此
 ```
 
 --------------------------------------------------------------------------------

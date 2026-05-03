@@ -53,7 +53,7 @@ Imports System.Windows
 '
 ' 모든 값을 지정하거나 아래와 같이 '*'를 사용하여 빌드 번호 및 수정 번호가 자동으로
 ' 지정되도록 할 수 있습니다.
-' <Assembly: AssemblyVersion("1.0.*")>
+' <Assembly: AssemblyVersion("0.19.*")>
 
 <Assembly: AssemblyVersion("0.19.6.0")>
 <Assembly: AssemblyFileVersion("0.19.6.0")>

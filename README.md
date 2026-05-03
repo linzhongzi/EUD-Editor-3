@@ -51,6 +51,7 @@ https://www.bilibili.com/video/BV1SmmGYLEY8/?vd_source=3a5440c76763b1446854d8958
 
 ## 工程目录结构:
 
+```
 EUD-Editor-3-0.19.6.1-kor Source\
 ├── packages\                          ← 所有 NuGet 包统一放此
 ├── BingsuCodeEditor\
@@ -59,6 +60,7 @@ EUD-Editor-3-0.19.6.1-kor Source\
 │   ├── BingsuCodeEditor\ 
 │   └── BingsuCodeEditorTest\
 └── EUD-Editor-3\
+```
 
 --------------------------------------------------------------------------------
 

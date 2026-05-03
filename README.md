@@ -36,3 +36,36 @@ https://github.com/linzhongzi/BingsuCodeEditor/tree/0.19.6
 
 ## Tag 版本
 0.19.6.0	首次创建，未修改任何代码与配置。基于 Master 2025.05.27(8af35b1) 的提交创建分支。
+0.19.6.1	统一Nuget包位置。尚未翻译中文为韩文。修正编译错误。
+
+# -----------------------------------------------------------------------------------------------------------
+
+## 网上教程
+https://www.bilibili.com/video/BV1SmmGYLEY8/?vd_source=3a5440c76763b1446854d89582d61af9&spm_id_from=333.788.videopod.sections
+
+# -----------------------------------------------------------------------------------------------------------
+
+工程目录结构:
+
+EUD-Editor-3-0.19.6.1-kor Source\
+├── packages\                          ← 所有 NuGet 包统一放此
+├── BingsuCodeEditor\
+│   ├── NuGet.Config                   ← 指定还原 NuGet 包时的位置为: packages
+│   ├── BingsuBlocklyEpsEditor\
+│   ├── BingsuCodeEditor\ 
+│   └── BingsuCodeEditorTest\
+└── EUD-Editor-3\
+
+# -----------------------------------------------------------------------------------------------------------
+
+## 导入星际争霸图片时需要的资源文件:
+
+操作:
+设置 - Default - Graphics - Remastered
+
+文件:
+EUD-Editor-3-0.19.6.1-kor Source\Data\GRPDATA
+
+这个文件是在操作后自动生成的，如果选择 Remastered 时出错，可从其它地方拷贝一个相同文件。 
+
+原代码的换行符如何没有从 Linux 格式转成 Windows 格式，会导致 0.19.6.1 变慢，且选择 Remastered 时会异常。

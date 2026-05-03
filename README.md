@@ -73,3 +73,4 @@ EUD-Editor-3-0.19.6.1-kor Source\Data\GRPDATA
 这个文件是在操作后自动生成的，如果选择 Remastered 时出错，可从其它地方拷贝一个相同文件。 
 
 原代码的换行符如何没有从 Linux 格式转成 Windows 格式，会导致 0.19.6.1 变慢，且选择 Remastered 时会异常。
+

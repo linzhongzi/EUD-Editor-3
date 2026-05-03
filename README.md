@@ -28,11 +28,15 @@ https://github.com/Buizz/EUD-Editor-3/wiki
 ## 检查补丁
 https://github.com/Buizz/EUD-Editor-3/blob/master/EUD%20Editor%203/PatchNote.txt
 
+--------------------------------------------------------------------------------
+
 ## Fork 版本说明
 Fork 并创建分支:
 https://github.com/linzhongzi/EUD-Editor-3/tree/0.19.6
 依赖分支:
 https://github.com/linzhongzi/BingsuCodeEditor/tree/0.19.6
+
+--------------------------------------------------------------------------------
 
 ## Tag 版本
 0.19.6.0	首次创建，未修改任何代码与配置。基于 Master 2025.05.27(8af35b1) 的提交创建分支。
@@ -45,7 +49,7 @@ https://www.bilibili.com/video/BV1SmmGYLEY8/?vd_source=3a5440c76763b1446854d8958
 
 --------------------------------------------------------------------------------
 
-工程目录结构:
+## 工程目录结构:
 
 EUD-Editor-3-0.19.6.1-kor Source\
 ├── packages\                          ← 所有 NuGet 包统一放此

@@ -393,7 +393,7 @@ Public Class ProjectData
             If _MapData IsNot Nothing Then
                 Return _MapData
             Else
-                Tool.ErrorMsgBox("시스템에러 맵데이터가 없음")
+                Tool.ErrorMsgBox("系统错误，没有地图数据")
                 Return Nothing
             End If
 
@@ -840,6 +840,6 @@ Public Class ProjectData
         Return True
     End Function
 
-    ' 先加载代码。加载stat_txt.bin，并以此为基础创建。（除了图形或子图形（Sprite）外，可以用韩文名称，所以图形和子图形需要准备数据）
+    ' 先加载代码。加载stat_txt.bin，并以此为基础创建。（除了实体图(Images)或精灵(Sprites)外，可以用韩文名称，所以实体图和精灵需要准备数据）
 
 End Class

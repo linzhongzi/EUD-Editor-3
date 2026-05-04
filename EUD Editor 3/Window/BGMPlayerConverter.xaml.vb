@@ -30,7 +30,7 @@ Public Class BGMPlayerConverter
     End Sub
 
     Private Function BGMProcess(bgmdata As BGMData.BGMFile) As Boolean
-        LabelChange(bgmdata.BGMPath & " 작업중 ...")
+        LabelChange(bgmdata.BGMPath & " 工作中 ...")
 
         If Not My.Computer.FileSystem.FileExists(bgmdata.BGMPath) Then
             Return False
@@ -135,7 +135,7 @@ Public Class BGMPlayerConverter
 
 
 
-        LabelChange(bgmdata.BGMPath & " wav로 변환 중 ...")
+        LabelChange(bgmdata.BGMPath & " 转换为 wav ...")
         ProgressChange(0)
 
         psiProcInfo.Arguments = "-i " & openfile & " -y " & Chr(34) & output & ".wav" & Chr(34)
@@ -153,7 +153,7 @@ Public Class BGMPlayerConverter
         End If
 
 
-        LabelChange(bgmdata.BGMPath & " " & ext & "로 변환 중 ...")
+        LabelChange(bgmdata.BGMPath & " 转换为 " & ext & " ...")
         ProgressChange(25)
 
         psiProcInfo.Arguments = "-i " & Chr(34) & output & ".wav" & Chr(34) & " -y " & Chr(34) & output & "." & ext & Chr(34)
@@ -166,7 +166,7 @@ Public Class BGMPlayerConverter
         Dim samplerate As Integer = bgmdata.BGMSampleRate
 
         If bitrate <> -1 Or samplerate <> -1 Then
-            LabelChange(bgmdata.BGMPath & " " & ext & "로 압축 중 ...")
+            LabelChange(bgmdata.BGMPath & " 压缩为 " & ext & " ...")
             ProgressChange(50)
 
             Dim bitratestr As String = ""
@@ -195,7 +195,7 @@ Public Class BGMPlayerConverter
         '====================================================================================================================================
 
         If Not IsSCAScript Then
-            LabelChange(bgmdata.BGMPath & " 파일 분활 중 ...")
+            LabelChange(bgmdata.BGMPath & " 文件分割中 ...")
             ProgressChange(75)
 
             If bitrate = -1 And samplerate = -1 Then
@@ -273,7 +273,7 @@ Public Class BGMPlayerConverter
     End Sub
     Private Sub BGM_Complete(sender As Object, e As RunWorkerCompletedEventArgs)
         If e.Error IsNot Nothing Then
-            Tool.ErrorMsgBox("BGM 변환 에러", e.Error.ToString)
+            Tool.ErrorMsgBox("BGM转换错误", e.Error.ToString)
             isSuccess = False
         Else
             isSuccess = True

@@ -234,7 +234,7 @@ function Exec(){
 			if (sct.SCAUseUserMessage == 1) {
 				setcurpl(LoadPlayer);
 				PlayWAV("sound\\Misc\\TDrTra01.wav");
-				f_eprintln("\x07성공적으로 \x03데이터\x04를 불러왔습니다.");
+				f_eprintln("\x07成功加载\x03数据\x04已加载。");
 			}
 
 			loadsecorder = 0;
@@ -302,7 +302,7 @@ function DataFastLoad(Player, Slot) {
 				if (sct.SCAUseUserMessage == 1) {
 					setcurpl(Player);
 					PlayWAV("sound\\Misc\\PError.WAV");
-					f_eprintln("\x08이미 데이터를 로드 중입니다.  :", usercommandstatus);
+					f_eprintln("\x08正在加载数据。", usercommandstatus);
 				}
 			}
         }
@@ -313,7 +313,7 @@ function DataFastLoad(Player, Slot) {
 			if (sct.SCAUseUserMessage == 1) {
 				setcurpl(Player);
 				PlayWAV("sound\\Misc\\PError.WAV");
-						f_eprintln("\x08데이터를 불러오려면 모든 플레이어가 SCArchive와 연결되어야 합니다.");
+						f_eprintln("\x08要加载数据，所有玩家都必须连接到SCArchive。");
 			}
 		}
     }

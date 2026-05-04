@@ -9,31 +9,31 @@
              mc:Ignorable="d" >
     <DockPanel LastChildFill="False">
         <ComboBox x:Name="ForTypeCB" DockPanel.Dock="Top" SelectionChanged="ForTypeCB_SelectionChanged" MaxDropDownHeight="500">
-            <ComboBoxItem Content="직접입력" Tag="UserEdit"/>
-            <ComboBoxItem Content="횟수반복" Tag="CountRepeat"/>
+            <ComboBoxItem Content="直接输入" Tag="UserEdit"/>
+            <ComboBoxItem Content="次数重复" Tag="CountRepeat"/>
             <Separator/>
-            <ComboBoxItem Content="플레이어" Tag="EUDLoopPlayer"/>
-            <ComboBoxItem Content="모든플레이어" Tag="EUDPlayerLoop"/>
+            <ComboBoxItem Content="玩家" Tag="EUDLoopPlayer"/>
+            <ComboBoxItem Content="所有玩家" Tag="EUDPlayerLoop"/>
             <Separator/>
-            <ComboBoxItem Content="새유닛루프" Tag="EUDLoopNewUnit"/>
-            <ComboBoxItem Content="유닛루프" Tag="EUDLoopUnit"/>
-            <ComboBoxItem Content="모든유닛" Tag="EUDLoopUnit2"/>
-            <ComboBoxItem Content="플레이어유닛" Tag="EUDLoopPlayerUnit"/>
-            <ComboBoxItem Content="스프라이트루프" Tag="EUDLoopSprite"/>
-            <ComboBoxItem Content="타임루프" Tag="Timeline"/>
+            <ComboBoxItem Content="新单位循环" Tag="EUDLoopNewUnit"/>
+            <ComboBoxItem Content="单位循环" Tag="EUDLoopUnit"/>
+            <ComboBoxItem Content="所有单位" Tag="EUDLoopUnit2"/>
+            <ComboBoxItem Content="玩家单位" Tag="EUDLoopPlayerUnit"/>
+            <ComboBoxItem Content="精灵循环" Tag="EUDLoopSprite"/>
+            <ComboBoxItem Content="时间循环" Tag="Timeline"/>
         </ComboBox>
 
         <UniformGrid x:Name="doubleptr" Columns="2" DockPanel.Dock="Top" Visibility="Collapsed">
-            <TextBox x:Name="ptr_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="ptr 변수명" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
-            <TextBox x:Name="epd_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="epd 변수명" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="ptr_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="ptr变量名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="epd_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="epd变量名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
         </UniformGrid>
 
 
         <Label x:Name="tipLabel" DockPanel.Dock="Top" Visibility="Collapsed"/>
         <UniformGrid x:Name="countgrid" DockPanel.Dock="Top" Columns="3" Visibility="Collapsed" Margin="10">
-            <TextBox x:Name="count_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="변수명" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
-            <TextBox x:Name="count_vinit" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="초기값" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
-            <TextBox x:Name="count_vcount" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="반복횟수" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="count_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="变量名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="count_vinit" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="初始值" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="count_vcount" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="重复次数" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
         </UniformGrid>
         <StackPanel x:Name="usereditgrid" DockPanel.Dock="Top" Visibility="Collapsed" Margin="10">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
@@ -43,44 +43,44 @@
             <TextBox x:Name="useredittextbox" TextChanged="Refresh_TextChanged"/>
         </StackPanel>
         <StackPanel x:Name="playerloop" DockPanel.Dock="Top" Visibility="Collapsed" Margin="10">
-            <TextBox x:Name="playerloop_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="변수명" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="playerloop_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="变量名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
 
             <UniformGrid Columns="3">
-                <ComboBox x:Name="playerloopcb1" materialDesign:HintAssist.Hint="제어권" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="5" SelectionChanged="combobox_SelectionChanged">
-                    <ComboBoxItem Content="모두" Tag="None"/>
-                    <ComboBoxItem Content="사람" Tag="Human"/>
-                    <ComboBoxItem Content="컴퓨터" Tag="Computer"/>
-                    <ComboBoxItem Content="구조가능한" Tag="Rescuable"/>
-                    <ComboBoxItem Content="중립" Tag="Neutral"/>
+                <ComboBox x:Name="playerloopcb1" materialDesign:HintAssist.Hint="控制权" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="5" SelectionChanged="combobox_SelectionChanged">
+                    <ComboBoxItem Content="全部" Tag="None"/>
+                    <ComboBoxItem Content="人类" Tag="Human"/>
+                    <ComboBoxItem Content="电脑" Tag="Computer"/>
+                    <ComboBoxItem Content="可救援的" Tag="Rescuable"/>
+                    <ComboBoxItem Content="中立" Tag="Neutral"/>
                 </ComboBox>
-                <ComboBox x:Name="playerloopcb2" materialDesign:HintAssist.Hint="세력" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="5" SelectionChanged="combobox_SelectionChanged">
-                    <ComboBoxItem Content="모두" Tag="None"/>
-                    <ComboBoxItem Content="세력1" Tag="Force1"/>
-                    <ComboBoxItem Content="세력2" Tag="Force2"/>
-                    <ComboBoxItem Content="세력3" Tag="Force3"/>
-                    <ComboBoxItem Content="세력4" Tag="Force4"/>
+                <ComboBox x:Name="playerloopcb2" materialDesign:HintAssist.Hint="势力" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="5" SelectionChanged="combobox_SelectionChanged">
+                    <ComboBoxItem Content="全部" Tag="None"/>
+                    <ComboBoxItem Content="势力1" Tag="Force1"/>
+                    <ComboBoxItem Content="势力2" Tag="Force2"/>
+                    <ComboBoxItem Content="势力3" Tag="Force3"/>
+                    <ComboBoxItem Content="势力4" Tag="Force4"/>
                 </ComboBox>
-                <ComboBox x:Name="playerloopcb3" materialDesign:HintAssist.Hint="종족" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="5" SelectionChanged="combobox_SelectionChanged">
-                    <ComboBoxItem Content="모두" Tag="None"/>
-                    <ComboBoxItem Content="저그" Tag="Zerg"/>
-                    <ComboBoxItem Content="테란" Tag="Terran"/>
-                    <ComboBoxItem Content="프로토스" Tag="Protoss"/>
+                <ComboBox x:Name="playerloopcb3" materialDesign:HintAssist.Hint="种族" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="5" SelectionChanged="combobox_SelectionChanged">
+                    <ComboBoxItem Content="全部" Tag="None"/>
+                    <ComboBoxItem Content="虫族" Tag="Zerg"/>
+                    <ComboBoxItem Content="人族" Tag="Terran"/>
+                    <ComboBoxItem Content="神族" Tag="Protoss"/>
                 </ComboBox>
             </UniformGrid>
-            <CheckBox x:Name="playerloopcheckbox" Content="해당플레이어설정"/>
+            <CheckBox x:Name="playerloopcheckbox" Content="当前玩家设置"/>
         </StackPanel>
 
         <StackPanel x:Name="TimelinePanel" DockPanel.Dock="Top" Visibility="Collapsed" Margin="10">
-            <TextBox x:Name="Timeline_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="변수명" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="Timeline_vname" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="变量名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
 
-            <TextBox x:Name="timetextbox" materialDesign:HintAssist.Hint="최종 틱" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" />
+            <TextBox x:Name="timetextbox" materialDesign:HintAssist.Hint="最终帧" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" />
         </StackPanel>
         <StackPanel x:Name="PlayerUnitPanel" DockPanel.Dock="Top" Visibility="Collapsed" Margin="10">
             <UniformGrid Columns="2">
-                <TextBox x:Name="PlayerUnit_v1" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="ptr 변수명" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
-                <TextBox x:Name="PlayerUnit_v2" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="epd 변수명" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
+                <TextBox x:Name="PlayerUnit_v1" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="ptr变量名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
+                <TextBox x:Name="PlayerUnit_v2" TextChanged="Refresh_TextChanged" materialDesign:HintAssist.Hint="epd变量名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" Margin="5"/>
             </UniformGrid>
-            <ComboBox x:Name="playerselect" materialDesign:HintAssist.Hint="플레이어" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="5" SelectionChanged="combobox_SelectionChanged">
+            <ComboBox x:Name="playerselect" materialDesign:HintAssist.Hint="玩家" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Margin="5" SelectionChanged="combobox_SelectionChanged">
                 <ComboBoxItem Content="Player 1"/>
                 <ComboBoxItem Content="Player 2"/>
                 <ComboBoxItem Content="Player 3"/>

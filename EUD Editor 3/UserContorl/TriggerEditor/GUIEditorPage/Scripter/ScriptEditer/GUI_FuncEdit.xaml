@@ -7,7 +7,7 @@
              mc:Ignorable="d" >
     <DockPanel>
         <TextBlock DockPanel.Dock="Top">
-           함수 이름
+           函数名称
         </TextBlock>
         <DockPanel DockPanel.Dock="Top">
             <!--<Border x:Name="colorbox" DockPanel.Dock="Left" Width="30"/>-->
@@ -28,7 +28,7 @@
 
         </WrapPanel>
         <TextBlock DockPanel.Dock="Top">
-           함수 설명
+           函数说明
         </TextBlock>
         <TextBox DockPanel.Dock="Top" x:Name="argtip" AcceptsReturn="True" VerticalContentAlignment="Stretch"/>
     </DockPanel>

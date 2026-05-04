@@ -10,7 +10,7 @@
     <DockPanel LastChildFill="False">
         <TextBox x:Name="countVal" DockPanel.Dock="Top" TextChanged="countVal_TextChanged" MouseWheel="countVal_MouseWheel"/>
         <CheckBox x:Name="ChBox" DockPanel.Dock="Top" Style="{StaticResource MaterialDesignCheckBox}" Checked="ChBox_Checked" Unchecked="ChBox_Unchecked">
-            전체
+            全部
         </CheckBox>
     </DockPanel>
 </UserControl>

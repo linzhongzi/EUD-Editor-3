@@ -3687,7 +3687,7 @@ function EncodeWeapon(weaponname /*Weapon*/) { }
  * The name of the code.
  * 
  * @Summary.zh-CN
- * 返回投掷信息（Flingy）的索引。
+ * 返回运转（Flingy）的索引。
  * @param.flingyname.zh-CN
  * 代码名称
 ***/
@@ -3709,7 +3709,7 @@ function EncodeFlingy(flingyname /*Flingy*/) { }
  * The name of the code.
  * 
  * @Summary.zh-CN
- * 返回子图形（Sprite）的索引。
+ * 返回精灵（Sprite）的索引。
  * @param.spritename.zh-CN
  * 代码名称
 ***/
@@ -3753,7 +3753,7 @@ function EncodeUpgrade(upgradename /*Upgrade*/) { }
  * The name of the code.
  * 
  * @Summary.zh-CN
- * 返回科技（Tech）的索引。
+ * 返回技能（Tech）的索引。
  * @param.techname.zh-CN
  * 代码名称
 ***/

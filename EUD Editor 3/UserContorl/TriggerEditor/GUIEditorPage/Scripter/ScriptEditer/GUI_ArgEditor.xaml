@@ -10,11 +10,11 @@
            >
     <DockPanel>
         <StackPanel Orientation="Vertical" Margin="4" DockPanel.Dock="Left">
-            <RadioButton x:Name="typebtn0" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="0" Content="기본" Padding="0" Margin="0" Height="24"/>
-            <RadioButton x:Name="typebtn1" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="1" Content="변수" Padding="0" Margin="0" Height="24"/>
-            <RadioButton x:Name="typebtn2" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="2" Content="함수" Padding="0" Margin="0" Height="24"/>
-            <RadioButton x:Name="typebtn3" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="3" Content="수식" Padding="0" Margin="0" Height="24"/>
-            <RadioButton x:Name="typebtn4" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="4" Content="사용자" Padding="0" Margin="0" Height="24"/>
+            <RadioButton x:Name="typebtn0" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="0" Content="基本" Padding="0" Margin="0" Height="24"/>
+            <RadioButton x:Name="typebtn1" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="1" Content="变量" Padding="0" Margin="0" Height="24"/>
+            <RadioButton x:Name="typebtn2" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="2" Content="函数" Padding="0" Margin="0" Height="24"/>
+            <RadioButton x:Name="typebtn3" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="3" Content="公式" Padding="0" Margin="0" Height="24"/>
+            <RadioButton x:Name="typebtn4" Style="{StaticResource MaterialDesignTabRadioButton}"  Checked="typebtn_Checked" Tag="4" Content="用户" Padding="0" Margin="0" Height="24"/>
         </StackPanel>
         <DockPanel>
             <ComboBox x:Name="valuetypecb" Visibility="Collapsed" DockPanel.Dock="Top" SelectionChanged="valuetypecb_SelectionChanged">

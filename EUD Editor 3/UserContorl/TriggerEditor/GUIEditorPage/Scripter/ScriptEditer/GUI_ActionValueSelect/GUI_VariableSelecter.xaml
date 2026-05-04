@@ -12,7 +12,7 @@
 
     <Grid>
         <DockPanel Margin="4" x:Name="FuncSelecter" Visibility="Collapsed">
-            <Button DockPanel.Dock="Top" Content="변수 선택창으로 돌아가기" Click="Button_Click_1"/>
+            <Button DockPanel.Dock="Top" Content="返回变量选择窗口" Click="Button_Click_1"/>
             <DockPanel DockPanel.Dock="Top">
                 <materialDesign:PackIcon Kind="Magnify" DockPanel.Dock="Left" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}"/>
                 <Button  DockPanel.Dock="Right"
@@ -29,18 +29,18 @@
             
         </DockPanel>
         <DockPanel Margin="4" x:Name="VarSelecter" Visibility="Visible">
-            <ComboBox x:Name="variabletype"  DockPanel.Dock="Top" SelectionChanged="variabletype_SelectionChanged" materialDesign:HintAssist.Hint="변수 타입" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                <ComboBoxItem Content="전체" Tag="all"/>
-                <ComboBoxItem Content="상수변수" Tag="const"/>
-                <ComboBoxItem Content="일반변수" Tag="default"/>
-                <ComboBoxItem Content="스태틱변수" Tag="static"/>
-                <ComboBoxItem Content="오브젝트" Tag="object"/>
+            <ComboBox x:Name="variabletype"  DockPanel.Dock="Top" SelectionChanged="variabletype_SelectionChanged" materialDesign:HintAssist.Hint="变量类型" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBoxItem Content="全部" Tag="all"/>
+                <ComboBoxItem Content="常量变量" Tag="const"/>
+                <ComboBoxItem Content="普通变量" Tag="default"/>
+                <ComboBoxItem Content="静态变量" Tag="static"/>
+                <ComboBoxItem Content="对象" Tag="object"/>
             </ComboBox>
-            <ComboBox x:Name="variablepos"  DockPanel.Dock="Top" SelectionChanged="variablepos_SelectionChanged" materialDesign:HintAssist.Hint="변수 위치" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                <ComboBoxItem Content="전체" Tag="all"/>
-                <ComboBoxItem Content="지역변수" Tag="local"/>
-                <ComboBoxItem Content="전역변수" Tag="global"/>
-                <ComboBoxItem Content="외부파일" Tag="extern"/>
+            <ComboBox x:Name="variablepos"  DockPanel.Dock="Top" SelectionChanged="variablepos_SelectionChanged" materialDesign:HintAssist.Hint="变量位置" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBoxItem Content="全部" Tag="all"/>
+                <ComboBoxItem Content="局部变量" Tag="local"/>
+                <ComboBoxItem Content="全局变量" Tag="global"/>
+                <ComboBoxItem Content="外部文件" Tag="extern"/>
             </ComboBox>
 
             <DockPanel DockPanel.Dock="Top" Height="35">

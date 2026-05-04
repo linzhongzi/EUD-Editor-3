@@ -11,13 +11,13 @@
         AddHandler valueEditPanel.BtnRefresh, AddressOf AgrbtnRefresh
         valueEditPanel.ComboboxInit(EditValues)
 
-        returnVal.Text = "반환 값 : " & EditValues.ValueCoder
+        returnVal.Text = "返回值 : " & EditValues.ValueCoder
 
         isload = True
     End Sub
     Public Sub AgrbtnRefresh(sender As String, e As RoutedEventArgs)
         ' sender.Last 所选值
-        returnVal.Text = "반환 값 : " & EditValues.ValueCoder
+        returnVal.Text = "返回值 : " & EditValues.ValueCoder
     End Sub
 
     Public Sub OkayAction(sender As Object, e As RoutedEventArgs)

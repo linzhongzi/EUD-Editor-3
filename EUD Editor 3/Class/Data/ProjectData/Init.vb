@@ -63,8 +63,8 @@
     End Sub
     Public Sub TELegacy(tfile As TEFile)
         If tfile.FileType = TEFile.EFileType.GUIEps Then
-            Tool.CustomMsgBox("호환성 경고" & vbCrLf &
-                        "다음 파일이 CUI로 강제 변경됩니다." & vbCrLf &
+            Tool.CustomMsgBox("兼容性警告" & vbCrLf &
+                        "以下文件将被强制更改为CUI。" & vbCrLf &
                        tfile.FileName, MessageBoxButton.OK, MessageBoxImage.Exclamation)
 
             If tfile.ChagneType() Then

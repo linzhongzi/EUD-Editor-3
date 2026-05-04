@@ -9,7 +9,7 @@ Public Class HexValidationRule
             Dim number As Long = "&H" & value
             Return ValidationResult.ValidResult
         Catch ex As Exception
-            Return New ValidationResult(False, "16진수를 입력하세요")
+            Return New ValidationResult(False, "请输入十六进制数")
             'Return New ValidationResult(False, value.ToString)
         End Try
 

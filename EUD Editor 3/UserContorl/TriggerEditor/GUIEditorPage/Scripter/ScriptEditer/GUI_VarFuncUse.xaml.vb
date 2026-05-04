@@ -105,9 +105,9 @@ Public Class GUI_VarFuncUse
 
             Dim b As New Button
             If isCast Then
-                b.Tag = {b, scr.child(0), "캐스트 벨류"}
+                b.Tag = {b, scr.child(0), "强制转换值"}
             Else
-                b.Tag = {b, scr.child(0), "인덱스 설정"}
+                b.Tag = {b, scr.child(0), "索引设置"}
             End If
 
             AddHandler b.Click, AddressOf BtnClick
@@ -161,7 +161,7 @@ Public Class GUI_VarFuncUse
                     'tLabel.Content = scrlist.First.name & ":" & scrlist.First.value & ":" & scrlist.First.value2
                 Else
                     tLabel.Visibility = Visibility.Visible
-                    tLabel.Content = "존재하지 않는 벨류"
+                    tLabel.Content = "不存在的值"
                     ToolBtnlist.Visibility = Visibility.Collapsed
                     Return
                 End If
@@ -183,7 +183,7 @@ Public Class GUI_VarFuncUse
                     'tLabel.Content = scrlist.First.name & ":" & scrlist.First.value & ":" & scrlist.First.value2
                 Else
                     tLabel.Visibility = Visibility.Visible
-                    tLabel.Content = "존재하지 않는 벨류"
+                    tLabel.Content = "不存在的值"
                     ToolBtnlist.Visibility = Visibility.Collapsed
                     Return
                 End If
@@ -210,7 +210,7 @@ Public Class GUI_VarFuncUse
                 Next
             Else
                 tLabel.Visibility = Visibility.Visible
-                tLabel.Content = "존재하지 않는 오브젝트"
+                tLabel.Content = "不存在的对象"
                 ToolBtnlist.Visibility = Visibility.Collapsed
                 Return
             End If
@@ -233,14 +233,14 @@ Public Class GUI_VarFuncUse
                 Next
             Else
                 tLabel.Visibility = Visibility.Visible
-                tLabel.Content = "존재하지 않는 오브젝트"
+                tLabel.Content = "不存在的对象"
                 ToolBtnlist.Visibility = Visibility.Collapsed
                 Return
             End If
         End If
 
 
-        tLabel.Content = "오브젝트 이름" & objscr.value & " 함수 명 : " & methodname
+        tLabel.Content = "对象名" & objscr.value & " 函数名 : " & methodname
 
         ToolBtnlist.Visibility = Visibility.Visible
         Dim methodlist As List(Of ScriptBlock) = tescm.GetObjectMethod(objscr)
@@ -341,10 +341,10 @@ Public Class GUI_VarFuncUse
         Else
             tLabel.Visibility = Visibility.Visible
             If methodname = "constructor" Then
-                tLabel.Content = "기본생성자"
+                tLabel.Content = "默认构造函数"
                 DefaultConstructor = True
             Else
-                tLabel.Content = "존재하지 않는 함수"
+                tLabel.Content = "不存在的函数"
                 ToolBtnlist.Visibility = Visibility.Collapsed
             End If
         End If

@@ -28,7 +28,7 @@ Module BuildErrorHandling
         For i = 0 To mcol.Count - 1
             Dim File As String = mcol(i).Groups(1).Value.Trim
             Dim Line As String = mcol(i).Groups(2).Value.Trim
-            Dim Description As String = "epScript 컴파일러 오류 : " & mcol(i).Groups(3).Value.Trim
+            Dim Description As String = "epScript编译器错误 : " & mcol(i).Groups(3).Value.Trim
 
 
 

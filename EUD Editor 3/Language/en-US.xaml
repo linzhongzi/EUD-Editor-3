@@ -313,7 +313,7 @@
     <sys:String x:Key="UnitCreateSize">Create Size</sys:String>
     <sys:String x:Key="UnitAddonPos">Addon location</sys:String>
 
-    
+
     <sys:String x:Key="WeaponAttack">Target</sys:String>
     <sys:String x:Key="WeaponRange">Range</sys:String>
     <sys:String x:Key="WeaponBullet">Bullet</sys:String>
@@ -352,7 +352,6 @@
     <sys:String x:Key="statusinfor">StatusInfor</sys:String>
 
 
-
     <sys:String x:Key="datfliename">Datfile tag</sys:String>
     <sys:String x:Key="parameter">Parameter</sys:String>
     <sys:String x:Key="valuetype">Value Type</sys:String>
@@ -369,7 +368,6 @@
     <sys:String x:Key="StatDatalimit4">Skills used</sys:String>
     <sys:String x:Key="StatDatalimit5">Tech upgrade</sys:String>
     <sys:String x:Key="StatDatalimit6">Unit transformation</sys:String>
-
 
 
     <sys:String x:Key="StatDataShortCut">Shortcut</sys:String>
@@ -593,7 +591,7 @@
 
     <sys:String x:Key="orders_Highlight">Activation buton</sys:String>
     <sys:String x:Key="orders_Unknown17">Unknown</sys:String>
-    <sys:String x:Key="orders_Obscured Order">Unclear order</sys:String>
+    <sys:String x:Key="orders_Obscured Order">Obscured order</sys:String>
 
 
     <!--ToolTip-->
@@ -617,9 +615,6 @@
     <sys:String x:Key="units_Ground Weapon_ToolTip">A weapon that can be used for attacking ground units.</sys:String>
     <sys:String x:Key="units_Max Ground Hits_ToolTip">A maximum counts that unit can damage on target when unit attacks with ground target weapon.</sys:String>
     <sys:String x:Key="units_Air Weapon_ToolTip">A weapon when attacking air units.</sys:String>
-
-
-
     <sys:String x:Key="units_Max Air Hits_ToolTip">Maximum number of times a unit can deal damage each time it strikes a target with an air target weapon.</sys:String>
     <sys:String x:Key="units_AI Internal_ToolTip">Specifies the internal AI of the unit. The ‘Strategic Suicide Mission’ AI command can be ignored, or the Guard command status (return to the original position when the target is destroyed) can be prevented.</sys:String>
 
@@ -691,7 +686,6 @@
 
     <sys:String x:Key="flingy_Sprite_ToolTip">This is the sprite used by the flight information (appearance). If you click OK, you will be taken to the Associated Sprite tab.</sys:String>
     <sys:String x:Key="flingy_Speed_ToolTip">It means the maximum speed of the flight information (appearance).</sys:String>
-
     <sys:String x:Key="flingy_Acceleration_ToolTip">It means the acceleration of the flight information (appearance). The higher the value, the faster the maximum speed can be achieved.</sys:String>
     <sys:String x:Key="flingy_Halt Distance_ToolTip">It means the distance value at which the relevant flight information (appearance) starts to stop. The higher the value, the farther away you start to slow down. They are subject to acceleration and must fit properly.</sys:String>
     <sys:String x:Key="flingy_Turn Radius_ToolTip">It means the turning radius of the flight information (appearance). The higher the value, the more angular it turns when turning in the other direction. Smaller values ​​rotate slowly and round when turning in the desired direction. Very large values ​​can hover around. If 0, the game will bounce.</sys:String>
@@ -721,7 +715,6 @@
     <sys:String x:Key="images_Special Overlay_ToolTip">Indicates the position data when current unit pick up Powerups or have additional units.</sys:String>
     <sys:String x:Key="images_Landing Dust Overlay_ToolTip">Indicates the position data when current unit do landing. Used in Terran buildings.</sys:String>
     <sys:String x:Key="images_Lift-Off Overlay_ToolTip">Indicates the position data when current unit do lift off. Used in Terran buildings</sys:String>
-
 
 
     <sys:String x:Key="upgrades_Mineral Cost Base_ToolTip">Require Mineral cost to research upgrade.</sys:String>
@@ -791,7 +784,7 @@
     <sys:String x:Key="FG_BatchSetting">Batch setting</sys:String>
 
     <sys:String x:Key="FG_Requirement">Requirements</sys:String>
-    
+
     <sys:String x:Key="FG_DefaultUse">Default</sys:String>
     <sys:String x:Key="FG_DontUse">Don’t Use</sys:String>
     <sys:String x:Key="FG_AlwaysUse">Always Use</sys:String>
@@ -973,7 +966,7 @@
 
     <sys:String x:Key="emptytext">Blank text</sys:String>
 
-    
+
     <sys:String x:Key="ChatPluginSetting">ChatEvent Settings</sys:String>
     <sys:String x:Key="MSQCPluginSetting">MSQC Settings</sys:String>
     <sys:String x:Key="FuncNameUserEdit">UserEdit</sys:String>
@@ -1084,7 +1077,6 @@
     <sys:String x:Key="Identificationnumber">ID Number</sys:String>
     <sys:String x:Key="SeverID">Server ID</sys:String>
 
-
     <sys:String x:Key="DatabaseName">Database Name</sys:String>
     <sys:String x:Key="SecondName">Second Name</sys:String>
     <sys:String x:Key="MapInfor">Map Info</sys:String>
@@ -1124,7 +1116,7 @@
 
     <sys:String x:Key="SCAScriptVarCount">Script Max Count</sys:String>
     <sys:String x:Key="SCAScriptVarCountHint">Maximum quantity of SCA Script Variable.</sys:String>
-    
+
 
     <sys:String x:Key="CT_TriggerSetting">Setting</sys:String>
     <sys:String x:Key="CT_Computer">Computer</sys:String>
@@ -1179,8 +1171,8 @@
 
     <sys:String x:Key="CT_TriggerUnused">[TRIGGER UNUSED]</sys:String>
     <sys:String x:Key="CT_PreservedHead">[PRESERVED TRIGGER]</sys:String>
-    
-    
+
+
 
     <sys:String x:Key="CT_Select">Select</sys:String>
 

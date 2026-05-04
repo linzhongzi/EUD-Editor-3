@@ -95,10 +95,10 @@ Partial Public Class BuildData
 
         Select Case respon
             Case "NOACCOUNT"
-                Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "계정 정보가 올바르지 않습니다.")
+                Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "账户信息不正确。")
                 Return False
             Case "BANUSER"
-                Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "SCA사용이 금지된 아이디입니다.")
+                Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "禁止使用SCA的账号。")
                 Return False
         End Select
 
@@ -444,21 +444,21 @@ Partial Public Class BuildData
         sb.AppendLine("    const spec, ObjNum = div(indicator, 0x1000);")
         sb.AppendLine("    var vindex = 0;")
         sb.AppendLine("    var value;")
-        sb.AppendLine("    if (spec == 1) {  // 4바이트 지정")
+        sb.AppendLine("    if (spec == 1) {  // 指定4字节")
         sb.AppendLine("        const value1 = wread_epd(iQ, iR);")
         sb.AppendLine("        AdvanceI();")
         sb.AppendLine("        const value2 = wread_epd(iQ, iR);")
         sb.AppendLine("        value = value1 * 0x10000 + value2;")
-        sb.AppendLine("    } else if (spec == 2) {  // 2바이트 지정")
+        sb.AppendLine("    } else if (spec == 2) {  // 指定2字节")
         sb.AppendLine("        value = wread_epd(iQ, iR);")
-        sb.AppendLine("    } else if (spec == 3) {  // 4바이트 지정")
+        sb.AppendLine("    } else if (spec == 3) {  // 指定4字节")
         sb.AppendLine("        vindex = wread_epd(iQ, iR);")
         sb.AppendLine("        AdvanceI();")
         sb.AppendLine("        const value1 = wread_epd(iQ, iR);")
         sb.AppendLine("        AdvanceI();")
         sb.AppendLine("        const value2 = wread_epd(iQ, iR);")
         sb.AppendLine("        value = value1 * 0x10000 + value2;")
-        sb.AppendLine("    } else if (spec == 4) {  //2바이트 지정")
+        sb.AppendLine("    } else if (spec == 4) {  // 指定2字节")
         sb.AppendLine("        vindex = wread_epd(iQ, iR);")
         sb.AppendLine("        AdvanceI();")
         sb.AppendLine("        value = wread_epd(iQ, iR);")

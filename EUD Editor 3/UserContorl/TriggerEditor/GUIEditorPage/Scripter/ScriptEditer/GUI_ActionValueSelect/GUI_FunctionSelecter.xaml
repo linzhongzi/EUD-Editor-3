@@ -10,14 +10,14 @@
              Loaded="UserControl_Loaded"
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel Margin="4">
-        <ComboBox x:Name="functype"  DockPanel.Dock="Top" SelectionChanged="functype_SelectionChanged" materialDesign:HintAssist.Hint="함수 타입" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-            <ComboBoxItem Content="일반함수" Tag="default"/>
-            <ComboBoxItem Content="액션" Tag="action"/>
-            <ComboBoxItem Content="조건" Tag="condition"/>
-            <ComboBoxItem Content="플립함수" Tag="plib"/>
+        <ComboBox x:Name="functype"  DockPanel.Dock="Top" SelectionChanged="functype_SelectionChanged" materialDesign:HintAssist.Hint="函数类型" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <ComboBoxItem Content="普通函数" Tag="default"/>
+            <ComboBoxItem Content="动作" Tag="action"/>
+            <ComboBoxItem Content="条件" Tag="condition"/>
+            <ComboBoxItem Content="插件函数" Tag="plib"/>
             
-            <ComboBoxItem Content="매크로함수" Tag="macro"/>
-            <ComboBoxItem Content="외부파일" Tag="extern"/>
+            <ComboBoxItem Content="宏函数" Tag="macro"/>
+            <ComboBoxItem Content="外部文件" Tag="extern"/>
         </ComboBox>
         <DockPanel DockPanel.Dock="Top" Height="35">
             <materialDesign:PackIcon Kind="Magnify" DockPanel.Dock="Left" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource MaterialDesignBody}" Height="22" Width="22" Margin="4"/>

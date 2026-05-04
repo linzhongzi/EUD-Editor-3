@@ -154,7 +154,7 @@ Partial Public Class BuildData
 
 
     Private Sub WriteStatusInfor(sb As StringBuilder)
-        sb.AppendLine("    DoActions([ # 스테이터스인포메이션")
+        sb.AppendLine("    DoActions([ # 状态信息")
         For i = 0 To SCUnitCount - 1
             If Not pjData.ExtraDat.DefaultStatusFunction1(i) Then
                 Dim _lastvalue As Long = scData.statusFnVal1(pjData.ExtraDat.StatusFunction1(i))

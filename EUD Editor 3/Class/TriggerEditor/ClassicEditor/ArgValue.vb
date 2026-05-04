@@ -105,12 +105,12 @@ Public Class ArgValue
     Public Function GetEditorText() As String
         Dim v As String
         If ValueType = "Variable" Then
-            v = "변수:" & ValueString & ValueString2
+            v = "变量:" & ValueString & ValueString2
         ElseIf ValueType = "Function" Then
             If CodeBlock Is Nothing Then
-                v = "함수지정"
+                v = "函数指定"
             Else
-                v = "함수:" & CodeBlock.FName
+                v = "函数:" & CodeBlock.FName
             End If
         Else
             If IsArgNumber Then

@@ -33,7 +33,7 @@ Public Class CodeTextEditor
     Private CompletionData As New List(Of TriggerEditorCompletionData)
     Private Sub DataCreate()
         For i = 0 To 7000
-            CompletionData.Add(New TriggerEditorCompletionData(0, "표시 : " & i, "입력 : " & i, "설명 : " & i, TextEditor, TECompletionData.EIconType.StarConst))
+            CompletionData.Add(New TriggerEditorCompletionData(0, "显示 : " & i, "输入 : " & i, "说明 : " & i, TextEditor, TECompletionData.EIconType.StarConst))
         Next
     End Sub
 

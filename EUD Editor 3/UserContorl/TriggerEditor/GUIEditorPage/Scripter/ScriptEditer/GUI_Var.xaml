@@ -11,28 +11,28 @@
     
     <DockPanel x:Name="MainStackPanel" LastChildFill="False">
         <Border x:Name="ValueSelecter" DockPanel.Dock="Right" Width="250"/>
-        <TextBox x:Name="vname" materialDesign:HintAssist.Hint="변수 명" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" DockPanel.Dock="Top" TextChanged="vname_TextChanged"/>
-        <ComboBox x:Name="VarType" materialDesign:HintAssist.Hint="타입" DockPanel.Dock="Top" Style="{StaticResource MaterialDesignFloatingHintComboBox}" SelectionChanged="VarType_SelectionChanged">
-            <ComboBoxItem Content="변수"/>
-            <ComboBoxItem Content="스태틱변수"/>
-            <ComboBoxItem Content="상수"/>
-            <ComboBoxItem Content="오브젝트"/>
+        <TextBox x:Name="vname" materialDesign:HintAssist.Hint="变量名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" DockPanel.Dock="Top" TextChanged="vname_TextChanged"/>
+        <ComboBox x:Name="VarType" materialDesign:HintAssist.Hint="类型" DockPanel.Dock="Top" Style="{StaticResource MaterialDesignFloatingHintComboBox}" SelectionChanged="VarType_SelectionChanged">
+            <ComboBoxItem Content="变量"/>
+            <ComboBoxItem Content="静态变量"/>
+            <ComboBoxItem Content="常量"/>
+            <ComboBoxItem Content="对象"/>
         </ComboBox>
-        <CheckBox x:Name="initcb" Content="초기값" DockPanel.Dock="Top" Checked="initcb_Checked" Unchecked="initcb_Unchecked"/>
+        <CheckBox x:Name="initcb" Content="初始值" DockPanel.Dock="Top" Checked="initcb_Checked" Unchecked="initcb_Unchecked"/>
 
         <WrapPanel x:Name="EditValuesPanel" Visibility="Visible" DockPanel.Dock="Top">
-            <Button Content="ㅁㄴㅇ"/>
-            <Button Content="ㅁㄴㅇ"/>
-            <Button Content="ㅁㄴㅇ"/>
-            <Button Content="ㅁㄴㅇ"/>
+            <Button Content="ㅁㄴㅇ"/> <!--临时占位符？-->
+            <Button Content="ㅁㄴㅇ"/> <!--临时占位符？-->
+            <Button Content="ㅁㄴㅇ"/> <!--临时占位符？-->
+            <Button Content="ㅁㄴㅇ"/> <!--临时占位符？-->
         </WrapPanel>
         <DockPanel x:Name="varObjectBorder" DockPanel.Dock="Top" >
             <!-- 必须选择对象. -->
             <!-- 从选定的对象中选择函数。 -->
             <DockPanel DockPanel.Dock="Top">
-                <CheckBox x:Name="SpFlag" Content="인게임초기화" DockPanel.Dock="Right" Checked="SpFlag_Checked" Unchecked="SpFlag_Unchecked" Visibility="Collapsed"/>
-                <ComboBox x:Name="ObjectFunc" materialDesign:HintAssist.Hint="함수" DockPanel.Dock="Left" Style="{StaticResource MaterialDesignFloatingHintComboBox}" SelectionChanged="ObjectFunc_SelectionChanged">
-                    <ComboBoxItem Content="생성자" Tag="constructor"/>
+                <CheckBox x:Name="SpFlag" Content="游戏中初始化" DockPanel.Dock="Right" Checked="SpFlag_Checked" Unchecked="SpFlag_Unchecked" Visibility="Collapsed"/>
+                <ComboBox x:Name="ObjectFunc" materialDesign:HintAssist.Hint="函数" DockPanel.Dock="Left" Style="{StaticResource MaterialDesignFloatingHintComboBox}" SelectionChanged="ObjectFunc_SelectionChanged">
+                    <ComboBoxItem Content="构造函数" Tag="constructor"/>
                     <ComboBoxItem Content="Cast" Tag="cast"/>
                     <ComboBoxItem Content="Alloc" Tag="alloc"/>
                 </ComboBox>

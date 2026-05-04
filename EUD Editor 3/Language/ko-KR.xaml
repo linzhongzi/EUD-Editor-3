@@ -360,9 +360,6 @@
 
 
 
-
-
-
     <sys:String x:Key="StatDatalimit">한정자</sys:String>
     <sys:String x:Key="StatDatalimit0">없음</sys:String>
     <sys:String x:Key="StatDatalimit1">일반 명령</sys:String>
@@ -371,7 +368,6 @@
     <sys:String x:Key="StatDatalimit4">스킬 사용</sys:String>
     <sys:String x:Key="StatDatalimit5">기술 연구</sys:String>
     <sys:String x:Key="StatDatalimit6">유닛 변태</sys:String>
-
 
 
     <sys:String x:Key="StatDataShortCut">단축키</sys:String>
@@ -861,7 +857,7 @@
 
     <sys:String x:Key="TE_SCAScriptImage">이미지</sys:String>
     <sys:String x:Key="TE_SCAScriptSound">효과음</sys:String>
-    
+
     <sys:String x:Key="TE_AllScript">모든 코드</sys:String>
 
     <!--Menu-->
@@ -910,7 +906,6 @@
     <sys:String x:Key="ErrorText">오류!</sys:String>
     <sys:String x:Key="NoMatchesFoundText">일치하는 결과가 없습니다!</sys:String>
 
-
     <sys:String x:Key="Invalide2s">올바른 e2s파일이 아닙니다!</sys:String>
     <sys:String x:Key="LodingError">$S0$를 불러오는 과정에서 오류가 발생했습니다.</sys:String>
 
@@ -938,7 +933,6 @@
 
     <sys:String x:Key="VarDefine">변수 정의하기</sys:String>
 
-
     <sys:String x:Key="ConnectProgramNoExist">연결 프로그램이 지정되어 있지 않습니다.</sys:String>
 
     <sys:String x:Key="TEFileChangeError">타입 변경에 실패했습니다.</sys:String>
@@ -960,7 +954,6 @@
     <sys:String x:Key="TE_SnackBar12">케이스는 스위치에만 들어 갈 수 있습니다.</sys:String>
     <sys:String x:Key="TE_SnackBar13">조건을 넣을 수 없는 곳입니다.</sys:String>
 
-    
     <sys:String x:Key="fundefine">함수선언</sys:String>
     <sys:String x:Key="funargblock">인자선언</sys:String>
     <sys:String x:Key="funreturn">함수반환</sys:String>
@@ -978,13 +971,10 @@
     <sys:String x:Key="MSQCPluginSetting">MSQC 설정</sys:String>
     <sys:String x:Key="FuncNameUserEdit">직접입력</sys:String>
 
-
     <sys:String x:Key="GUIEditorBtn">GUI편집기</sys:String>
-
 
     <sys:String x:Key="NewClassicScript">새ClassicTrigger파일</sys:String>
     <sys:String x:Key="NewRawTextScript">새RawText파일</sys:String>
-
 
     <sys:String x:Key="TrgArgAll">모두</sys:String>
     <sys:String x:Key="TrgArg0">모두</sys:String>
@@ -1032,7 +1022,6 @@
 
 
 
-
     <sys:String x:Key="Explorer">탐색기</sys:String>
     <sys:String x:Key="ErrorList">오류 목록</sys:String>
     <sys:String x:Key="Location">위치</sys:String>
@@ -1056,7 +1045,7 @@
     <sys:String x:Key="NameSpace">네임스페이스</sys:String>
 
     <sys:String x:Key="Default">기본</sys:String>
-    
+
     <sys:String x:Key="BGMList">BGM 목록</sys:String>
 
 
@@ -1068,7 +1057,6 @@
     <sys:String x:Key="TestMode">테스트 모드</sys:String>
     <sys:String x:Key="MultiPlayMode">멀티 모드</sys:String>
     <sys:String x:Key="FreePlayMode">자유 모드</sys:String>
-
 
     <sys:String x:Key="SCAHomepage">SCArchive 맵 정보 페이지</sys:String>
 
@@ -1202,8 +1190,8 @@
     <sys:String x:Key="ArgFuncSelect">함수 선택하기</sys:String>
     <sys:String x:Key="ArgGlobal">전역 변수</sys:String>
     <sys:String x:Key="CurrentPlayer">해당플레이어</sys:String>
-    
-    
+
+
     <sys:String x:Key="ArgDefault">기본값</sys:String>
     <sys:String x:Key="ArgVariable">변수</sys:String>
     <sys:String x:Key="ArgFunction">함수</sys:String>

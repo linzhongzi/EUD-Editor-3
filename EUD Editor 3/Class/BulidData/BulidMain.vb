@@ -43,7 +43,7 @@ Partial Public Class BuildData
 
             If CheckBuildable() Then
                 If Not SoundConverter() Then
-                    Tool.ErrorMsgBox("Sound파일 변환 에러")
+                    Tool.ErrorMsgBox("Sound文件转换错误")
                     pgData.IsCompilng = False
                     pgData.isEddCompile = False
                     Tool.RefreshMainWindow()
@@ -53,7 +53,7 @@ Partial Public Class BuildData
 
 
                 If Not SoundSCAScriptConverter() Then
-                    Tool.ErrorMsgBox("SCAScriptSound파일 변환 에러")
+                    Tool.ErrorMsgBox("SCAScriptSound文件转换错误")
                     pgData.IsCompilng = False
                     pgData.isEddCompile = False
                     Tool.RefreshMainWindow()
@@ -75,7 +75,7 @@ Partial Public Class BuildData
 
                             ' 如果登录失败
                             If Not SCALoginWindow.Result Then
-                                Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "계정 정보가 올바르지 않습니다. SCA사용이 해제됩니다.")
+                                Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "账户信息不正确。SCA功能已禁用。")
                                 pgData.IsCompilng = False
                                 pgData.isEddCompile = False
                                 Tool.RefreshMainWindow()
@@ -91,7 +91,7 @@ Partial Public Class BuildData
 
                         ' 如果登录失败
                         If Not SCALoginWindow.Result Then
-                            Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "계정 정보가 올바르지 않습니다. SCA사용이 해제됩니다.")
+                            Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "账户信息不正确。SCA功能已禁用。")
                             pgData.IsCompilng = False
                             pgData.isEddCompile = False
                             Tool.RefreshMainWindow()
@@ -436,7 +436,7 @@ Partial Public Class BuildData
 
                 'MsgBox(tempstr(tempstr.Count - 2))
                 ' 临时判断
-                If (StandardOutput.IndexOf("Output scenario.chk") < 0) And (StandardOutput.IndexOf("출력된 scenario.chk 크기") < 0) Then
+                If (StandardOutput.IndexOf("Output scenario.chk") < 0) And (StandardOutput.IndexOf("输出的 scenario.chk 大小") < 0) Then
                     If eudplibShutDown Then
                         'Tool.CustomMsgBox(Tool.GetText("Error CompileStop"), MessageBoxButton.OK, MessageBoxImage.Error)
                     Else

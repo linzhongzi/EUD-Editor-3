@@ -46,7 +46,7 @@ Public Class GUI_Action_ArgSelecter
         ExtraTip.Text = FuncDefine.FuncComment
 
         If FuncDefine.FunNoExist Then
-            Fname.Text = "함수가 존재하지 않습니다."
+            Fname.Text = "函数不存在。"
             DefaultCoder()
             IsDefaultCoder = True
             Return

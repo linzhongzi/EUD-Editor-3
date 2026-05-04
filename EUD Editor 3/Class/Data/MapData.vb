@@ -291,13 +291,13 @@ Public Class MapData
 
 
                 Dim TEMPUPGMin(60) As UInteger
-                ' #### (61个) = 第一次升级的矿物花费
+                ' #### (61个) = 第一次升级的水晶花费
                 For i = 0 To 60
                     TEMPUPGMin(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGADDMin(60) As UInteger
-                ' #### (61个) = 额外升级的矿物花费
+                ' #### (61个) = 额外升级的水晶花费
                 For i = 0 To 60
                     TEMPUPGADDMin(i) = binary.ReadUInt16()
                 Next
@@ -373,7 +373,7 @@ Public Class MapData
 
 
                 Dim TEMPTECHMin(43) As UInteger
-                ' #### = 矿物花费
+                ' #### = 水晶花费
                 For i = 0 To 43
                     TEMPTECHMin(i) = binary.ReadUInt16()
                 Next
@@ -468,7 +468,7 @@ Public Class MapData
                 Next
 
                 Dim TEMPMinCost(227) As UShort
-                ' #### (228个) = 矿物花费
+                ' #### (228个) = 水晶花费
                 For i = 0 To 227
                     TEMPMinCost(i) = binary.ReadUInt16()
                 Next
@@ -715,13 +715,13 @@ Public Class MapData
 
 
                 Dim TEMPUPGMin(60) As UInteger
-                ' #### (61个) = 第一次升级的矿物花费
+                ' #### (61个) = 第一次升级的水晶花费
                 For i = 0 To 60
                     TEMPUPGMin(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGADDMin(60) As UInteger
-                ' #### (61个) = 额外升级的矿物花费
+                ' #### (61个) = 额外升级的水晶花费
                 For i = 0 To 60
                     TEMPUPGADDMin(i) = binary.ReadUInt16()
                 Next
@@ -797,7 +797,7 @@ Public Class MapData
 
 
                 Dim TEMPTECHMin(43) As UInteger
-                ' #### = 矿物花费
+                ' #### = 水晶花费
                 For i = 0 To 43
                     TEMPTECHMin(i) = binary.ReadUInt16()
                 Next
@@ -892,7 +892,7 @@ Public Class MapData
                 Next
 
                 Dim TEMPMinCost(227) As UShort
-                ' #### (228个) = 矿物花费
+                ' #### (228个) = 水晶花费
                 For i = 0 To 227
                     TEMPMinCost(i) = binary.ReadUInt16()
                 Next

@@ -10,7 +10,8 @@ ShutdownMode="OnMainWindowClose">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Language\ko-KR.xaml" />
+                <!-- <ResourceDictionary Source="Language\ko-KR.xaml" /> -->
+                <ResourceDictionary Source="Language\zh-CN.xaml" />
                 <!-- MahApps -->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />

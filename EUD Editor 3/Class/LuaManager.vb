@@ -77,7 +77,7 @@ Public Class LuaManager
 
 
 
-        RegFunction("ClearLog", "clear", "<1>function <0>clear()" & vbCrLf & "로그 창을 지웁니다.")
+        RegFunction("ClearLog", "clear", "<1>function <0>clear()" & vbCrLf & "清除日志窗口。")
 
         For DatFiles = 0 To Datfilesname.Count - 1
             Properties.Add(Datfilesname(DatFiles))
@@ -97,49 +97,49 @@ Public Class LuaManager
             Next
         Next
 
-        RegFunction("Log", "log", "<1>function <0>log(str)" & vbCrLf & "로그를 입력합니다.")
+        RegFunction("Log", "log", "<1>function <0>log(str)" & vbCrLf & "输入日志。")
 
         ' RegFunction("SetDat", "setdat", "<1>function <0>setdat(datfile =<2>" & DatIndex & "<0>, param , objectid, value)" & vbCrLf & "修改Dat数据。",
         '            {"datfile", "param", "objectid", "value"})
 
-        RegFunction("SetDat", "setdat", "<1>function <0>setdat(datfile, param , objectid, value)" & vbCrLf & "Dat데이터를 수정합니다.",
+        RegFunction("SetDat", "setdat", "<1>function <0>setdat(datfile, param , objectid, value)" & vbCrLf & "修改Dat数据。",
                     {"datfile", "param", "objectid", "value"})
-        RegFunction("GetDat", "getdat", "<1>function <0>getdat(datfile, param , objectid)" & vbCrLf & "Dat데이터를 읽어옵니다.",
+        RegFunction("GetDat", "getdat", "<1>function <0>getdat(datfile, param , objectid)" & vbCrLf & "读取Dat数据。",
                     {"datfile", "param", "objectid"})
-        RegFunction("ResetDat", "resetdat", "<1>function <0>resetdat(datfile, param , objectid)" & vbCrLf & "Dat데이터를 초기화 합니다.",
+        RegFunction("ResetDat", "resetdat", "<1>function <0>resetdat(datfile, param , objectid)" & vbCrLf & "初始化Dat数据。",
                     {"datfile", "param", "objectid"})
 
 
-        RegFunction("SetTbl", "settbl", "<1>function <0>settbl(tblid, value)" & vbCrLf & "Tbl을 수정합니다.",
+        RegFunction("SetTbl", "settbl", "<1>function <0>settbl(tblid, value)" & vbCrLf & "修改Tbl。",
                     {"tblid", "value"})
-        RegFunction("GetTbl", "gettbl", "<1>function <0>gettbl(tblid)" & vbCrLf & "Tbl을 읽어옵니다.",
+        RegFunction("GetTbl", "gettbl", "<1>function <0>gettbl(tblid)" & vbCrLf & "读取Tbl。",
                     {"tblid"})
-        RegFunction("ResetTbl", "resettbl", "<1>function <0>resettbl(tblid)" & vbCrLf & "Tbl을 초기화 합니다.",
+        RegFunction("ResetTbl", "resettbl", "<1>function <0>resettbl(tblid)" & vbCrLf & "初始化Tbl。",
                     {"tblid"})
 
 
 
-        RegFunction("GetCodeLabel", "getcodelabel", "<1>function <0>getcodelabel(datfile, objectid)" & vbCrLf & "오브젝트의 이름을 읽어옵니다.",
+        RegFunction("GetCodeLabel", "getcodelabel", "<1>function <0>getcodelabel(datfile, objectid)" & vbCrLf & "读取对象名称。",
                     {"datfile", "objectid"})
-        RegFunction("GetCodeCount", "getcodecount", "<1>function <0>getcodecount(datfile)" & vbCrLf & "각 코드의 총 갯수를 반환합니다.",
+        RegFunction("GetCodeCount", "getcodecount", "<1>function <0>getcodecount(datfile)" & vbCrLf & "返回每个代码的总数。",
                     {"datfile"})
-        RegFunction("GetDatName", "getdatname", "<1>function <0>getdatname(index)" & vbCrLf & "해당 index의 DatFile의 이름을 가져옵니다.",
+        RegFunction("GetDatName", "getdatname", "<1>function <0>getdatname(index)" & vbCrLf & "获取该索引的DatFile名称。",
                     {"index"})
 
 
-        RegFunction("SetToolTip", "settooltip", "<1>function <0>settooltip(datfile, objectid, value)" & vbCrLf & "ToolTip테이터를 수정합니다.",
+        RegFunction("SetToolTip", "settooltip", "<1>function <0>settooltip(datfile, objectid, value)" & vbCrLf & "修改ToolTip数据。",
                     {"datfile", "objectid", "value"})
-        RegFunction("GetToolTip", "gettooltip", "<1>function <0>gettooltip(datfile, objectid)" & vbCrLf & "ToolTip테이터를 읽어옵니다.",
+        RegFunction("GetToolTip", "gettooltip", "<1>function <0>gettooltip(datfile, objectid)" & vbCrLf & "读取ToolTip数据。",
                     {"datfile", "objectid"})
-        RegFunction("ResetToolTip", "resettooltip", "<1>function <0>resettooltip(datfile, objectid)" & vbCrLf & "ToolTip테이터를 초기화 합니다",
+        RegFunction("ResetToolTip", "resettooltip", "<1>function <0>resettooltip(datfile, objectid)" & vbCrLf & "初始化ToolTip数据。",
                     {"datfile", "objectid"})
 
 
-        RegFunction("SetGroup", "setgroup", "<1>function <0>setgroup(datfile, objectid, value)" & vbCrLf & "Group데이터를 수정합니다.",
+        RegFunction("SetGroup", "setgroup", "<1>function <0>setgroup(datfile, objectid, value)" & vbCrLf & "修改Group数据。",
                     {"datfile", "objectid", "value"})
-        RegFunction("GetGroup", "getgroup", "<1>function <0>getgroup(datfile, objectid)" & vbCrLf & "Group데이터를 읽어옵니다.",
+        RegFunction("GetGroup", "getgroup", "<1>function <0>getgroup(datfile, objectid)" & vbCrLf & "读取Group数据。",
                     {"datfile", "objectid"})
-        RegFunction("ResetGroup", "resetgroup", "<1>function <0>resetgroup(datfile, objectid)" & vbCrLf & "Group데이터를 초기화 합니다.",
+        RegFunction("ResetGroup", "resetgroup", "<1>function <0>resetgroup(datfile, objectid)" & vbCrLf & "初始化Group数据。",
                     {"datfile", "objectid"})
     End Sub
 
@@ -212,7 +212,7 @@ Public Class LuaManager
             For i = 0 To 7
                 DatIndex = DatIndex & " " & Datfilesname(i)
             Next
-            ErrorLog("올바른 Dat파일 이름이 아닙니다." & vbCrLf & DatIndex)
+            ErrorLog("不是正确的Dat文件名。" & vbCrLf & DatIndex)
             Return SCDatFiles.DatFiles.None
         End If
         Return Datfile

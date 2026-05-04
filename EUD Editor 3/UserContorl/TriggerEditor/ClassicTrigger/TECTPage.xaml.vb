@@ -99,9 +99,9 @@ Public Class TECTPage
                             forcename= Tool.GetLanText("CT_Computer")
                     End Select
 
-                    tlistitem.Content = forcename & vbCrLf & TriggerCount(i) & "개"
+                    tlistitem.Content = forcename & vbCrLf & TriggerCount(i) & "个"
                 Else
-                    tlistitem.Content = "Player " & i + 1 & vbCrLf & TriggerCount(i) & "개"
+                    tlistitem.Content = "Player " & i + 1 & vbCrLf & TriggerCount(i) & "个"
                 End If
                 tlistitem.Tag = i
 

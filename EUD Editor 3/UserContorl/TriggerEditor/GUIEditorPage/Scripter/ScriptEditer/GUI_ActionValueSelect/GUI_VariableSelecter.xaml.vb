@@ -242,7 +242,7 @@ Public Class GUI_VariableSelecter
         If True Then
             Dim listitem As New ListBoxItem
 
-            listitem.Content = "주소"
+            listitem.Content = "地址"
             listitem.Tag = "!default"
 
             funclist.Items.Add(listitem)
@@ -250,7 +250,7 @@ Public Class GUI_VariableSelecter
         If True Then
             Dim listitem As New ListBoxItem
 
-            listitem.Content = "인덱스"
+            listitem.Content = "索引"
             listitem.Tag = "!index"
 
             funclist.Items.Add(listitem)
@@ -258,7 +258,7 @@ Public Class GUI_VariableSelecter
         If True Then
             Dim listitem As New ListBoxItem
 
-            listitem.Content = "해당플레이어"
+            listitem.Content = "当前玩家"
             listitem.Tag = "!cp"
 
             funclist.Items.Add(listitem)

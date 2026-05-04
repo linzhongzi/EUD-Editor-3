@@ -392,7 +392,7 @@ Public Class TextEditorWindow
             starcraftHandle = Process.GetProcessesByName("StarCraft")(0).MainWindowHandle
 
         Catch ex As Exception
-            Tool.ErrorMsgBox("스타크래프트 프로세스를 찾을 수 없습니다.")
+            Tool.ErrorMsgBox("找不到星际争霸进程。")
             Return
         End Try
 

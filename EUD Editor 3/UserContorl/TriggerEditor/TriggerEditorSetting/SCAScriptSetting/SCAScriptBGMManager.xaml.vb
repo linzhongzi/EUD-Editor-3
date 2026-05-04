@@ -107,8 +107,8 @@ Public Class SCAScriptBGMManager
                 IsMultiFileOpen = True
                 Filelist.Clear()
                 Filelist.AddRange(Files)
-                BGMPath.Text = "다중 파일"
-                BGMName.Text = "다중 파일"
+                BGMPath.Text = "多文件"
+                BGMName.Text = "多文件"
                 DefaultInfo.IsEnabled = False
             End If
         End If
@@ -237,8 +237,8 @@ Public Class SCAScriptBGMManager
                 IsMultiFileOpen = True
                 Filelist.Clear()
                 Filelist.AddRange(files)
-                BGMPath.Text = "다중 파일"
-                BGMName.Text = "다중 파일"
+                BGMPath.Text = "多文件"
+                BGMName.Text = "多文件"
                 DefaultInfo.IsEnabled = False
             End If
         End If

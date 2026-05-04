@@ -66,7 +66,7 @@
 
                     <Grid x:Name="CountPanel" Visibility="Collapsed">
                         <DockPanel>
-                            <CheckBox x:Name="CountAll" Content="모두" DockPanel.Dock="Right" Checked="CountAll_Checked" Unchecked="CountAll_Unchecked"/>
+                            <CheckBox x:Name="CountAll" Content="全部" DockPanel.Dock="Right" Checked="CountAll_Checked" Unchecked="CountAll_Unchecked"/>
                             <TextBox x:Name="CountTB" Text="1289" TextChanged="CountTB_TextChanged"/>
                         </DockPanel>
                     </Grid>
@@ -78,7 +78,7 @@
 
                     <Grid x:Name="FormatStringPanel" Visibility="Collapsed">
                         <DockPanel>
-                            <Button DockPanel.Dock="Top" Content="큰 창에서 수정" Click="FormatStringOpenClick"/>
+                            <Button DockPanel.Dock="Top" Content="在大窗口中修改" Click="FormatStringOpenClick"/>
                             <TextBox x:Name="FormatStringTB" AcceptsReturn="True" TextChanged="FormatStringTB_TextChanged"/>
                         </DockPanel>
                     </Grid>

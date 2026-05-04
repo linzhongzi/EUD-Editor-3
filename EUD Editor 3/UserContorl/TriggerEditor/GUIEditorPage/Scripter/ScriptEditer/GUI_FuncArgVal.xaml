@@ -7,7 +7,7 @@
              mc:Ignorable="d" >
     <DockPanel>
         <TextBlock DockPanel.Dock="Top">
-            인자 명
+           参数名
         </TextBlock>
         <DockPanel DockPanel.Dock="Top">
             <Border x:Name="colorbox" DockPanel.Dock="Left" Width="30"/>
@@ -17,13 +17,13 @@
 
         </Label>
         <TextBlock DockPanel.Dock="Top">
-            타입
+           类型
         </TextBlock>
         <ComboBox DockPanel.Dock="Top" x:Name="typecombobox" SelectionChanged="typecombobox_SelectionChanged">
         </ComboBox>
 
         <TextBlock DockPanel.Dock="Top">
-           설명
+           说明
         </TextBlock>
         <TextBox DockPanel.Dock="Top" x:Name="argtip" AcceptsReturn="True" VerticalContentAlignment="Stretch"/>
 

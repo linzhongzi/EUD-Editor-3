@@ -24,7 +24,7 @@ Partial Public Class ProjectData
                             End If
 
                             If Not MapData.ReLoad(OpenMapName) Then
-                                MsgBox("맵을 불러 올 수 없었습니다.")
+                                MsgBox("无法加载地图。")
                             End If
                             If AutoBuild Then
                                 If LastCompile Then

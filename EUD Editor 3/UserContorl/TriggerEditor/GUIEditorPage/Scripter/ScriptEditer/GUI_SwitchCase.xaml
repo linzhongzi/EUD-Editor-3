@@ -7,9 +7,9 @@
              mc:Ignorable="d" >
     <DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <TextBlock Text="값" DockPanel.Dock="Left" VerticalAlignment="Center"/>
+            <TextBlock Text="值" DockPanel.Dock="Left" VerticalAlignment="Center"/>
             <TextBox x:Name="vtb" Margin="10,0,0,0" TextChanged="vtb_TextChanged"/>
         </DockPanel>
-        <CheckBox x:Name="breakcb" Content="Break사용" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
+        <CheckBox x:Name="breakcb" Content="使用Break" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"/>
     </DockPanel>
 </UserControl>

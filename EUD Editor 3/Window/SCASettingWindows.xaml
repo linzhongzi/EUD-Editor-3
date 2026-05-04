@@ -25,13 +25,13 @@
 
                     <TextBox x:Name="EmailTextBox" materialDesign:HintAssist.Hint="{StaticResource Email}" PreviewKeyDown="TextBox_PreviewKeyDown"
                   DockPanel.Dock="Right" TextWrapping="Wrap" Style="{StaticResource MaterialDesignFilledTextBox}" />
-                    <TextBlock x:Name="EmailErrorTextBox" Text="올바른 이메일 형태가 아닙니다." Foreground="#FFFF3939" Visibility="Collapsed"/>
+                    <TextBlock x:Name="EmailErrorTextBox" Text="不是正确的电子邮件格式。" Foreground="#FFFF3939" Visibility="Collapsed"/>
 
 
                     <PasswordBox x:Name="PasswordBox" materialDesign:HintAssist.Hint="{StaticResource PassWord}" PreviewKeyDown="TextBox_PreviewKeyDown"
                       DockPanel.Dock="Right" Style="{StaticResource MaterialDesignFilledPasswordBox}"/>
-                    <TextBlock x:Name="PWErrorTextBox" Text="비밀번호는 공란일 수 없습니다.." Foreground="#FFFF3939" Visibility="Collapsed"/>
-                    <TextBlock x:Name="ErrorTextBox" Text="이메일과 비밀번호를 확인하세요." Foreground="#FFFF3939" Visibility="Collapsed"/>
+                    <TextBlock x:Name="PWErrorTextBox" Text="密码不能为空。" Foreground="#FFFF3939" Visibility="Collapsed"/>
+                    <TextBlock x:Name="ErrorTextBox" Text="请检查邮箱和密码。" Foreground="#FFFF3939" Visibility="Collapsed"/>
                 </StackPanel>
             </Border>
 

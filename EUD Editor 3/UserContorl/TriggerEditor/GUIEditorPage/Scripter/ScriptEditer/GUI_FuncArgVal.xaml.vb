@@ -80,12 +80,12 @@ Public Class GUI_FuncArgVal
 
 
         If nametext.Count = 0 Then
-            ErrorLog.Content = "변수명은 비어있을 수 없습니다."
+            ErrorLog.Content = "变量名不能为空。"
             Return False
         End If
 
         If IsNumeric(Mid(nametext, 1, 1)) Then
-            ErrorLog.Content = "첫 문자는 숫자일 수 없습니다."
+            ErrorLog.Content = "首字符不能是数字。"
             Return False
         End If
 
@@ -94,7 +94,7 @@ Public Class GUI_FuncArgVal
         Dim rgx As New Regex("[ !@#$%^&*=]")
 
         If rgx.IsMatch(nametext) Then
-            ErrorLog.Content = "잘못된 문자가 포함되어 있습니다."
+            ErrorLog.Content = "包含无效字符。"
             Return False
         End If
 

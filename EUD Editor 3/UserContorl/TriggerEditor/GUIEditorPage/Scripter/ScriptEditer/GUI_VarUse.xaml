@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:EUD_Editor_3"
              mc:Ignorable="d" >
     <DockPanel LastChildFill="False">
-        <ComboBox x:Name="maincombobox" DockPanel.Dock="Top" materialDesign:HintAssist.Hint="연산자" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+        <ComboBox x:Name="maincombobox" DockPanel.Dock="Top" materialDesign:HintAssist.Hint="运算符" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
 
         </ComboBox>
     </DockPanel>

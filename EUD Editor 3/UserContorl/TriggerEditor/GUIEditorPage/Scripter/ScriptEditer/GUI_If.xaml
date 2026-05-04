@@ -7,7 +7,7 @@
              mc:Ignorable="d" >
     <StackPanel>
         <CheckBox x:Name="ifCB" Checked="ifCB_Checked" Unchecked="ifCB_Unchecked">
-            Else사용
+            Else使用
         </CheckBox>
     </StackPanel>
 </UserControl>

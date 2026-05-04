@@ -10,7 +10,7 @@
 @Summary
 将 [Key] 修改为安全的字符。
 @Group
-按键识别组
+按钮识别组
 @param.Key.Key
 要修改的 [key] 值
 
@@ -57,7 +57,7 @@ end
 @Summary
 检测 [Player] 按下 [Key] 键的时刻。
 @Group
-按键识别
+按钮识别组
 @param.Player.TrgPlayer
 目标玩家。
 @param.Key.Key
@@ -99,7 +99,7 @@ end
 @Summary
 检测 [Player] 松开 [Key] 键的时刻。
 @Group
-按键识别
+按钮识别组
 @param.Player.TrgPlayer
 目标玩家。
 @param.Key.Key
@@ -141,7 +141,7 @@ end
 @Summary
 检测 [Player] 是否正在按下 [Key] 键。
 @Group
-按键识别
+按钮识别组
 @param.Player.TrgPlayer
 目标玩家。
 @param.Key.Key
@@ -263,7 +263,7 @@ end
 @Summary
 检测 [Player] 是否正在按住鼠标 [Button].
 @Group
-鼠标
+鼠标组
 @param.Player.TrgPlayer
 目标玩家。
 @param.Button.Button
@@ -301,7 +301,7 @@ end
 @Summary
 返回鼠标所在的文本行。
 @Group
-鼠标
+鼠标组
 
 
 @Language.en-US
@@ -334,7 +334,7 @@ X좌표 최대 범위입니다.
 @Summary
 识别 [Player] 的鼠标何时点击位于 X 坐标 [MinX] ~ [MaxX] 的第 [Line] 行。
 @Group
-鼠标
+鼠标组
 @param.Player.TrgPlayer
 目标玩家。
 @param.Line.Number

@@ -132,8 +132,8 @@
                 <!-- 保存 -->
                 <Button.ContextMenu>
                     <ContextMenu>
-                        <MenuItem Header="저장" Click="MenuItemSave_Click"/>
-                        <MenuItem Header="다른 이름으로 저장" Click="MenuItemSaveAs_Click" />
+                        <MenuItem Header="保存" Click="MenuItemSave_Click"/>
+                        <MenuItem Header="另存为" Click="MenuItemSaveAs_Click" />
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>

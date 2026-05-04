@@ -307,7 +307,7 @@ function PlayerExec() {
             SCALastMessage[CP] = 2;
             if (SCAUseUserMessage == 1) {
                 PlayWAV("sound\\Bullet\\tscFir00.wav");
-                f_eprintln("\x03SCArchive\x04와 \x07연결\x04이 \x08끊어졌습니다.");
+                f_eprintln("\x03SCArchive\x04 与 \x07连接\x04 已 \x08断开。");
             }
 
             if (IsUserCP()) {
@@ -340,16 +340,16 @@ function PlayerExec() {
                 const LauncherStatus = bread_epd(orderAddrEPD, 3);
                 if (SCAUseUserMessage == 1) {
                     if (rn[CP] == 1) {
-                        f_eprintln("\x07불러오기 : \x03SCArchive\x04의 \x1F응답\x04을 \x07기다리는 중...");
+                        f_eprintln("\x07加载 : \x03正在等待SCArchive\x04的 \x1F响应\x04 ...");
                     } else if (CheckIntegrityFlag[CP] == 0) {
                         if(ml.loadstart[CP] == 1){
                             if(ml.l_displayloaddatalen == 0){
-                                f_eprintln("\x07불러오기 : \x03SCArchive\x04의 \x1F응답\x04을 \x07기다리는 중...");
+                                f_eprintln("\x07加载 : \x03正在等待SCArchive\x04的 \x1F响应\x04 ...");
                             }else{
-                                f_eprintln("\x07불러오기 : \x03데이터 불러오는 중 ... \x1FPage : ", ml.lastrindex[CP], "/", ml.l_displayloaddatalen);
+                                f_eprintln("\x07加载 : \x03正在加载数据 ... \x1FPage : ", ml.lastrindex[CP], "/", ml.l_displayloaddatalen);
                             }
                         }else{
-                            f_eprintln("\x07불러오기 : \x03전달 오류를 판단하는 중 ... ");
+                            f_eprintln("\x07加载 : \x03正在判断传输错误 ... ");
                         }
 
                     }
@@ -404,7 +404,7 @@ function PlayerExec() {
 
                     if (SCAUseUserMessage == 1) {
                         PlayWAV("sound\\Misc\\TDrTra01.wav");
-                        f_eprintln("\x07성공적으로 \x03데이터\x04를 불러왔습니다.");
+                        f_eprintln("\x07成功加载 \x03数据\x04。");
                     }
                     break;
                 }
@@ -556,7 +556,7 @@ function PlayerExec() {
                     // 接收数据错误
                     if (SCAUseUserMessage == 1) {
                         PlayWAV("sound\\Misc\\PError.WAV");
-                        f_eprintln("\x03데이터 \x08저장에 실패했습니다. \x04다시 시도합니다.");
+                        f_eprintln("\x03数据 \x08保存失败。\x04请重试。");
                     }
 
                     if (IsUserCP()) {
@@ -576,7 +576,7 @@ function PlayerExec() {
                     SCALastMessage[CP] = 6;
                     if (SCAUseUserMessage == 1) {
                         PlayWAV("sound\\Misc\\TDrTra01.wav");
-                        f_eprintln("\x07성공적으로 \x03데이터\x04를 저장했습니다.");
+                        f_eprintln("\x07成功保存 \x03数据\x04。");
                     }
                 }
                 break;
@@ -608,7 +608,7 @@ function PlayerExec() {
             SCALastMessage[CP] = 1;
             if (SCAUseUserMessage == 1) {
                 PlayWAV("sound\\Misc\\ZRescue.wav");
-                f_eprintln("\x03SCArchive\x04와 \x07연결\x04되었습니다.");
+                f_eprintln("\x03SCArchive\x04 已连接到 \x07。");
             }
             if (IsUserCP()) {
                 MSQCSpecial = 0;
@@ -663,14 +663,14 @@ function DataLoad(Slot) {
             SCALastMessage[CP] = 8;
             if (SCAUseUserMessage == 1) {
                 PlayWAV("sound\\Misc\\PError.WAV");
-                f_eprintln("\x08현재 다른 작업중입니다.");
+                f_eprintln("\x08当前其他操作进行中。");
             }
         }
     } else {
         SCALastMessage[CP] = 7;
         if (SCAUseUserMessage == 1) {
             PlayWAV("sound\\Misc\\PError.WAV");
-            f_eprintln("\x08데이터를 불러오기 위해선 SCArchive와 연결되어야 합니다.");
+            f_eprintln("\x08要加载数据，必须连接到SCArchive。");
         }
     }
 }
@@ -699,14 +699,14 @@ function DataSave(Slot) {
             SCALastMessage[CP] = 8;
             if (SCAUseUserMessage == 1) {
                 PlayWAV("sound\\Misc\\PError.WAV");
-                f_eprintln("\x08현재 다른 작업중입니다.");
+                f_eprintln("\x08当前其他操作进行中。");
             }
         }
     } else {
         SCALastMessage[CP] = 7;
         if (SCAUseUserMessage == 1) {
             PlayWAV("sound\\Misc\\PError.WAV");
-            f_eprintln("\x08데이터를 저장하기 위해선 SCArchive와 연결되어야 합니다.");
+            f_eprintln("\x08要保存数据，必须连接到SCArchive。");
         }
     }
 }
@@ -741,14 +741,14 @@ function BanPlayer(BanType) {
             SCALastMessage[CP] = 8;
             if (SCAUseUserMessage == 1) {
                 PlayWAV("sound\\Misc\\PError.WAV");
-                f_eprintln("\x08현재 다른 작업중입니다.");
+                f_eprintln("\x08当前其他操作进行中。");
             }
         }
     } else {
         SCALastMessage[CP] = 7;
         if (SCAUseUserMessage == 1) {
             PlayWAV("sound\\Misc\\PError.WAV");
-            f_eprintln("\x08명령을 실행하기 위해선 SCArchive와 연결되어야 합니다.");
+            f_eprintln("\x08要执行命令，必须连接到SCArchive。");
         }
     }
 }
@@ -783,14 +783,14 @@ function GetDate() {
             SCALastMessage[CP] = 8;
             if (SCAUseUserMessage == 1) {
                 PlayWAV("sound\\Misc\\PError.WAV");
-                f_eprintln("\x08현재 다른 작업중입니다.");
+                f_eprintln("\x08当前其他操作进行中。");
             }
         }
     } else {
         SCALastMessage[CP] = 7;
         if (SCAUseUserMessage == 1) {
             PlayWAV("sound\\Misc\\PError.WAV");
-            f_eprintln("\x08데이터를 불러오기 위해선 SCArchive와 연결되어야 합니다.");
+            f_eprintln("\x08要加载数据，必须连接到SCArchive。");
         }
     }
 }
@@ -824,14 +824,14 @@ function LoadGlobalData() {
             SCALastMessage[CP] = 8;
             if (SCAUseUserMessage == 1) {
                 PlayWAV("sound\\Misc\\PError.WAV");
-                f_eprintln("\x08현재 다른 작업중입니다.");
+                f_eprintln("\x08当前其他操作进行中。");
             }
         }
     } else {
         SCALastMessage[CP] = 7;
         if (SCAUseUserMessage == 1) {
             PlayWAV("sound\\Misc\\PError.WAV");
-            f_eprintln("\x08데이터를 불러오기 위해선 SCArchive와 연결되어야 합니다.");
+            f_eprintln("\x08要加载数据，必须连接到SCArchive。");
         }
     }
 }

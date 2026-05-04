@@ -1,0 +1,1203 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:EUD_Editor_3"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <sys:String x:Key="Language">语言</sys:String>
+    <sys:String x:Key="Graphic">图形</sys:String>
+    <sys:String x:Key="NoGraphic">未加载</sys:String>
+    <sys:String x:Key="SDGraphic">原版</sys:String>
+    <sys:String x:Key="HDGraphic">重制版</sys:String>
+    <sys:String x:Key="CarbotGraphic">卡通版</sys:String>
+
+    <sys:String x:Key="DataLoading">正在加载数据...</sys:String>
+    <sys:String x:Key="RegistryConnect">是否将 EUD Editor 3 与 .e3s 文件关联？（推荐）</sys:String>
+
+    <sys:String x:Key="SCASettingWindow">SCA 登录</sys:String>
+    
+    <sys:String x:Key="Setting">程序设置</sys:String>
+    <sys:String x:Key="SampleSelect">选择示例地图</sys:String>
+    <sys:String x:Key="OpenMap">打开地图</sys:String>
+    <sys:String x:Key="SaveMap">保存地图</sys:String>
+    <sys:String x:Key="Find">查找</sys:String>
+
+    <sys:String x:Key="RegSetting">注册 EUD Editor 文件扩展名</sys:String>
+    <sys:String x:Key="RegSettingBtn">应用</sys:String>
+    <sys:String x:Key="RegSettingCheckbox">检查程序是否正在运行</sys:String>
+
+    <sys:String x:Key="UpdataSetting">更新</sys:String>
+    <sys:String x:Key="Donate">捐赠</sys:String>
+
+    <sys:String x:Key="CheckUpdate">自动检查更新</sys:String>
+    <sys:String x:Key="Update">更新</sys:String>
+    <sys:String x:Key="LastVersion">您正在使用 EUD Editor 的最新版本。</sys:String>
+    <sys:String x:Key="NotFoundServer">服务器无响应。</sys:String>
+
+    <sys:String x:Key="Encoding">编码</sys:String>
+
+    <sys:String x:Key="TempFileLoc">临时文件位置</sys:String>
+    <sys:String x:Key="TempFileLoc0">数据文件夹</sys:String>
+    <sys:String x:Key="TempFileLoc1">地图文件文件夹</sys:String>
+    <sys:String x:Key="TempFileLoc2">保存文件文件夹</sys:String>
+    <sys:String x:Key="TempFileLoc3">自定义</sys:String>
+
+    <sys:String x:Key="TEFontSize">字体大小</sys:String>
+
+    <sys:String x:Key="TETestCodeEditorUse">使用测试代码编辑器</sys:String>
+    <sys:String x:Key="TECESmoothScroolUse">使用平滑滚动（经典触发器）</sys:String>
+
+    <sys:String x:Key="TBLChange">使用自定义 tbl</sys:String>
+    <sys:String x:Key="chkDataFirst">chk 数据优先</sys:String>
+    <sys:String x:Key="AutoCompile">自动编译</sys:String>
+    <sys:String x:Key="BuildLog">显示构建日志</sys:String>
+
+
+
+    <sys:String x:Key="Project Setting">项目</sys:String>
+    <sys:String x:Key="Default Setting">默认</sys:String>
+
+    <sys:String x:Key="Editor Setting">编辑器</sys:String>
+    <sys:String x:Key="DatEdit Setting">数据编辑器</sys:String>
+    <sys:String x:Key="TE Setting">触发器编辑器</sys:String>
+    <sys:String x:Key="Plugin Setting">插件</sys:String>
+    <sys:String x:Key="StarExeFile Select">选择星际争霸启动器</sys:String>
+    <sys:String x:Key="euddraftExe Select">选择 euddraft 可执行文件</sys:String>
+    <sys:String x:Key="SCX Fliter">星际争霸地图文件|*.scx</sys:String>
+    <sys:String x:Key="BGM Fliter">声音文件|*.ogg;*.wav;*.mp3</sys:String>
+    <sys:String x:Key="SCX Select">打开目标地图</sys:String>
+    <sys:String x:Key="SCX Save Select">选择保存地图</sys:String>
+
+    <sys:String x:Key="IMG Fliter">图片|*.png;*.jpeg;*.jpg;*.bmp</sys:String>
+    <sys:String x:Key="IMG Select">选择图片</sys:String>
+
+
+
+    <sys:String x:Key="ToolTip Setting">程序设置 (Ctrl + E)</sys:String>
+    <sys:String x:Key="ToolTip NewFile">新建项目 (Ctrl + Shift + N)</sys:String>
+    <sys:String x:Key="ToolTip OpenFile">打开项目 (Ctrl + O)</sys:String>
+    <sys:String x:Key="ToolTip SaveFile">保存项目 (Ctrl + S)</sys:String>
+    <sys:String x:Key="ToolTip CloseFile">关闭项目</sys:String>
+
+    <sys:String x:Key="ToolTip OpenMapEditor">在地图编辑器中打开 (Ctrl + W)</sys:String>
+    <sys:String x:Key="ToolTip Compile">构建 (Ctrl + B, F5)</sys:String>
+
+    <sys:String x:Key="ToolTip DE">数据编辑器 (Ctrl + D)</sys:String>
+    <sys:String x:Key="ToolTip TE">触发器编辑器 (Ctrl + T)</sys:String>
+    <sys:String x:Key="ToolTip Plugin">插件设置 (Ctrl + P)</sys:String>
+
+
+
+
+    <sys:String x:Key="DataEditor">数据编辑器</sys:String>
+    <sys:String x:Key="TriggerEditor">触发器编辑器</sys:String>
+    <sys:String x:Key="PluginSetting">插件设置</sys:String>
+
+
+
+    <sys:String x:Key="StarExeFile">星际争霸启动器路径</sys:String>
+    <sys:String x:Key="euddraftExe">euddraft 可执行文件路径</sys:String>
+    <sys:String x:Key="euddraftVersion1">当前版本：</sys:String>
+    <sys:String x:Key="euddraftVersion2">推荐版本：</sys:String>
+
+    <!--<sys:String x:Key="SaveFliter">EUD Editor 3 Save file|*.e3s</sys:String>-->
+    <sys:String x:Key="SaveFliter">EUD Editor 3 保存文件|*.e3s|EUD Editor 2 保存文件|*.e2s</sys:String>
+    <!--<sys:String x:Key="LoadFliter">EUD Editor Save file|*.e3s</sys:String>-->
+    <sys:String x:Key="LoadFliter">EUD Editor 保存文件|*.e3s;*.e2s;|EUD Editor 3 保存文件|*.e3s|EUD Editor 2 保存文件|*.e2s</sys:String>
+
+
+
+    <sys:String x:Key="NoName">无标题</sys:String>
+    <sys:String x:Key="None">无</sys:String>
+    <sys:String x:Key="NotUse">X</sys:String>
+
+
+    <sys:String x:Key="Theme">主题</sys:String>
+    <sys:String x:Key="Light">亮色</sys:String>
+    <sys:String x:Key="Dark">暗色</sys:String>
+    <sys:String x:Key="Normal">默认</sys:String>
+    <sys:String x:Key="Main Colour">主色</sys:String>
+
+
+    <sys:String x:Key="Background Colour">背景</sys:String>
+    <sys:String x:Key="Default Colour">默认</sys:String>
+    <sys:String x:Key="Map Colour">地图数据</sys:String>
+    <sys:String x:Key="Edit Colour">编辑数据</sys:String>
+    <sys:String x:Key="Check Colour">检查数据</sys:String>
+
+
+    <sys:String x:Key="Code Lan">代码语言</sys:String>
+    <sys:String x:Key="Code CEng">英语</sys:String>
+    <sys:String x:Key="Code CKor-Eng">韩语（音译）</sys:String>
+    <sys:String x:Key="Code CKor-Kor">韩语（完全翻译）</sys:String>
+
+    <sys:String x:Key="Code CTbl">自动保存更改</sys:String>
+
+
+    <!--ContextMenu-->
+    <sys:String x:Key="Cut">剪切</sys:String>
+    <sys:String x:Key="Edit">修改</sys:String>
+    <sys:String x:Key="Copy">复制</sys:String>
+    <sys:String x:Key="Paste">粘贴</sys:String>
+    <sys:String x:Key="Reset">重置</sys:String>
+    <sys:String x:Key="Check">转到</sys:String>
+    <sys:String x:Key="Okay">确认</sys:String>
+    <sys:String x:Key="Cancel">取消</sys:String>
+    <sys:String x:Key="PageCopy">复制页面</sys:String>
+    <sys:String x:Key="PagePaste">粘贴页面</sys:String>
+    <sys:String x:Key="PageReset">重置页面</sys:String>
+    <sys:String x:Key="CoverWrite">覆盖粘贴</sys:String>
+    <sys:String x:Key="Rename">重命名</sys:String>
+
+    <sys:String x:Key="Save">保存</sys:String>
+    <sys:String x:Key="InsertEdd">以 .edd 运行</sys:String>
+
+    <sys:String x:Key="SaveAs">另存为</sys:String>
+    <!--RequireMenu-->
+    <sys:String x:Key="NewCode">新建代码</sys:String>
+    <sys:String x:Key="CodeDelete">删除</sys:String>
+
+    <sys:String x:Key="TECodeEdit">编辑</sys:String>
+    <sys:String x:Key="TECodeCut">剪切代码</sys:String>
+    <sys:String x:Key="TECodeCopy">复制代码</sys:String>
+    <sys:String x:Key="TECodePaste">粘贴代码</sys:String>
+    <sys:String x:Key="TECodeDelete">删除代码</sys:String>
+    <sys:String x:Key="TEFold">折叠代码</sys:String>
+    <sys:String x:Key="TEUnFold">展开代码</sys:String>
+    <sys:String x:Key="TECodedeSelect">取消选择</sys:String>
+    <sys:String x:Key="TECodeUndo">撤销</sys:String>
+    <sys:String x:Key="TECodeRedo">重做</sys:String>
+
+
+
+
+    <sys:String x:Key="UnitName">单位名称</sys:String>
+    <sys:String x:Key="Group">组</sys:String>
+    <sys:String x:Key="ToolTip">工具提示</sys:String>
+
+    <sys:String x:Key="ColseSaveMsg">是否保存这些更改？</sys:String>
+
+
+
+    <sys:String x:Key="ErrorMsgbox">错误</sys:String>
+    <sys:String x:Key="Error MapOpen">打开地图时发生错误。</sys:String>
+
+
+    <sys:String x:Key="Error SaveFileOpen">无法打开保存文件。请选择以下备份文件之一。</sys:String>
+
+    <sys:String x:Key="Error OpenMap is not SaveMap">关联地图的名称与保存地图的名称不能相同。</sys:String>
+    <sys:String x:Key="Error OpenMap is not exist reset">没有关联的地图。是否要选择要关联的地图？</sys:String>
+    <sys:String x:Key="Error SaveMap is not exist reset">无法创建保存地图。是否要选择地图？</sys:String>
+    <sys:String x:Key="Error SettingSave Fail">保存程序设置失败。</sys:String>
+    <sys:String x:Key="Error ProgramInit Fail">重置程序数据时出现问题。</sys:String>
+    <sys:String x:Key="Error TriggerScript Init Fail">重置触发器脚本编辑器时出现问题。</sys:String>
+    <sys:String x:Key="Error LoadStarCraftData Fail">重置星际争霸数据时出现问题。</sys:String>
+    <sys:String x:Key="Error LoadMPQData Fail" xml:space="preserve">读取 Casc 数据失败。&#13;您的星际争霸版本可能不是最新的。</sys:String>
+    <sys:String x:Key="Error NotExistMPQ">无法从星际争霸加载图形。请在程序设置中更新星际争霸启动器的路径。</sys:String>
+    <sys:String x:Key="Error NotExistMPQ reset">未选择 Casc 文件。是否要选择文件？</sys:String>
+
+    <sys:String x:Key="Error OpenMap is not exist!">关联的地图无效。无法打开地图。</sys:String>
+    <sys:String x:Key="Error WriteMapFile">无法写入地图文件。</sys:String>
+
+
+    <sys:String x:Key="CompileFail">编译失败</sys:String>
+    <sys:String x:Key="CompileSucesse">编译成功。</sys:String>
+
+    <sys:String x:Key="Error CompileFail NotSaved Project">编译构建失败。保存文件必须存在才能选择保存文件文件夹形式。</sys:String>
+    <sys:String x:Key="Error CompileFail OpenMap is not exist!">编译构建失败。没有关联的地图。</sys:String>
+    <sys:String x:Key="Error CompileFail SaveMap is not exist!">编译构建失败。无法创建保存地图。</sys:String>
+    <sys:String x:Key="Error CompileFail euddraft is not exist!">编译构建失败。没有 euddraft 文件。</sys:String>
+    <sys:String x:Key="Error TempFolder is not exist reset">未选择临时文件文件夹。是否要选择文件夹？</sys:String>
+    <sys:String x:Key="Error complieFail TempFolder is not exist!">编译构建失败。未选择临时文件文件夹。</sys:String>
+    <sys:String x:Key="Error euddraft is not exist reset">euddraft 运行文件无效。是否要选择文件？</sys:String>
+    <sys:String x:Key="Error FailLoad DataEditor">加载数据编辑器失败。</sys:String>
+    <sys:String x:Key="Error FailLoad TriggerEditor">加载触发器编辑器失败。</sys:String>
+    <sys:String x:Key="Error FailLoad PluginSet">加载插件设置失败。</sys:String>
+
+
+
+
+    <sys:String x:Key="Error compiling">编译地图时无法关闭 EUD Editor 3。</sys:String>
+    <sys:String x:Key="Error ProgramLoading">正在加载数据。仍要关闭 EUD Editor 3 吗？</sys:String>
+
+    <sys:String x:Key="Error WriteStatusInfor">编译地图时发生错误。状态信息已损坏。</sys:String>
+
+
+
+
+    <sys:String x:Key="Error Dont Delete File">无法删除此文件。</sys:String>
+    <sys:String x:Key="Error CompileStop">编译已停止。</sys:String>
+    <sys:String x:Key="Error SCAPassWord">密码不匹配！</sys:String>
+    <sys:String x:Key="Error SCANresponDB">数据库无响应。</sys:String>
+    <sys:String x:Key="Error SCAUnKnow">发生未知错误。</sys:String>
+    <sys:String x:Key="Error SCA">SCArchive 错误：编译失败。</sys:String>
+    <sys:String x:Key="Error SCA Freeze">要同时使用 SCArchive 和 freeze，必须使用 prompt 选项。</sys:String>
+
+
+    <sys:String x:Key="Compile">编译中...</sys:String>
+
+
+
+    <!--MapOpenError-->
+    <sys:String x:Key="Error Not support SCM">不支持 SCM 地图。</sys:String>
+
+
+
+    <!--CodeSelecter-->
+    <sys:String x:Key="FliterEnter">搜索</sys:String>
+
+
+    <!--DataEditor-->
+    <sys:String x:Key="CodeUseIndexer">已使用的代码列表</sys:String>
+
+
+    <sys:String x:Key="OpenFuncFoloder">打开函数文件夹</sys:String>
+    <sys:String x:Key="refreshLua">刷新</sys:String>
+    <sys:String x:Key="LogClear">清除日志</sys:String>
+
+
+    <sys:String x:Key="MuteSound">静音</sys:String>
+    <sys:String x:Key="TopMost">总在最前</sys:String>
+    <sys:String x:Key="TopMostOption">总在最前开启</sys:String>
+    <sys:String x:Key="Transparency">透明度</sys:String>
+
+    <sys:String x:Key="CommandExpander">命令提示符</sys:String>
+    <sys:String x:Key="CodeExpander">代码 (Ctrl + F)</sys:String>
+
+
+    <sys:String x:Key="TabClose">关闭选项卡</sys:String>
+    <sys:String x:Key="RightTabsClose">关闭右侧选项卡</sys:String>
+    <sys:String x:Key="OtherTabsClose">关闭其他选项卡</sys:String>
+    <sys:String x:Key="OpenTab">在新选项卡中打开</sys:String>
+    <sys:String x:Key="OpenWindow">在新窗口中打开</sys:String>
+
+    <sys:String x:Key="SortCode">按 ID 排序</sys:String>
+    <sys:String x:Key="SortABC">按字母排序</sys:String>
+    <sys:String x:Key="SortTree">以树形视图显示</sys:String>
+    <sys:String x:Key="FliterIcon">以缩略图显示</sys:String>
+    <sys:String x:Key="FliterEdit">仅显示已编辑条目</sys:String>
+
+    <sys:String x:Key="DefaultInfor">基本</sys:String>
+    <sys:String x:Key="UpgradeRequir">需求</sys:String>
+    <sys:String x:Key="TechUseRequir">使用需求</sys:String>
+    <sys:String x:Key="TechReserachRequir">研究需求</sys:String>
+    <sys:String x:Key="OrderRequir">需求</sys:String>
+
+    <sys:String x:Key="UnitDefault">基本</sys:String>
+    <sys:String x:Key="UnitSpecial">高级</sys:String>
+    <sys:String x:Key="UnitSound">声音</sys:String>
+    <sys:String x:Key="UnitGraphic">图形</sys:String>
+    <sys:String x:Key="UnitMapEdit">地图编辑器</sys:String>
+    <sys:String x:Key="UnitAIOrder">AI 命令</sys:String>
+
+    <sys:String x:Key="UnitInfor">显示</sys:String>
+    <sys:String x:Key="UnitRequir">需求</sys:String>
+    <sys:String x:Key="UnitWireFrame">线框</sys:String>
+
+    <sys:String x:Key="UnitBionic">单位属性</sys:String>
+    <sys:String x:Key="UnitCreate">建造花费</sys:String>
+    <sys:String x:Key="UnitWeapon">武器</sys:String>
+    <sys:String x:Key="UnitSupply">人口补给</sys:String>
+    <sys:String x:Key="UnitEntrance">单位载/负荷</sys:String>
+    <sys:String x:Key="UnitOthers">杂项属性</sys:String>
+
+
+    <sys:String x:Key="UnitSpecialAbilityFlag">特殊能力标志</sys:String>
+    <sys:String x:Key="UnitSpecialOthers">杂项属性</sys:String>
+    <sys:String x:Key="UnitMovementFlag">单位移动标志</sys:String>
+
+    <sys:String x:Key="UnitStarEditFlag">可用性</sys:String>
+    <sys:String x:Key="UnitGroupFlag">分组</sys:String>
+    <sys:String x:Key="UnitString">字符串属性</sys:String>
+
+    <sys:String x:Key="UnitGraphicinfor">图形信息</sys:String>
+    <sys:String x:Key="UnitSize">单位大小</sys:String>
+    <sys:String x:Key="UnitCreateSize">建造大小</sys:String>
+    <sys:String x:Key="UnitAddonPos">附加建筑位置</sys:String>
+
+
+    <sys:String x:Key="WeaponAttack">目标</sys:String>
+    <sys:String x:Key="WeaponRange">射程</sys:String>
+    <sys:String x:Key="WeaponBullet">子弹</sys:String>
+    <sys:String x:Key="WeaponSplash">溅射</sys:String>
+    <sys:String x:Key="WeaponDisplay">显示</sys:String>
+
+
+    <sys:String x:Key="FlingyInfor">运动物体参数</sys:String>
+    <sys:String x:Key="SpriteInfor">精灵虚体信息</sys:String>
+    <sys:String x:Key="UpgradeScreen">屏幕信息</sys:String>
+    <sys:String x:Key="UpgradeCost">基础花费</sys:String>
+    <sys:String x:Key="UpgradeExtraCost">额外花费</sys:String>
+    <sys:String x:Key="UpgradeInfor">升级信息</sys:String>
+
+    <sys:String x:Key="TechScreen">显示信息</sys:String>
+    <sys:String x:Key="TechCost">技能花费</sys:String>
+    <sys:String x:Key="TechInfor">技能信息</sys:String>
+    <sys:String x:Key="OrderInfor">命令信息</sys:String>
+
+    <sys:String x:Key="ImageInfor">实体图形信息</sys:String>
+    <sys:String x:Key="ImageDefault">基本信息</sys:String>
+    <sys:String x:Key="ImageScreen">显示信息</sys:String>
+
+
+    <sys:String x:Key="units">单位</sys:String>
+    <sys:String x:Key="weapons">武器</sys:String>
+    <sys:String x:Key="flingy">运转</sys:String>
+    <sys:String x:Key="sprites">灵体</sys:String>
+    <sys:String x:Key="images">实体</sys:String>
+    <sys:String x:Key="upgrades">升级</sys:String>
+    <sys:String x:Key="techdata">技能</sys:String>
+    <sys:String x:Key="orders">命令</sys:String>
+    <sys:String x:Key="Startxt">文本</sys:String>
+    <sys:String x:Key="Icon">图标</sys:String>
+    <sys:String x:Key="wireframe">线框</sys:String>
+    <sys:String x:Key="statusinfor">状态信息</sys:String>
+
+
+
+    <sys:String x:Key="datfliename">Dat 文件标签</sys:String>
+    <sys:String x:Key="parameter">参数</sys:String>
+    <sys:String x:Key="valuetype">值类型</sys:String>
+    <sys:String x:Key="orgvalue">源</sys:String>
+    <sys:String x:Key="mapdatavalue">地图值</sys:String>
+
+
+    <sys:String x:Key="StatDatalimit">限定单位</sys:String>
+    <sys:String x:Key="StatDatalimit0">无</sys:String>
+    <sys:String x:Key="StatDatalimit1">正常命令</sys:String>
+    <sys:String x:Key="StatDatalimit2">建造单位</sys:String>
+    <sys:String x:Key="StatDatalimit3">升级</sys:String>
+    <sys:String x:Key="StatDatalimit4">使用技能</sys:String>
+    <sys:String x:Key="StatDatalimit5">技能升级</sys:String>
+    <sys:String x:Key="StatDatalimit6">单位变形</sys:String>
+
+
+    <sys:String x:Key="StatDataShortCut">快捷键</sys:String>
+    <sys:String x:Key="StatDataShortCut0">无</sys:String>
+
+    <sys:String x:Key="HEXClipboard">十六进制复制</sys:String>
+
+
+    <sys:String x:Key="ImageScriptSelect">图形脚本</sys:String>
+
+
+
+
+
+
+
+
+    <sys:String x:Key="units_Graphics">动态实图</sys:String>
+    <sys:String x:Key="units_Subunit 1">子单位 1</sys:String>
+    <sys:String x:Key="units_Subunit 2">子单位 2</sys:String>
+    <sys:String x:Key="units_Infestation">感染单位</sys:String>
+    <sys:String x:Key="units_Construction Animation">建造动画</sys:String>
+    <sys:String x:Key="units_Unit Direction">单位方向</sys:String>
+    <sys:String x:Key="units_Unit Direction_V">上（垂直）|右上|右上|右上|右上|右上|右上|右上|右（垂直）|右下|右下|右下|右下|右下|右下|右下|下（垂直）|左下|左下|左下|左下|左下|左下|左下|左（垂直）|左上|左上|左上|左上|左上|左上|左上|随机</sys:String>
+
+    <sys:String x:Key="units_Shield Enable">启用</sys:String>
+    <sys:String x:Key="units_Shield Amount">护盾能量值</sys:String>
+    <sys:String x:Key="units_Hit Points">生命值</sys:String>
+    <sys:String x:Key="units_Elevation Level">海拔</sys:String>
+    <sys:String x:Key="units_Elevation Level_V">地底|地底|地面|地面|地面|地面|地面|地面|地面|地面|地面|地面|空中|空中|空中|空中|空中|空中|空中|空中</sys:String>
+
+    <sys:String x:Key="units_Unknown (old Movement)">标志移动</sys:String>
+    <sys:String x:Key="units_Unknown (old Movement)_V">0x01|0x02|0x04|0x08|0x10|0x20|0x40|0x80</sys:String>
+    <sys:String x:Key="units_Rank/Sublabel">等级</sys:String>
+    <sys:String x:Key="units_Comp AI Idle">电脑空闲</sys:String>
+    <sys:String x:Key="units_Human AI Idle">玩家空闲</sys:String>
+    <sys:String x:Key="units_Return to Idle">待命空闲</sys:String>
+    <sys:String x:Key="units_Attack Unit">单位攻击</sys:String>
+    <sys:String x:Key="units_Attack Move">攻击并移动</sys:String>
+    <sys:String x:Key="units_Ground Weapon">对地武器</sys:String>
+    <sys:String x:Key="units_Max Ground Hits">连击次数</sys:String>
+    <sys:String x:Key="units_Air Weapon">对空武器</sys:String>
+    <sys:String x:Key="units_Max Air Hits">连击次数</sys:String>
+    <sys:String x:Key="units_AI Internal">内部 AI</sys:String>
+    <sys:String x:Key="units_AI Internal_V">忽略“战略自杀任务” AI。|不会变成“警戒”状态</sys:String>
+
+    <sys:String x:Key="units_Special Ability Flags">特殊能力标志</sys:String>
+    <sys:String x:Key="units_Special Ability Flags_V">建筑物|建筑物附件|可飞行|资源采集者|单位子部件|可飞行建筑|英雄单位|自动回复生命值|动画覆盖|隐形单位|一个蛋孵化两个单位|独立单位|资源回收点|资源矿脉|机械单位|反隐形能力|生物单位|需要虫族菌毯|未使用|需要神族水晶塔|可钻地|拥有技能者|永久隐形|可运载部队|忽略人口检查|使用中型技能覆盖图|使用大型技能覆盖图|自动攻击|战斗反应能力|单位无敌|机械单位|可生产单位</sys:String>
+
+    <sys:String x:Key="units_Target Acquisition Range">发现目标范围</sys:String>
+    <sys:String x:Key="units_Sight Range">可视范围</sys:String>
+    <sys:String x:Key="units_Armor Upgrade">护甲升级</sys:String>
+    <sys:String x:Key="units_Unit Size">单位大小</sys:String>
+    <sys:String x:Key="units_Unit Size_V">独立大小|小型|中型|大型</sys:String>
+    <sys:String x:Key="units_Armor">护甲值</sys:String>
+    <sys:String x:Key="units_Right-click Action">右键操作</sys:String>
+    <sys:String x:Key="units_Right-click Action_V">命令无效 / 自动攻击|默认移动 / 普通攻击|普通移动 / 无效攻击|无效移动 / 默认攻击|采集资源|采集资源 / 修理|无</sys:String>
+
+    <sys:String x:Key="units_Ready Sound">就绪</sys:String>
+    <sys:String x:Key="units_What Sound Start">点选（开始）</sys:String>
+    <sys:String x:Key="units_What Sound End">点选（结束）</sys:String>
+    <sys:String x:Key="units_Piss Sound Start">连点（开始）</sys:String>
+    <sys:String x:Key="units_Piss Sound End">连点（结束）</sys:String>
+    <sys:String x:Key="units_Yes Sound Start">指派（开始）</sys:String>
+    <sys:String x:Key="units_Yes Sound End">指派（结束）</sys:String>
+    <sys:String x:Key="units_StarEdit Placement Box Width">宽</sys:String>
+    <sys:String x:Key="units_StarEdit Placement Box Height">高</sys:String>
+    <sys:String x:Key="units_Addon Horizontal (X) Position">水平 (X)</sys:String>
+    <sys:String x:Key="units_Addon Vertical (Y) Position">垂直 (Y)</sys:String>
+    <sys:String x:Key="units_Unit Size Left">左</sys:String>
+    <sys:String x:Key="units_Unit Size Up">上</sys:String>
+    <sys:String x:Key="units_Unit Size Right">右</sys:String>
+    <sys:String x:Key="units_Unit Size Down">下</sys:String>
+    <sys:String x:Key="units_Portrait">头像</sys:String>
+    <sys:String x:Key="units_Mineral Cost">水晶</sys:String>
+    <sys:String x:Key="units_Vespene Cost">瓦斯</sys:String>
+    <sys:String x:Key="units_Build Time">时间</sys:String>
+    <sys:String x:Key="units_Unknown1">需求起始位置</sys:String>
+    <sys:String x:Key="units_Staredit Group Flags">组标志</sys:String>
+    <sys:String x:Key="units_Staredit Group Flags_V">虫族|人族|神族|所有部队(Men)|建筑|可生产建筑|独立单位|中立单位</sys:String>
+
+    <sys:String x:Key="units_Supply Provided">提供人口</sys:String>
+    <sys:String x:Key="units_Supply Required">占用人口</sys:String>
+    <sys:String x:Key="units_Space Required">占用空间</sys:String>
+    <sys:String x:Key="units_Space Provided">提供空间</sys:String>
+    <sys:String x:Key="units_Build Score">建造得分</sys:String>
+    <sys:String x:Key="units_Destroy Score">摧毁得分</sys:String>
+    <sys:String x:Key="units_Unit Map String">地图字符串</sys:String>
+    <sys:String x:Key="units_Broodwar Unit Flag">仅母巢之战</sys:String>
+    <sys:String x:Key="units_Staredit Availability Flags">可用性标志</sys:String>
+    <sys:String x:Key="units_Staredit Availability Flags_V">非中立|单位列表&amp;调色板|任务简报|玩家设置|所有种族|设置装饰物状态|无位置触发器|单位/英雄设置|位置触发器|仅母巢之战|未使用|未使用|未使用|未使用|未使用|未使用</sys:String>
+
+
+
+
+    <sys:String x:Key="weapons_Label">名称</sys:String>
+    <sys:String x:Key="weapons_Graphics">图形</sys:String>
+    <sys:String x:Key="weapons_Unused">未使用</sys:String>
+    <sys:String x:Key="weapons_Target Flags">目标</sys:String>
+    <sys:String x:Key="weapons_Target Flags_V">空中|地面|机械|生物|非建筑|非机械|地形|生物或机械|己方单位</sys:String>
+
+    <sys:String x:Key="weapons_Minimum Range">最小</sys:String>
+    <sys:String x:Key="weapons_Maximum Range">最大</sys:String>
+    <sys:String x:Key="weapons_Damage Upgrade">升级</sys:String>
+    <sys:String x:Key="weapons_Weapon Type">类型</sys:String>
+    <sys:String x:Key="weapons_Weapon Type_V">独立|爆炸|震荡|普通|无视护甲</sys:String>
+
+    <sys:String x:Key="weapons_Weapon Behavior">行为</sys:String>
+    <sys:String x:Key="weapons_Weapon Behavior_V">飞行&amp;不跟随目标|飞行&amp;跟随目标|出现在目标上|停留在目标点|出现在目标点上|出现在攻击者上|自爆|弹跳|攻击目标 3x3 区域|到达最大射程</sys:String>
+
+    <sys:String x:Key="weapons_Remove After">停留时间</sys:String>
+    <sys:String x:Key="weapons_Explosion Type">爆炸类型</sys:String>
+    <sys:String x:Key="weapons_Explosion Type_V">无|默认|目标周围溅射|目标溅射|锁定|核弹|寄生虫|巢虫|EMP 冲击波|辐射|诱捕|瘟疫|静止力场|黑暗虫群|吞噬|大和炮|恢复|网|酸液|精神控制|反馈|光学 flare|漩涡|未知 2|空中溅射</sys:String>
+
+    <sys:String x:Key="weapons_Inner Splash Range">内圈</sys:String>
+    <sys:String x:Key="weapons_Medium Splash Range">中圈</sys:String>
+    <sys:String x:Key="weapons_Outer Splash Range">外圈</sys:String>
+    <sys:String x:Key="weapons_Damage Amount">攻击</sys:String>
+    <sys:String x:Key="weapons_Damage Bonus">+</sys:String>
+    <sys:String x:Key="weapons_Weapon Cooldown">冷却</sys:String>
+    <sys:String x:Key="weapons_Damage Factor">系数</sys:String>
+    <sys:String x:Key="weapons_Attack Angle">攻击角度</sys:String>
+    <sys:String x:Key="weapons_Launch Spin">发射旋转</sys:String>
+    <sys:String x:Key="weapons_Forward Offset">向前偏移</sys:String>
+    <sys:String x:Key="weapons_Upward Offset">向上偏移</sys:String>
+    <sys:String x:Key="weapons_Target Error Message">错误消息</sys:String>
+    <sys:String x:Key="weapons_Icon">升级图标</sys:String>
+
+
+
+    <sys:String x:Key="flingy_Sprite">精灵</sys:String>
+    <sys:String x:Key="flingy_Speed">最高速度</sys:String>
+    <sys:String x:Key="flingy_Acceleration">加速度</sys:String>
+    <sys:String x:Key="flingy_Halt Distance">制动距离</sys:String>
+    <sys:String x:Key="flingy_Turn Radius">转弯半径</sys:String>
+    <sys:String x:Key="flingy_Unused">Iscript 掩码</sys:String>
+    <sys:String x:Key="flingy_Movement Control">移动控制</sys:String>
+    <sys:String x:Key="flingy_Movement Control_V">按 Flingy.dat 文件控制|部分控制，攻击形式|按 Iscript.bin 文件控制</sys:String>
+
+
+
+    <sys:String x:Key="sprites_Image File">实体图</sys:String>
+    <sys:String x:Key="sprites_Health Bar">生命条</sys:String>
+    <sys:String x:Key="sprites_Unknown2">未知</sys:String>
+    <sys:String x:Key="sprites_Is Visible">可见</sys:String>
+    <sys:String x:Key="sprites_Sel.Circle Image">选择圈图形</sys:String>
+    <sys:String x:Key="sprites_Sel.Circle Offset">选择圈位置</sys:String>
+
+
+
+    <sys:String x:Key="images_GRP File">GRP 文件</sys:String>
+    <sys:String x:Key="images_Gfx Turns">实体转向</sys:String>
+    <sys:String x:Key="images_Clickable">可点击</sys:String>
+    <sys:String x:Key="images_Use Full Iscript">使用全部 Iscript</sys:String>
+    <sys:String x:Key="images_Draw If Cloaked">隐形时绘制</sys:String>
+    <sys:String x:Key="images_Draw Function">功能</sys:String>
+    <sys:String x:Key="images_Draw Function_V">正常绘制|（未知 1）|敌方隐形|自身隐形|盟友隐形|自身隐形（技能）|自身隐形（仅绘制）|（崩溃）|EMP 冲击波|使用重映射|阴影/战争迷雾（dark.pcx）|（未知11）|（扭曲闪光，崩溃）|不镜像帧|（未知14）|隐藏实体，显示大小矩形|幻象|扭曲闪光</sys:String>
+
+    <sys:String x:Key="images_Remapping">颜色表</sys:String>
+    <sys:String x:Key="images_Remapping_V">无重映射|ofire.pcx（橙色）|gfire.pcx（绿色）|bfire.pcx（蓝色）|bexpl.pcx（蓝色2）|特殊（自身隐形）|（崩溃）|（崩溃）|（未知8）|（未知9）</sys:String>
+
+    <sys:String x:Key="images_Iscript ID">脚本 ID</sys:String>
+    <sys:String x:Key="images_Shield Overlay">护盾覆盖</sys:String>
+    <sys:String x:Key="images_Attack Overlay">攻击覆盖</sys:String>
+    <sys:String x:Key="images_Damage Overlay">伤害覆盖</sys:String>
+    <sys:String x:Key="images_Special Overlay">特殊覆盖</sys:String>
+    <sys:String x:Key="images_Landing Dust Overlay">着陆叠加层</sys:String>
+    <sys:String x:Key="images_Lift-Off Overlay">升起叠加层</sys:String>
+
+
+
+    <sys:String x:Key="upgrades_Mineral Cost Base">水晶</sys:String>
+    <sys:String x:Key="upgrades_Mineral Cost Factor">水晶系数</sys:String>
+    <sys:String x:Key="upgrades_Vespene Cost Base">瓦斯</sys:String>
+    <sys:String x:Key="upgrades_Vespene Cost Factor">瓦斯系数</sys:String>
+    <sys:String x:Key="upgrades_Research Time Base">基础时间</sys:String>
+    <sys:String x:Key="upgrades_Research Time Factor">时间系数</sys:String>
+    <sys:String x:Key="upgrades_Unknown6">未知</sys:String>
+    <sys:String x:Key="upgrades_Icon">图标</sys:String>
+    <sys:String x:Key="upgrades_Label">名称</sys:String>
+    <sys:String x:Key="upgrades_Race">种族</sys:String>
+    <sys:String x:Key="upgrades_Race_V">虫族|人族|神族|所有</sys:String>
+
+    <sys:String x:Key="upgrades_Max. Repeats">升级次数</sys:String>
+    <sys:String x:Key="upgrades_Broodwar Flag">仅母巢之战</sys:String>
+
+
+
+    <sys:String x:Key="techdata_Mineral Cost">水晶</sys:String>
+    <sys:String x:Key="techdata_Vespene Cost">瓦斯</sys:String>
+    <sys:String x:Key="techdata_Resarch Time">时间</sys:String>
+    <sys:String x:Key="techdata_Energy Required">能量</sys:String>
+    <sys:String x:Key="techdata_Unknown 4">未知</sys:String>
+    <sys:String x:Key="techdata_Icon">图标</sys:String>
+    <sys:String x:Key="techdata_Label">名称</sys:String>
+    <sys:String x:Key="techdata_Race">种族</sys:String>
+    <sys:String x:Key="techdata_Race_V">虫族|人族|神族|所有</sys:String>
+
+    <sys:String x:Key="techdata_Unused">未知</sys:String>
+    <sys:String x:Key="techdata_Brood War Flag">仅母巢之战</sys:String>
+
+
+
+    <sys:String x:Key="orders_Label">名称</sys:String>
+    <sys:String x:Key="orders_Use Weapon Targeting">使用武器库目标</sys:String>
+    <sys:String x:Key="orders_Unknown2">使用第二个命令</sys:String>
+    <sys:String x:Key="orders_Unknown3">未知3</sys:String>
+    <sys:String x:Key="orders_Unknown4">未知4</sys:String>
+    <sys:String x:Key="orders_Unknown5">未知5</sys:String>
+    <sys:String x:Key="orders_Can Be Interrupted">可中断</sys:String>
+    <sys:String x:Key="orders_Unknown7">未知7</sys:String>
+    <sys:String x:Key="orders_Can Be Queued">可排队</sys:String>
+    <sys:String x:Key="orders_Unknown9">未知9</sys:String>
+    <sys:String x:Key="orders_Unknown10">被地形阻挡</sys:String>
+    <sys:String x:Key="orders_Unknown11">未知11</sys:String>
+    <sys:String x:Key="orders_Unknown12">未知12</sys:String>
+    <sys:String x:Key="orders_Targeting">目标选择</sys:String>
+    <sys:String x:Key="orders_Energy">能量</sys:String>
+    <sys:String x:Key="orders_Animation">动画</sys:String>
+    <sys:String x:Key="orders_Animation_V">默认|死亡|对地攻击 - 默认|对空攻击 - 默认|未使用1|对地攻击 - 重复|对空攻击 - 重复|使用特殊能力|对地攻击 - 返回|对空攻击 - 返回|未知2|行走|行走 - 返回|特殊状态1|特殊状态2|建筑完成 - 附近|建筑完成|建筑着陆|建筑升起|生产|生产 - 返回|传送|未知3|默认 - 星际编辑器|不可用 - 禁用|钻地|钻出|可用 - 启用|正常/默认动画</sys:String>
+
+    <sys:String x:Key="orders_Highlight">高亮按钮</sys:String>
+    <sys:String x:Key="orders_Unknown17">未知</sys:String>
+    <sys:String x:Key="orders_Obscured Order">遇阻命令</sys:String>
+
+
+    <!--ToolTip-->
+    <sys:String x:Key="units_Graphics_ToolTip">单位的移动信息。</sys:String>
+    <sys:String x:Key="units_Subunit 1_ToolTip">单位的主要子单位。</sys:String>
+    <sys:String x:Key="units_Subunit 2_ToolTip">单位的次要子单位。无法使用。</sys:String>
+    <sys:String x:Key="units_Infestation_ToolTip">如果女王感染某物，变化的单位列表。仅存在于 106-201（建筑）中。</sys:String>
+    <sys:String x:Key="units_Construction Animation_ToolTip">单位建造时显示的实体图。如果此值为 0，则不显示实体图。</sys:String>
+    <sys:String x:Key="units_Unit Direction_ToolTip">设置单位创建时的视角方向。值 0 到 31 会使其朝向特定方向。值为 32 时，创建时随机方向。</sys:String>
+    <sys:String x:Key="units_Shield Enable_ToolTip">激活单位的护盾。不仅可用于神族，也可用于所有单位。人族和虫族的建筑在建造期间护盾不会上升。</sys:String>
+    <sys:String x:Key="units_Shield Amount_ToolTip">单位的护盾点数。游戏中允许 "9999" 的数量，但不会显示。</sys:String>
+    <sys:String x:Key="units_Hit Points_ToolTip">单位的生命值。游戏中允许 "9999" 的数量，但不会显示。</sys:String>
+    <sys:String x:Key="units_Elevation Level_ToolTip">单位移动时的高度。可以使单位像空中单位一样移动。但是，如果该单位不是空中单位，则对于特殊能力（如召回）和命中公式来说，它可能是地面单位。数值越高，单位可以放置在比地形或其他单位更高的位置。</sys:String>
+    <sys:String x:Key="units_Unknown (old Movement)_ToolTip">此移动控制相关数据来自 SC 测试版。现在不再使用。</sys:String>
+    <sys:String x:Key="units_Rank/Sublabel_ToolTip">设置单位的等级：等级较低的单位会停下并等待，以允许等级较高的单位继续移动。对空中单位没有影响。还决定该单位在 StarEdit 分类文件夹中显示的顺序。</sys:String>
+    <sys:String x:Key="units_Comp AI Idle_ToolTip">当电脑的单位无事可做时的命令。</sys:String>
+    <sys:String x:Key="units_Human AI Idle_ToolTip">当人类玩家的单位无事可做时的命令。</sys:String>
+    <sys:String x:Key="units_Return to Idle_ToolTip">使单位在完成上一个命令后无事可做的命令。</sys:String>
+    <sys:String x:Key="units_Attack Unit_ToolTip">单位在接到攻击目标命令时执行的命令。如果目标是敌人，右键也可使用。</sys:String>
+    <sys:String x:Key="units_Attack Move_ToolTip">拥有者对地形下达攻击命令时执行的命令。</sys:String>
+    <sys:String x:Key="units_Ground Weapon_ToolTip">可用于攻击地面单位的武器。</sys:String>
+    <sys:String x:Key="units_Max Ground Hits_ToolTip">单位每次使用对地武器攻击目标时可造成伤害的最大次数。</sys:String>
+    <sys:String x:Key="units_Air Weapon_ToolTip">攻击空中单位时使用的武器。</sys:String>
+    <sys:String x:Key="units_Max Air Hits_ToolTip">单位每次使用对空武器攻击目标时可造成伤害的最大次数。</sys:String>
+    <sys:String x:Key="units_AI Internal_ToolTip">指定单位的内部 AI。可以忽略“战略自杀任务” AI 命令，或防止警戒命令状态（目标被摧毁后返回原位）。</sys:String>
+
+
+    <sys:String x:Key="units_Special Ability Flags_ToolTip">这是单位的特殊独特能力数据。您可以检查生命自动恢复、永久隐形、空中单位化等。</sys:String>
+    <sys:String x:Key="units_Target Acquisition Range_ToolTip">航母的拦截机出击或金甲的圣甲虫发射的距离。也决定了近战单位的攻击范围和医疗兵的治疗范围。如果将值留为 0，游戏将使用现有武器数据作为距离数据。此处距离值 1 与现有武器数据中的距离值 2 相同。</sys:String>
+    <sys:String x:Key="units_Sight Range_ToolTip">视野可见的距离（1 单位）。大于 &lt;5&gt;11 的值会导致游戏崩溃！&lt;0&gt;</sys:String>
+    <sys:String x:Key="units_Armor Upgrade_ToolTip">可以指定单位的护甲受哪种护甲升级的影响。</sys:String>
+    <sys:String x:Key="units_Unit Size_ToolTip">用于计算在爆炸型和震荡型攻击类型中受到的伤害。爆炸型：对小型 50%，中型 75%，大型 100% 伤害。震荡型：对小型 100%，中型 50%，大型 25% 伤害。独立大小每击中一次受到 1 点伤害，无论护甲或单位类型如何。某些技能的伤害仍然适用。例如，瘟疫的伤害值不变，但辐射不适用。</sys:String>
+    <sys:String x:Key="units_Armor_ToolTip">单位的基础防御。所有伤害都会减少防御。如果护甲高于攻击伤害，单位将受到“独立”类型伤害。</sys:String>
+    <sys:String x:Key="units_Right-click Action_ToolTip">可以选择在选择单位时右键单击特定点或目标时采取的操作。\n0：用户无法下达命令，当附加范围内的敌人进入时自动攻击。\n1：可以下达命令并自动攻击。\n2：右键移动。可以通过设置的按钮强制攻击。\n3：右键仅攻击，不移动。它甚至不移动和攻击。\n4：具有 1 的特征，但也采集资源。\n5：具有 1 的特征，可以采集和修理资源。\n6：右键不接收任何命令，也不执行任何命令。</sys:String>
+    <sys:String x:Key="units_Ready Sound_ToolTip">设置单位生产时播放的声音。</sys:String>
+    <sys:String x:Key="units_What Sound Start_ToolTip">设置拥有者选择单位时播放的第一个声音，意思是“叫我干嘛？”。如果此值设置为 0，则不产生声音。</sys:String>
+    <sys:String x:Key="units_What Sound End_ToolTip">拥有者选择单位时播放的最后一个声音。如果此值设置为 0，则不产生声音。</sys:String>
+    <sys:String x:Key="units_Piss Sound Start_ToolTip">当用户再次选择单位时，单位发出的声音的起始点。如果设置为 0，则没有声音。</sys:String>
+    <sys:String x:Key="units_Piss Sound End_ToolTip">当用户再次选择单位时，单位发出的声音的结束点。如果设置为 0，则没有声音。</sys:String>
+    <sys:String x:Key="units_Yes Sound Start_ToolTip">播放第一个声音，意思是“好的”，当拥有者向单位下达命令时播放。如果此值设置为 0，则不产生声音。</sys:String>
+    <sys:String x:Key="units_Yes Sound End_ToolTip">播放最后一个声音，意思是“好的”，当拥有者向单位下达命令时播放。如果此值设置为 0，则不产生声音。</sys:String>
+    <sys:String x:Key="units_StarEdit Placement Box Width_ToolTip">星际编辑器中绿色矩形放置空间的宽度（以像素为单位）。在星际编辑器中，仅使用建筑物而不是单位尺寸。</sys:String>
+    <sys:String x:Key="units_StarEdit Placement Box Height_ToolTip">设置星际编辑器中绿色矩形放置空间的高度（以像素为单位）。在星际编辑器中，仅使用建筑物而不是单位尺寸。</sys:String>
+    <sys:String x:Key="units_Addon Horizontal (X) Position_ToolTip">设置附加建筑将放置的水平（X 轴）位置。仅存在于单位 ID 为 106-201 的建筑中。</sys:String>
+    <sys:String x:Key="units_Addon Vertical (Y) Position_ToolTip">设置附加建筑将放置的垂直（Y 轴）位置。仅存在于单位 ID 为 106-201 的建筑中。</sys:String>
+    <sys:String x:Key="units_Unit Size Left_ToolTip">设置占据位置左侧的大小。可以以像素为单位设置。</sys:String>
+    <sys:String x:Key="units_Unit Size Up_ToolTip">设置占据位置上方的大小。可以以像素为单位设置。</sys:String>
+    <sys:String x:Key="units_Unit Size Right_ToolTip">设置占据位置右侧的大小。可以以像素为单位设置。</sys:String>
+    <sys:String x:Key="units_Unit Size Down_ToolTip">设置占据位置底部的大小。可以以像素为单位设置。</sys:String>
+    <sys:String x:Key="units_Portrait_ToolTip">设置单位的头像。您可以通过在当前值上添加 110 来更改头像。不要将正在说话的头像设置为默认头像。在幽灵和秃鹰的情况下，它可以作为例外使用。</sys:String>
+    <sys:String x:Key="units_Mineral Cost_ToolTip">生产所需的水晶值</sys:String>
+    <sys:String x:Key="units_Vespene Cost_ToolTip">生产所需的瓦斯值</sys:String>
+    <sys:String x:Key="units_Build Time_ToolTip">设置建造时间。游戏中 1 秒：最快 - 24 到最慢 - 6。不要将此值保留为 0。</sys:String>
+    <sys:String x:Key="units_Unknown1_ToolTip">未使用。</sys:String>
+    <sys:String x:Key="units_Staredit Group Flags_ToolTip">指定所属种族。人口值适用于设定的种族。\n所有部队(Men)：指可以被操控行动的三族单位，包括机械和生物单位，但不是建筑单位、中立单位、独立单位。\n可生产建筑(Factory)：可生产部队的建筑或可变异的建筑单位（如三族的基地、虫族Creep Colony），但人族卫星站、核弹厂不算。\n中立单位：如资源矿产、建筑遗迹(如神庙、装饰品)、自然生物（如熊）、地图上放置的武器(Floor Missile Trap)等。\n独立单位：通常是一些未定义，已失效的建筑单位。</sys:String>
+    <sys:String x:Key="units_Supply Provided_ToolTip">设置可接受人口值的增加量。0.5 的人口容量在显示时四舍五入，但实际值计算为 0.5。</sys:String>
+    <sys:String x:Key="units_Supply Required_ToolTip">设置训练或建造所需的人口需求。0.5 的人口值在显示时四舍五入，但实际值计算为 0.5。</sys:String>
+    <sys:String x:Key="units_Space Required_ToolTip">设置装载单位时占用的空间量。不能超过最大装载能力。更改此值不会改变单位线框的大小。</sys:String>
+    <sys:String x:Key="units_Space Provided_ToolTip">设置单位的最大容量。这是可以装载的空间量，而不是可以装载的单位数量。装载的单位占用的空间量可能不同。</sys:String>
+    <sys:String x:Key="units_Build Score_ToolTip">生产和建造单位获得的积分。游戏结束后，总计显示在结果屏幕上。</sys:String>
+    <sys:String x:Key="units_Destroy Score_ToolTip">设置摧毁单位获得的积分。游戏结束后，总计显示在结果屏幕上。该值用于目标选择 AI。摧毁点数越高的单位将首先被选为目标。</sys:String>
+    <sys:String x:Key="units_Unit Map String_ToolTip">指示获取单位名称信息的字符串编号。</sys:String>
+    <sys:String x:Key="units_Broodwar Unit Flag_ToolTip">使此单位仅在母巢之战扩展包中可用。</sys:String>
+    <sys:String x:Key="units_Staredit Availability Flags_ToolTip">您可以在单位编辑器中指定特征数据。\n非中立：表示是否在两种死亡动画/状态（例如建筑被摧毁后的废墟）。\n单位列表和调色板：表示单位的调色板是否更改以适应地形。\n任务简报：表示单位的头像是否可以在简报屏幕上显示。\n玩家设置：表示是否可以为每个玩家设置创建或禁用单位的能力。\n设置装饰物状态：表示是否受“设置装饰物状态”触发器影响。\n位置触发器：表示是否受使用该位置的触发器影响。\n仅母巢之战：如果未选中，会无条件将单位显示为原始数据。</sys:String>
+
+
+    <sys:String x:Key="weapons_Label_ToolTip">设置游戏中鼠标指针悬停在图标上时显示的武器名称。</sys:String>
+    <sys:String x:Key="weapons_Graphics_ToolTip">设置用作武器的主要实体图。如果此值保留为 0，则视为没有实体图。</sys:String>
+    <sys:String x:Key="weapons_Unused_ToolTip">无功能。曾被认为与武器相关的科技有关，但最终发现只是设计者留下的一个提示。</sys:String>
+    <sys:String x:Key="weapons_Target Flags_ToolTip">定义技能或攻击可以针对的单位特征。</sys:String>
+    <sys:String x:Key="weapons_Minimum Range_ToolTip">设置攻击的最小距离。</sys:String>
+    <sys:String x:Key="weapons_Maximum Range_ToolTip">设置可以攻击的最大距离。</sys:String>
+    <sys:String x:Key="weapons_Damage Upgrade_ToolTip">设置升级添加到伤害的值。</sys:String>
+    <sys:String x:Key="weapons_Weapon Type_ToolTip">设置伤害类型。\n爆炸型和震荡型造成的伤害量根据目标的尺寸分类而变化。\n普通型可以对大型、中型和小型单位造成 100% 伤害。\n爆炸型可以对大型单位造成 100% 伤害，对中型单位造成 75%，对小型单位造成 50%。\n震荡型可以对大型单位造成 25% 伤害，对中型单位造成 50%，对小型单位造成 100% 伤害。\n独立伤害方式对同一目标的每偶数次命中造成 1 点伤害。</sys:String>
+    <sys:String x:Key="weapons_Weapon Behavior_ToolTip">决定武器将如何攻击目标以及如何表现。</sys:String>
+    <sys:String x:Key="weapons_Remove After_ToolTip">武器精灵在不攻击目标的情况下可以停留的时间。游戏中 1 秒：最快 - 24 ~ 最慢 - 6。</sys:String>
+    <sys:String x:Key="weapons_Explosion Type_ToolTip">可以对大型单位造成 100% 伤害，对中型单位造成 75%，对小型单位造成 50%。</sys:String>
+    <sys:String x:Key="weapons_Inner Splash Range_ToolTip">设置可以对非目标造成 100% 伤害的范围。仅适用于爆炸型，即核弹、圆形溅射、单向溅射和空中溅射。</sys:String>
+    <sys:String x:Key="weapons_Medium Splash Range_ToolTip">可以对非目标造成 50% 伤害的范围。仅适用于爆炸型，即核弹、圆形溅射、单向溅射和空中溅射。</sys:String>
+    <sys:String x:Key="weapons_Outer Splash Range_ToolTip">可以对非目标造成 25% 伤害的范围。仅适用于爆炸型，即核弹、圆形溅射、单向溅射和空中溅射。</sys:String>
+    <sys:String x:Key="weapons_Damage Amount_ToolTip">每次攻击目标时造成的基础伤害。</sys:String>
+    <sys:String x:Key="weapons_Damage Bonus_ToolTip">每个升级步骤添加到基础伤害的伤害值。</sys:String>
+    <sys:String x:Key="weapons_Weapon Cooldown_ToolTip">等待下一次攻击的时间。游戏中 1 秒：最快 - 24 ~ 最慢 - 6。不要将此值保留为 0。</sys:String>
+    <sys:String x:Key="weapons_Damage Factor_ToolTip">将此值乘以伤害值即可获得武器显示的总伤害。即使数值超过 65535 变成负数，被显示为 0，实际伤害值也保持不变。在一定程度上，决定了每次攻击使用的武器数量，但除2以外的任何数值都会导致仅使用1件武器。（例如，歌利亚(Goliath)、侦察机(Scout)和女武神(Valkyrie)每次攻击使用2枚导弹）。</sys:String>
+    <sys:String x:Key="weapons_Attack Angle_ToolTip">设置可以在不进一步旋转单位实体图的情况下使用武器的角度。128 = 180˚</sys:String>
+    <sys:String x:Key="weapons_Launch Spin_ToolTip">设置武器精灵将以旋转状态创建的角度。128 = 180˚</sys:String>
+    <sys:String x:Key="weapons_Forward Offset_ToolTip">设置武器精灵将在攻击单位前方创建的位置（以像素为单位）。前侧由单位看的方向决定。</sys:String>
+    <sys:String x:Key="weapons_Upward Offset_ToolTip">设置武器精灵将在攻击单位上方创建的位置（以像素为单位）。武器精灵在单位顶部生成，与方向无关。</sys:String>
+    <sys:String x:Key="weapons_Target Error Message_ToolTip">指定将无法用当前武器攻击的目标指定为目标时显示的消息。</sys:String>
+    <sys:String x:Key="weapons_Icon_ToolTip">用于生产该武器的图标。</sys:String>
+
+
+    <sys:String x:Key="flingy_Sprite_ToolTip">这是运动物体（外观）使用的精灵。如果单击“转到”，切换到关联的精灵选项卡。</sys:String>
+    <sys:String x:Key="flingy_Speed_ToolTip">表示运动物体（外观）的最大速度。</sys:String>
+
+    <sys:String x:Key="flingy_Acceleration_ToolTip">表示运动物体（外观）的加速度。值越高，越能更快达到最大速度。</sys:String>
+    <sys:String x:Key="flingy_Halt Distance_ToolTip">表示相关运动（外观）开始停止的距离值。值越高，开始减速的距离越远。它们受加速度影响，必须合适。</sys:String>
+    <sys:String x:Key="flingy_Turn Radius_ToolTip">表示运动物体（外观）的转弯半径。值越高，向另一个方向转弯时转向越有角度。较小的值在向所需方向转弯时缓慢且圆润地旋转。非常大的值可能会在原地盘旋。如果为 0，游戏会崩溃。</sys:String>
+    <sys:String x:Key="flingy_Unused_ToolTip">测试版时使用的数据。目前未使用。</sys:String>
+    <sys:String x:Key="flingy_Movement Control_ToolTip">指控制相关运动物体（外观）的形式。\n0：Flingy.dat 使运动遵循上面可以设置的最大速度、加速度和停止距离。\n1：武器类型的弹道运动参数遵循上面设置的项目，但其中一些遵循 Iscript 应用的项目。\n2：使 Iscript.bin 图形选项卡中设置的 IscriptID 脚本中设置的速度跟随。上面设置的任何内容都将被忽略。</sys:String>
+
+    <sys:String x:Key="sprites_Image File_ToolTip">精灵引用的实体图。单击“转到”切换到相应的图形选项卡。</sys:String>
+    <sys:String x:Key="sprites_Health Bar_ToolTip">选择精灵时显示的生命条的大小。</sys:String>
+    <sys:String x:Key="sprites_Unknown2_ToolTip">此数据未使用。</sys:String>
+    <sys:String x:Key="sprites_Is Visible_ToolTip">精灵在游戏中是否可见。</sys:String>
+    <sys:String x:Key="sprites_Sel.Circle Image_ToolTip">选择精灵时显示的选择圈的实体图。取决于大小和形状。</sys:String>
+    <sys:String x:Key="sprites_Sel.Circle Offset_ToolTip">表示选择精灵时显示的选择圈的顶部和底部位置。尺寸越大，选择圈越低。</sys:String>
+
+
+    <sys:String x:Key="images_GRP File_ToolTip">图形引用的 GRP 文件，不起作用。</sys:String>
+    <sys:String x:Key="images_Gfx Turns_ToolTip">检查当前实体图是否启用左右反转。</sys:String>
+    <sys:String x:Key="images_Clickable_ToolTip">检查当前实体图单位是否可点击。</sys:String>
+    <sys:String x:Key="images_Use Full Iscript_ToolTip">检查当前实体图是否引用 Iscript 并激活所有脚本内容。</sys:String>
+    <sys:String x:Key="images_Draw If Cloaked_ToolTip">检查当前实体图是否在隐形（不可见）状态下显示形状。</sys:String>
+    <sys:String x:Key="images_Draw Function_ToolTip">选择当前实体图的显示类型：\n0：显示 GRP 文件。\n1：禁用。\n2：显示单位的轮廓，类似于敌方隐形显示。\n3：显示变暗的实体图，如己方单位隐形显示。\n4：与第 3 相同。\n5：与第 3 相同。\n6：与第 3 类似，但不是隐形状态。\n7：显示实体图如未通电状态。\n8：显示实体图如 EMP 冲击波的特效，显示为白色。\n9：应用重映射颜色。不起作用。\n10：显示较暗的实体图，如阴影。\n11：禁用。\n12：神族建筑完成时的扭曲效果。\n13：显示左右反转。\n14：禁用。\n15：图形不可见，用绿色边缘指示。边缘始终可见。\n16：显示蓝色，如幻象单位，但不是幻象单位。\n17：与第 12 相同。</sys:String>
+    <sys:String x:Key="images_Remapping_ToolTip">在上述显示类型为 9 时适用：重映射时颜色叠加（图形的某些部分未完全覆盖）。\n0：显示默认实体图。\n1：将图形覆盖为黄色调色板。\n2：将图形覆盖为绿色调色板。\n3：将图形覆盖为蓝色调色板。（深蓝）\n4：将图形覆盖为蓝色调色板。（浅蓝）\n5：变为暗色，如隐形效果。\n6~9：星际争霸崩溃。</sys:String>
+    <sys:String x:Key="images_Iscript ID_ToolTip">实体图引用的 Iscript ID。</sys:String>
+    <sys:String x:Key="images_Shield Overlay_ToolTip">指示当前护盾单位受到攻击时的护盾命中实体图位置数据。</sys:String>
+    <sys:String x:Key="images_Attack Overlay_ToolTip">指示当前单位攻击时覆盖特殊攻击效果的位置数据。</sys:String>
+    <sys:String x:Key="images_Damage Overlay_ToolTip">指示当前单位受到攻击时覆盖特殊伤害效果的位置数据。</sys:String>
+    <sys:String x:Key="images_Special Overlay_ToolTip">指示当前单位拾取能量包或有额外单位时的位置数据。</sys:String>
+    <sys:String x:Key="images_Landing Dust Overlay_ToolTip">指示当前单位着陆时的位置数据。用于人族建筑。</sys:String>
+    <sys:String x:Key="images_Lift-Off Overlay_ToolTip">指示当前单位升起时的位置数据。用于人族建筑。</sys:String>
+
+
+    <sys:String x:Key="upgrades_Mineral Cost Base_ToolTip">研究升级所需的水晶花费。</sys:String>
+    <sys:String x:Key="upgrades_Mineral Cost Factor_ToolTip">每次升级增加的额外水晶花费。</sys:String>
+    <sys:String x:Key="upgrades_Vespene Cost Base_ToolTip">研究升级所需的瓦斯花费。</sys:String>
+    <sys:String x:Key="upgrades_Vespene Cost Factor_ToolTip">每次升级增加的额外瓦斯花费。</sys:String>
+    <sys:String x:Key="upgrades_Research Time Base_ToolTip">完成升级研究的时间。</sys:String>
+    <sys:String x:Key="upgrades_Research Time Factor_ToolTip">每次升级增加的额外时间。</sys:String>
+    <sys:String x:Key="upgrades_Unknown6_ToolTip">未使用的数据。</sys:String>
+    <sys:String x:Key="upgrades_Icon_ToolTip">当前升级图标。在研究时显示。</sys:String>
+    <sys:String x:Key="upgrades_Label_ToolTip">当前升级名称。与按钮面板中显示的名称不同。</sys:String>
+    <sys:String x:Key="upgrades_Race_ToolTip">显示升级所属种族。</sys:String>
+    <sys:String x:Key="upgrades_Max. Repeats_ToolTip">最大升级等级。</sys:String>
+    <sys:String x:Key="upgrades_Broodwar Flag_ToolTip">检查升级是否仅用于母巢之战。不会影响任何东西。</sys:String>
+
+
+    <sys:String x:Key="techdata_Mineral Cost_ToolTip">研究技能所需的水晶花费。</sys:String>
+    <sys:String x:Key="techdata_Vespene Cost_ToolTip">研究技能所需的瓦斯花费。</sys:String>
+    <sys:String x:Key="techdata_Resarch Time_ToolTip">完成技能研究的时间。</sys:String>
+    <sys:String x:Key="techdata_Energy Required_ToolTip">释放技能所需的能量花费。</sys:String>
+    <sys:String x:Key="techdata_Unknown 4_ToolTip">未使用的数据。</sys:String>
+    <sys:String x:Key="techdata_Icon_ToolTip">当前技能图标。在研究时显示。</sys:String>
+    <sys:String x:Key="techdata_Label_ToolTip">当前技能名称。与按钮面板中显示的名称不同。</sys:String>
+    <sys:String x:Key="techdata_Race_ToolTip">显示技能所属种族。</sys:String>
+    <sys:String x:Key="techdata_Unused_ToolTip">未使用的数据。</sys:String>
+    <sys:String x:Key="techdata_Brood War Flag_ToolTip">检查技能是否仅用于母巢之战。不会影响任何东西。</sys:String>
+
+
+    <sys:String x:Key="orders_Label_ToolTip">当前命令名称。与按钮面板中显示的名称不同。</sys:String>
+    <sys:String x:Key="orders_Use Weapon Targeting_ToolTip">命令将使用 weapons.dat 的目标设置。</sys:String>
+    <sys:String x:Key="orders_Unknown2_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Unknown3_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Unknown4_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Unknown5_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Can Be Interrupted_ToolTip">检查玩家是否可以取消当前命令。</sys:String>
+    <sys:String x:Key="orders_Unknown7_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Can Be Queued_ToolTip">检查玩家是否可以排队等待此命令。</sys:String>
+    <sys:String x:Key="orders_Unknown9_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Unknown10_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Unknown11_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Unknown12_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Targeting_ToolTip">检查指定武器的目标状态。例如，如果您指定“漩涡”，则应用漩涡的目标数据。如果漩涡对移动单位无效，则当前命令目标不能是移动单位。</sys:String>
+    <sys:String x:Key="orders_Energy_ToolTip">显示执行命令所需能量花费的技术/魔法索引号。如果此处为“召回”，则需要足够的能量才能施放召回。</sys:String>
+    <sys:String x:Key="orders_Animation_ToolTip">显示 Iscript 部件的命令。修改 Iscript 时不能完全正常工作。</sys:String>
+    <sys:String x:Key="orders_Highlight_ToolTip">启用时的按钮图形。</sys:String>
+    <sys:String x:Key="orders_Unknown17_ToolTip">可能影响多种事物的未知数据。</sys:String>
+    <sys:String x:Key="orders_Obscured Order_ToolTip">当移动被各种迷雾、障碍物和装饰物阻挡时，执行该命令。</sys:String>
+
+
+    <!--FG-->
+    <sys:String x:Key="FG_StatusInfor1">单位类型</sys:String>
+    <sys:String x:Key="FG_StatusInfor1_V">建筑|单位|舰载机母舰单位|运输单位|提供人口的运输单位|能量包(Powerups)|变形单位（卵）|合体单位（执政官）|不可选中（核弹，扫描）|圣甲虫，地图显示器|（未使用的神族建筑）</sys:String>
+    <sys:String x:Key="FG_Status">状态</sys:String>
+    <sys:String x:Key="FG_Display">显示</sys:String>
+
+    <sys:String x:Key="FG_WireFrame">标准</sys:String>
+    <sys:String x:Key="FG_GrpFrame">多选</sys:String>
+    <sys:String x:Key="FG_TranFrame">运输</sys:String>
+
+
+    <!--Require-->
+    <sys:String x:Key="RequireText">（必须拥有...）|或者|当前单位是...|必须拥有...|必须拥有附加建筑|未升起|已升起|未训练或变形|未建造附加建筑|未研究|未升级|未建造|没有附加建筑|没有出口|有舰载机空间|必须研究|没有装载核弹|未钻地|可以攻击|可以设置集结点|可以移动|有武器|是工人|是飞行建筑|是运输单位|是能量包|是子单位|有蜘蛛雷|是英雄且启用|可以保持原位|允许对幻象|升级 Lv-1 要求...|升级 Lv-2 要求...|升级 Lv-3+ 要求...|灰色|空白|必须是母巢之战|已研究...|已钻地|分支</sys:String>
+    <sys:String x:Key="RequireSubListEnd">结束升级要求</sys:String>
+
+
+    <sys:String x:Key="FG_Size">内存</sys:String>
+    <sys:String x:Key="FG_BatchSetting">批量设置</sys:String>
+
+    <sys:String x:Key="FG_Requirement">要求</sys:String>
+
+    <sys:String x:Key="FG_DefaultUse">基本</sys:String>
+    <sys:String x:Key="FG_DontUse">不使用</sys:String>
+    <sys:String x:Key="FG_AlwaysUse">总是使用</sys:String>
+    <sys:String x:Key="FG_AlwaysCurrentUse">当前使用</sys:String>
+    <sys:String x:Key="FG_CustomUse">用户自定义</sys:String>
+
+    <sys:String x:Key="FG_DefaultUseToolTip">所有代码设为默认值。</sys:String>
+    <sys:String x:Key="FG_DontUseToolTip">所有代码设为不使用。</sys:String>
+    <sys:String x:Key="FG_AlwaysUseToolTip">所有代码设为总是使用。</sys:String>
+    <sys:String x:Key="FG_AlwaysCurrentUseToolTip">所有代码设为当前使用。</sys:String>
+    <sys:String x:Key="FG_CustomUseToolTip">用户自定义</sys:String>
+
+    <!--颜色代码-->
+    <sys:String x:Key="ColorNames">使用默认颜色|淡蓝色|黄色|白色|灰色|红色|绿色|红色 (P1)|NULL|NULL|&lt;1&gt;隐形|&lt;1&gt;移除超出|NULL|蓝色 (P2)|青色 (P3)|紫色 (P4)|橙色 (P5)|右对齐|居中对齐|&lt;1&gt;隐形|棕色 (P6)|白色 (P7)|黄色 (P8)|绿色 (P9)|亮黄色 (P10)|青色|粉红色 (P11)|深青色 (P12)|灰绿色|蓝灰色|绿松石色</sys:String>
+
+    <!--按钮组-->
+    <sys:String x:Key="buttonSetEtcGroup">其他按钮</sys:String>
+    <sys:String x:Key="buttonSet">键盘</sys:String>
+    <sys:String x:Key="button">按钮数据</sys:String>
+    <sys:String x:Key="BtnList">按钮列表</sys:String>
+    <sys:String x:Key="BtnInfor">基本信息</sys:String>
+    <sys:String x:Key="BtnPreview">预览</sys:String>
+    <sys:String x:Key="BtnWork">按钮工作</sys:String>
+
+
+    <sys:String x:Key="BtnLoc">位置</sys:String>
+    <sys:String x:Key="BtnIcon">图标</sys:String>
+    <sys:String x:Key="BtnEnaStr">启用</sys:String>
+    <sys:String x:Key="BtnDisStr">禁用</sys:String>
+    <sys:String x:Key="BtnCon">条件</sys:String>
+    <sys:String x:Key="BtnConVal">条件值</sys:String>
+    <sys:String x:Key="BtnAct">动作</sys:String>
+    <sys:String x:Key="BtnActVal">动作值</sys:String>
+
+    <sys:String x:Key="BtnNewString">值</sys:String>
+
+    <sys:String x:Key="BtnNewIndex">基本命令|飞行建筑命令|钻地命令|采集命令|运输命令|空按钮|训练单位|训练单位 - 变异|升级研究|技能研究|激活技能|建筑变异|建造 - 变异|建造 - 人族|建造 - 神族|建造 - 附加建筑</sys:String>
+
+
+    <!-- 触发器编辑 -->
+    <sys:String x:Key="NewFolder">新建文件夹</sys:String>
+    <sys:String x:Key="NewEpsScript">epScript 文件</sys:String>
+    <sys:String x:Key="NewSCAScript">SCAScript 文件</sys:String>
+    <sys:String x:Key="NewPyScript">新建 eudplib 文件</sys:String>
+    <sys:String x:Key="Folder">文件夹</sys:String>
+    <sys:String x:Key="EpsScriptFile">epScript 文件</sys:String>
+    <sys:String x:Key="PyScriptFile">eudplib 文件</sys:String>
+    <sys:String x:Key="FIleName">文件名</sys:String>
+    <sys:String x:Key="CreateDate">创建日期</sys:String>
+    <sys:String x:Key="ConnectFile">关联文件</sys:String>
+    <sys:String x:Key="LastDate">最后编辑</sys:String>
+
+    <sys:String x:Key="Warning">警告</sys:String>
+    <sys:String x:Key="ExternWarning">文件已被外部修改。是否从外部加载文件？</sys:String>
+
+    <sys:String x:Key="SearchText">搜索</sys:String>
+    <sys:String x:Key="TextEditor">文本编辑器</sys:String>
+
+    <!-- 触发器编辑器设置 -->
+    <sys:String x:Key="TE_CompileSetting">编译设置</sys:String>
+    <sys:String x:Key="TE_MainScriptSetting">主文件设置</sys:String>
+
+
+    <sys:String x:Key="TE_CustomUserDataSetting">自定义用户数据</sys:String>
+    <sys:String x:Key="TE_BGMSetting">声音设置</sys:String>
+    <sys:String x:Key="TE_MacroDatASetting">插件设置</sys:String>
+    <sys:String x:Key="TE_DotPainter">DotPainter 设置</sys:String>
+    <sys:String x:Key="TE_SCASetting">SCArchive 设置</sys:String>
+    <sys:String x:Key="TE_SCAScriptSetting">脚本资源</sys:String>
+
+    <sys:String x:Key="TE_SCAScriptImage">图形</sys:String>
+    <sys:String x:Key="TE_SCAScriptSound">声音</sys:String>
+
+    <sys:String x:Key="TE_AllScript">所有脚本</sys:String>
+
+    <!--Menu-->
+    <sys:String x:Key="MenuOpen">打开</sys:String>
+    <sys:String x:Key="MenuAdd">添加</sys:String>
+    <sys:String x:Key="MenuImport">导入</sys:String>
+    <sys:String x:Key="MenuExport">导出</sys:String>
+    <sys:String x:Key="MenuConnect">关联</sys:String>
+    <sys:String x:Key="MenuDisConnect">断开关联</sys:String>
+    <sys:String x:Key="MenuViewEps">查看结果</sys:String>
+    <sys:String x:Key="Open">打开</sys:String>
+
+    <sys:String x:Key="OpenEpsFileFliter">epScript 文件|*.eps</sys:String>
+    <sys:String x:Key="OpenPyFileFliter">eudplib 文件|*.py</sys:String>
+
+    <sys:String x:Key="OpenEpsTitle">选择 epScript 文件</sys:String>
+    <sys:String x:Key="OpenPyTitle">选择 eudplib 文件</sys:String>
+
+
+    <sys:String x:Key="MenuCNewCT">经典触发器</sys:String>
+    <sys:String x:Key="MenuSCAScript">SCA 脚本</sys:String>
+    <sys:String x:Key="MenuCNewEpsScript">epScript 文件</sys:String>
+    <sys:String x:Key="MenuCNewRawTextScript">RawText 文件</sys:String>
+    <sys:String x:Key="MenuCNewPyScript">[CUI] eudplib 文件</sys:String>
+    <sys:String x:Key="MenuGNewEpsScript">[GUI] epScript 文件</sys:String>
+    <sys:String x:Key="MenuGNewPyScript">[GUI] eudplib 文件</sys:String>
+
+
+
+    <sys:String x:Key="NewEdsPlugin">新建插件</sys:String>
+    <sys:String x:Key="PluginDelete">删除插件</sys:String>
+
+
+
+    <sys:String x:Key="onPluginStart">仅执行一次的函数</sys:String>
+    <sys:String x:Key="beforeTriggerExec">每帧执行触发器前执行的函数</sys:String>
+    <sys:String x:Key="afterTriggerExec">每帧执行触发器后执行的函数</sys:String>
+
+
+
+    <sys:String x:Key="MatchCaseText">区分大小写</sys:String>
+    <sys:String x:Key="MatchWholeWordsText">匹配整个单词</sys:String>
+    <sys:String x:Key="UseRegexText">使用正则表达式</sys:String>
+    <sys:String x:Key="FindNextText">查找下一个 (F3)</sys:String>
+    <sys:String x:Key="FindPreviousText">查找上一个 (Shift+F3)</sys:String>
+    <sys:String x:Key="ErrorText">错误！</sys:String>
+    <sys:String x:Key="NoMatchesFoundText">没有匹配结果！</sys:String>
+
+    <sys:String x:Key="Invalide2s">无效的 e2s 文件！</sys:String>
+     <sys:String x:Key="LodingError">加载 $S0$ 时发生错误。</sys:String>
+
+    <sys:String x:Key="Comment">注释</sys:String>
+    <sys:String x:Key="Control">Ctrl</sys:String>
+    <sys:String x:Key="plibFunc">Plib</sys:String>
+    <sys:String x:Key="Func">函数</sys:String>
+    <sys:String x:Key="MacroFunc">Lua</sys:String>
+    <sys:String x:Key="Condition">条件</sys:String>
+    <sys:String x:Key="Action">动作</sys:String>
+    <sys:String x:Key="Object">对象</sys:String>
+    <sys:String x:Key="Value">值</sys:String>
+    <sys:String x:Key="EtcBlock">导入</sys:String>
+
+
+    <sys:String x:Key="wireframe_wire">这是选定单位时显示的线框。</sys:String>
+     <sys:String x:Key="wireframe_grp">这是选择多个单位时显示的线框。</sys:String>
+     <sys:String x:Key="wireframe_tran">这是运输舱中显示的线框。</sys:String>
+
+    <sys:String x:Key="Var">变量</sys:String>
+    <sys:String x:Key="Label">标签</sys:String>
+    <sys:String x:Key="Code">代码</sys:String>
+    <sys:String x:Key="Import">导入</sys:String>
+
+
+    <sys:String x:Key="VarDefine">定义变量</sys:String>
+
+     <sys:String x:Key="ConnectProgramNoExist">无法连接到程序</sys:String>
+
+     <sys:String x:Key="TEFileChangeError">类型更改失败。</sys:String>
+     <sys:String x:Key="NotDeleteitem">无法删除此项目。</sys:String>
+
+     <sys:String x:Key="NitemDelete">已删除 %S1 个项目。</sys:String>
+
+    <sys:String x:Key="TE_SnackBar1">只能包含声明。</sys:String>
+    <sys:String x:Key="TE_SnackBar2">函数声明可以在外部进行。</sys:String>
+    <sys:String x:Key="TE_SnackBar3">对象声明可以在外部进行。</sys:String>
+    <sys:String x:Key="TE_SnackBar4">导入可以在外部进行。</sys:String>
+    <sys:String x:Key="TE_SnackBar5">只允许函数参数。</sys:String>
+    <sys:String x:Key="TE_SnackBar6">只能输入 case。</sys:String>
+    <sys:String x:Key="TE_SnackBar7">只能包含条件或函数。</sys:String>
+    <sys:String x:Key="TE_SnackBar8">只能输入函数。</sys:String>
+    <sys:String x:Key="TE_SnackBar9">只能包含变量声明。</sys:String>
+    <sys:String x:Key="TE_SnackBar10">不能在启动函数中放置参数。</sys:String>
+    <sys:String x:Key="TE_SnackBar11">函数参数可以放入函数中。</sys:String>
+    <sys:String x:Key="TE_SnackBar12">case 只能放入 switch 中。</sys:String>
+    <sys:String x:Key="TE_SnackBar13">此处不能输入条件。</sys:String>
+
+    <sys:String x:Key="fundefine">函数声明</sys:String>
+    <sys:String x:Key="funargblock">参数</sys:String>
+    <sys:String x:Key="funreturn">函数返回</sys:String>
+
+    <sys:String x:Key="objectdefine">对象声明</sys:String>
+    <sys:String x:Key="vardefine">变量声明</sys:String>
+    <sys:String x:Key="folder">文件夹</sys:String>
+    <sys:String x:Key="expression">表达式</sys:String>
+
+
+    <sys:String x:Key="emptytext">空白文本</sys:String>
+
+
+    <sys:String x:Key="ChatPluginSetting">聊天事件设置</sys:String>
+    <sys:String x:Key="MSQCPluginSetting">MSQC 设置</sys:String>
+    <sys:String x:Key="FuncNameUserEdit">用户编辑</sys:String>
+
+    <sys:String x:Key="GUIEditorBtn">GUI 编辑器</sys:String>
+
+    <sys:String x:Key="NewClassicScript">新建经典触发器</sys:String>
+    <sys:String x:Key="NewRawTextScript">新建 RawText 文件</sys:String>
+
+    <sys:String x:Key="TrgArgAll">所有</sys:String>
+    <sys:String x:Key="TrgArg0">所有</sys:String>
+
+    <sys:String x:Key="TrgArgEnemy">敌人</sys:String>
+    <sys:String x:Key="TrgArgAlly">盟友</sys:String>
+    <sys:String x:Key="TrgArgAlliedVictory">盟友胜利</sys:String>
+    <sys:String x:Key="TrgArgAtLeast">至少</sys:String>
+    <sys:String x:Key="TrgArgAtMost">至多</sys:String>
+    <sys:String x:Key="TrgArgExactly">正好</sys:String>
+    <sys:String x:Key="TrgArgSetTo">设为</sys:String>
+    <sys:String x:Key="TrgArgAdd">添加</sys:String>
+    <sys:String x:Key="TrgArgSubtract">减去</sys:String>
+    <sys:String x:Key="TrgArgMove">移动</sys:String>
+    <sys:String x:Key="TrgArgPatrol">巡逻</sys:String>
+    <sys:String x:Key="TrgArgAttack">攻击</sys:String>
+    <sys:String x:Key="TrgArgCurrentPlayer">当前玩家</sys:String>
+    <sys:String x:Key="TrgArgFoes">敌人</sys:String>
+    <sys:String x:Key="TrgArgAllies">盟友</sys:String>
+    <sys:String x:Key="TrgArgNeutralPlayers">中立玩家</sys:String>
+    <sys:String x:Key="TrgArgAllPlayers">所有玩家</sys:String>
+    <sys:String x:Key="TrgArgForce1">势力 1</sys:String>
+    <sys:String x:Key="TrgArgForce2">势力 2</sys:String>
+    <sys:String x:Key="TrgArgForce3">势力 3</sys:String>
+    <sys:String x:Key="TrgArgForce4">势力 4</sys:String>
+    <sys:String x:Key="TrgArgNonAlliedVictoryPlayers">非盟友胜利玩家</sys:String>
+    <sys:String x:Key="TrgArgEnable">启用</sys:String>
+    <sys:String x:Key="TrgArgDisable">禁用</sys:String>
+    <sys:String x:Key="TrgArgOre">矿石</sys:String>
+    <sys:String x:Key="TrgArgGas">瓦斯</sys:String>
+    <sys:String x:Key="TrgArgOreAndGas">矿石和瓦斯</sys:String>
+    <sys:String x:Key="TrgArgTotal">总计</sys:String>
+    <sys:String x:Key="TrgArgUnits">单位</sys:String>
+    <sys:String x:Key="TrgArgBuildings">建筑</sys:String>
+    <sys:String x:Key="TrgArgUnitsAndBuildings">单位和建筑</sys:String>
+    <sys:String x:Key="TrgArgKills">击杀</sys:String>
+    <sys:String x:Key="TrgArgRazings">摧毁</sys:String>
+    <sys:String x:Key="TrgArgKillsAndRazings">击杀和摧毁</sys:String>
+    <sys:String x:Key="TrgArgCustom">自定义</sys:String>
+    <sys:String x:Key="TrgArgSet">设置</sys:String>
+    <sys:String x:Key="TrgArgClear">清除</sys:String>
+    <sys:String x:Key="TrgArgToggle">切换</sys:String>
+    <sys:String x:Key="TrgArgRandom">随机化</sys:String>
+    <sys:String x:Key="TrgArgCleared">已清除</sys:String>
+
+
+
+    <sys:String x:Key="Explorer">资源管理器</sys:String>
+    <sys:String x:Key="ErrorList">错误列表</sys:String>
+    <sys:String x:Key="Location">位置</sys:String>
+    <sys:String x:Key="File">文件</sys:String>
+    <sys:String x:Key="Description">描述</sys:String>
+
+    <sys:String x:Key="Name">名称</sys:String>
+    <sys:String x:Key="Address">文件</sys:String>
+    <sys:String x:Key="Len">长度</sys:String>
+    <sys:String x:Key="Size">大小</sys:String>
+    <sys:String x:Key="Compression">压缩</sys:String>
+    <sys:String x:Key="Samplerate">采样率</sys:String>
+    <sys:String x:Key="Bitrate">比特率</sys:String>
+
+    <sys:String x:Key="Type">类型</sys:String>
+    <sys:String x:Key="DataSet">数据设置</sys:String>
+
+    <sys:String x:Key="Variable">变量</sys:String>
+    <sys:String x:Key="Death">死亡</sys:String>
+    <sys:String x:Key="Array">数组</sys:String>
+    <sys:String x:Key="NameSpace">命名空间</sys:String>
+
+    <sys:String x:Key="Default">基本</sys:String>
+
+    <sys:String x:Key="BGMList">声音列表</sys:String>
+
+
+    <sys:String x:Key="Visible">可见</sys:String>
+    <sys:String x:Key="Use">启用</sys:String>
+    <sys:String x:Key="MouseLocSetting">鼠标位置设置</sys:String>
+
+
+    <sys:String x:Key="TestMode">测试模式</sys:String>
+    <sys:String x:Key="MultiPlayMode">多人模式</sys:String>
+    <sys:String x:Key="FreePlayMode">自由模式</sys:String>
+
+    <sys:String x:Key="SCAHomepage">SCArchive 设置页面</sys:String>
+
+    <sys:String x:Key="SCALogin">登录</sys:String>
+    <sys:String x:Key="SCALogout">登出</sys:String>
+    <sys:String x:Key="SCASign">注册</sys:String>
+    <sys:String x:Key="SCALoginError">登录错误</sys:String>
+    <sys:String x:Key="Email">电子邮件</sys:String>
+    <sys:String x:Key="SCASaveLoginInfor">记住我</sys:String>
+
+    <sys:String x:Key="SCADoubleLoginAlert">这是一个与已保存的 SCA 帐户不同的 SCA 帐户。\nID 号码将被删除。\n您仍然要继续吗？</sys:String>
+
+    <sys:String x:Key="SCALoginInfor">SCA 登录</sys:String>
+    <sys:String x:Key="MapSetting">地图设置</sys:String>
+    <sys:String x:Key="BattleTag">战网标签</sys:String>
+
+    <sys:String x:Key="PassWord">密码</sys:String>
+    <sys:String x:Key="Identificationnumber">ID 号码</sys:String>
+    <sys:String x:Key="SeverID">服务器 ID</sys:String>
+
+    <sys:String x:Key="DatabaseName">数据库名称</sys:String>
+    <sys:String x:Key="SecondName">第二名称</sys:String>
+    <sys:String x:Key="MapInfor">地图信息</sys:String>
+
+    <sys:String x:Key="InforUpdate">更新信息</sys:String>
+    <sys:String x:Key="OldBattleTag">（旧）使用战网标签</sys:String>
+
+    <sys:String x:Key="DataSetting">数据设置</sys:String>
+
+    <sys:String x:Key="ViewUnEnabled">私有</sys:String>
+    <sys:String x:Key="ViewEnabled">公开</sys:String>
+
+    <sys:String x:Key="MapName">地图名称</sys:String>
+    <sys:String x:Key="MapNameHint">这是下载页面上显示的名称。</sys:String>
+
+    <sys:String x:Key="SCAEmail">SCA 登录电子邮件</sys:String>
+    <sys:String x:Key="MakerEmail">制作者电子邮件</sys:String>
+    <sys:String x:Key="MakerEmailHint">使用举报功能时可以收到内容。</sys:String>
+
+    <sys:String x:Key="MapTag">地图标签</sys:String>
+    <sys:String x:Key="MapTagHint">这是下载页面上显示的标签。</sys:String>
+
+    <sys:String x:Key="MapInforLink">地图信息链接</sys:String>
+    <sys:String x:Key="MapInforLinkHint">这是下载页面上显示的链接。</sys:String>
+
+    <sys:String x:Key="MapImageLink">地图图形链接</sys:String>
+    <sys:String x:Key="MapImageLinkHint">这是下载页面上显示的图形的链接。</sys:String>
+
+    <sys:String x:Key="MapDescription">地图描述</sys:String>
+    <sys:String x:Key="MapDescriptionHint">这是下载页面上显示的描述。</sys:String>
+
+    <sys:String x:Key="BufferSize">缓冲区大小</sys:String>
+    <sys:String x:Key="BufferSizeHint">这是用户发送和接收数据所使用的空间量。如果发送和接收的数据很多，缓冲区不够大会发生错误。</sys:String>
+
+    <sys:String x:Key="SCAFunctionSize">函数缓冲区大小</sys:String>
+    <sys:String x:Key="SCAFunctionHint">调用函数时的空间。数据越大，一次可以发送的数据量越多。</sys:String>
+
+    <sys:String x:Key="SCAScriptVarCount">脚本最大数量</sys:String>
+    <sys:String x:Key="SCAScriptVarCountHint">SCA 脚本变量的最大数量。</sys:String>
+
+
+    <sys:String x:Key="CT_TriggerSetting">设置</sys:String>
+    <sys:String x:Key="CT_Computer">电脑</sys:String>
+    <sys:String x:Key="CT_User">人类</sys:String>
+    <sys:String x:Key="CT_Force">势力</sys:String>
+    <sys:String x:Key="CT_Player">玩家</sys:String>
+    <sys:String x:Key="CT_Condition">条件</sys:String>
+    <sys:String x:Key="CT_Action">动作</sys:String>
+    <sys:String x:Key="CT_Trigger">触发器</sys:String>
+    <sys:String x:Key="CT_GlobalVar">全局变量</sys:String>
+    <sys:String x:Key="CT_Import">导入</sys:String>
+
+    <sys:String x:Key="CT_NewCond">新建条件</sys:String>
+    <sys:String x:Key="CT_NewAct">新建动作</sys:String>
+    <sys:String x:Key="CT_New">新建</sys:String>
+    <sys:String x:Key="CT_Edit">编辑</sys:String>
+    <sys:String x:Key="CT_Cut">剪切</sys:String>
+    <sys:String x:Key="CT_Copy">复制</sys:String>
+    <sys:String x:Key="CT_Paste">粘贴</sys:String>
+    <sys:String x:Key="CT_Delete">删除</sys:String>
+    <sys:String x:Key="CT_Up">上移</sys:String>
+    <sys:String x:Key="CT_Down">下移</sys:String>
+    <sys:String x:Key="CT_Add">添加</sys:String>
+
+
+    <sys:String x:Key="CT_VarName">名称</sys:String>
+    <sys:String x:Key="CT_VarType">类型</sys:String>
+    <sys:String x:Key="CT_VarInit">初始值</sys:String>
+
+
+    <sys:String x:Key="CT_DefaultVar">变量</sys:String>
+    <sys:String x:Key="CT_ConstVar">常量</sys:String>
+    <sys:String x:Key="CT_PVariable">玩家变量</sys:String>
+    <sys:String x:Key="CT_Array">数组</sys:String>
+    <sys:String x:Key="CT_VArray">变量数组</sys:String>
+
+
+
+    <sys:String x:Key="CT_ImportName">名称</sys:String>
+    <sys:String x:Key="CT_ImportFile">文件</sys:String>
+
+
+    <sys:String x:Key="CT_Preserved">保存的触发器</sys:String>
+    <sys:String x:Key="CT_Comment">输入注释</sys:String>
+
+
+
+    <sys:String x:Key="CT_Plib">Plib</sys:String>
+    <sys:String x:Key="CT_Lua">Lua</sys:String>
+    <sys:String x:Key="CT_Extern">外部</sys:String>
+
+
+    <sys:String x:Key="CT_TriggerUnused">[触发器未使用]</sys:String>
+    <sys:String x:Key="CT_PreservedHead">[保存的触发器]</sys:String>
+
+
+
+    <sys:String x:Key="CT_Select">选择</sys:String>
+
+
+    <sys:String x:Key="CT_OnlyCode">仅代码</sys:String>
+    <sys:String x:Key="CT_CodeText">触发器代码</sys:String>
+
+    <sys:String x:Key="CT_ActionNotExist">没有动作。</sys:String>
+    <sys:String x:Key="CT_ConditionNotExist">没有条件。</sys:String>
+
+    <sys:String x:Key="DirectDonate">直接捐赠</sys:String>
+    <sys:String x:Key="ViewDonateWindow">不再显示</sys:String>
+
+
+    <sys:String x:Key="ArgFuncSelect">选择函数</sys:String>
+    <sys:String x:Key="ArgGlobal">全局变量</sys:String>
+    <sys:String x:Key="CurrentPlayer">当前玩家</sys:String>
+
+
+    <sys:String x:Key="ArgDefault">基本</sys:String>
+    <sys:String x:Key="ArgVariable">变量</sys:String>
+    <sys:String x:Key="ArgFunction">函数</sys:String>
+    <sys:String x:Key="ArgUserCode">用户代码</sys:String>
+
+
+    <sys:String x:Key="BackUpDataWindow">备份</sys:String>
+    <sys:String x:Key="TempFolderError">临时文件夹 [%S1] 无法访问。\n已更改为默认临时文件夹。</sys:String>
+</ResourceDictionary>

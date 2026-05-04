@@ -37,8 +37,8 @@
 
     <DockPanel>
         <UniformGrid DockPanel.Dock="Top" Rows="1">
-            <Button Content="기본 플러그인 설명서" Click="Button_Click"/>
-            <Button Content="chatEvent 설명서" Click="Button_Click_1"/>
+            <Button Content="默认插件说明书" Click="Button_Click"/>
+            <Button Content="chatEvent说明书" Click="Button_Click_1"/>
         </UniformGrid>
         <Grid>
             <ListBox x:Name="EdsText" MouseUp="EdsText_MouseUp" PreviewMouseLeftButtonDown="EdsText_PreviewMouseLeftButtonDown" PreviewMouseMove="EdsText_PreviewMouseMove" PreviewMouseLeftButtonUp="EdsText_PreviewMouseLeftButtonUp" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="False">

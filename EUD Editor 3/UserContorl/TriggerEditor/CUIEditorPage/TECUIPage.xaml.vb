@@ -77,7 +77,7 @@ Public Class TECUIPage
 
         If pgData.Setting(ProgramData.TSetting.TestCodeEditorUse) = "True" Then
             OldTextEditor.Visibility = Visibility.Collapsed
-            NewTextEditor.AddCustomMenuBtn("텍스트 에디터 열기", "Ctrl+T", Key.LeftCtrl, Key.T, New RoutedEventHandler(AddressOf MenuItem_Click))
+            NewTextEditor.AddCustomMenuBtn("打开文本编辑器", "Ctrl+T", Key.LeftCtrl, Key.T, New RoutedEventHandler(AddressOf MenuItem_Click))
             NewTextEditor.SetImportManager(Tool.EpsImportManager)
             NewTextEditor.SetImportManager(Tool.LuaImportManager)
             NewTextEditor.SetFilePath = PTEFile.GetPullPath()

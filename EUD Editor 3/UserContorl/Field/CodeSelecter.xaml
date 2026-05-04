@@ -25,7 +25,7 @@
 
         </ContextMenu>
         <ContextMenu x:Key="GroupOption" Opened="ContextMenu_Opened">
-            <MenuItem Header="이름 바꾸기" Icon="{materialDesign:PackIcon Kind=ContentCopy}"/>
+            <MenuItem Header="重命名" Icon="{materialDesign:PackIcon Kind=ContentCopy}"/>
         </ContextMenu>
 
     </UserControl.Resources>

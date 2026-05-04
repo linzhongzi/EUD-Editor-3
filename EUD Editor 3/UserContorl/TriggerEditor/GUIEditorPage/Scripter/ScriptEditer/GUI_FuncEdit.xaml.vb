@@ -106,12 +106,12 @@ Public Class GUI_FuncEdit
 
 
         If nametext.Count = 0 Then
-            ErrorLog.Content = "함수명은 비어있을 수 없습니다."
+            ErrorLog.Content = "函数名不能为空。"
             Return False
         End If
 
         If IsNumeric(Mid(nametext, 1, 1)) Then
-            ErrorLog.Content = "첫 문자는 숫자일 수 없습니다."
+            ErrorLog.Content = "首字符不能是数字。"
             Return False
         End If
 
@@ -120,7 +120,7 @@ Public Class GUI_FuncEdit
         Dim rgx As New Regex("[ !@#$%^&*=]")
 
         If rgx.IsMatch(nametext) Then
-            ErrorLog.Content = "잘못된 문자가 포함되어 있습니다."
+            ErrorLog.Content = "包含无效字符。"
             Return False
         End If
 
@@ -128,7 +128,7 @@ Public Class GUI_FuncEdit
         Dim funcstr As List(Of String) = tescm.GetFuncList(p._GUIScriptEditorUI.PTEFile)
         If funcstr.IndexOf(nametext) <> -1 Then
             If tescm.GetFuncInfor(scr.value, p._GUIScriptEditorUI.Script) IsNot scr Then
-                ErrorLog.Content = "중복된 함수명입니다."
+                ErrorLog.Content = "重复的函数名。"
                 Return False
             End If
         End If

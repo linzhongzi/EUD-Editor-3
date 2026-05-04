@@ -41,30 +41,30 @@
 
                 tAddText(lnlines, Tool.GetText("Import") & " : ", Nothing)
                 tAddText(lnlines, name, tescm.HighlightBrush)
-                tAddText(lnlines, "을 ", Nothing)
+                tAddText(lnlines, " 到 ", Nothing)
                 tAddText(lnlines, tag, tescm.HighlightBrush)
-                tAddText(lnlines, "로 불러옵니다.", Nothing)
+                tAddText(lnlines, " 加载。", Nothing)
             Case ScriptBlock.EBlockType.vardefine
                 Dim vname As String = sb.value
 
                 If sb.flag Then
                     If sb.value2 = "object" Then
-                        tAddText(lnlines, "오브젝트 ", Nothing)
+                        tAddText(lnlines, "对象 ", Nothing)
                     ElseIf sb.value2 = "static" Then
-                        tAddText(lnlines, "스태틱 변수 ", Nothing)
+                        tAddText(lnlines, "静态变量 ", Nothing)
                     ElseIf sb.value2 = "const" Then
-                        tAddText(lnlines, "상수 변수 ", Nothing)
+                        tAddText(lnlines, "常量变量 ", Nothing)
                     End If
                 Else
-                    tAddText(lnlines, "변수 ", Nothing)
+                    tAddText(lnlines, "变量 ", Nothing)
                 End If
 
                 tAddText(lnlines, vname, tescm.HighlightBrush)
 
                 If sb.child.Count = 0 Then
-                    tAddText(lnlines, "를 선언합니다.", Nothing)
+                    tAddText(lnlines, " 声明。", Nothing)
                 Else
-                    tAddText(lnlines, "를 ", Nothing)
+                    tAddText(lnlines, " 到 ", Nothing)
 
                     For i = 0 To sb.child.Count - 1
                         If i <> 0 Then
@@ -73,27 +73,27 @@
                         tAddText(lnlines, sb.child(i).ValueCoder, tescm.HighlightBrush)
                     Next
 
-                    tAddText(lnlines, "의 초기값", tescm.HighlightBrush)
-                    tAddText(lnlines, "으로 선언합니다.", Nothing)
+                    tAddText(lnlines, " 的初始值", tescm.HighlightBrush)
+                    tAddText(lnlines, " 声明。", Nothing)
                 End If
             Case ScriptBlock.EBlockType.varuse
-                tAddText(lnlines, "변수 ", Nothing)
+                tAddText(lnlines, "变量 ", Nothing)
                 tAddText(lnlines, sb.name, tescm.HighlightBrush)
-                tAddText(lnlines, "를 사용합니다.", Nothing)
+                tAddText(lnlines, " 使用。", Nothing)
             Case ScriptBlock.EBlockType.objectdefine
-                tAddText(lnlines, "객체정의 : ", Nothing)
+                tAddText(lnlines, "对象定义 : ", Nothing)
                 tAddText(lnlines, sb.value, tescm.HighlightBrush)
             Case ScriptBlock.EBlockType.objectfields
-                textblock.Text = "필드"
+                textblock.Text = "字段"
             Case ScriptBlock.EBlockType.objectmethod
-                textblock.Text = "메서드"
+                textblock.Text = "方法"
             Case ScriptBlock.EBlockType.fundefine
-                tAddText(lnlines, "함수정의 : ", Nothing)
+                tAddText(lnlines, "函数定义 : ", Nothing)
                 tAddText(lnlines, sb.value, tescm.HighlightBrush)
             Case ScriptBlock.EBlockType.funargs
-                textblock.Text = "인자"
+                textblock.Text = "参数"
             Case ScriptBlock.EBlockType.funcontent
-                textblock.Text = "내용"
+                textblock.Text = "内容"
             Case ScriptBlock.EBlockType._if
                 textblock.Text = "If"
             Case ScriptBlock.EBlockType._elseif
@@ -137,9 +137,9 @@
                 tAddText(lnlines, "   Break : ", Nothing)
                 tAddText(lnlines, sb.flag, tescm.HighlightBrush)
             Case ScriptBlock.EBlockType._or
-                tAddText(lnlines, "논리연산 또는", Nothing)
+                tAddText(lnlines, "逻辑运算 或", Nothing)
             Case ScriptBlock.EBlockType._and
-                tAddText(lnlines, "논리연산 그리고", Nothing)
+                tAddText(lnlines, "逻辑运算 且", Nothing)
             Case ScriptBlock.EBlockType.folder
                 'flag true = iscondition
 
@@ -158,7 +158,7 @@
             Case ScriptBlock.EBlockType.plibfun, ScriptBlock.EBlockType.funuse, ScriptBlock.EBlockType.action, ScriptBlock.EBlockType.condition, ScriptBlock.EBlockType.externfun, ScriptBlock.EBlockType.macrofun
                 sb.FuncCoder(lnlines)
             Case ScriptBlock.EBlockType.exp
-                tAddText(lnlines, "수식 : ", Nothing)
+                tAddText(lnlines, "公式 : ", Nothing)
                 sb.ExpCoder(lnlines)
             Case ScriptBlock.EBlockType.break
                 tAddText(lnlines, "Break", Nothing)

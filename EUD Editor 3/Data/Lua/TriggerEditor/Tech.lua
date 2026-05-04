@@ -14,7 +14,7 @@
 @Summary
 将 [Player] 中的 [Tech] 值 [Modifier] 为 [Amount] 。
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 @param.Modifier.TrgModifier
@@ -81,7 +81,7 @@ end
 @Summary
 [Comparison]: 确认 [Player] 中 [Tech] 的当前值是否为 [Amount] 。
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 @param.Comparison.TrgComparison
@@ -142,7 +142,7 @@ end
 @Summary
 返回 [Player] 中 [Tech] 的当前值。
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 
@@ -187,7 +187,7 @@ end
 @Summary
 返回 [Player] 中 [Tech] 的当前值地址的转换值(EPD).
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 
@@ -240,7 +240,7 @@ end
 @Summary
 返回 [Player] 中 [Tech] 的当前值地址。
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 
@@ -296,7 +296,7 @@ end
 @Summary
 将 [Player] 的 [Tech] 的最大值 [Modifier] 为 [Amount].
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 @param.Modifier.TrgModifier
@@ -363,7 +363,7 @@ end
 @Summary
 [Comparison]: 确认 [Player] 的 [Tech] 的最大值 [Modifier] 是否为 [Amount].
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 @param.Comparison.TrgComparison
@@ -424,7 +424,7 @@ end
 @Summary
 返回 [Player] 的 [Tech] 的最大值。
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 
@@ -470,7 +470,7 @@ end
 @Summary
 返回 [Player] 中 [Tech] 的地址最大值的转换值(EPD).
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 
@@ -523,7 +523,7 @@ end
 @Summary
 返回 [Player] 的 [Tech] 中最大值的地址。
 @Group
-科技
+技能组
 @param.Tech.Tech
 @param.Player.TrgPlayer
 

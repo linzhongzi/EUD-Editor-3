@@ -52,7 +52,7 @@
                         <Button DockPanel.Dock="Bottom" Height="Auto" Click="AttachToStarCraft">
                             <DockPanel>
                                 <materialDesign:PackIcon Kind="Magnify" />
-                                <TextBlock Text="화면에 부착"/>
+                                <TextBlock Text="附加到屏幕"/>
                             </DockPanel>
                         </Button>
                         <ListBox x:Name="ColorInfor" DockPanel.Dock="Top" SelectionChanged="ColorInfor_SelectionChanged"/>
@@ -68,7 +68,7 @@
                           Style="{StaticResource MaterialDesignDiscreteSlider}"
                           TickFrequency="{Binding DiscreteHorizontal.TickFrequency}"
                           TickPlacement="BottomRight" VerticalAlignment="Center" Margin="2,2,2,2" />
-                    <Button DockPanel.Dock="Bottom" Content="확인" Click="Button_Click" Height="Auto"/>
+                    <Button DockPanel.Dock="Bottom" Content="确认" Click="Button_Click" Height="Auto"/>
                 </DockPanel>
 
             </Grid>
@@ -84,12 +84,12 @@
                     </Border>
                     <DockPanel Margin="10" >
                         <ListBox x:Name="FormatFunc"  DockPanel.Dock="Left" SelectionChanged="FormatFunc_SelectionChanged">
-                            <ListBoxItem Content="숫자" Tag=""/>
-                            <ListBoxItem Content="c 플레이어 색상" Tag=":c"/>
-                            <ListBoxItem Content="n 플레이어 이름" Tag=":n"/>
-                            <ListBoxItem Content="s 스트링 주소" Tag=":s"/>
-                            <ListBoxItem Content="t 스트링EPD 주소" Tag=":t"/>
-                            <ListBoxItem Content="x 16진법 출력" Tag=":x"/>
+                            <ListBoxItem Content="数字" Tag=""/>
+                            <ListBoxItem Content="c 玩家颜色" Tag=":c"/>
+                            <ListBoxItem Content="n 玩家名称" Tag=":n"/>
+                            <ListBoxItem Content="s 字符串地址" Tag=":s"/>
+                            <ListBoxItem Content="t 字符串EPD地址" Tag=":t"/>
+                            <ListBoxItem Content="x 十六进制输出" Tag=":x"/>
                         </ListBox>
                         <DockPanel>
                             <TextBlock Text="1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8&#10;9&#10;10&#10;11" DockPanel.Dock="Left" VerticalAlignment="Top" Margin="0,14,0,0" />

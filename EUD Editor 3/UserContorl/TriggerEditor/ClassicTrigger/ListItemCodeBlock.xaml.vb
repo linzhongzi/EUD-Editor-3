@@ -27,7 +27,7 @@
         If t Is Nothing Then
             Dim ttb As New Label
             ttb.Foreground = tmanager.HighlightBrush
-            ttb.Content = _tcode.FName & vbCrLf & "존재하지 않거나 참조할 수 없는 함수입니다.  "
+            ttb.Content = _tcode.FName & vbCrLf & "不存在或无法引用的函数。  "
             ttb.VerticalAlignment = VerticalAlignment.Center
 
             Wrap.Children.Add(ttb)

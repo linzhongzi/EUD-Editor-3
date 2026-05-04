@@ -568,12 +568,12 @@ Public Class RequireListBox
             Dim CodeData As CRequireData.RequireBlock = RequireList(MenuSeletIndex)
 
             If CodeData.opCode = CRequireData.EOpCode.Is_researched Then
-                ValueSelecter.Init(SCDatFiles.DatFiles.techdata, "기술", CodeData.Value)
+                ValueSelecter.Init(SCDatFiles.DatFiles.techdata, "技术", CodeData.Value)
             Else
-                ValueSelecter.Init(SCDatFiles.DatFiles.units, "유닛", CodeData.Value)
+                ValueSelecter.Init(SCDatFiles.DatFiles.units, "单位", CodeData.Value)
             End If
         Else
-            ValueSelecter.Init(SCDatFiles.DatFiles.units, "유닛", 0)
+            ValueSelecter.Init(SCDatFiles.DatFiles.units, "单位", 0)
         End If
 
     End Sub
@@ -647,9 +647,9 @@ Public Class RequireListBox
             ValueSelecter.Visibility = Visibility.Visible
 
             If CodeSelecter.SelectedIndex = CRequireData.EOpCode.Is_researched Then
-                ValueSelecter.Init(SCDatFiles.DatFiles.techdata, "기술", ValueSelecter.Value)
+                ValueSelecter.Init(SCDatFiles.DatFiles.techdata, "技术", ValueSelecter.Value)
             Else
-                ValueSelecter.Init(SCDatFiles.DatFiles.units, "유닛", ValueSelecter.Value)
+                ValueSelecter.Init(SCDatFiles.DatFiles.units, "单位", ValueSelecter.Value)
             End If
         Else
             ValueSelecter.Visibility = Visibility.Hidden

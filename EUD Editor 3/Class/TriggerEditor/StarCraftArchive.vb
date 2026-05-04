@@ -460,7 +460,7 @@ Public Class StarCraftArchive
     Public Class CodeData
         Public Property TagName As String
 
-        Private TypeNames() As String = {"변수", "데스값", "배열"}
+        Private TypeNames() As String = {"变量", "死亡值", "数组"}
         Public Property ECodeType As String
             Get
                 Return TypeNames(TypeIndex)

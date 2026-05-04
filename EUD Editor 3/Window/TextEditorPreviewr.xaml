@@ -11,7 +11,7 @@
             <RichTextBox HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Top">
                 <FlowDocument PageWidth="50">
                     <Paragraph>
-                        텍스트1
+                       文本1
                     </Paragraph>
 
                 </FlowDocument>
@@ -19,7 +19,7 @@
             <RichTextBox DockPanel.Dock="Right">
                 <FlowDocument>
                     <Paragraph>
-                        텍스트2
+                       文本2
                     </Paragraph>
 
                 </FlowDocument>
@@ -27,7 +27,7 @@
             <RichTextBox HorizontalAlignment="Center">
                 <FlowDocument>
                     <Paragraph>
-                        텍스트3
+                       文本3
                     </Paragraph>
 
                 </FlowDocument>

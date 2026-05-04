@@ -9,11 +9,11 @@
     <DockPanel>
         <DockPanel DockPanel.Dock="Left" Width="150">
             <UniformGrid DockPanel.Dock="Top" Rows="1">
-                <Button Style="{StaticResource MaterialDesignFlatButton}" Click="AddBtn">추가</Button>
-                <Button Style="{StaticResource MaterialDesignFlatButton}" x:Name="DeleteBtn" Click="DeleteBtnClick" IsEnabled="False">삭제</Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Click="AddBtn">添加</Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" x:Name="DeleteBtn" Click="DeleteBtnClick" IsEnabled="False">删除</Button>
             </UniformGrid>
             <ListBox x:Name="ItemList" SelectionChanged="ItemList_SelectionChanged">
-                <ListBoxItem Content="리자몽"></ListBoxItem>
+                <ListBoxItem Content="喷火龙"></ListBoxItem>
             </ListBox>
         </DockPanel>
 

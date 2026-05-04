@@ -36,7 +36,7 @@
             index += 1
             Return rstr
         End If
-        Throw New Exception("Line : " & line & " Col : " & col & " 문자열의 끝에 도달했습니다.")
+        Throw New Exception("Line : " & line & " Col : " & col & " 到达字符串末尾。")
 
         Return ""
     End Function

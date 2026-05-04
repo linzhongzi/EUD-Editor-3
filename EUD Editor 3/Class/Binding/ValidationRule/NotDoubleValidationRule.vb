@@ -9,7 +9,7 @@ Public Class NotDoubleValidationRule
             Dim number As Double = value
             Return ValidationResult.ValidResult
         Catch ex As Exception
-            Return New ValidationResult(False, "숫자를 입력하세요")
+            Return New ValidationResult(False, "请输入数字")
             'Return New ValidationResult(False, value.ToString)
         End Try
 

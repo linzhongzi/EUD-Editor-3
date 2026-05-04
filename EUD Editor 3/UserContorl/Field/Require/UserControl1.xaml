@@ -18,8 +18,8 @@
                         </Border>
 
                         <StackPanel>
-                            <TextBlock x:Name="Textb" Text="하이" Padding="5"/>
-                            <TextBlock x:Name="TextV" Text="하이" Padding="5"/>
+                            <TextBlock x:Name="Textb" Text="嗨" Padding="5"/>
+                            <TextBlock x:Name="TextV" Text="嗨" Padding="5"/>
                         </StackPanel>
 
                     </DockPanel>
@@ -36,8 +36,8 @@
                         </Border>
 
                         <StackPanel>
-                            <TextBlock Text="하이" Padding="5"/>
-                            <TextBlock Text="하이" Padding="5"/>
+                            <TextBlock Text="嗨" Padding="5"/>
+                            <TextBlock Text="嗨" Padding="5"/>
                         </StackPanel>
 
                     </DockPanel>

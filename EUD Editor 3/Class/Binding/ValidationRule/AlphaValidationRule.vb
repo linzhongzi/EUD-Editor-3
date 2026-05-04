@@ -9,19 +9,19 @@ Public Class AlphaValidationRule
         Dim str As String = value
 
         If str Is Nothing Then
-            Return New ValidationResult(False, "값은 비어있으면 안됩니다.")
+            Return New ValidationResult(False, "值不能为空。")
         End If
         If str = "" Then
-            Return New ValidationResult(False, "값은 비어있으면 안됩니다.")
+            Return New ValidationResult(False, "值不能为空。")
         End If
         If str.Length > 30 Then
-            Return New ValidationResult(False, "30글자 이하로 입력하세요.")
+            Return New ValidationResult(False, "请输入少于30字。")
         End If
 
 
         For i = 0 To str.Length - 1
             If AbleConst.IndexOf(str(i)) = -1 Then
-                Return New ValidationResult(False, ".!@#$%^&*()_+와 숫자, 알파벳을 입력하세요.")
+                Return New ValidationResult(False, ".!@#$%^&*()_+和数字、字母请输入。")
             End If
 
         Next

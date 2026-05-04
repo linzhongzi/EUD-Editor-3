@@ -77,16 +77,16 @@ Partial Public Class ProjectData
                 TeFileRefresh(mainTEFile)
 
                 'If _pjdata.SaveData.LastVersion.ToString <> pgData.Version.ToString Then
-                '    Tool.ErrorMsgBox("测试版无法打开其他版本的存档文件")
+                ' Tool.ErrorMsgBox("测试版无法打开其他版本的存档文件")
                 '    pjData.CloseFile()
                 'End If
             Else
                 stm.Close()
 
-                Tool.CustomMsgBox("호환성 경고" & vbCrLf &
-                       "e2s파일을 불러올 경우 일부 에러가 발생할 수 있습니다." & vbCrLf &
-                       "플러그인 로드 안됨" & vbCrLf &
-                       "TE로드 안됨", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+                Tool.CustomMsgBox("兼容性警告" & vbCrLf &
+                       "加载e2s文件时可能发生部分错误。" & vbCrLf &
+                       "插件加载失败" & vbCrLf &
+                       "TE加载失败", MessageBoxButton.OK, MessageBoxImage.Exclamation)
 
                 _pjdata = New ProjectData
                 _pjdata.NewFIle()

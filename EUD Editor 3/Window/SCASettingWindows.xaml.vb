@@ -50,15 +50,15 @@ Public Class SCASettingWindows
         Dim returnval As String = HttpTool.Login(email, pw)
         Select Case returnval
             Case "BANUSER"
-                ErrorTextBox.Text = "이용이 금지된 계정입니다."
+                ErrorTextBox.Text = "禁止使用的账户。"
                 ErrorTextBox.Visibility = Visibility.Visible
                 Return
             Case "NOACCOUNT"
-                ErrorTextBox.Text = "이메일과 비밀번호를 확인하세요."
+                ErrorTextBox.Text = "请检查邮箱和密码。"
                 ErrorTextBox.Visibility = Visibility.Visible
                 Return
             Case "ERROR"
-                ErrorTextBox.Text = "로그인에 실패했습니다."
+                ErrorTextBox.Text = "登录失败。"
                 ErrorTextBox.Visibility = Visibility.Visible
                 Return
         End Select

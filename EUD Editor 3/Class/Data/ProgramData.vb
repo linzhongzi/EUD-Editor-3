@@ -259,10 +259,10 @@ Public Class ProgramData
         TestCodeEditorUse = 31
         TECEUseSmoothScrool = 32
     End Enum
-    Private settingstr() As String = {"euddraft.exe", "StarCraft.exe", "Lanuage", "Theme", "CDLanuage",
+    Private settingstr() As String = {"euddraft.exe", "StarCraft.exe", "Language", "Theme", "CDLanguage",
     "PrimaryHueLightBrush", "PrimaryHueLightForegroundBrush", "PrimaryHueMidBrush", "PrimaryHueMidForegroundBrush", "PrimaryHueDarkBrush",
     "PrimaryHueDarkForegroundBrush", "SecondaryAccentBrush", "SecondaryAccentForegroundBrush", "DefaultData", "MapEditorData",
-    "EditedData", "CheckedData", "CDLanuageChange", "DataEditorTopMost", "CheckReg",
+    "EditedData", "CheckedData", "CDLanguageChange", "DataEditorTopMost", "CheckReg",
     "TriggerEditrTopMost", "PluginSettingTopMost", "CheckUpdate", "Graphic", "TEFontSize", "SavePath", "OpenPath", "SaveMapPath", "OpenMapPath", "DonateMsg", "MuteSound",
     "TestCodeEditorUse", "TECEUseSmoothScrool"}
     Public Property Setting(key As TSetting) As String

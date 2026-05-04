@@ -18,21 +18,21 @@
             ToolBarTray.IsLocked="True"
             Style="{DynamicResource MaterialDesignToolBar}"
             ClipToBounds="False">
-            <Button ToolTip="실행취소" x:Name="Undobtn" Click="Undobtn_Click">
+            <Button ToolTip="撤销" x:Name="Undobtn" Click="Undobtn_Click">
                 <materialDesign:PackIcon Kind="Undo"/>
             </Button>
-            <Button ToolTip="다시실행" x:Name="Redobtn" Click="Redobtn_Click">
+            <Button ToolTip="重做" x:Name="Redobtn" Click="Redobtn_Click">
                 <materialDesign:PackIcon Kind="Redo"/>
             </Button>
             <Separator />
-            <Button x:Name="insertPos"  Click="InsertPos_Click" ToolTip="삽입 위치 전환">
+            <Button x:Name="insertPos"  Click="InsertPos_Click" ToolTip="切换插入位置">
                 <materialDesign:PackIcon x:Name="insertPosIcon" Kind="ArrowExpandDown"/>
             </Button>
             <Separator />
-            <Button x:Name="upbtn"  Click="UpSel_Click" ToolTip="위로 이동">
+            <Button x:Name="upbtn"  Click="UpSel_Click" ToolTip="上移">
                 <materialDesign:PackIcon Kind="ChevronDoubleUp"/>
             </Button>
-            <Button x:Name="downbtn" Click="DownSel_Click" ToolTip="아래로 이동">
+            <Button x:Name="downbtn" Click="DownSel_Click" ToolTip="下移">
                 <materialDesign:PackIcon Kind="ChevronDoubleDown"/>
             </Button>
             <Separator />

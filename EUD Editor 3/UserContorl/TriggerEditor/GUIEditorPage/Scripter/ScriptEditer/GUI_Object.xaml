@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:EUD_Editor_3"
              mc:Ignorable="d" >
     <DockPanel>
-        <TextBox x:Name="vname" materialDesign:HintAssist.Hint="객체 명" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" DockPanel.Dock="Top" TextChanged="vname_TextChanged"/>
+        <TextBox x:Name="vname" materialDesign:HintAssist.Hint="对象名" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Center" DockPanel.Dock="Top" TextChanged="vname_TextChanged"/>
 
     </DockPanel>
 </UserControl>

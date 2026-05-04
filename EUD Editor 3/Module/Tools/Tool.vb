@@ -229,7 +229,7 @@ Namespace Tool
             Try
                 TEEpsDefaultFunc.LoadFunc(sr.ReadToEnd)
             Catch ex As Exception
-                CustomMsgBox("함수 초기화 실패", MessageBoxButton.OK, MessageBoxImage.Error)
+                CustomMsgBox("函数初始化失败", MessageBoxButton.OK, MessageBoxImage.Error)
             End Try
             sr.Close()
             fs.Close()
@@ -255,7 +255,7 @@ Namespace Tool
 
             Dim inlines As InlineCollection = TextBlcck.Inlines
             inlines.Clear()
-            Dim MainText As String = textstr '.Replace(vbCrLf, "<A>")
+            Dim MainText As String = textstr.Replace(vbCrLf, vbCrLf).Replace("\n", vbCrLf) ' Ensure \n is treated as newline
 
 
             Dim rgx As New Text.RegularExpressions.Regex("<([A-Za-z0-9])+>", Text.RegularExpressions.RegexOptions.IgnoreCase)
@@ -281,19 +281,9 @@ Namespace Tool
 
                 Dim AddedText As String = Mid(MainText, Startindex, tMatch.Index - Startindex + 1)
 
+                ' Process AddedText for newlines
+                AddTextWithNewlines(inlines, AddedText, LastColor, colorinvert)
 
-                Dim Run As New Run(AddedText)
-                If LastColor = 0 Then
-                    If colorinvert Then
-                        Run.Foreground = Application.Current.Resources("MaterialDesignPaper")
-                    Else
-                        Run.Foreground = Application.Current.Resources("MaterialDesignBody")
-                    End If
-                Else
-                    Run.Foreground = TextBlockColorTable(LastColor)
-                End If
-
-                inlines.Add(Run)
                 Startindex = tMatch.Index + Value.Length + 3
                 LastCode = ColorCode
                 If ColorCode <> -1 Then
@@ -307,21 +297,34 @@ Namespace Tool
 
             If True Then
                 Dim AddedText As String = Mid(MainText, Startindex, MainText.Length - Startindex + 1)
-                Dim Run As New Run(AddedText)
-                If LastColor = 0 Then
-                    If colorinvert Then
-                        Run.Foreground = Application.Current.Resources("MaterialDesignPaper")
-                    Else
-                        Run.Foreground = Application.Current.Resources("MaterialDesignBody")
-                    End If
-                Else
-                    Run.Foreground = TextBlockColorTable(LastColor)
-                End If
-                inlines.Add(Run)
+                ' Process AddedText for newlines
+                AddTextWithNewlines(inlines, AddedText, LastColor, colorinvert)
             End If
 
             Return TextBlcck
         End Function
+
+        Private Sub AddTextWithNewlines(inlines As InlineCollection, text As String, color As Integer, colorinvert As Boolean)
+            Dim parts As String() = text.Split({vbCrLf}, StringSplitOptions.None)
+            For j = 0 To parts.Length - 1
+                If parts(j).Length > 0 Then
+                    Dim Run As New Run(parts(j))
+                    If color = 0 Then
+                        If colorinvert Then
+                            Run.Foreground = Application.Current.Resources("MaterialDesignPaper")
+                        Else
+                            Run.Foreground = Application.Current.Resources("MaterialDesignBody")
+                        End If
+                    Else
+                        Run.Foreground = TextBlockColorTable(color)
+                    End If
+                    inlines.Add(Run)
+                End If
+                If j < parts.Length - 1 Then
+                    inlines.Add(New LineBreak())
+                End If
+            Next
+        End Sub
 
         Public Function ParameterParser(PName As String, Datname As String) As String
             If ParameterList.IndexOf(PName) >= 0 Then

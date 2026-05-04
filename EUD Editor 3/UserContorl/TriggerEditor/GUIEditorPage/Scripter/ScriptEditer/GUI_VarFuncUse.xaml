@@ -14,7 +14,7 @@
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="ResetCoder" Click="ResetCoder_Click" DockPanel.Dock="Left"
                     Style="{StaticResource MaterialDesignOutlinedButton}">
-                    초기화
+                    初始化
                 </Button>
                 <Button x:Name="CoderChange" Click="CoderChange_Click" DockPanel.Dock="Left"
                     Style="{StaticResource MaterialDesignOutlinedButton}">
@@ -22,11 +22,11 @@
                 </Button>
                 <Button x:Name="ArgAdderbtn" Click="ArgAdder_Click" DockPanel.Dock="Left"
                     Style="{StaticResource MaterialDesignOutlinedButton}">
-                    인자추가
+                    添加参数
                 </Button>
                 <Button x:Name="ArgRemovebtn" Click="ArgRemove_Click" DockPanel.Dock="Left"
                     Style="{StaticResource MaterialDesignOutlinedButton}">
-                    인자제거
+                    移除参数
                 </Button>
             </StackPanel>
         </StackPanel>

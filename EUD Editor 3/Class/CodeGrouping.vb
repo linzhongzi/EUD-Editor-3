@@ -218,16 +218,16 @@ Public Class CodeGrouping
 
                             WeaponRace(WeaponN) = flag + 1
 
-                            Dim unitnmae As String
+                            Dim unitname As String
                             If scData Is Nothing Then
-                                unitnmae = tstat_txt.Strings(i).val1 & " A"
+                                unitname = tstat_txt.Strings(i).val1 & " A"
                             Else
-                                unitnmae = scData.GetStat_txt(i) & " A"
+                                unitname = scData.GetStat_txt(i) & " A"
                             End If
                             If WeaponUnit(WeaponN) <> "" Then
-                                WeaponUnit(WeaponN) = WeaponUnit(WeaponN) & ", " & unitnmae
+                                WeaponUnit(WeaponN) = WeaponUnit(WeaponN) & ", " & unitname
                             Else
-                                WeaponUnit(WeaponN) = unitnmae
+                                WeaponUnit(WeaponN) = unitname
                             End If
                         End If
                     End If

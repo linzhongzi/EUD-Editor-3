@@ -93,7 +93,7 @@ Public Class Parser
                         code.Items.Add(ncode)
                         index += 1
                     Case Else
-                        Throw New Exception("Line : " & CurrentToken.Ln & " Col : " & CurrentToken.Col & ", Parse 오류 " & CurrentToken.TType.ToString & "는 해석 할 수 없는 단락입니다.")
+                        Throw New Exception("Line : " & CurrentToken.Ln & " Col : " & CurrentToken.Col & ", 解析错误 " & CurrentToken.TType.ToString & " 是无法解析的段落。")
                 End Select
             Case CodeType.CODE_IMPORT
                 Dim ncode As New CodeBlock(CodeType.CODE_IMPORT)
@@ -708,7 +708,7 @@ PRIUse:
                                                         Dim ListF As CodeBlock = tcode.Items.First
                                                         ListF = ListF.Items.First
                                                         If IsNumeric(ListF.Value1) Then
-                                                            Throw New Exception("P변수 양식이 잘못되었습니다.")
+                                                            Throw New Exception("变量P格式错误。")
                                                         Else
                                                             For i = 0 To ListF.Items.Count - 1
                                                                 initojb.child.Add(GetScriptBlock(ListF.Items(i)))

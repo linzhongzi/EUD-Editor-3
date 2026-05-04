@@ -77,7 +77,7 @@ Public Class SCADataList
         DataName.Text = ""
         Checekname()
         TypeCB.SelectedIndex = 1
-        ValueSelecter.Init(SCDatFiles.DatFiles.units, "유닛", 0)
+        ValueSelecter.Init(SCDatFiles.DatFiles.units, "单位", 0)
 
 
         ValueSelecter.Visibility = Visibility.Visible
@@ -122,7 +122,7 @@ Public Class SCADataList
                     Next
                 End If
             Case 1
-                ValueSelecter.Init(SCDatFiles.DatFiles.units, "데스값", SelCodeData.ValueIndex)
+                ValueSelecter.Init(SCDatFiles.DatFiles.units, "死亡值", SelCodeData.ValueIndex)
             Case 2
                 ValueSelecter.Visibility = Visibility.Collapsed
                 VariableField.Visibility = Visibility.Visible
@@ -175,7 +175,7 @@ Public Class SCADataList
                 OkKey.IsEnabled = False
                 VariableReset()
             Case 1
-                ValueSelecter.Init(SCDatFiles.DatFiles.units, "데스값", initvalue)
+                ValueSelecter.Init(SCDatFiles.DatFiles.units, "死亡值", initvalue)
                 ValueSelecter.Visibility = Visibility.Visible
                 VariableField.Visibility = Visibility.Collapsed
                 Checekname()
@@ -393,7 +393,7 @@ Public Class SCADataList
             DataName.Foreground = Application.Current.Resources("MaterialDesignBody")
         Else
             NameCondpanel.Visibility = Visibility.Visible
-            NameCond.Content = "숫자나 알파벳 문자만 가능합니다."
+            NameCond.Content = "只能使用数字或字母字符。"
             OkKey.IsEnabled = False
             DataName.Foreground = Brushes.Red
         End If

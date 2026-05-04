@@ -201,7 +201,7 @@
             Case "EUDLoopNewUnit"
                 tipLabel.Visibility = Visibility.Visible
                 doubleptr.Visibility = Visibility.Visible
-                tipLabel.Content = "새로 생성된 유닛을 루프합니다."
+                tipLabel.Content = "循环新创建的单位。"
                 Dim ptrepd() As String = val.Split(",")
 
                 If ptrepd.Count = 2 Then
@@ -214,7 +214,7 @@
             Case "EUDLoopUnit"
                 tipLabel.Visibility = Visibility.Visible
                 doubleptr.Visibility = Visibility.Visible
-                tipLabel.Content = "모든 유닛을 연결리스트를 따라 루프합니다."
+                tipLabel.Content = "沿链表循环所有单位。"
                 Dim ptrepd() As String = val.Split(",")
 
                 If ptrepd.Count = 2 Then
@@ -227,7 +227,7 @@
             Case "EUDLoopUnit2"
                 tipLabel.Visibility = Visibility.Visible
                 doubleptr.Visibility = Visibility.Visible
-                tipLabel.Content = "모든 유닛을 루프합니다."
+                tipLabel.Content = "循环所有单位。"
                 Dim ptrepd() As String = val.Split(",")
 
                 If ptrepd.Count = 2 Then
@@ -240,7 +240,7 @@
             Case "EUDLoopSprite"
                 tipLabel.Visibility = Visibility.Visible
                 doubleptr.Visibility = Visibility.Visible
-                tipLabel.Content = "모든 스프라이트를 루프합니다."
+                tipLabel.Content = "循环所有精灵。"
                 Dim ptrepd() As String = val.Split(",")
 
                 If ptrepd.Count = 2 Then
@@ -314,7 +314,7 @@
                 End If
             Case "EUDPlayerLoop"
                 tipLabel.Visibility = Visibility.Visible
-                tipLabel.Content = "모든 플레이어를 순환합니다."
+                tipLabel.Content = "循环所有玩家。"
         End Select
     End Sub
     'Human

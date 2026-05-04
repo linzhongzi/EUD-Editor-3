@@ -3,7 +3,7 @@
 Partial Public Class BuildData
     Private Sub WriteButtonSet(sb As StringBuilder)
         ' 随机指针集合偏移量
-        sb.AppendLine("    # 버튼셋")
+        sb.AppendLine("    # 按钮集")
         Dim Address(SCButtonCount - 1) As String
         For Index = 0 To SCButtonCount - 1
             If pjData.ExtraDat.ButtonData.GetButtonSet(Index).IsDefault Then

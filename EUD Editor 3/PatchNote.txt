@@ -1,258 +1,261 @@
+# 0.19.6.3
+-翻译所有韩文代码为中文。
+
 # 0.19.6.2
--모든 한국어 주석을 중국어로 번역하세요.
+-翻译所有韩文注释为中文。
 
 # 0.19.6.1
--중국어를 한국어로 번역하지 않았습니다. 
--컴파일 오류를 수정하고 Nuget 패키지 위치를 통일합니다.
+-未翻译中文为韩文。
+-修正编译错误，统一Nuget包位置。
 
 # 0.19.6.0
--SCA 계정정보 암호화 로직 수정
+-SCA 账户信息加密逻辑修改
 
 # 0.19.5.0
--https://github.com/Buizz/EUD-Editor-3/issues/143 외부파일 연결 설정 관련
--https://github.com/Buizz/EUD-Editor-3/issues/142 외부파일 연결 설정 관련
--https://github.com/Buizz/EUD-Editor-3/issues/141 SCA 설정 관련
+-https://github.com/Buizz/EUD-Editor-3/issues/143 外部文件连接设置相关
+-https://github.com/Buizz/EUD-Editor-3/issues/142 外部文件连接设置相关
+-https://github.com/Buizz/EUD-Editor-3/issues/141 SCA 设置相关
 
 # 0.19.4.0
--SCA K런처 호환 패치
+-SCA K启动器兼容补丁
 
 # 0.19.3.0
--euddraft 대응 패치
+-euddraft 对应补丁
 
 # 0.19.2.1
--RawTextFile 생성 추가 (확장자까지 이름에 포함됩니다. ex tool.py로 해야 정상 작성됨)
--Bulid 오타 수정 -> Build
--SCA 계정정보 암호화 로직 수정
--빌드시 오류가 생기면 무한루프에 안빠지게 수정
+-RawTextFile 创建增加（扩展名也包含在名称中。例如必须用 tool.py 才能正常生成）
+-Bulid 拼写修正 -> Build
+-SCA 账户信息加密逻辑修改
+-构建时发生错误不会陷入无限循环的修正
 
 # 0.19.1.1
--CodeTextEditor 투명 문자 가시화 https://github.com/Buizz/EUD-Editor-3/issues/129
--CodeTextEditor CPU 점유율 및 성능 누수 버그 수정
--CodeTextEditor F12로 정의로 따라가는 기능 추가
--SCAScript 함수 이름 변경 SCAScriptRunFunc, SCAScriptWriteVariable, SCAScriptReadVariable, SCAScriptVariableOffset
--CodeTextEditor 다중 선택 후 삭제시 버그 해결
--CodeTextEditor 파일 분할시 발생하는 오류 해결
--SCA계정이 다른 PC로 옮겨질 경우 암호화 되게 수정
--Lua함수를 메인파일에 사용하지 않아도 beforeTriggerExec등에 내용 출력되게 수정 https://cafe.naver.com/edac/131774
+-CodeTextEditor 透明字符可视化 https://github.com/Buizz/EUD-Editor-3/issues/129
+-CodeTextEditor CPU占用及性能泄露 bug 修正
+-CodeTextEditor 添加按 F12 跳转到定义的功能
+-SCAScript 函数名称变更 SCAScriptRunFunc, SCAScriptWriteVariable, SCAScriptReadVariable, SCAScriptVariableOffset
+-CodeTextEditor 多选后删除时的 bug 修复
+-CodeTextEditor 文件分割时发生的错误修复
+-SCA账户转移到其他 PC 时加密处理
+-即使不在主文件中使用 Lua 函数，也会在 beforeTriggerExec 等中输出内容 https://cafe.naver.com/edac/131774
 
 # 0.18.4.0
--SCA 무한로딩 해결 2
--Code TextEditor 버그 개선
+-SCA 无限加载修复 2
+-Code TextEditor bug 改进
 -https://github.com/Buizz/EUD-Editor-3/issues/119
 -https://github.com/Buizz/EUD-Editor-3/issues/118
 -https://github.com/Buizz/EUD-Editor-3/issues/116
 
 # 0.18.3.0
--SCA 무한로딩 현상 해결
--DataEditor 텍스트에 Hex형식으로 복사하는 기능 추가
+-SCA 无限加载现象修复
+-DataEditor 添加以 Hex 格式复制文本的功能
 
 # 0.18.1.0
--SCA 로드시 데이터 못 불러오던 버그 수정
--MouseLocation이름이 잘못 바인딩되던 오류 수정
--SCA Script 수정
--ScriptEditor 버그 수정
--맵의 인코딩을 수동으로 변경하는 기능 추가
--최근에 연 파일 리스트 추가(로드 버튼 우클릭)
--SCA 로드 속도 개선
+-SCA 加载时无法读取数据的 bug 修复
+-MouseLocation 绑定名称错误的修复
+-SCA Script 修改
+-ScriptEditor bug 修复
+-添加手动更改地图编码的功能
+-最近打开的文件列表添加（右键点击加载按钮）
+-SCA 加载速度改进
 
 # Beta 0.17.0.0
--SCA Script 추가 (테스트)
--클래식 트리거 CUnit관련 인자 추가
--MSQC Lua관련 버그 수정
--ScriptEditor 한글 입력 후 포인터 이동시 입력 이상하게 되는 현상 수정
--SCA FastLoad 비활성화
+-SCA Script 添加（测试）
+-经典触发器添加 CUnit 相关参数
+-MSQC Lua 相关 bug 修复
+-ScriptEditor 韩文输入后移动光标时输入异常的问题修复
+-SCA FastLoad 禁用
 
 # Beta 0.16.0.0
--SCA로직 수정
--SCA FastLoad 최적화
--ScriptEditor 버그 수정
+-SCA 逻辑修改
+-SCA FastLoad 优化
+-ScriptEditor bug 修复
 
 # Beta 0.15.1.1
--ScriptEditor 폴딩 저장
--TextEditor 수정
+-ScriptEditor 折叠保存
+-TextEditor 修改
 
 # Beta 0.15.0.0
--64Bit 빌드
--ScriptEditor 버그 수정 및 자동 완성 함수 추가
+-64Bit 构建
+-ScriptEditor bug 修复及自动完成函数添加
 
 # Beta 0.14.4.0
--와이어프레임 작동안하는 버그 수정
--빌드 중지 못하는 버그 수정
+-线框不工作的 bug 修复
+-构建无法停止的 bug 修复
 
 # Beta 0.14.3.3
--기본 다이얼로그 수정
--Lua함수 추가
--텍스트에디터 버그
--설정파일 없을 시 오류나는 버그 수정
--TriggerEditor 최근창 복구 안되는 버그 수정
--리스트뷰 컨텍스트메뉴 
+-基本对话框修改
+-Lua 函数添加
+-文本编辑器 bug
+-没有配置文件时出错的 bug 修复
+-TriggerEditor 最近窗口无法恢复的 bug 修复
+-列表视图上下文菜单
 
 # Beta 0.14.2.2
--클래식 트리거 호출시 CP복구 로직 추가
--클래식 트리거 외부파일 사용시 네임스페이스 표기
+-经典触发器调用时添加 CP 恢复逻辑
+-经典触发器使用外部文件时命名空间标记
 
 # Beta 0.14.2.1
--컬러텍스트박스 최적화
--코드셀렉트 옵션 아이콘 위치 수정
+-彩色文本框优化
+-代码选择选项图标位置修正
 
 # Beta 0.14.2.0
--코드에디터 버그 수정
--뎃에딧 스플래쉬 범위 문제 수정
+-代码编辑器 bug 修复
+-数据编辑器溅射范围问题修复
 
 # Beta 0.14.1.0
--클래식 트리거 붙여넣기시 위치 어긋나는 현상 수정
--클래식 트리거 부드러운 스크롤 옵션
--코드에디터 개선
--  텍스트 편집기 추가(Ctrl+T)
--  주석 단축키 추가 (Ctrl+/, Ctrl+K, Ctrl+K U)
--코드에디터 버그
--  EUDFuncPtr등 ()가 들어가는 인자타입 입력시 오류나는 현상 수정
--  for문 작성시 ;로 괄호가 탈출하는 현상 수정(임시 비활성)
--  몇몇 lua문 작성시 괄호가 사라지는 현상 수정
+-经典触发器粘贴时位置偏移现象修复
+-经典触发器平滑滚动选项
+-代码编辑器改进
+- 文本编辑器添加（Ctrl+T）
+- 注释快捷键添加（Ctrl+/, Ctrl+K, Ctrl+K U）
+-代码编辑器 bug
+- 包含括号的 EUDFuncPtr 等参数类型输入时出错的现象修复
+- for 语句中用 ; 导致括号逃逸的现象修复（暂时禁用）
+- 编写部分 lua 语句时括号消失的现象修复
 
 # Beta 0.14.0.0
--클래식 트리거 최적화
--코드에디터 리메이크
--와이어프레임 버그 수정
+-经典触发器优化
+-代码编辑器重制
+-线框 bug 修复
 
 # Beta 0.13.0.5
--버그 수정. Lua 업그레이드시 값에 문자열이 들어가면 생기던 오류 수정
--클래식 트리거 최적화
--클래식 트리거 컴파일 보기 오류 해결
--클래식 트리거 추가시 발생하는 오류 해결
--클래식 트리거 주석 수정 2
--클래식 트리거 TrgAIScript에 "넣기
--기타 lua트리거 최적화
--SCA 모듈 빌드 실패 오류 
+-bug 修复。Lua 升级时值包含字符串时发生的错误修复
+-经典触发器优化
+-经典触发器编译视图错误修复
+-经典触发器添加时发生的错误修复
+-经典触发器注释修改 2
+-经典触发器 TrgAIScript 中添加 "
+-其他 lua 触发器优化
+-SCA 模块构建失败错误
 
 # Beta 0.12.10.1
--SCA 0.0.0.6 대응패치
--SCA 배틀태그가 아닌 이메일 입력으로 변경
--SCA 밴기능 추가
--일부 항목 수정(PR)
+-SCA 0.0.0.6 对应补丁
+-SCA 更改为输入邮箱而非战网标签
+-SCA 添加封禁功能
+-部分项目修改(PR)
 
 # Beta 0.12.9.0
--일부 항목 수정
+-部分项目修改
 
 # Beta 0.12.8.1
--SCA 코드 일부 수정
+-SCA 代码部分修改
 
 # Beta 0.12.7.0
--SCA2 지원
+-SCA2 支持
 
 # Beta 0.12.6.3
--TETools Lua Player부분 
--TETools 버그 수정
--스트링 수정 마지막 번호 Null참조 오류 수정
+-TETools Lua Player 部分
+-TETools bug 修复
+-字符串修改最后一个编号 Null 引用错误修复
 
 # Beta 0.12.6.1
--WireFrame Index초과 버그 수정
--TE외부 함수 초기화 실패 오류 수정
--TE 클래식트리거 인자 설정 첫 실행시 뜨지 않는 오류 수정
--TE Lua 키보드 인식 특수문자 처리
--SetVar, Var에서 등호부분에 사용자 코드 허용
--TE내보내기 오류 수정
--TETools 논타켓스킬 오류 수정
--TE 브르드워 업그레이드,테크 수정
+-WireFrame 索引超限 bug 修复
+-TE 外部函数初始化失败错误修复
+-TE 经典触发器参数设置首次不弹出的错误修复
+-TE Lua 键盘识别特殊字符处理
+-SetVar, Var 中等号部分允许用户代码
+-TE 导出错误修复
+-TETools 非目标技能错误修复
+-TE 母巢之战升级、技能修改
 
 # Beta 0.12.5.3
--다국어 처리
--TE클래식 WAV Switch 문자열로 안되던 버그 수정
--요구사항 버그 수정
--SCA 먹통 버그 수정
--스위치 버그 수정, scaWrapper 코드 수정
+-多语言处理
+-TE 经典 WAV Switch 无法使用字符串的 bug 修复
+-需求 bug 修复
+-SCA 卡死 bug 修复
+-开关 bug 修复, scaWrapper 代码修改
 
 # Beta 0.12.4.0
--scaWrapper 코드 수정
+-scaWrapper 代码修改
 
 # Beta 0.12.3.5
--StatTxt 문자 깨짐 현상 해결
+-StatTxt 文字乱码现象解决
 
 # Beta 0.12.3.4
--TE버그 수정 및 함수 추가
+-TE bug 修复及函数添加
 
 # Beta 0.12.3.3
--영문번역 추가(Thanks to Milestone)
--영문 윈도우에서 초기 에러 수정(by Milestone)
--TE클래식 플레이어 없어도 실행되는 오류
--TE변수 수정 기능 추가
+-英文翻译添加(Thanks to Milestone)
+-英文 Windows 下初始错误修复(by Milestone)
+-TE 经典即使没有玩家也执行的错误
+-TE 变量修改功能添加
 
 # Beta 0.12.3.1
--TE 클래식 추가
--TE 클래식 대기하기 추가
--TE 클래식 잔 버그 수정2
--DataEditor TBL수정 함수 
--TE 클래식 한글 불러오기 오류 수정
--DE tbl에러 수정
+-TE 经典添加
+-TE 经典添加等待功能
+-TE 经典残余 bug 修复2
+-DataEditor TBL 修改函数
+-TE 经典韩文加载错误修复
+-DE tbl 错误修复
 
 # Beta 0.11.0.0
--TE 매크로함수->lua함수 이름 변경
--TE lua함수, import 트리뷰 형태로 변경
--TE SCA전용 lua함수 추가
+-TE 宏函数 -> lua 函数名称变更
+-TE lua 函数、import 改为树形视图
+-TE SCA 专用 lua 函数添加
 
 # Beta 0.10.0.0
--플러그인 창 편의성 수정(euddraft plugin폴더 읽기, 도움말 링크)
--TE ChatEvent와 MSQC매크로 함수 추가
--TE 설정창 초기화 타이밍 수정(파일 추가,삭제 등에 자동 새로고침)
--TEST(dotPainter추가)
+-插件窗口便利性修改（读取 euddraft plugin 文件夹、帮助链接）
+-TE ChatEvent 和 MSQC 宏函数添加
+-TE 设置窗口刷新时机修改（添加、删除文件时自动刷新）
+-TEST（添加 dotPainter）
 
 # Beta 0.9.10.0
--기타 버그 수정
+-其他 bug 修复
 
 # Beta 0.9.9.1
--기타 버그 수정
--검색창에서 번호나 툴팁을 이용해 검색가능
+-其他 bug 修复
+-搜索框可通过编号或工具提示进行搜索
 
 # Beta 0.9.8.0
--SCA 버전 업데이트 관련
+-SCA 版本更新相关
 
 # Beta 0.9.7.0
--BGM플레이어 싱크 조절
--Map생성 기능 추가
--윈도우 프리징 버그 수정
+-BGM 播放器同步调节
+-添加创建地图功能
+-窗口冻结 bug 修复
 
 # Beta 0.9.6.3
--BGM플레이어 Drag&Drop지원
--변수 선언에 있어서 다중 변수 선언 지원 
-+버그수정
--WireFrame관련 버그 수정3
--CUI To GUI버그 수정(인자가 증발하는 버그)
+-BGM 播放器支持拖放
+-变量声明支持多变量声明
++bug修复
+-WireFrame 相关 bug 修复3
+-CUI To GUI bug 修复（参数蒸发 bug）
 
 # Beta 0.9.5.0
--텍스트 에디터 수정
--예외 발생시 오류 
-+버그수정
--여러가지 버그 수정
+-文本编辑器修改
+-异常发生时错误
++bug修复
+-多种 bug 修复
 
 # Beta 0.9.4.1
--텍스트 에디터 추가
--배열 선언 관련 추가
--*Args형 인자 추가 기능
--CUI to GUI 한글 식별자 인식
-+버그수정
--빌드 데이터가 복사 되지 않던 버그
--TETools 컴파일 버그 
--CUI to GUI 배열 인식 불가 수정
+-文本编辑器添加
+-数组声明相关添加
+-*Args 类型参数添加功能
+-CUI to GUI 韩文标识符识别
++bug修复
+-构建数据未被复制的 bug
+-TETools 编译 bug
+-CUI to GUI 数组无法识别修复
 
 # Beta 0.9.3.0
--CUI검색 기능 추가
-+버그수정
--CUI관련 버그 수정(Import관련)
--CUI to GUI버그 
+-CUI 搜索功能添加
++bug修复
+-CUI 相关 bug 修复（Import 相关）
+-CUI to GUI bug
 
 # Beta 0.9.2.0
--CUI To GUI 기능 임시 추가(버그가 있을 수 있음)
--BGM플레이어 추가
-+버그수정
--GUI관련 버그 수정
+-CUI To GUI 功能临时添加（可能存在 bug）
+-BGM 播放器添加
++bug修复
+-GUI 相关 bug 修复
 
 # Beta 0.9.1.0
-+추가
--TE GUI가 추가되었습니다.(사용시 발견못한 버그에 주의해주세요.)
--TE Macro함수가 추가되었습니다.(lua기반 전처리기)
-+버그수정
--여러가지 버그 수정(창 프리즈)
--GUI 복사시 팅기는 버그
--Macro 내용없는 파일에서 팅기는 버그
--기타버그수정
--GUI 복사시 랙걸리는 버그
++添加
+-TE GUI 已添加（使用时请注意未发现的 bug）
+-TE 宏函数已添加（基于 lua 的预处理器）
++bug修复
+-多种 bug 修复（窗口冻结）
+-GUI 复制时崩溃的 bug
+-宏内容为空文件时崩溃的 bug
+-其他bug修复
+-GUI 复制时卡顿的 bug

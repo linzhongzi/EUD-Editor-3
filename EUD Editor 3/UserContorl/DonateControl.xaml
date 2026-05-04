@@ -10,7 +10,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Margin="10">
         <StackPanel Orientation="Horizontal">
-            <Button Background="#FFF96853" Foreground="#DDFFFFFF" Click="Button_Click" ToolTip="정기적으로 후원을 할 수 있는 플랫폼입니다. 언제든지 취소가 가능합니다.">
+            <Button Background="#FFF96853" Foreground="#DDFFFFFF" Click="Button_Click" ToolTip="This is a platform where you can make regular donations. You can cancel at any time.">
                 <WrapPanel Cursor="Hand">
                     <materialDesign:PackIcon Kind="Patreon" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     <TextBlock Text=" BECOME A PATREON"/>
@@ -23,7 +23,7 @@
 
 
         <Label Content="{StaticResource DirectDonate}" HorizontalAlignment="Left" VerticalAlignment="Top"  />
-        <Label Content="카카오뱅크 이정훈 3333-09-9263239" Margin="10"/>
+        <Label Content="Kakao Bank, 李正勋(이정훈), 3333-09-9263239" Margin="10"/>
         
         <Separator Background="#4CA0A0A0"/>
 
@@ -49,10 +49,10 @@
             </StackPanel>
          
 
-            <Label Content="농협 김영민 312-0089-5615-21" />
+            <Label Content="Nonghyup(农协, 농협), 金永敏(김영민), 312-0089-5615-21" />
             <Separator Background="#4CA0A0A0"/>
-            <Label Content="트리거왕" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
-            <Label Content="카카오뱅크 박현우 3333-04-4793219" />
+            <Label Content="Trigger King" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+            <Label Content="Kakao Bank, 朴贤宇(박현우), 3333-04-4793219" />
         </StackPanel>
 
 

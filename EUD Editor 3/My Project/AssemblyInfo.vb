@@ -15,7 +15,7 @@ Imports System.Windows
 <Assembly: AssemblyDescription("EUD Edit Program")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("EUD Editor 3")>
-<Assembly: AssemblyCopyright("Copyright © 2025 맛있는빙수")>
+<Assembly: AssemblyCopyright("Copyright © 2025 韩式刨冰")>
 <Assembly: AssemblyTrademark("")>
 <Assembly: ComVisible(false)>
 
@@ -55,5 +55,5 @@ Imports System.Windows
 ' 指定构建号和修订号，如下所示：
 ' <Assembly: AssemblyVersion("0.19.*")>
 
-<Assembly: AssemblyVersion("0.19.6.2")>
-<Assembly: AssemblyFileVersion("0.19.6.2")>
+<Assembly: AssemblyVersion("0.19.6.3")>
+<Assembly: AssemblyFileVersion("0.19.6.3")>

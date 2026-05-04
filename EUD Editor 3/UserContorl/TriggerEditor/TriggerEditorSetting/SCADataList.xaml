@@ -96,7 +96,7 @@
                                 SelectionChanged="NameCombobox_SelectionChanged"
                                 Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                             </ComboBox>
-                            <ComboBox x:Name="VarSelecter" materialDesign:HintAssist.Hint="변수 명" 
+                            <ComboBox x:Name="VarSelecter" materialDesign:HintAssist.Hint="变量名"
                                       SelectionChanged="VarSelecter_SelectionChanged"
                                 Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                             </ComboBox>

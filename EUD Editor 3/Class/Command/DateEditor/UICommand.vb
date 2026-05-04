@@ -54,7 +54,7 @@
                     Return True
                 Case CommandType.Paste
                     Dim clipboard As String = My.Computer.Clipboard.GetText
-                    If clipboard = "수열" Then
+                    If clipboard = "数列" Then
                         Return True
                     End If
                     Return False

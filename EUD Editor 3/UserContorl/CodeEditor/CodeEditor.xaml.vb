@@ -127,7 +127,7 @@ Public Class CodeEditor
             ' sMessageQueue.Enqueue("FontSize : " & TextEditor.FontSize & "px (默认 14px)")
 
             ErrorSnackbar.IsActive = True
-            SnackbarContent.Content = "FontSize : " & TextEditor.FontSize & "px (기본 16px)"
+            SnackbarContent.Content = "FontSize : " & TextEditor.FontSize & "px (默认16px)"
             time = 0
             timer.Start()
         End If

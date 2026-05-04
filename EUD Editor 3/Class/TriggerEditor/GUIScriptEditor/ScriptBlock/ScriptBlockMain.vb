@@ -461,11 +461,11 @@ Public Class ScriptBlock
 
 
             Case EBlockType.funuse, EBlockType.plibfun, EBlockType.externfun, EBlockType.macrofun
-                rstr = "함수:" & name
+                rstr = "函数:" & name
             Case EBlockType.action
-                rstr = "액션:" & name
+                rstr = "动作:" & name
             Case EBlockType.condition
-                rstr = "조건:" & name
+                rstr = "条件:" & name
             Case EBlockType.rawcode
                 rstr = value
             Case EBlockType.exp
@@ -486,7 +486,7 @@ Public Class ScriptBlock
                         Return rstr
                     End If
                     If value = "!cp" Then
-                        rstr = name & "[해당플레이어]"
+                        rstr = name & "[当前玩家]"
                         Return rstr
                     End If
                     If value = "!default" Then
@@ -653,25 +653,25 @@ Public Class ScriptBlock
 
                 If v.Count = 3 Then
                     rvalue = v(0) & " : "
-                    rvalue = rvalue & "초기값=" & v(1)
-                    rvalue = rvalue & ", 횟수=" & v(2)
+                    rvalue = rvalue & "初始值=" & v(1)
+                    rvalue = rvalue & ", 次数=" & v(2)
                 Else
-                    rvalue = rvalue & "오류"
+                    rvalue = rvalue & "错误"
                 End If
             Case "EUDLoopNewUnit"
-                rvalue = vvalue & " : 새로 생성된 유닛을 루프합니다."
+                rvalue = vvalue & " : 循环新创建的单位。"
             Case "EUDLoopUnit"
-                rvalue = vvalue & " : 모든 유닛을 연결리스트를 따라 루프합니다."
+                rvalue = vvalue & " : 沿链表循环所有单位。"
             Case "EUDLoopUnit2"
-                rvalue = vvalue & " : 모든 유닛을 루프합니다."
+                rvalue = vvalue & " : 循环所有单位。"
             Case "EUDLoopSprite"
-                rvalue = vvalue & " : 모든 스프라이트를 루프합니다."
+                rvalue = vvalue & " : 循环所有精灵(Sprites)。"
             Case "Timeline"
                 Dim v() As String = vvalue.Split("ᗢ")
-                rvalue = v(0) & " : " & v(1) & "틱 만큼 진행합니다."
+                rvalue = v(0) & " : 进行 " & v(1) & " 帧。"
             Case "EUDLoopPlayerUnit"
                 Dim v() As String = vvalue.Split("ᗢ")
-                rvalue = v(0) & " : Player " & v(1) + 1 & "의 유닛을 루프합니다."
+                rvalue = v(0) & " : 循环 Player " & v(1) + 1 & " 的单位。"
             Case "EUDLoopPlayer"
                 Dim v() As String = vvalue.Split("ᗢ")
                 Dim vname As String = v(0)
@@ -679,24 +679,24 @@ Public Class ScriptBlock
                 Dim forces As String = v(2)
                 Dim race As String = v(3)
                 If owner = "None" Then
-                    owner = "모두"
+                    owner = "全部"
                 End If
                 If forces = "None" Then
-                    forces = "모두"
+                    forces = "全部"
                 End If
                 If race = "None" Then
-                    race = "모두"
+                    race = "全部"
                 End If
 
 
                 rvalue = vname & " : "
-                rvalue = rvalue & "제어권 : " & owner
-                rvalue = rvalue & "   세력 : " & forces
-                rvalue = rvalue & "   종족 : " & race
-                rvalue = rvalue & "   해당플레이어 설정 : " & v(4)
+                rvalue = rvalue & "控制权 : " & owner
+                rvalue = rvalue & "   势力 : " & forces
+                rvalue = rvalue & "   种族 : " & race
+                rvalue = rvalue & "   当前玩家设置 : " & v(4)
 
             Case "EUDPlayerLoop"
-                rvalue = "모든 플레이어를 순환합니다."
+                rvalue = "循环所有玩家。"
         End Select
 
 
@@ -705,9 +705,9 @@ Public Class ScriptBlock
     End Function
 
     Public Sub ArgCoder(lnlines As InlineCollection)
-        AddText(lnlines, "이름 : ", Nothing)
+        AddText(lnlines, "名称 : ", Nothing)
         AddText(lnlines, value, tescm.HighlightBrush)
-        AddText(lnlines, "    타입 : ", Nothing)
+        AddText(lnlines, "    类型 : ", Nothing)
         AddText(lnlines, name, tescm.HighlightBrush)
     End Sub
 
@@ -790,7 +790,7 @@ Public Class ScriptBlock
                 Return
             End If
             If vcount <> child.Count Then
-                AddText(lnlines, "인자수가 정의랑 일치하지 않습니다. : ", Brushes.MediumVioletRed)
+                AddText(lnlines, "参数数量与定义不匹配。 : ", Brushes.MediumVioletRed)
                 DefaultCoder(lnlines)
                 Return
             End If
@@ -844,7 +844,7 @@ Public Class ScriptBlock
                     Return
                 End If
                 If vcount <> child.Count Then
-                    AddText(lnlines, "인자수가 정의랑 일치하지 않습니다. : ", Brushes.MediumVioletRed)
+                    AddText(lnlines, "参数数量与定义不匹配。 : ", Brushes.MediumVioletRed)
                     DefaultCoder(lnlines)
                     Return
                 End If

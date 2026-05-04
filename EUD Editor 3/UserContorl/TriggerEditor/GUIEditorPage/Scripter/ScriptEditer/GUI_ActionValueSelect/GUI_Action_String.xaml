@@ -8,7 +8,7 @@
        
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <Button DockPanel.Dock="Top" Content="큰 창에서 수정" Click="Button_Click"/>
+        <Button DockPanel.Dock="Top" Content="在大窗口中修改" Click="Button_Click"/>
         <TextBox x:Name="MainTB" VerticalContentAlignment="Top" AcceptsReturn="False" TextWrapping="WrapWithOverflow" TextChanged="MainTB_TextChanged"> 
         </TextBox>
     </DockPanel>

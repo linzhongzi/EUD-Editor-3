@@ -34,7 +34,7 @@
             Case MessageBoxButton.OK
                 If True Then
                     Dim button As Button = New Button()
-                    button.Content = "확인"
+                    button.Content = "确认"
                     button.Style = CType(Application.Current.Resources("MaterialDesignFlatButton"), Style)
                     AddHandler button.Click, New RoutedEventHandler(Sub(ByVal sender As Object, ByVal e As RoutedEventArgs)
                                                                         msgresult = MessageBoxResult.OK
@@ -45,7 +45,7 @@
             Case MessageBoxButton.OKCancel
                 If True Then
                     Dim button As Button = New Button()
-                    button.Content = "확인"
+                    button.Content = "确认"
                     button.Style = CType(Application.Current.Resources("MaterialDesignFlatButton"), Style)
                     AddHandler button.Click, New RoutedEventHandler(Sub(ByVal sender As Object, ByVal e As RoutedEventArgs)
                                                                         msgresult = MessageBoxResult.OK
@@ -56,7 +56,7 @@
 
                 If True Then
                     Dim button As Button = New Button()
-                    button.Content = "취소"
+                    button.Content = "取消"
                     button.Style = CType(Application.Current.Resources("MaterialDesignFlatButton"), Style)
                     AddHandler button.Click, New RoutedEventHandler(Sub(ByVal sender As Object, ByVal e As RoutedEventArgs)
                                                                         msgresult = MessageBoxResult.Cancel
@@ -67,7 +67,7 @@
             Case MessageBoxButton.YesNo
                 If True Then
                     Dim button As Button = New Button()
-                    button.Content = "예"
+                    button.Content = "是"
                     button.Style = CType(Application.Current.Resources("MaterialDesignFlatButton"), Style)
                     AddHandler button.Click, New RoutedEventHandler(Sub(ByVal sender As Object, ByVal e As RoutedEventArgs)
                                                                         msgresult = MessageBoxResult.Yes
@@ -78,7 +78,7 @@
 
                 If True Then
                     Dim button As Button = New Button()
-                    button.Content = "아니요"
+                    button.Content = "否"
                     button.Style = CType(Application.Current.Resources("MaterialDesignFlatButton"), Style)
                     AddHandler button.Click, New RoutedEventHandler(Sub(ByVal sender As Object, ByVal e As RoutedEventArgs)
                                                                         msgresult = MessageBoxResult.No
@@ -89,7 +89,7 @@
             Case MessageBoxButton.YesNoCancel
                 If True Then
                     Dim button As Button = New Button()
-                    button.Content = "예"
+                    button.Content = "是"
                     button.Style = CType(Application.Current.Resources("MaterialDesignFlatButton"), Style)
                     AddHandler button.Click, New RoutedEventHandler(Sub(ByVal sender As Object, ByVal e As RoutedEventArgs)
                                                                         msgresult = MessageBoxResult.Yes
@@ -100,7 +100,7 @@
 
                 If True Then
                     Dim button As Button = New Button()
-                    button.Content = "아니요"
+                    button.Content = "否"
                     button.Style = CType(Application.Current.Resources("MaterialDesignFlatButton"), Style)
                     AddHandler button.Click, New RoutedEventHandler(Sub(ByVal sender As Object, ByVal e As RoutedEventArgs)
                                                                         msgresult = MessageBoxResult.No
@@ -111,7 +111,7 @@
 
                 If True Then
                     Dim button As Button = New Button()
-                    button.Content = "취소"
+                    button.Content = "取消"
                     button.Style = CType(Application.Current.Resources("MaterialDesignFlatButton"), Style)
                     AddHandler button.Click, New RoutedEventHandler(Sub(ByVal sender As Object, ByVal e As RoutedEventArgs)
                                                                         msgresult = MessageBoxResult.Cancel

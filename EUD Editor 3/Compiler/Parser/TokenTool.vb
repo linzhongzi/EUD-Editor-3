@@ -56,7 +56,7 @@
         If rtoken.TType = type Then
             Return rtoken
         Else
-            Throw New Exception("Line : " & rtoken.Ln & " Col : " & rtoken.Col & ", Parse 오류 타입 불일치 " & type.ToString & "가 와야 하지만 " & rtoken.TType.ToString & "가 왔습니다.")
+            Throw New Exception("Line : " & rtoken.Ln & " Col : " & rtoken.Col & ", 解析错误类型不匹配。应为 " & type.ToString & " 但却是 " & rtoken.TType.ToString & " 来的。")
             Return Nothing
         End If
     End Function

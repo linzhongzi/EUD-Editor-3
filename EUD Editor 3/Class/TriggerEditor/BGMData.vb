@@ -106,7 +106,7 @@ Public Class BGMData
         Public ReadOnly Property BGMSampleRateStr As String
             Get
                 If _BGMSampleRate = -1 Then
-                    Return "원본"
+                    Return "原版"
                 End If
 
                 Return _BGMSampleRate & "Hz"
@@ -115,7 +115,7 @@ Public Class BGMData
         Public ReadOnly Property BGMBitRateStr As String
             Get
                 If _BGMBitRate = -1 Then
-                    Return "원본"
+                    Return "原版"
                 End If
 
                 Return _BGMBitRate & "kbps"
@@ -132,7 +132,7 @@ Public Class BGMData
         Public Property BGMCompressionSizestr As String
             Get
                 If BGMCompressionSize = -1 Then
-                    Return "알수없음"
+                    Return "未知"
                 End If
 
                 Return BGMCompressionSize \ 1024 & "kbyte"

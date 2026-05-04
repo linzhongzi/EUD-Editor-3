@@ -28,9 +28,9 @@
     Private Sub AddTreeviewItem(parent As TreeViewItem)
         Dim items As New TreeViewItem
         Dim textb As New TextBlock
-        textb.Text = "안녕 " & parent.Items.Count
+        textb.Text = "你好 " & parent.Items.Count
         items.Header = textb
-        items.Tag = "안녕 " & parent.Items.Count
+        items.Tag = "你好 " & parent.Items.Count
 
 
 
@@ -48,9 +48,9 @@
     Private Sub AddTreeviewItem(parent As TreeView)
         Dim items As New TreeViewItem
         Dim textb As New TextBlock
-        textb.Text = "안녕 " & parent.Items.Count
+        textb.Text = "你好 " & parent.Items.Count
         items.Header = textb
-        items.Tag = "안녕 " & parent.Items.Count
+        items.Tag = "你好 " & parent.Items.Count
 
 
 

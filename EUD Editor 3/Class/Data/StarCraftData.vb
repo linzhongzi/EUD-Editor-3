@@ -307,6 +307,8 @@ Public Class StarCraftData
                             Return stat_txt_kor_eng.Strings(index).val1
                         Case 2
                             Return stat_txt_kor_kor.Strings(index).val1
+                        Case 3
+                            Return stat_txt_kor_chi.Strings(index).val1
                         Case Else
                             Return stat_txt.Strings(index).val1
                     End Select
@@ -330,6 +332,7 @@ Public Class StarCraftData
 
     Private ReadOnly stat_txt_kor_eng As tblReader
     Private ReadOnly stat_txt_kor_kor As tblReader
+    Private ReadOnly stat_txt_kor_chi As tblReader
 
 
     Private _GRPData As GRPManager
@@ -456,6 +459,7 @@ Public Class StarCraftData
         stat_txt = New tblReader(Tool.GetTblFolder & "\stat_txt.tbl")
         stat_txt_kor_eng = New tblReader(Tool.GetTblFolder & "\stat_txt_kor_eng.tbl")
         stat_txt_kor_kor = New tblReader(Tool.GetTblFolder & "\stat_txt_kor_kor.tbl")
+        stat_txt_kor_chi = New tblReader(Tool.GetTblFolder & "\stat_txt_kor_chi.tbl")
 
         pSfxFileName = New tblReader(Tool.GetTblFolder & "\sfxdata.tbl")
 

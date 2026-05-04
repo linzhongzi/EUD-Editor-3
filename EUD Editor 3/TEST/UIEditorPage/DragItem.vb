@@ -31,23 +31,23 @@
             DragSelectItem = sender
 
 
-            log.Text = "한번 클릭함 : "
+            log.Text = "单击一次 : "
             For i = 0 To SelectItems.Count - 1
                 log.Text = log.Text & SelectItems(i).Tag & ", "
             Next
-            log.Text = log.Text & vbCrLf & "현재 선택한 블럭 : " & sender.Tag & "  드래그 완료  IsTop : " & IsTop
+            log.Text = log.Text & vbCrLf & "当前选择的块 : " & sender.Tag & "  拖动完成  IsTop : " & IsTop
 
         End If
     End Sub
     Private Sub MainTreeviewItme_PreviewMouseUp(sender As TreeViewItem, e As MouseEventArgs)
         If DragSelect Then
             If sender Is DragSelectItem Then
-                log.Text = "한번 클릭함 : "
+                log.Text = "单击一次 : "
 
                 For i = 0 To SelectItems.Count - 1
                     log.Text = log.Text & SelectItems(i).Tag & ", "
                 Next
-                log.Text = log.Text & vbCrLf & "현재 선택한 블럭 : " & DragSelectItem.Tag & "  드래그 완료  IsTop : " & IsTop
+                log.Text = log.Text & vbCrLf & "当前选择的块 : " & DragSelectItem.Tag & "  拖动完成  IsTop : " & IsTop
 
                 If SelectItems.IndexOf(DragSelectItem) < 0 Then
                     ' 如果拖动的位置不是所选块！
@@ -100,7 +100,7 @@
         End If
     End Sub
     Private Sub CreateDragImage()
-        Log.Text = "한번 클릭함 : "
+        Log.Text = "单击一次 : "
         For i = 0 To SelectItems.Count - 1
             Log.Text = Log.Text & SelectItems(i).Tag & ", "
         Next
@@ -110,7 +110,7 @@
 
         For i = 0 To SelectItems.Count - 1
             Dim si As New TreeViewItem
-            si.Header = "임시텍스트" 'SelectItems(i).Tag
+            si.Header = "临时文本" 'SelectItems(i).Tag
             si.Background = Brushes.Transparent
 
             DragTreeview.Items.Add(si)

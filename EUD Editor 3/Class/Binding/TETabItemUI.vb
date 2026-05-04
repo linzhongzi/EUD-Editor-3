@@ -30,7 +30,7 @@ Public Class TETabItemUI
                 Dim ticon As New PackIcon()
                 ticon.Kind = PackIconKind.CloseBox
                 tmenu.Icon = ticon
-                tmenu.Header = "닫기"
+                tmenu.Header = "关闭"
 
                 AddHandler tmenu.Click, New RoutedEventHandler(Sub(sender As Object, e As RoutedEventArgs)
                                                                    TECloseTabITem(TEFile)
@@ -44,7 +44,7 @@ Public Class TETabItemUI
                 Dim ticon As New PackIcon()
                 ticon.Kind = PackIconKind.CloseBoxMultiple
                 tmenu.Icon = ticon
-                tmenu.Header = "모든 문서 닫기"
+                tmenu.Header = "关闭所有文档"
 
                 AddHandler tmenu.Click, New RoutedEventHandler(Sub(sender As Object, e As RoutedEventArgs)
                                                                    TECloseAllTabITem(TEFile)
@@ -57,7 +57,7 @@ Public Class TETabItemUI
                 Dim ticon As New PackIcon()
                 ticon.Kind = PackIconKind.CloseBoxMultiple
                 tmenu.Icon = ticon
-                tmenu.Header = "이 창을 제외하고 모든 문서 닫기"
+                tmenu.Header = "除本窗口外关闭所有文档"
 
                 AddHandler tmenu.Click, New RoutedEventHandler(Sub(sender As Object, e As RoutedEventArgs)
                                                                    TECloseOtherTabITem(TEFile)

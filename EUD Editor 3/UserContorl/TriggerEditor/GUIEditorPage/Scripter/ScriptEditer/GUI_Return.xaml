@@ -13,7 +13,7 @@
             <RowDefinition Height="130"/>
         </Grid.RowDefinitions>
         <DockPanel x:Name="MainStackPanel" Grid.Row="0"  LastChildFill="False">
-            <TextBlock x:Name="returnVal" Text="반환 값" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0"/>
+            <TextBlock x:Name="returnVal" Text="返回值" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,0"/>
         </DockPanel>
         <local:GUI_ArgEditor x:Name="valueEditPanel" Grid.Row="1" />
     </Grid>

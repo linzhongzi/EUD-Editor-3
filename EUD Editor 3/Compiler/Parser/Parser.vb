@@ -11,9 +11,9 @@ Public Class Parser
         CODE_PARAM_DCL
         CODE_OBJECT
         CODE_IMPORT
-        CODE_DECLARATION '선언문
-        CODE_STATEMENT 'if문, 수식
-        CODE_COMPOUND_ST '{괄호}
+        CODE_DECLARATION ' 声明语句
+        CODE_STATEMENT ' if语句, 表达式
+        CODE_COMPOUND_ST ' {括号}
         CODE_EXPRESSION 'expression
         CODE_PRIMARY 'expression
         CODE_OPERATOR
@@ -56,14 +56,14 @@ Public Class Parser
         CODE_MACRO
     End Enum
 
-    '한줄씩 들어감
+    ' 逐行输入
 
 
-    '현재 코드를 가르키는 포인터를 만들어 둬야됨.
-    'Decode가 작업할때 현재 포인터에다가 아이템을 넣음
+    ' 必须创建一个指向当前代码的指针。
+    ' 当Decode工作时，将项目放入当前指针。
 
 
-    '오류 처리기. 만들어야 됨.
+    ' 需要创建错误处理器。
 
     Public Sub Decoder(CodeType As CodeType, code As CodeBlock)
         Select Case CodeType
@@ -134,7 +134,7 @@ Public Class Parser
                 Dim fname As String = CheckNextToken(Token.TokenType.TOKEN_IDENTIFIER).value
 
 
-                'MsgBox("함수 명  : " & fname)
+                ' MsgBox("函数名 : " & fname)
 
                 CheckNextToken(Token.TokenType.TOKEN_LPAREN)
                 While (Not CheckBlockToken(Token.TokenType.TOKEN_RPAREN))
@@ -145,7 +145,7 @@ Public Class Parser
                 If CurrentToken.TType = Token.TokenType.TOKEN_LSQBRACKET Then
                     Decoder(CodeType.CODE_COMPOUND_ST, ncode)
                     If ToolTipToken IsNot Nothing Then
-                        '툴팁 분석하기.
+                        ' 分析工具提示。
                         'MsgBox(ToolTipToken.value)
 
 
@@ -168,24 +168,24 @@ Public Class Parser
 
                 CheckNextToken(Token.TokenType.TOKEN_IDENTIFIER)
                 If CurrentToken.TType = Token.TokenType.TOKEN_COLON Then
-                    '인자
+                    ' 参数
                     CheckNextToken(Token.TokenType.TOKEN_COLON)
 
 
                     argtype = CurrentToken().value
                     CheckNextToken(Token.TokenType.TOKEN_IDENTIFIER)
                 ElseIf CurrentToken.TType = Token.TokenType.TOKEN_COMMENT Then
-                    '코맨드인자
+                    ' 命令参数
                     argtype = CurrentToken().value
                     CheckNextToken(Token.TokenType.TOKEN_COMMENT)
                 End If
                 ncode.Value1 = argname
                 ncode.Value2 = argtype
 
-                'MsgBox("인자  : " & argname & ":" & argtype)
+                ' MsgBox("参数 : " & argname & ":" & argtype)
 
                 code.Items.Add(ncode)
-            Case CodeType.CODE_COMPOUND_ST '{괄호}
+            Case CodeType.CODE_COMPOUND_ST ' {括号}
                 Dim ncode As New CodeBlock(CodeType.CODE_COMPOUND_ST)
 
 
@@ -202,7 +202,7 @@ Public Class Parser
                 End While
 
                 code.Items.Add(ncode)
-            Case CodeType.CODE_DECLARATION '선언문
+            Case CodeType.CODE_DECLARATION ' 声明语句
                 Dim ncode As CodeBlock = Nothing
 
                 Select Case CurrentToken.TType
@@ -215,7 +215,7 @@ Public Class Parser
                 End Select
                 CheckNextToken(CurrentToken.TType)
 
-                '변수 이름
+                ' 变量名称
                 Dim vname As String = CheckNextToken(Token.TokenType.TOKEN_IDENTIFIER).value
                 ncode.Value1 = vname
                 If CurrentToken.TType = Token.TokenType.TOKEN_COMMA Then
@@ -228,10 +228,10 @@ Public Class Parser
 
 
                 If CurrentToken.TType = Token.TokenType.TOKEN_SEMICOLON Then
-                    '끝
+                    ' 结束
                     CheckNextToken(Token.TokenType.TOKEN_SEMICOLON)
                 ElseIf CurrentToken.TType = Token.TokenType.TOKEN_ASSIGN Then
-                    'EXP가 들어감
+                    ' 放入EXP
                     CheckNextToken(Token.TokenType.TOKEN_ASSIGN)
 
 ReLoad:
@@ -260,7 +260,7 @@ ReLoad:
                     End If
 
                     code.Items.Add(ncode)
-            Case CodeType.CODE_STATEMENT 'if문, 수식
+            Case CodeType.CODE_STATEMENT ' if语句, 表达式
                 Dim ncode As New CodeBlock(CodeType.CODE_STATEMENT)
 
                 Select Case CurrentToken.TType
@@ -380,7 +380,7 @@ ReLoad:
 
                 code.Items.Add(ncode)
             Case CodeType.CODE_EXPRESSION 'expression
-                'CODE_PRIMARY + 연산자의 묶음
+                ' CODE_PRIMARY + 运算符组合
                 Dim ncode As New CodeBlock(CodeType.CODE_EXPRESSION)
 
                 While (True)
@@ -409,14 +409,14 @@ ReLoad:
             Case CodeType.CODE_PRIMARY
                 Dim ncode As New CodeBlock(CodeType.CODE_PRIMARY)
                 'Number
-                '식별자
-                '뒤에 (),[]이 올 수 있음.
+                ' 标识符
+                ' 后面可以跟 (),[]。
                 Select Case CurrentToken.TType
                     Case Token.TokenType.TOKEN_IDENTIFIER
                         Dim value As String = CurrentToken.value
 PRIUse:
                         ncode.BType = CodeType.PRI_USE
-                        '변수 호출일수도 있고 함수 사용일 수도 있음
+                        ' 可能是变量调用，也可能是函数使用。
                         NextToken()
 
                         If CurrentToken.TType = Token.TokenType.TOKEN_LPAREN Then
@@ -472,7 +472,7 @@ PRIUse:
 
         'While (index < tlist.Count)
         '    'Decoder(CodeType.CODE_MAIN, MainCode)
-        '    MsgBox("타입 : " & tlist(index).TType.ToString & "  값 : " & tlist(index).value)
+        ' MsgBox("类型 : " & tlist(index).TType.ToString & "  值 : " & tlist(index).value)
         '    index += 1
         'End While
 
@@ -480,12 +480,12 @@ PRIUse:
 
         While (index < tlist.Count)
             Decoder(CodeType.CODE_MAIN, MainCode)
-            'MsgBox("타입 : " & tlist(index).TType.ToString & "  값 : " & tlist(index).value)
+            ' MsgBox("类型 : " & tlist(index).TType.ToString & "  值 : " & tlist(index).value)
         End While
     End Sub
 
 
-    '모든 함수등의 정보를 가지고 있어야 됨
+    ' 必须包含所有函数等信息。
 
 
 
@@ -509,13 +509,13 @@ PRIUse:
         Return False
     End Function
     Private Sub GetFuncComment(funcCode As ScriptBlock, Comment As ScriptBlock)
-        '두 스크립트를 섞는다
+        ' 混合两个脚本
         Dim commentstr As String = Comment.value
         Dim argstr As String = ""
         Dim fname As String = funcCode.value
 
         commentstr = Mid(commentstr, 5, commentstr.Length - 8).Trim
-        '두 스크립트를 비교하여 인코딩 가능하면 True를 반환
+        ' 比较两个脚本，如果可编码则返回True
         Dim arglist As List(Of ScriptBlock) = tescm.GetFuncArgs(funcCode)
         For i = 0 To arglist.Count - 1
             If i <> 0 Then
@@ -621,7 +621,7 @@ PRIUse:
                 Next
 
             Case CodeType.CODE_VAR, CodeType.CODE_CONST, CodeType.CODE_STATIC
-                'MsgBox("변수선언 호출")
+                ' MsgBox("调用变量声明")
                 scritem = New ScriptBlock(ScriptBlock.EBlockType.vardefine, "vardefine", True, False, cblock.Value1, Nothing)
 
                 Dim vname As String = cblock.Value1
@@ -673,11 +673,11 @@ PRIUse:
 
                                         Dim tstr() As String = objname.Split(".")
                                         If tstr.Count = 1 Then
-                                            '.가지고 하는거임
+                                            ' 使用 . 进行操作
                                             'ex
                                             'name = StringBuffer
                                             'value = constructor
-                                            'child = 100(일반 값)
+                                            ' child = 100(正常值)
                                             '-> StringBuffer(100)
                                             initojb.name = objname
                                             initojb.value = "constructor"
@@ -753,7 +753,7 @@ PRIUse:
                                                         initojb.value = "alloc"
                                                 End Select
                                             Else
-                                                '외부 오브젝트
+                                                ' 外部对象
                                                 Dim objn As String = ""
                                                 Dim methodn As String = ""
 
@@ -857,8 +857,8 @@ PRIUse:
 
 
             Case CodeType.CODE_COMPOUND_ST
-                'MsgBox("CODE_COMPOUND_ST 호출")
-                'None라는건 빈 컨테이너를 뜻함.
+                ' MsgBox("调用CODE_COMPOUND_ST")
+                ' None表示空容器。
                 scritem = New ScriptBlock(ScriptBlock.EBlockType.none, "none", True, False, "", Nothing)
 
                 For i = 0 To cblock.Items.Count - 1
@@ -867,7 +867,7 @@ PRIUse:
 
 
             Case CodeType.CODE_STATEMENT
-                'MsgBox("CODE_STATEMENT 호출")
+                ' MsgBox("调用CODE_STATEMENT")
                 Dim tcode As CodeBlock = cblock.Items.First
 
                 Select Case tcode.BType
@@ -896,14 +896,14 @@ PRIUse:
                         Dim thenscr As ScriptBlock = scritem.child(1) 'then
                         Dim cscr As ScriptBlock = GetScriptBlock(tcode.Items(1))
                         If cscr.ScriptType = ScriptBlock.EBlockType.folder Then
-                            '가져온게 폴더일 경우 COMPOUND_ST
+                            ' 如果获取的是文件夹，则为COMPOUND_ST
                             Dim faction As ScriptBlock = cscr.child.First
 
                             For i = 0 To faction.child.Count - 1
                                 thenscr.child.Add(faction.child(i))
                             Next
                         Else
-                            '한 문장일 경우
+                            ' 如果是一句话
                             thenscr.child.Add(cscr)
                         End If
 
@@ -913,14 +913,14 @@ PRIUse:
                             Dim elsescr As ScriptBlock = scritem.child(2) 'then
                             Dim tcscr As ScriptBlock = GetScriptBlock(tcode.Items(2))
                             If tcscr.ScriptType = ScriptBlock.EBlockType.folder Then
-                                '가져온게 폴더일 경우 COMPOUND_ST
+                                ' 如果获取的是文件夹，则为COMPOUND_ST
                                 Dim faction As ScriptBlock = tcscr.child.First
 
                                 For i = 0 To faction.child.Count - 1
                                     elsescr.child.Add(faction.child(i))
                                 Next
                             Else
-                                '한 문장일 경우
+                                ' 如果是一句话
                                 elsescr.child.Add(tcscr)
                             End If
                         End If
@@ -938,14 +938,14 @@ PRIUse:
                         Dim thenscr As ScriptBlock = scritem.child(1) 'then
                         Dim cscr As ScriptBlock = GetScriptBlock(tcode.Items(1))
                         If cscr.ScriptType = ScriptBlock.EBlockType.folder Then
-                            '가져온게 폴더일 경우 COMPOUND_ST
+                            ' 如果获取的是文件夹，则为COMPOUND_ST
                             Dim faction As ScriptBlock = cscr.child.First
 
                             For i = 0 To faction.child.Count - 1
                                 thenscr.child.Add(faction.child(i))
                             Next
                         Else
-                            '한 문장일 경우
+                            ' 如果是一句话
                             thenscr.child.Add(cscr)
                         End If
                     Case CodeType.CODE_FOREACH
@@ -977,7 +977,7 @@ PRIUse:
                         Select Case fortype
                             Case "EUDLoopNewUnit", "EUDLoopUnit", "EUDLoopUnit2", "EUDLoopSprite"
                                 Dim vname As String = varname(0) & ", " & varname(1)
-                                '원래 아무것도 없음
+                                ' 原本什么都没有
                                 rvalue = vname
                             Case "Timeline"
                                 Dim vname As String = varname(0)
@@ -1032,9 +1032,9 @@ PRIUse:
 
 
 
-                        Dim declar As ScriptBlock = GetScriptBlock(tcode.Items(0)) '선언문
-                        Dim cond As ScriptBlock = GetScriptBlock(tcode.Items(1)) '조건문
-                        Dim oper As ScriptBlock = GetScriptBlock(tcode.Items(2)) '연산자
+                        Dim declar As ScriptBlock = GetScriptBlock(tcode.Items(0)) ' 声明语句
+                        Dim cond As ScriptBlock = GetScriptBlock(tcode.Items(1)) ' 条件语句
+                        Dim oper As ScriptBlock = GetScriptBlock(tcode.Items(2)) ' 运算符
                         declarstr = declar.ValueCoder
                         condstr = cond.ValueCoder
                         operstr = oper.ValueCoder
@@ -1096,9 +1096,9 @@ PRIUse:
 
 
             Case CodeType.PRI_USEBRACKET
-                '함수, 외부함수, 오브젝트의 필드
+                ' 函数、外部函数、对象的字段
                 If cblock.Value1.IndexOf(".") = -1 Then
-                    '내부함수나 함수입니다.
+                    ' 是内部函数或函数。
                     Dim fname As String = cblock.Value1
 
 
@@ -1141,7 +1141,7 @@ PRIUse:
 
                     'macrofun
                 Else
-                    '외부함수, 매서드입니다.
+                    ' 是外部函数或方法。
                     Dim nspace As String = cblock.Value1.Split(".").First
                     Dim tastr() As String = cblock.Value1.Split(".")
 
@@ -1189,7 +1189,7 @@ PRIUse:
 
 
             Case CodeType.PRI_USEINDEX
-                '오브젝트
+                ' 对象
                 Dim tastr() As String = cblock.Value1.Split(".")
                 Dim tscr As New ScriptBlock(ScriptBlock.EBlockType.varuse, cblock.Value1, True, False, "!index", Nothing)
                 tscr.child.Add(GetScriptBlock(cblock.Items(0)))
@@ -1197,7 +1197,7 @@ PRIUse:
                 scritem = tscr
             Case CodeType.PRI_USE
                 If cblock.Value1.IndexOf(".") = -1 Then
-                    '내부 파일의 변수 일 경우
+                    ' 如果是内部文件的变量
                     Dim tscr As New ScriptBlock(ScriptBlock.EBlockType.varuse, cblock.Value1, True, False, "", Nothing)
                     tscr.value2 = "value"
                     scritem = tscr
@@ -1205,7 +1205,7 @@ PRIUse:
                 Else
                     Dim nspace As String = cblock.Value1.Split(".").First
                     If GetNameSpace.IndexOf(nspace) <> -1 Then
-                        '외부파일의 변수(.앞에 글자가 네임스페이스에 있을 경우
+                        ' 如果是外部文件的变量（点号前的字符在命名空间中时）
                         Dim tastr() As String = cblock.Value1.Split(".")
 
                         If tastr.Count = 2 Then
@@ -1230,7 +1230,7 @@ PRIUse:
                             scritem = tscr
                         End If
                     Else
-                        '내부파일의 변수의 오브젝트의 필드일 경우(해당 변수가 오브젝트 타입으로 선언된 경우)
+                        ' 如果是内部文件变量的对象的字段（如果该变量被声明为对象类型）
                         'fields
                         'method
                         Dim tscr As New ScriptBlock(ScriptBlock.EBlockType.varuse, cblock.Value1.Split(".").First, True, False, cblock.Value1.Split(".").Last, Nothing)
@@ -1247,7 +1247,7 @@ PRIUse:
 
 
             Case CodeType.CODE_EXPRESSION
-                'MsgBox("CODE_EXPRESSION 호출")
+                ' MsgBox("调用CODE_EXPRESSION")
                 Dim scrlist As New List(Of ScriptBlock)
 
                 For i = 0 To cblock.Items.Count - 1
@@ -1291,7 +1291,7 @@ PRIUse:
 
 
 
-                '마지막에 설정
+                ' 最后设置
 
             Case CodeType.CODE_COMMENT
                 scritem = New ScriptBlock(ScriptBlock.EBlockType.rawcode, "rawcode", True, False, "/*" & cblock.Value1 & "*/", Nothing)

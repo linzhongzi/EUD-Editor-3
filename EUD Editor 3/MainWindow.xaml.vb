@@ -70,13 +70,13 @@ Class MainWindow
 
 
     Private Sub BtnSetting_Click(sender As Object, e As RoutedEventArgs)
-        If SettiingForm Is Nothing Then '첫 실행일 경우
+        If SettiingForm Is Nothing Then ' 首次运行时
             SettiingForm = New SettingWindows
             SettiingForm.ShowDialog()
         Else
-            If SettiingForm.IsLoaded Then '열려있을경우
+            If SettiingForm.IsLoaded Then ' 如果已打开
                 SettiingForm.Activate()
-            Else '닫혀있을 경우
+            Else ' 如果已关闭
                 SettiingForm = New SettingWindows
                 SettiingForm.ShowDialog()
             End If
@@ -233,7 +233,7 @@ Class MainWindow
     Private Sub BtnDataEditor_Click(sender As Object, e As RoutedEventArgs)
         BtnRefresh()
 
-        If Not scData.LoadStarCraftData Then '로드가 되어있지 않을 경우 판단
+        If Not scData.LoadStarCraftData Then ' 判断是否未加载
             If Tool.CustomMsgBox(Tool.GetText("Error NotExistMPQ reset"), MessageBoxButton.OKCancel) = MsgBoxResult.Ok Then
                 Dim opendialog As New System.Windows.Forms.OpenFileDialog With {
                 .Filter = "StarCraft.exe|StarCraft.exe",
@@ -266,7 +266,7 @@ Class MainWindow
     Private Sub Btn_TriggerEdit_Click(sender As Object, e As RoutedEventArgs)
         BtnRefresh()
 
-        If Not scData.LoadStarCraftData Then '로드가 되어있지 않을 경우 판단
+        If Not scData.LoadStarCraftData Then ' 判断是否未加载
             If Tool.CustomMsgBox(Tool.GetText("Error NotExistMPQ reset"), MessageBoxButton.OKCancel) = MsgBoxResult.Ok Then
                 Dim opendialog As New System.Windows.Forms.OpenFileDialog With {
                 .Filter = "StarCraft.exe|StarCraft.exe",
@@ -301,7 +301,7 @@ Class MainWindow
     Private Sub Btn_Plugin_Click(sender As Object, e As RoutedEventArgs)
         BtnRefresh()
 
-        If Not scData.LoadStarCraftData Then '로드가 되어있지 않을 경우 판단
+        If Not scData.LoadStarCraftData Then ' 判断是否未加载
             If Tool.CustomMsgBox(Tool.GetText("Error NotExistMPQ reset"), MessageBoxButton.OKCancel) = MsgBoxResult.Ok Then
                 Dim opendialog As New System.Windows.Forms.OpenFileDialog With {
                 .Filter = "StarCraft.exe|StarCraft.exe",

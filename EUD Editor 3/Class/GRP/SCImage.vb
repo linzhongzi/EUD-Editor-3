@@ -1,7 +1,7 @@
 ﻿Public Class SCImage
     Private GRPBOX As GRPBox
 
-    '스타와 동일하게 작동하는 이미지.
+    ' 与星际相同工作原理的图形。
     Private grpID As Integer
     Private DeleteFlag As Boolean = False
     Public ReadOnly Property IsDelete As Boolean

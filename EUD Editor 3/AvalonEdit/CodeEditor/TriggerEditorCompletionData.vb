@@ -10,22 +10,22 @@ Public Class TriggerEditorCompletionData
     Private IconType As EIconType
     Public Enum EIconType
         Auto
-        '키워드
+        ' 关键字
         KeyWord
         LuaKeyWord
         SettingValue
         Funcname
         StarKeyWord
         StarConst
-        '스타 스트링 값
+        ' 星号字符串值
         StarStringConst
-        '액션들
+        ' 动作
         Action
-        '조건들
+        ' 条件
         Condiction
-        'eps기본 함수
+        ' eps基本函数
         plibFunction
-        '로컬 함수
+        ' 局部函数
         localFunction
         Variable
         NameSpace_
@@ -117,7 +117,7 @@ Public Class TriggerEditorCompletionData
         End Get
     End Property
 
-    '검색기준
+    ' 搜索标准
     Public Property Text As String Implements ICompletionData.Text
 
     Public ReadOnly Property Content As Object Implements ICompletionData.Content

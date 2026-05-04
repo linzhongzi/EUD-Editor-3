@@ -34,7 +34,7 @@ Public Class DataManager
     End Function
 
 
-    'UnitDat의 경우 페이지 별 담당하는 파라미터들이 다름. 그걸 정의해야됨
+    ' 对于UnitDat，每个页面负责的参数不同。需要定义这些参数。
     Private PageMask() As List(Of String)
     Public Sub New()
         ReDim PageMask(10)
@@ -95,8 +95,8 @@ Public Class DataManager
 
         Return True
     End Function
-    '복사 붙여넣기 등등을 담당.
-    '바인딩을 이용하는게 특징.
+    ' 负责复制粘贴等操作。
+    ' 特点是使用绑定。
     Public Sub CopyDatPage(DatFiles As SCDatFiles.DatFiles, ObjectID As Integer)
         CopyDatObject(DatFiles, ObjectID)
     End Sub
@@ -168,7 +168,7 @@ Public Class DataManager
             Select Case DatFiles
                 Case SCDatFiles.DatFiles.units
                     Select Case UnitDatPage
-                        Case 6 '와이어 프레임 등
+                        Case 6 ' 线框图等
                             If DataPagePasteAble(DatFiles, ObjectID) Then
                                 Dim tTemplate As Template = JsonConvert.DeserializeObject(Of Template)((My.Computer.Clipboard.GetText))
 
@@ -188,7 +188,7 @@ Public Class DataManager
                                     End If
                                 Next
                             End If
-                        Case 7 '요구사항 등
+                        Case 7 ' 需求等
                             If DataPagePasteAble(DatFiles, ObjectID) Then
                                 Dim tTemplate As Template = JsonConvert.DeserializeObject(Of Template)((My.Computer.Clipboard.GetText))
 

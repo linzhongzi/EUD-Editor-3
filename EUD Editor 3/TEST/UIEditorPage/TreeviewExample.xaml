@@ -15,63 +15,65 @@
                   PreviewMouseLeftButtonDown="MainTreeview_PreviewMouseLeftButtonDown" PreviewMouseLeftButtonUp="MainTreeview_PreviewMouseLeftButtonUp"
                   PreviewMouseMove="MainTreeview_PreviewMouseMove">
                
-                <!--<TreeViewItem Header="if" Background="Orange" >
+                <!--
+                <TreeViewItem Header="if" Background="Orange" >
                 <TreeViewItem Header="Condition" Background="Yellow">
-                    <TreeViewItem Header="조건 1" Background="LawnGreen">
-                        
-                    </TreeViewItem>
+                <TreeViewItem Header="条件 1" Background="LawnGreen">
+
+                </TreeViewItem>
                 </TreeViewItem>
                 <TreeViewItem Header="than" Background="Yellow" >
-                    <TreeViewItem Header="함수 1" Background="Purple">
+                <TreeViewItem Header="函数 1" Background="Purple">
 
-                    </TreeViewItem>
+                </TreeViewItem>
                 </TreeViewItem>
                 <TreeViewItem Header="else" Background="Yellow">
-                    <TreeViewItem Header="액션 1" Background="DodgerBlue">
+                <TreeViewItem Header="行动 1" Background="DodgerBlue">
 
-                    </TreeViewItem>
-                    <TreeViewItem Header="액션 2" Background="DodgerBlue">
-
-                    </TreeViewItem>
                 </TreeViewItem>
-            </TreeViewItem>
+                <TreeViewItem Header="行动 2" Background="DodgerBlue">
 
-            <TreeViewItem Header="액션 3" Background="DodgerBlue">
+                </TreeViewItem>
+                </TreeViewItem>
+                </TreeViewItem>
 
-            </TreeViewItem>
-            <TreeViewItem Header="액션 4" Background="DodgerBlue">
+                <TreeViewItem Header="行动 3" Background="DodgerBlue">
 
-            </TreeViewItem>
-            <TreeViewItem Header="if" Background="Orange" >
+                </TreeViewItem>
+                <TreeViewItem Header="行动 4" Background="DodgerBlue">
+
+                </TreeViewItem>
+                <TreeViewItem Header="if" Background="Orange" >
                 <TreeViewItem Header="Condition" Background="Yellow">
-                    <TreeViewItem Header="조건 2" Background="LawnGreen" IsSelected="True">
+                <TreeViewItem Header="条件 2" Background="LawnGreen" IsSelected="True">
 
-                    </TreeViewItem>
-                    <TreeViewItem Header="조건 3" Background="LawnGreen">
+                </TreeViewItem>
+                <TreeViewItem Header="条件 3" Background="LawnGreen">
 
-                    </TreeViewItem>
+                </TreeViewItem>
                 </TreeViewItem>
                 <TreeViewItem Header="than" Background="Yellow" >
-                    <TreeViewItem Header="함수 2" Background="Purple">
-                        
-                    </TreeViewItem>
-                    <TreeViewItem Header="if" Background="Orange" >
-                        <TreeViewItem Header="Condition" Background="Yellow">
-                            <TreeViewItem Header="조건 4" Background="LawnGreen">
+                <TreeViewItem Header="函数 2" Background="Purple">
 
-                            </TreeViewItem>
-                            <TreeViewItem Header="조건 5" Background="LawnGreen">
-
-                            </TreeViewItem>
-                        </TreeViewItem>
-                        <TreeViewItem Header="than" Background="Yellow" >
-                            <TreeViewItem Header="함수 3" Background="Purple">
-
-                            </TreeViewItem>
-                        </TreeViewItem>
-                    </TreeViewItem>
                 </TreeViewItem>
-            </TreeViewItem>-->
+                <TreeViewItem Header="if" Background="Orange" >
+                <TreeViewItem Header="Condition" Background="Yellow">
+                <TreeViewItem Header="条件 4" Background="LawnGreen">
+
+                </TreeViewItem>
+                <TreeViewItem Header="条件 5" Background="LawnGreen">
+
+                </TreeViewItem>
+                </TreeViewItem>
+                <TreeViewItem Header="than" Background="Yellow" >
+                <TreeViewItem Header="函数 3" Background="Purple">
+
+                </TreeViewItem>
+                </TreeViewItem>
+                </TreeViewItem>
+                </TreeViewItem>
+                </TreeViewItem>
+                -->
             </TreeView>
             <Border x:Name="DragImage" BorderThickness="1" Opacity="0.7" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" Visibility="Collapsed" BorderBrush="#FF9B9B9B">
                 <TreeView x:Name="DragTreeview">

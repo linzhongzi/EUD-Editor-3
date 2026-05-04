@@ -30,11 +30,13 @@
                     
                 </Label>
             </StackPanel>
-            <!--<ComboBox  HorizontalAlignment="Left" Width="200" SelectedIndex="{Binding SCATestMode, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="제작 모드" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                <ComboBoxItem Content="{StaticResource TestMode}"/>
-                <ComboBoxItem Content="{StaticResource MultiPlayMode}"/>
-                <ComboBoxItem Content="{StaticResource FreePlayMode}"/>
-            </ComboBox>-->
+            <!--
+            <ComboBox HorizontalAlignment="Left" Width="200" SelectedIndex="{Binding SCATestMode, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="生产模式" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <ComboBoxItem Content="{StaticResource TestMode}"/>
+            <ComboBoxItem Content="{StaticResource MultiPlayMode}"/>
+            <ComboBoxItem Content="{StaticResource FreePlayMode}"/>
+            </ComboBox>
+            -->
             <StackPanel>
                 <Label Content="{StaticResource SCALoginInfor}" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
 

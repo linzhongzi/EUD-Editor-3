@@ -21,15 +21,15 @@
     End Sub
 
 
-    '컨트롤이 눌렸을때 OneClick수가 존나 크면 저번 선택을 지운다!
-    '컨트롤 키가 눌리지 않았을 때 마지막으로 누른 아이템이 중복이었을 경우가 아니면 하나빼고 다지운다.
+    ' 当按下控件时，如果点击数非常大，则清除上次的选择！
+    ' 当未按下控件键时，如果最后点击的项目不是重复的，则除一个外全部清除。
     Private Sub AddSelectItem(SelectItem As TreeViewItem)
-        If SelectItems.IndexOf(SelectItem) < 0 Then '중복 방지
+        If SelectItems.IndexOf(SelectItem) < 0 Then ' 避免重复
 
-            '컨트롤 또는 쉬프트가 안눌렸으면 다중 선택 방지!
+            ' 如果未按下控件或 Shift，则防止多选！
             If Not PressCtrl And Not PressShift Then
 
-                '선택한 아이템이 많을 경우
+                ' 如果所选项目较多
                 If SelectItems.Count > 0 Then
                     SelectListClear()
                 End If
@@ -47,7 +47,7 @@
                 End If
             End If
 
-            '일반 선택 작업
+            ' 常规选择操作
             SelectItems.Add(SelectItem)
             SelectItem.Background = SelectColor()
             SelectItem.IsSelected = True
@@ -55,7 +55,7 @@
             LastSelectItem = SelectItem
 
             If Not PressCtrl And Not PressShift Then
-                '선택한 아이템이 많을 경우
+                ' 如果所选项目较多
                 If PreviewLastSelectItem Is SelectItem Then
                     SelectListRecover()
                     LastSelectItem = SelectItem
@@ -80,9 +80,10 @@
     End Sub
     Private Sub ListClick(sender As TreeViewItem, e As MouseButtonEventArgs)
         IsSelect = True
-        If PressShift Then '쉬프트키가 눌렸을 경우
-            If LastSelectItem IsNot Nothing Then '첫번째 선택 블록이 있을 경우
-                '현재 누른 아이템이 라스트샐랙트 아이템과 부모가 같은지 판단.
+        If PressShift Then ' 如果按下了 Shift 键
+            If LastSelectItem IsNot Nothing Then 
+            ' 如果存在第一个选中块。
+            ' 判断当前点击的项目与最后选择的项目是否具有相同的父级。
                 If LastSelectItem.Parent Is sender.Parent Then
                     Dim RFirstSelectItem As TreeViewItem = LastSelectItem
 

@@ -13,7 +13,7 @@
 
     Public Sub CrlInit()
         '//////////////////////////////
-        '초기화 식
+        ' 初始化表达式
         'Dim values As List(Of String) = GUIScriptManager.SplitText(scr.value)
         vname.Text = scr.value
 
@@ -62,7 +62,7 @@
 
 
     Private Sub CrlRefresh()
-        '기초 공사도 여기서 한다.
+        ' 基础工作也在这里进行。
         SelectBtn = Nothing
         valueEditPanel.Visibility = Visibility.Collapsed
         varObjectBorder.Visibility = Visibility.Collapsed
@@ -98,9 +98,9 @@
             EditValuesPanel.Visibility = Visibility.Collapsed
             Return
         End If
-        '값목록을 갱신합니다.
+        ' 更新值列表。
         If vcount > EditValues.Count Then
-            '값이 더 적어서 생산해야됨
+            ' 值太少，需要生产。
             For i = 1 To vcount - EditValues.Count
                 If _VariableType = VariableType.Object_ Then
                     EditValues.Add(New ScriptBlock(ScriptBlock.EBlockType.varuse, "init", True, False, "init", Nothing))
@@ -109,7 +109,7 @@
                 End If
             Next
         ElseIf vcount < EditValues.Count Then
-            '값이 더 많아서 지워야 함
+            ' 值太多，需要删除。
             EditValues.RemoveRange(vcount - 1, EditValues.Count - vcount)
         End If
 
@@ -154,7 +154,7 @@
     Private Sub InitVBtnClick(sender As Button, e As RoutedEventArgs)
         Dim btnscr As ScriptBlock = sender.Tag
         If btnscr.ScriptType = ScriptBlock.EBlockType.varuse Then
-            '오브젝트임
+            ' 是对象。
 
 
             If btnscr.name = "init" Or btnscr.value = "init" Then
@@ -209,12 +209,12 @@
         End If
     End Sub
     Private Sub VarType_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        '변수의 타입을 정한다
+        ' 确定变量的类型。
         If isload Then
-            '변수
-            '스태틱변수
-            '상수
-            '오브젝트
+            ' 变量
+            ' 静态变量
+            ' 常量
+            ' 对象
             Select Case VarType.SelectedIndex
                 Case VariableType.Variable
                     _VariableType = VariableType.Variable
@@ -237,7 +237,7 @@
 
 
     Public Sub AgrbtnRefresh(sender As String, e As RoutedEventArgs)
-        'sender.Last 선택한 값
+        ' sender.Last 所选值
         'valuetb.Text = NNNNNNNNNNEditValues.ValueCoder
         If SelectBtn IsNot Nothing Then
             SelectBtn.Content = CType(SelectBtn.Tag, ScriptBlock).ValueCoder
@@ -245,7 +245,7 @@
     End Sub
     Private Function CheckEditable() As Boolean
         '//////////////////////////////
-        '확인을 누를 수 있는지 확인
+        ' 检查是否可以按确认键。
         If vname.Text.Trim = "" Then
             Return False
         End If
@@ -289,7 +289,7 @@
 
     Private ObjectfuncLoad As Boolean = True
     Private Sub ObjectSelect(sender As Object, e As RoutedEventArgs)
-        '리스트에서 오브젝트를 선택했을 때 뜨는 창.
+        ' 从列表中选择对象时弹出的窗口。
         If isload Then
             'MsgBox("?")
             Dim btnscr As ScriptBlock = SelectBtn.Tag
@@ -309,7 +309,7 @@
             btnRefresh()
             'CrlRefresh()
             ObjectfuncLoad = True
-            'MsgBox("오브젝트선택")
+            ' MsgBox("对象选择")
             SelectBtn.Content = CType(SelectBtn.Tag, ScriptBlock).ValueCoder
 
             If btnscr.name = "EUDArray" Or btnscr.name = "EUDVArray" Then
@@ -322,7 +322,7 @@
     End Sub
 
     Private Sub ObjectFunc_SelectionChanged(sender As Object, e As SelectionChangedEventArgs)
-        '오브젝트가 생성자, 할당, 변환인지 결정한다
+        ' 确定对象是构造函数、赋值还是转换。
         If isload And ObjectfuncLoad Then
             Dim btnscr As ScriptBlock = SelectBtn.Tag
             If ObjectFunc.SelectedItem IsNot Nothing Then
@@ -342,7 +342,7 @@
     End Sub
 
     Private Sub SpFlag_Checked(sender As Object, e As RoutedEventArgs)
-        '인게임 초기화를 정한다. 값이 EUDArray, EUDVArray일 경우
+        ' 确定游戏内初始化。当值为 EUDArray, EUDVArray 时。
 
         Dim btnscr As ScriptBlock = SelectBtn.Tag
         If btnscr IsNot Nothing Then
@@ -350,7 +350,7 @@
         End If
     End Sub
     Private Sub SpFlag_Unchecked(sender As Object, e As RoutedEventArgs)
-        '인게임 초기화를 정한다. 값이 EUDArray, EUDVArray일 경우
+        ' 确定游戏内初始化。当值为 EUDArray, EUDVArray 时。
 
         Dim btnscr As ScriptBlock = SelectBtn.Tag
         If btnscr IsNot Nothing Then
@@ -361,7 +361,7 @@
 
     Public Sub OkayAction(sender As Object, e As RoutedEventArgs)
         '//////////////////////////////
-        '스크립트 갱신
+        ' 更新脚本
         scr.value = vname.Text
 
         scr.child.Clear()
@@ -399,10 +399,10 @@
     Private dotscr As ScriptBlock
     Public Sub New(tp As GUIScriptEditerWindow, tscr As ScriptBlock, _dotscr As ScriptBlock)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         p = tp
         scr = tscr
         dotscr = _dotscr

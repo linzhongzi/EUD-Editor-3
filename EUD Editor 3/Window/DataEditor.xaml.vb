@@ -16,10 +16,10 @@ Public Class DataEditor
     Private OpenPage As SCDatFiles.DatFiles = SCDatFiles.DatFiles.units
     Public Sub New(OType As OpenType)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         Select Case OType
             Case OpenType.MainWindow
                 OpenbyMainWindow()
@@ -28,20 +28,20 @@ Public Class DataEditor
     End Sub
     Public Sub New(tab As TabItem, Optional Page As SCDatFiles.DatFiles = SCDatFiles.DatFiles.None, Optional InitIndex As Integer = 0)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
         Me.InitIndex = InitIndex
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         WindowOpenType = OpenType.Orders
         OpenbyOthers(tab, Page)
     End Sub
     Public Sub New()
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         WindowOpenType = OpenType.Drag
     End Sub
     Public Sub CodeViewFold()
@@ -73,7 +73,7 @@ Public Class DataEditor
         'End If
         OpenPage = Page
     End Sub
-    '데이터 상태랑 선택한 인덱스랑 어떤 페이지인지 알고 있어야 함
+    ' 需要知道数据状态、所选索引以及当前页面。
 
     Private LastSize As Integer
     Private Sub CodeExpander_SizeChanged(sender As Object, e As SizeChangedEventArgs)
@@ -123,7 +123,7 @@ Public Class DataEditor
 
 
     '    Dim tabmenuitem As New MenuItem
-    '    tabmenuitem.Header = "닫기"
+    ' tabmenuitem.Header = "关闭"
     '    tabmenuitem.Command = TabablzControl.CloseItemCommand
 
     '    TabContextMenu.Items.Add(tabmenuitem)
@@ -146,7 +146,7 @@ Public Class DataEditor
         pgData.Setting(ProgramData.TSetting.DataEditorTopMost) = Me.Topmost
         CloseToolWindow()
 
-        'MsgBox("파괴")
+        ' MsgBox("销毁")
     End Sub
 
 

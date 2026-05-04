@@ -3,10 +3,10 @@
 Public Class GUI_ArgExpress
     Private scr As ScriptBlock
     Public Event ArgExpressRefreshEvent As RoutedEventHandler
-    '이벤트의 외형이 바뀌었을때 호출됩니다.
+    ' 当事件的外观发生变化时调用。
 
     Public Event ArgBtnClickEvent As RoutedEventHandler
-    'Value가 선택되었을때 호출됩니다. 인자로 선택한 scr을 보냅니다.
+    ' 当选择Value时调用。将所选scr作为参数传递。
 
     Private isLoad As Boolean = False
     Public Sub UpdateValue()
@@ -54,7 +54,7 @@ Public Class GUI_ArgExpress
     Private DragItem As Chip
 
     Public Sub argBtnRefresh(sender As Object, e As RoutedEventArgs)
-        '모든 블럭을 리프레시합니다.
+        ' 刷新所有块。
         For i = 0 To ItemPanel.Children.Count - 1
             Dim tchip As Chip = ItemPanel.Children(i)
             Dim cscr As ScriptBlock = tchip.Tag
@@ -123,10 +123,10 @@ Public Class GUI_ArgExpress
                 Dim di As Integer = 0
 
                 If mpos.X < aw / 2 Then
-                    '왼쪽 부분
+                    ' 左侧部分
                     lsLeft = True
                 Else
-                    '오른쪽 부분
+                    ' 右侧部分
                     lsLeft = False
                     di += aw + 8
                 End If
@@ -199,9 +199,9 @@ Public Class GUI_ArgExpress
 
         Dim di As Integer = 0
         If SelectlsLeft Then
-            '왼쪽 부분
+            ' 左侧部分
         Else
-            '오른쪽 부분
+            ' 右侧部分
             di += aw + 8
         End If
 

@@ -14,7 +14,7 @@ Public Module SCConst
     Public SCPortdataCount As UShort = 220
     Public SCSfxdataCount As UShort = 1144
     Public SCIconCount As UShort = 390
-    Public SCtbltxtCount As UShort = 1547 '없음코드
+    Public SCtbltxtCount As UShort = 1547 ' 无代码
     Public SCIscriptCount As UShort = 412
 
 
@@ -106,8 +106,8 @@ Public Module SCConst
     Color.FromRgb(44, 180, 148),
     Color.FromRgb(136, 64, 156),
     Color.FromRgb(248, 140, 20),
-    Nothing,'우측정렬
-    Nothing,'가운대정렬
+    Nothing,' 右对齐
+    Nothing,' 居中对齐
     Color.FromArgb(0, 0, 0, 0),
     Color.FromRgb(112, 48, 20),
     Color.FromRgb(204, 224, 208),
@@ -445,7 +445,7 @@ Public Class StarCraftData
         DefaultDat = New SCDatFiles(False)
         DefaultExtraDat = New ExtraDatFiles
         Offsets = New Dictionary(Of String, String)
-        '오프셋 읽기
+        ' 读取偏移量
 
         piscriptData = New IScript.CIScript
         piscriptData.LoadIscriptToFile(Tool.DataPath("iscript.bin"))
@@ -506,8 +506,8 @@ Public Class StarCraftData
     End Property
 
 
-    Private ConDict As Dictionary(Of UInteger, ButtonFunc) '코드 번호에 대응하는 이름
-    Private ActDict As Dictionary(Of UInteger, ButtonFunc) '코드 번호에 대응하는 이름
+    Private ConDict As Dictionary(Of UInteger, ButtonFunc) ' 与代码编号对应的名称
+    Private ActDict As Dictionary(Of UInteger, ButtonFunc) ' 与代码编号对应的名称
     Private Sub ReadActConCode()
         ConDict = New Dictionary(Of UInteger, ButtonFunc)
         ActDict = New Dictionary(Of UInteger, ButtonFunc)
@@ -717,7 +717,4 @@ Public Class StarCraftData
 
 
 End Class
-
-
-
 

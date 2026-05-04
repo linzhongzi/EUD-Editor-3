@@ -86,7 +86,7 @@ Module GlobalObj
         If Environment.GetCommandLineArgs.Count > 1 Then
             Dim filename As String = Environment.GetCommandLineArgs(1)
             ProjectData.Load(filename, pjData)
-            'MsgBox(filename & " 다른파일로 열림")
+            ' MsgBox(filename & " 以其他文件打开")
         End If
         Return True
     End Function
@@ -117,7 +117,7 @@ Module GlobalObj
             Return False
         End Try
 
-        '언어 설정
+        ' 语言设置
         If pgData.Setting(ProgramData.TSetting.Language) = Nothing Then
             pgData.Setting(ProgramData.TSetting.Language) = System.Threading.Thread.CurrentThread.CurrentUICulture.ToString()
         End If
@@ -140,7 +140,7 @@ Module GlobalObj
         ProjectControlBinding = New MainMenuBinding
 
 
-        '색 설정
+        ' 颜色设置
         If pgData.Setting(ProgramData.TSetting.Theme) = "Light" Then
             ctheme.IsLight = True
         ElseIf pgData.Setting(ProgramData.TSetting.Theme) = "Dark" Then
@@ -225,7 +225,7 @@ Module GlobalObj
 
 
 
-        '세팅파일
+        ' 设置文件
         If pgData.Setting(ProgramData.TSetting.euddraft) = Nothing Then
             pgData.SaveSetting()
         End If
@@ -236,12 +236,12 @@ Module GlobalObj
     End Function
 
     Public Function ShutDownProgram() As Boolean
-        'MsgBox("프로그램종료")
+        ' MsgBox("程序结束")
         Try
             pgData.SaveSetting()
         Catch ex As Exception
             Tool.ErrorMsgBox(Tool.GetText("Error SettingSave Fail"))
         End Try
-        Return False '종료 허락
+        Return False ' 允许结束
     End Function
 End Module

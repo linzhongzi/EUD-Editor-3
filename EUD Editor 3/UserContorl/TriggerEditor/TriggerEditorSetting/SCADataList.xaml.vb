@@ -46,7 +46,7 @@ Public Class SCADataList
 
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
         OpenNewWindow()
-        'pjData.TEData.SCArchive.CodeDatas.Add(New StarCraftArchive.CodeData("레벨", "데스값 " & List.Items.Count, "마린"))
+        ' pjData.TEData.SCArchive.CodeDatas.Add(New StarCraftArchive.CodeData("等级", "死亡值 " & List.Items.Count, "海军陆战队"))
         'List.Items.Refresh()
     End Sub
 
@@ -412,4 +412,3 @@ Public Class SCADataList
         End If
     End Sub
 End Class
-

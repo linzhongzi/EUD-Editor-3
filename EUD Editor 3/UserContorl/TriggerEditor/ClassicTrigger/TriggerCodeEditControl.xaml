@@ -52,7 +52,7 @@
                                 <ListBoxItem Content="{StaticResource CT_Action}" x:Name="AListItem" Tag="A"/>
                                 <ListBoxItem Content="{StaticResource CT_Plib}" Tag="P"/>
                                 <ListBoxItem Content="{StaticResource CT_Lua}" Tag="L"/>
-                                <!--<ListBoxItem Content="함수" Tag="F"/>-->
+                                <!-- <ListBoxItem Content="函数" Tag="F"/> -->
                                 <ListBoxItem Content="{StaticResource CT_Extern}" Tag="E"/>
                             </ListBox>
                             <Grid>

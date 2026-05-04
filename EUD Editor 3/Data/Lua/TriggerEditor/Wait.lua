@@ -8,14 +8,23 @@ waittime = 0
 @param.Time.Number
 
 
+@Language.zh-CN
+@Summary
+等待 [Time] 个帧数。
+@Group
+等待
+@param.Time.Number
+
+
 @Language.en-US
 @Summary
-프레임 [Time]만큼 기다립니다.
+Waits for [Time] frames.
 @Group
-대기하기
+Wait
 @param.Time.Number
+The number of frames to wait.
 ]================================]
-function Wait(Time) --대기하기/Number/프레임 [Time]만큼 기다립니다.
+function Wait(Time) -- Wait 组/Number/等待 [Time] 个帧数。
 	waittime = waittime + Time
 	echo("}else if(WaitTimer == " .. waittime .. "){//")
 end
@@ -28,13 +37,20 @@ end
 대기하기
 
 
+@Language.zh-CN
+@Summary
+这是等待的开始部分
+@Group
+等待
+
+
 @Language.en-US
 @Summary
-대기하기의 시작 부분입니다.
+The beginning of the wait block.
 @Group
-대기하기
+Wait
 ]================================]
-function WaitStart() --대기하기//대기하기의 시작 부분입니다.
+function WaitStart() -- Wait 组//这是等待的开始部分。
 	waittime = 0
 	echo("{static var WaitTimer = 0;")
 end
@@ -47,13 +63,20 @@ end
 대기하기
 
 
+@Language.zh-CN
+@Summary
+等待条件部分的开始部分
+@Group
+等待
+
+
 @Language.en-US
 @Summary
-대기하기 조건 부의 시작 부분입니다.
+The beginning of the condition part of the wait block.
 @Group
-대기하기
+Wait
 ]================================]
-function WaitConditionStart() --대기하기//대기하기 조건 부의 시작 부분입니다.
+function WaitConditionStart() -- Wait 组//等待条件部分的开始部分。
 	echo("if (WaitTimer == 0 &&")
 end
 
@@ -65,13 +88,20 @@ end
 대기하기
 
 
+@Language.zh-CN
+@Summary
+等待条件部分的结束部分。
+@Group
+等待
+
+
 @Language.en-US
 @Summary
-대기하기 조건 부의 끝 부분입니다.
+The end of the condition part of the wait block.
 @Group
-대기하기
+Wait
 ]================================]
-function WaitConditionEnd() --대기하기//대기하기 조건 부의 끝 부분입니다.
+function WaitConditionEnd() -- Wait 组//等待条件部分的结束部分。
 	echo("){WaitTimer = 1;}")
 end
 
@@ -83,13 +113,20 @@ end
 대기하기
 
 
+@Language.zh-CN
+@Summary
+这是等待动作部分的开始部分。
+@Group
+等待
+
+
 @Language.en-US
 @Summary
-대기하기 액션 부의 시작 부분입니다.
+The beginning of the action part of the wait block.
 @Group
-대기하기
+Wait
 ]================================]
-function WaitActionStart() --대기하기//대기하기 액션 부의 시작 부분입니다.
+function WaitActionStart() -- Wait 组//这是等待动作部分的开始部分。
 	echo("if(WaitTimer > 0){if (WaitTimer == 1){")
 end
 
@@ -101,13 +138,20 @@ end
 대기하기
 
 
+@Language.zh-CN
+@Summary
+等待动作部分的结束部分。
+@Group
+等待
+
+
 @Language.en-US
 @Summary
-대기하기 액션 부의 끝 부분입니다.
+The end of the action part of the wait block.
 @Group
-대기하기
+Wait
 ]================================]
-function WaitActionEnd() --대기하기//대기하기 액션 부의 끝 부분입니다.
+function WaitActionEnd() -- Wait 组//等待动作部分的结束部分。
 	echo("}WaitTimer += 1;")
 end
 
@@ -119,12 +163,19 @@ end
 대기하기
 
 
+@Language.zh-CN
+@Summary
+等待动作的结束部分。
+@Group
+等待
+
+
 @Language.en-US
 @Summary
-대기하기의 끝 부분입니다.
+The end of the wait block.
 @Group
-대기하기
+Wait
 ]================================]
-function WaitEnd() --대기하기//대기하기의 끝 부분입니다.
+function WaitEnd() -- Wait 组//等待动作的结束部分。
 	echo("if (WaitTimer > " .. waittime .. "){WaitTimer = 0;}}}")
 end

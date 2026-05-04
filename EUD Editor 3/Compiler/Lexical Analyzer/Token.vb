@@ -1,5 +1,5 @@
 ﻿Public Class Token
-    '플래그 타입
+    ' 标志类型
     Public Enum TokenType
 
         'Keywords

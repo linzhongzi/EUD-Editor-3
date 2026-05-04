@@ -47,7 +47,7 @@ Public Class BGMPlayerConverter
         Dim sbitrate As Integer = 0
         Dim ssamplerate As Integer = 0
 
-        '세팅정보에는 음원파일의 CRC32가 들어있음
+        ' 设置信息中包含音频文件的 CRC32。
         Dim CRC32 As New CRC32
         bgmCRC32V = CRC32.GetCRC32FromFile(bgmdata.BGMPath)
 
@@ -55,18 +55,18 @@ Public Class BGMPlayerConverter
 
 
 
-        'BGM폴더 존재여부 확인
+        ' 确认 BGM 文件夹是否存在。
         Dim folderPath As String = BuildData.SoundFilePath() & "\" & bgmdata.BGMName
         Dim SettingPath As String = folderPath & "\bgm.ini"
 
         If Not My.Computer.FileSystem.DirectoryExists(folderPath) Then
-            '폴더가 없음
+            ' 文件夹不存在。
             My.Computer.FileSystem.CreateDirectory(folderPath)
         End If
 
 
 
-        '블럭 사운드 CRC32구하기
+        ' 获取块声音的 CRC32。
         For Each files As String In My.Computer.FileSystem.GetFiles(folderPath)
             Dim rfilename As String = files.Split("\").Last
             If rfilename.IndexOf("st") <> -1 Then
@@ -80,15 +80,15 @@ Public Class BGMPlayerConverter
         Next
 
 
-        '세팅파일 구조
+        ' 设置文件结构。
         'MainFileCRC32
         'SoundBlockCRC32 XorResult
 
 
 
-        '세팅파일 확인
+        ' 确认设置文件。
         If My.Computer.FileSystem.FileExists(SettingPath) Then
-            '세팅파일 정보를 읽고 틀리면 새로 작성함
+            ' 读取设置文件信息，如果错误则重新编写。
             Dim tfs As New FileStream(SettingPath, FileMode.Open)
             Dim sr As New StreamReader(tfs)
 
@@ -108,7 +108,7 @@ Public Class BGMPlayerConverter
         End If
 
 
-        '폴더안에 파일 모두 삭제 후 작업시작
+        ' 删除文件夹中的所有文件后开始工作。
         For Each files As String In My.Computer.FileSystem.GetFiles(folderPath)
             My.Computer.FileSystem.DeleteFile(files)
         Next
@@ -228,7 +228,7 @@ Public Class BGMPlayerConverter
 
         bgmblockCRC32V = 0
         bgmblockCount = 0
-        '블럭 사운드 CRC32구하기
+        ' 获取块声音的 CRC32。
         For Each files As String In My.Computer.FileSystem.GetFiles(folderPath)
             Dim rfilename As String = files.Split("\").Last
             If rfilename.IndexOf("st") <> -1 Then

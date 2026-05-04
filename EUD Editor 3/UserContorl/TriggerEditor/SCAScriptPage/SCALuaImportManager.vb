@@ -8,11 +8,11 @@ Public Class SCALuaImportManager : Inherits ImportManager
         Dim cTEfile As TEFile = tTEfile
 
         For index = 0 To Path.Length - 2
-            '마지막아니면 폴더에서 찾기
+            ' 如果不是最后，则在文件夹中查找。
             For i = 0 To cTEfile.FolderCount - 1
                 If cTEfile.Folders(i).FileType <> TEFile.EFileType.Setting Then
                     If cTEfile.Folders(i).FileName = Path(index) Then
-                        '파일
+                        ' 文件
 
                         cTEfile = cTEfile.Folders(i)
                         Exit For
@@ -29,7 +29,7 @@ Public Class SCALuaImportManager : Inherits ImportManager
             Dim Filename As String = cTEfile.Files(i).FileName
 
             If cTEfile.Files(i).FileName = Path.Last Then
-                '파일
+                ' 文件
                 Return cTEfile.Files(i).Scripter.GetStringText()
             End If
 
@@ -104,7 +104,7 @@ Public Class SCALuaImportManager : Inherits ImportManager
         Return rlist
     End Function
     Public Overrides Function GetFIleContent(pullpath As String) As String
-        '외부파일에 포함되지 않으면 맵에서 가져와야함.
+        ' 如果不包含在外部文件中，则必须从地图中获取。
         Select Case pullpath
             Case "DEFAULTFUNCTIONLIST"
                 Return System.IO.File.ReadAllText(MacroManager.SCAFloderPath & "\SCAScriptPredefine.lua")

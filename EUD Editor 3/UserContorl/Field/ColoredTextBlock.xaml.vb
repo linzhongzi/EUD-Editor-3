@@ -4,17 +4,17 @@ Imports System.Text.RegularExpressions
 Public Class ColoredTextBlock
     Public Sub New()
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
     End Sub
     Public Sub New(text As String)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         TextColred(text)
     End Sub
 
@@ -49,20 +49,20 @@ Public Class ColoredTextBlock
             End Try
 
 
-            '스페이스 하나당 4픽셀
+            ' 一个空格对应4像素
 
             Dim AddedText As String = Mid(MainText, Startindex, tMatch.Index - Startindex + 1)
-            'MsgBox(AddedText & vbCrLf & "   매치 인덱스:" & tMatch.Index & "  시작인덱스:" & Startindex)
+            ' MsgBox(AddedText & vbCrLf & "   匹配索引:" & tMatch.Index & "  开始索引:" & Startindex)
 
-            '남은 공간
+            ' 剩余空间
 
 
-            If LastCode = &H12 Or LastCode = &H13 Then '12 라이트   13 중앙
+            If LastCode = &H12 Or LastCode = &H13 Then ' 12 右对齐   13 居中
                 Dim TextBoxWidth As Integer = Texts.ActualWidth
                 Dim TextWidth As Integer
                 Dim AddexWidth As Integer = GetTextLen(AddedText)
 
-                If MainText.IndexOf(vbCrLf) = -1 Then '개행이 없을 경우
+                If MainText.IndexOf(vbCrLf) = -1 Then ' 如果没有换行
                     TextWidth = GetTextLen(MainText)
                 Else
 

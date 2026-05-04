@@ -28,13 +28,13 @@ Public Class StarCraftArchive
 
 
     ''' <summary>
-    ''' SCA가 사용으로 되어있을때 현재 계정정보가 올바른지 확인하고 올바르지 않으면 IsUsed를 비활성화 합니다.
+    ''' 当SCA设置为使用时，确认当前账户信息是否正确，如果不正确则禁用IsUsed。
     ''' </summary>
     ''' <returns></returns>
     Public Function CheckLoginAccount() As Boolean
         If IsLogin Then
-            'SCA에 로그인 중일 때
-            '로그인 체크 (현재 이메일을 기준으로 비밀번호를 가져온 다음에 가져온 정보로 로그인 서버로 보낸다)
+            ' 登录SCA时登录检查
+            ' (以当前邮箱为准获取密码，然后用获取的信息发送到登录服务器)
 
             Dim email As String = pjData.TEData.SCArchive.SCAEmail
             Dim pw As String = GetPassWord(email)
@@ -56,10 +56,10 @@ Public Class StarCraftArchive
 
 
             If success Then
-                '로그인 성공
+                ' 登录成功
                 Return True
             Else
-                '로그인 실패 SCA를 사용안함으로 돌림
+                ' 登录失败，将SCA设置为不使用
                 _IsLogin = False
                 _IsUsed = False
                 Return False
@@ -160,9 +160,9 @@ Public Class StarCraftArchive
     Private _LastLoginHash As String
 
     ''' <summary>
-    ''' 식별값을 저장할때 어떤 계정으로 저장되었는지 확인하는 값
-    ''' 특정한 문장을 LoginHash로 암호화한 값 만약 이메일로 로그인 했을 때 해당 값을 복호화 했을때 상수가 나타나지 않으면
-    ''' 다른 계정으로 로그인한것이므로 기존의 데이터를 모두 날림
+    ''' 保存标识值时，确认是使用哪个账户保存的值。
+    ''' 是用LoginHash加密的特定语句。如果使用邮箱登录时，解密该值后未出现常量，
+    ''' 由于您使用不同的帐户登录，所有现有数据都将丢失
     ''' </summary>
     ''' <returns></returns>
     Public Property LastLoginHash As String
@@ -185,7 +185,7 @@ Public Class StarCraftArchive
     End Sub
 
     ''' <summary>
-    ''' 현재 저장된 해시와 동일한 기록인지 확인합니다.
+    ''' 确认是否与当前保存的哈希值有相同记录。
     ''' </summary>
     ''' <returns></returns>
     Public Function CheckLoginHash(hash As String) As Boolean
@@ -481,13 +481,13 @@ Public Class StarCraftArchive
             Get
                 Select Case TypeIndex
                     Case CodeType.Variable
-                        '변수
+                        ' 变量
                         Return NameSpaceName & " " & ValueName
                     Case CodeType.Deaths
-                        '데스값
+                        ' 死亡值
                         Return pjData.CodeLabel(SCDatFiles.DatFiles.units, ValueIndex)
                     Case CodeType.Array
-                        '변수
+                        ' 变量
                         Return NameSpaceName & " " & ValueName
                 End Select
                 Return ""
@@ -495,14 +495,14 @@ Public Class StarCraftArchive
             Set(value As String)
                 Select Case TypeIndex
                     Case CodeType.Variable
-                        '변수
+                        ' 变量
                         NameSpaceName = value.Split(",").First
                         ValueName = value.Split(",").Last
                     Case CodeType.Deaths
-                        '데스값
+                        ' 死亡值
                         ValueIndex = value
                     Case CodeType.Array
-                        '변수
+                        ' 变量
                         NameSpaceName = value.Split(",").First
                         ValueName = value.Split(",").Last
                 End Select

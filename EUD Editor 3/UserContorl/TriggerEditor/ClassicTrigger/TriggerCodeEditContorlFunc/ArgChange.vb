@@ -43,14 +43,14 @@
         TriggerPanel.Children.Clear()
         SummaryPanel.Children.Clear()
 
-        '함수를 재정렬하여 쓴다.
+        ' 重新排序函数后使用。
         Dim t As TriggerFunction = SelectTBlock.GetCodeFunction(MainScriptEditor)
         Dim isCmpTrigger As Boolean
         Dim IsEmpty As Boolean = False
 
         If t Is Nothing Then
-            '없는 함수
-            '그냥 인자들만 출력시킨다.
+            ' 不存在的函数
+            ' 只输出参数。
             isCmpTrigger = False
             IsEmpty = True
         Else
@@ -70,7 +70,7 @@
 
                 TriggerPanel.Children.Add(ttb)
             Else
-                '트리거
+                ' 触发器
                 For i = 0 To t.SortArgList.Count - 1
                     Dim tstr As String = t.SortArgList(i)
 
@@ -93,7 +93,7 @@
 
 
         Else
-            '인자들을 나열한다.
+            ' 列出参数。
             For i = 0 To SelectTBlock.Args.Count - 1
                 Dim ttb As Button = NewArgBtn(i, SelectTBlock)
 
@@ -101,7 +101,7 @@
             Next
 
             If True Then
-                '설명
+                ' 说明
                 Dim ttb As New Label
                 ttb.VerticalContentAlignment = VerticalAlignment.Center
 

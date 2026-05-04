@@ -7,10 +7,10 @@ Public Class TriggerBlock
 
     Public Sub New(_scripter As ScriptEditor, _trg As Trigger)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         trg = _trg
         scripter = _scripter
         Refresh()

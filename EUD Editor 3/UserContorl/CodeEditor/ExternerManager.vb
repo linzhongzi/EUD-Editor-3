@@ -9,7 +9,7 @@ Partial Public Class CodeEditor
         For i = 0 To paths.Count - 1
             'Log.Text = Log.Text & "Path" & i & " : " & paths(i) & "  "
 
-            If paths(i) = "" Then '상위 폴더로
+            If paths(i) = "" Then ' 上级文件夹
                 If i = 0 Then
                     currentPath = currentPath.Parent.Parent
                 Else
@@ -19,7 +19,7 @@ Partial Public Class CodeEditor
             End If
 
 
-            'currentPath.Parent 해당 파일의 상위 파일
+            ' currentPath.Parent 该文件的上级文件
             Dim isFind As Boolean = False
 
             If currentPath.FileType <> TEFile.EFileType.Folder Then
@@ -27,7 +27,7 @@ Partial Public Class CodeEditor
             End If
 
             For k = 0 To currentPath.FolderCount - 1
-                If currentPath.Folders(k).FileName = paths(i) Then '골랐을 경우
+                If currentPath.Folders(k).FileName = paths(i) Then ' 如果选择了
                     currentPath = currentPath.Folders(k)
                     isFind = True
                     Exit For
@@ -39,7 +39,7 @@ Partial Public Class CodeEditor
                 End If
 
                 For k = 0 To currentPath.FileCount - 1
-                    If currentPath.Files(k).FileName = paths(i) Then '파일을 찾았을 경우
+                    If currentPath.Files(k).FileName = paths(i) Then ' 如果找到了文件
                         currentPath = currentPath.Files(k)
                         Exit For
                     End If
@@ -68,7 +68,7 @@ Partial Public Class CodeEditor
 
 
         Return currentPath
-        '선택한게 폴더일 경우와 파일일 경우로 나눠지긴 하지만 일단 구하긴함
+        ' 虽然分为选择的是文件夹还是文件，但暂时先获取。
         'Log.Text = Log.Text & currentPath.FileName & vbCrLf
     End Function
 
@@ -97,7 +97,7 @@ Partial Public Class CodeEditor
 
                 Dim nameSpaceName As String = ""
                 Dim FileName As String = ""
-                If val.Count = 1 Then 'As지정자가 없을 경우
+                If val.Count = 1 Then ' 如果没有 As 指定符
                     nameSpaceName = val(0).Trim
                     FileName = val(0).Trim
                 ElseIf val(1) = "as" Then
@@ -131,24 +131,25 @@ Partial Public Class CodeEditor
                 'Log.Text = tTEfile.FileName & vbCrLf & "ExternFilesCount : " & ExternFiles.Count
                 Dim CheckFlag As Boolean = False
                 For k = 0 To ExternFiles.Count - 1
-                    If ExternFiles(k).TEFile Is tTEfile Then '파일이 같다면?
+                    If ExternFiles(k).TEFile Is tTEfile Then ' 如果文件相同？
                         ExternFiles(k).CheckFlag = True
                         ExternFiles(k).nameSpaceName = nameSpaceName
                         CheckFlag = True
 
-                        If Not ExternFiles(k).CheckFIleChange Then '파일 체크해서 다를경우
+                        If Not ExternFiles(k).CheckFIleChange Then ' 检查文件，如果不同
                             ExternFiles(k).DateRefresh()
-                            'MsgBox("파일 갱신됨 : " & tTEfile.FileName)
+                            ' MsgBox("文件已更新 : " & tTEfile.FileName)
                             'Log.Text = TEFile.FileName & " " & ExternFiles(k).LastDate.ToString
                         End If
                         Exit For
                     End If
                 Next
 
-                If Not CheckFlag Then '만약 파일목록에 없었다면 새로추가
-                    'Log.Text = Log.Text & vbCrLf & "항목 추가"
+                If Not CheckFlag Then 
+                ' 如果不在文件列表中，则新增。
+                ' Log.Text = Log.Text & vbCrLf & "添加项目"
                     ExternFiles.Add(New ExternFile(tTEfile, nameSpaceName))
-                    'MsgBox("파일 갱신됨 : " & tTEfile.FileName)
+                    ' MsgBox("文件已更新 : " & tTEfile.FileName)
                 End If
 
 
@@ -157,7 +158,7 @@ Partial Public Class CodeEditor
 
             Dim index As Integer = 0
             For i = 0 To ExternFiles.Count - 1
-                If Not ExternFiles(index).CheckFlag Then '만약 목록에 없었을 경우
+                If Not ExternFiles(index).CheckFlag Then ' 如果不在列表中时
                     ExternFiles.RemoveAt(index)
                 Else
                     index += 1
@@ -169,8 +170,8 @@ End Class
 
 
 Public Class ExternFile
-    '외부파일을 관리하는 곳
-    '외부 파일들의 최종 수정 날짜를 판단함
+    ' 管理外部文件的地方。
+    ' 判断外部文件的最后修改日期。
 
 
 
@@ -182,7 +183,7 @@ Public Class ExternFile
 
 
 
-    Public Property TEFile As TEFile '지정된 TE파일
+    Public Property TEFile As TEFile ' 指定的TE文件
 
 
     Public LastDate As Date
@@ -200,7 +201,7 @@ Public Class ExternFile
     End Sub
 
     Public Sub DateRefresh()
-        '파일을 읽어서 CFunc를 작성함
+        ' 读取文件并创建 CFunc。
         Funcs.Init()
         Try
             Funcs.LoadFunc(TEFile.Scripter.GetStringText)
@@ -210,13 +211,13 @@ Public Class ExternFile
 
 
         'Try
-        '    MsgBox("데이터 불러오기 : " & TEFile.FileName)
+        ' MsgBox("加载数据 : " & TEFile.FileName)
         'Catch ex As Exception
         'End Try
 
 
         If TEFile IsNot Nothing Then
-            LastDate = TEFile.LastDate '생성시 마지막 날짜를 기록
+            LastDate = TEFile.LastDate ' 创建时记录最后日期。
         End If
     End Sub
 

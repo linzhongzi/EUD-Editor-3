@@ -12,10 +12,10 @@ Public Class TextEditorWindow
     Private IsLoading As Boolean = False
     Public Sub New(InitStr As String)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         KorFont = New FontFamily(New Uri("pack://application:,,,/resources/"), "./#Kostar")
 
 
@@ -30,7 +30,7 @@ Public Class TextEditorWindow
         TextString = InitStr
         Dim inittext As String = TextString
         inittext = inittext.Replace("\n", vbCrLf)
-        ''전처리기
+        ' '预处理器
         'Dim pattern As String = "\\x([\d\w][\d\w])"
         'Dim matches As MatchCollection = Regex.Matches(inittext, pattern)
         'For Each Match As Match In matches
@@ -80,16 +80,16 @@ Public Class TextEditorWindow
         End If
 
 
-        '한글자당 16
+        ' 每个字符 16
         '16 * 11 = 176
         '640 ~ 853
 
         If height < 480 Then
-            '480이 최소크기b
+            ' 480 是最小尺寸
             height = 480
         End If
 
-        '480일때 640이 최대
+        ' 当480、640为最大时
         Dim hr As Double = height / 480
         Dim rwidth As Double = width / hr
 
@@ -213,9 +213,9 @@ Public Class TextEditorWindow
                 lastindex = startindex + matches(k).Length
 
                 Select Case colorcode
-                    Case &H12 '오른쪽
+                    Case &H12 ' 右侧
                         Inlines = RightTextBox.Inlines
-                    Case &H13 '가운대
+                    Case &H13 ' 居中
                         Inlines = CenterTextBox.Inlines
                     Case Else
                         If ColorTable.Count < colorcode Then
@@ -267,17 +267,17 @@ Public Class TextEditorWindow
 
         '        Dim start As TextPointer = pointer.GetPositionAtOffset(startIndex)
 
-        '        'MsgBox("찾은 값 : " & Match.Value & "   찾은 시작 값 : " & startIndex)
+        ' 'MsgBox("找到的值 : " & Match.Value & "   找到的开始值 : " & startIndex)
 
 
         '        Dim ttr As New TextRange(start, bc(i).ContentEnd)
 
         '        Select Case colorCode
-        '            Case &H12 '오른쪽
+        ' Case &H12 '右侧
         '                ttr.ApplyPropertyValue(Paragraph.TextAlignmentProperty, TextAlignment.Right)
-        '            Case &H13 '가운대
+        ' Case &H13 '居中
         '                ttr.ApplyPropertyValue(Paragraph.TextAlignmentProperty, TextAlignment.Center)
-        '            Case &H9 '탭
+        ' Case &H9 '制表符
         '            Case Else
         '                ttr.ApplyPropertyValue(ForegroundProperty, New SolidColorBrush(ColorTable(colorCode)))
         '        End Select

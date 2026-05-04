@@ -7,10 +7,10 @@ Public Class BuildLogWindow
     Private IsErrorLogBox As Boolean
     Public Sub New(tLogText As String, tIsErrorLogBox As Boolean)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
 
 
         LogText = tLogText
@@ -41,7 +41,7 @@ Public Class BuildLogWindow
             Me.Opacity = 1
             SecTime = 0
         Else
-            '3초가 지나면 시작
+            ' 3秒后开始。
             If SecTime > 200 Then
                 Me.Opacity = 1 - (SecTime - 200) / 200
                 If SecTime > 400 Then

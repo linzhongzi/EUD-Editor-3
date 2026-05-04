@@ -20,7 +20,7 @@ Public Class TriggerEditor
     End Sub
 
     Public Sub Undo()
-        'MsgBox("다시실행")
+        ' MsgBox("重新执行")
 
     End Sub
     Public Sub Redo()
@@ -81,7 +81,7 @@ Public Class TriggerEditor
         MainTab.Content = TLoadLastItem(pjData.TEData.LastOpenTabs)
     End Sub
     Private Function TLoadLastItem(TabItems As TriggerEditorData.LastTab) As Control
-        '만약 TabItems에 리스트가 있을 경우
+        ' 如果 TabItems 中有列表
         If TabItems.Items.Count <> 0 Then
             Dim tTabablzControl As New TabablzControl
 
@@ -257,14 +257,14 @@ Public Class TriggerEditor
     End Sub
 
     'Public Function Factory() As TabItem
-    '    MsgBox("아")
+    ' MsgBox("啊")
     '    Return New TabItem
     'End Function
 
 
     Public Sub OpenTabItem(tTEFile As TEFile, Optional LineHighlight As String = "", Optional StartOffset As Integer = 0)
-        '모든 Winddow및 TEControl을 뒤져서 중복으로 켜져있는지 확인 후
-        '중복되어 있으면 해당 파일을 Activate시킨다.
+        ' 搜索所有 Window 和 TEControl，检查是否有重复打开的，
+        ' 如果有重复的，则激活该文件。
         Dim Line As Integer = -1
         If IsNumeric(LineHighlight) Then
             Line = LineHighlight
@@ -299,7 +299,7 @@ Public Class TriggerEditor
 
 
     Private Function CheckActvateTab(tTEFile As TEFile, Optional SelectLine As Integer = -1) As Boolean
-        '우선 모든 윈도우 돌면서 조사하자
+        ' 首先遍历所有窗口进行检查。
         For Each win As Window In Application.Current.Windows
             If win.GetType Is GetType(TriggerEditor) Then
                 Dim MainContent As Object = CType(win, TriggerEditor).MainTab
@@ -321,7 +321,7 @@ Public Class TriggerEditor
         Return False
     End Function
     Private Function CheckBranch(tTEFile As TEFile, ParentBranch As Object, SelectLine As Integer) As Boolean
-        '우선 모든 윈도우 돌면서 조사하자
+        ' 首先遍历所有窗口进行检查。
         While TypeOf ParentBranch IsNot TabablzControl
             Select Case ParentBranch.GetType
                 Case GetType(TabablzControl)

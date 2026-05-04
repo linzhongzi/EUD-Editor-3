@@ -3,12 +3,12 @@
     Private ObjectID As Integer
 
     Private MyList As CodeCollection
-    'Dat종류, 오브젝트 아이디만 있으면 됨
+    ' Dat类型，只需对象ID即可
 
-    'Dat종류에 따른 출처들을 미리 정리해두자
-    'ex Dat종류 Weapon의 경우, 모든 유닛들의 UnitDat_GroundWeapon을 조사하여 오브젝트 아이디가 같으면 해당 아이디를 보유한 유닛을 추가.
+    ' 提前整理好每种Dat类型的来源。
+    ' 例如，对于Dat类型Weapon，检查所有单位的UnitDat_GroundWeapon，如果对象ID相同，则添加拥有该ID的单位。
 
-    '이 관계를 이용하여 연결된 오브젝트의 이름도 변경해주면 좋겠음
+    ' 利用此关系，最好也更改连接到的对象的名称。
     Public Sub Init(_DatFile As SCDatFiles.DatFiles, _ObjectID As Integer)
         Datfile = _DatFile
         ObjectID = _ObjectID

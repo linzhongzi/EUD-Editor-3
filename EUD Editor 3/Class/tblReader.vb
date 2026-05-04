@@ -39,12 +39,12 @@ Public Class tblReader
 
             Dim charCount As Integer = 0
             While True
-                Dim val As Byte = br.ReadByte() '바이트씩 읽으면서 0이 나오면 종료.
-                If val = 0 And charCount >= 2 Then 'charCount가 2이상일 경우 부터만
+                Dim val As Byte = br.ReadByte() ' 逐字节读取，遇到0则结束。
+                If val = 0 And charCount >= 2 Then ' 仅当charCount为2或以上时
                     If i = count - 1 Then
                         Exit While
                     Else
-                        While fs.Position < header(i + 1) '문자 끝까지 읽기.
+                        While fs.Position < header(i + 1) ' 读取到字符串末尾。
                             If val = 0 Then
                                 bytes2.Add(124)
                             Else

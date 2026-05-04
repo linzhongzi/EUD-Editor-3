@@ -15,9 +15,9 @@ Partial Public Class CodeEditor
     End Sub
 
 
-    '외부 참조 파일들을 저장해야됨.
-    '사용하지 않는거로 추정되면 삭제도 해야됨
-    '즉 관리하는게 필요
+    ' 需要保存外部引用文件。
+    ' 如果推测为未使用，也应删除。
+    ' 因此需要进行管理。
 
 
 
@@ -123,12 +123,12 @@ Partial Public Class CodeEditor
     End Sub
 
 
-    '현재 위치로 부터 뒤로 간다.
-    '만약 엔터가 나오면 얆짤없이 끝 End
+    ' 从当前位置向后移动。
+    ' 如果遇到回车，则无条件结束。
 
-    '이름()
+    ' 名称()
 
-    '괄호를 입력하는 순간 뒤에 )이거 추가됨!
+    ' ) 是在输入括号后添加的！
 
 
     'asdfg(adsf, 123, 344, 312, 33, 11
@@ -217,11 +217,11 @@ Partial Public Class CodeEditor
                     If VarName = LocalFunc.GetVariableNames(i) Then
                         Dim VarType As String = LocalFunc.GetVariableType(i)
                         If VarType.IndexOf("(") >= 0 Then
-                            'Object나 함수인 경우
+                            ' 如果是对象或函数
                             Dim ObjectName As String = VarType.Split("(").First
 
 
-                            '다른거 다 조사하기
+                            ' 检查其他所有内容
                             For k = 0 To LocalFunc.ObjectCount - 1
                                 If ObjectName = LocalFunc.GetObject(k).ObjName Then
                                     funArgument = LocalFunc.GetObject(k).Functions.GetPopupToolTip(FuncrName, ArgumentIndex)
@@ -381,10 +381,10 @@ Partial Public Class CodeEditor
                 completionWindow = New CustomCompletionWindow(TextEditor.TextArea)
                 completionWindow.CloseWhenCaretAtBeginning = controlSpace
 
-                '만약 enteredText로 인해 CompletionData가 남아있을 경우 -1을 한다.
-                '아니면 -1을 하지 않고 SelectItem을 하지 않는다.
+                ' 如果因 enteredText 导致 CompletionData 残留，则执行 -1。
+                ' 否则不执行 -1，也不要执行 SelectItem。
 
-                '리스트에 엔터텍스트가 포함되어있을 경우 넣으면서 -1한다. 아니면 건들지 않는다.
+                ' 如果列表包含输入文本，则将其插入为 -1。否则不处理。
                 If LastStr.Length = 0 Then
                     completionWindow.StartOffset -= 1
                 Else
@@ -640,16 +640,16 @@ Partial Public Class CodeEditor
     End Sub
 
     Private Sub AutoInserter(keys As String)
-        '/* 쓰면 */ 뒤에 써주는거
-        '{ 쓰면 다음 줄에 }
+        ' /* 写入则后面添加 */
+        ' { 写入则下一行添加 }
         '( -> )
         '[ -> ]
-        '' 쓰면 뒤에 ' 넣어주는거
+        ' ' 写入则后面添加 '
         '" -> "
 
 
-        '"의 경우 뒤에 문자가 "일 경우 뒤에 문자를 지운다.
-        '앞의 문자가 "일 경우 추가로 저장하지 않는다.
+        ' 如果是（"），且其后紧跟的字符也是空字符串（"），则删除该空字符串。
+        ' 如果前面的字符是 "，则不额外保存。
 
 
 
@@ -779,4 +779,3 @@ Partial Public Class CodeEditor
         End If
     End Sub
 End Class
-

@@ -12,7 +12,7 @@ Public Class SettingWindows
         TBStarCraftexe.Text = pgData.Setting(ProgramData.TSetting.starcraft)
         TBeuddraftexe.Text = pgData.Setting(ProgramData.TSetting.euddraft)
         CheckeuddraftVersion(pgData.Setting(ProgramData.TSetting.euddraft))
-        '언어 설정
+        ' 语言设置
         Dim CurrentLan As String = pgData.Setting(ProgramData.TSetting.Language)
         'MsgBox(CurrentLan)
         For i = 0 To CBLanguage.Items.Count - 1
@@ -580,7 +580,7 @@ Public Class SettingWindows
             TBOpenMap.Text = pjData.OpenMapName
         End If
         Me.Visibility = Visibility.Visible
-        'MsgBox("ㅎㅇ")
+        ' MsgBox("你好")
     End Sub
 
     Private Sub Mute_Checked(sender As Object, e As RoutedEventArgs)

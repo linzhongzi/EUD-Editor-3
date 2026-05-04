@@ -94,8 +94,10 @@
             </materialDesign:Snackbar>
         </Grid>
 
-        <!--<TextBox x:Name="TestTextbox" Grid.Column="1" VerticalAlignment="Top" AcceptsReturn="True">안녕하세욧</TextBox>
-        <TextBox x:Name="TestScripts" Grid.Column="2" VerticalAlignment="Top" AcceptsReturn="True"></TextBox>-->
+        <!--
+        <TextBox x:Name="TestTextbox" Grid.Column="1" VerticalAlignment="Top" AcceptsReturn="True">你好</TextBox>
+        <TextBox x:Name="TestScripts" Grid.Column="2" VerticalAlignment="Top" AcceptsReturn="True"></TextBox>
+        -->
 
     </DockPanel>
     

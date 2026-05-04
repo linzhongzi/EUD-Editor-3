@@ -2,10 +2,10 @@
     Private isLoad As Boolean = False
     Public Sub CrlInit()
         '//////////////////////////////
-        '초기화 식
+        ' 初始化表达式
 
 
-        '값 유형
+        ' 值类型
         'var i = 0 ; i < 5 ; i++
         If scr.value = "defaultvalue" Then
             SetCombobox("CountRepeat", "")
@@ -43,7 +43,7 @@
 
     Public Sub OkayAction(sender As Object, e As RoutedEventArgs)
         '//////////////////////////////
-        '스크립트 갱신
+        ' 更新脚本
         Dim ForType As String = CType(ForTypeCB.SelectedItem, ComboBoxItem).Tag
         Dim rvalue As String = ""
 
@@ -66,7 +66,7 @@
                 'rvalue = "var " & vname & " = " & vinit & "; " & vname & " < " & vinit + vcount & "; " & vname & "++"
             Case "EUDLoopNewUnit", "EUDLoopUnit", "EUDLoopUnit2", "EUDLoopSprite"
                 Dim vname As String = ptr_vname.Text & ", " & epd_vname.Text
-                '원래 아무것도 없음
+                ' 原本什么都没有
                 rvalue = vname
             Case "Timeline"
                 Dim vname As String = Timeline_vname.Text
@@ -80,14 +80,14 @@
                     CType(playerloopcb2.SelectedItem, ComboBoxItem).Tag & "ᗢ" &
                     CType(playerloopcb3.SelectedItem, ComboBoxItem).Tag & "ᗢ" & playerloopcheckbox.IsChecked
             Case "EUDPlayerLoop"
-                '원래 아무것도 업슴
+                ' 原本什么都没有
         End Select
 
         scr.value = ForType & "ᚢ" & rvalue
     End Sub
     Private Function CheckEditable() As Boolean
         '//////////////////////////////
-        '확인을 누를 수 있는지 확인
+        ' 检查是否可以按确认键。
         If ForTypeCB.SelectedItem Is Nothing Then
             Return False
         End If
@@ -106,7 +106,7 @@
                 If ptr_vname.Text.Trim = "" Or epd_vname.Text.Trim = "" Then
                     Return False
                 End If
-                '원래 아무것도 없음
+                ' 原本什么都没有
             Case "Timeline"
                 If Not IsNumeric(timetextbox.Text) Or Timeline_vname.Text.Trim = "" Then
                     Return False
@@ -120,7 +120,7 @@
                     Return False
                 End If
             Case "EUDPlayerLoop"
-                '원래 아무것도 없음
+                ' 原本什么都没有
         End Select
 
 
@@ -132,10 +132,10 @@
     Private scr As ScriptBlock
     Public Sub New(tp As GUIScriptEditerWindow, tscr As ScriptBlock)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         p = tp
         scr = tscr
 

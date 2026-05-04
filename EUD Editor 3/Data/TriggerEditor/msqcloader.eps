@@ -125,7 +125,7 @@ function Start(cp, tsenddata, treceivedata){
 	receivedata[cp] = treceivedata;
 	
 	loadstart[cp] = 1;
-	//DisplayText("Debug: 로드시작");
+	// DisplayText("Debug: 开始加载");
 }
 
 
@@ -241,7 +241,7 @@ function Loop(cp){
 					//s.printfAt(7, "\x06sendindex {}, sendvalue {}", tinedx + i, ReadSendValue(tinedx + i));
 				}
 				
-				//다음 루프에서 안넘어가게
+				// 防止在下一个循环中跳过
 				if((tinedx + 20) < l_loaddatalen - 1){
 					l_loadindex += 1;
 				}
@@ -250,7 +250,7 @@ function Loop(cp){
 					l_datablockindex += 1;
 				}
 			}else{
-				//데이터가 넘어가면 끝 알리기
+				// 数据传输结束后通知结束
 				for (var i = 0; i < 20; i++) {
 					SetMSQCSend(i, l_loaddatalen, lenparity);
 				}
@@ -278,7 +278,7 @@ function Loop(cp){
 				const calcparity = receiveindex[cp] % 50;
 				
 				if(parity < calcparity){
-					//패리티 불일치
+					// 奇偶校验不一致
 					//receiveindex[cp] -= calcparity - parity;
 				}else if(parity > calcparity){
 					receiveindex[cp] += parity - calcparity;
@@ -286,27 +286,29 @@ function Loop(cp){
 				
 				const rindex = receiveindex[cp] * 20 + i;
 				lastrindex[cp] = rindex;
-				//값 받음
+				// 已接收值
 				//WriteReceiveValue()
 				wwrite_epd(receivedata[cp] + rindex / 2, (rindex % 2) * 2, rval);
 				//const testv = dwread_epd(senddata + rindex);
 				
 				if(rindex % 2 == 0){
-					//이떄출력
+					// 此时输出
 					const sendd = dwread_epd(senddata + rindex / 2 - 1);
 					const recevied = dwread_epd(receivedata[cp] + rindex / 2 - 1);
 					
-					/*디버그 텍스트 출력용
+					/*
+					用于调试文本输出
 					if(sendd != recevied){
-						s.printfAt(1, "\x06rindex {}, receive {} send {} parity {}", rindex / 2, recevied, sendd, parity);
+					s.printfAt(1, "\x06rindex {}, receive {} send {} parity {}", rindex / 2, recevied, sendd, parity);
 
-						const x = (temparray[i]) % 0x10000 - minwidth;
-						const y = (temparray[i]) / 0x10000 - minwidth;
-						const value = x + y * mapwidth;
-						s.printfAt(2, "\x06x  {}, y {}, value {}", x, y, value);
+					const x = (temparray[i]) % 0x10000 - minwidth;
+					const y = (temparray[i]) / 0x10000 - minwidth;
+					const value = x + y * mapwidth;
+					s.printfAt(2, "\x06x  {}, y {}, value {}", x, y, value);
 					}else{
-						s.printfAt(1, "\x07rindex {}, receive {} send {} parity {}", rindex / 2, recevied, sendd, parity);
-					}*/
+					s.printfAt(1, "\x07rindex {}, receive {} send {} parity {}", rindex / 2, recevied, sendd, parity);
+					}
+					*/
 				}
 				
 			}
@@ -318,7 +320,7 @@ function Loop(cp){
 			//s.printfAt(4, "\x07 lastrindex {}, loaddatalen {} ", lastrindex[cp], loaddatalen[cp]);
 			if(lastrindex[cp] >= loaddatalen[cp] - 1){
 				loadstart[cp] = 2;
-				//DisplayText("Debug: 스테이트변경");
+				// DisplayText("Debug: 状态更改");
 				break;
 			}
 		}
@@ -326,16 +328,16 @@ function Loop(cp){
 			receiveindex[cp] += 1;
 		}
 	}else if(loadstart[cp] == 2){
-		//검증 구간
+		// 验证区间
 		if(IsUserCP()){
 			if(l_errorcount == 0){
 				l_errorcount = 100;
 				l_errorindex = 0;
 				for (var i = 0; i < loaddatalen[cp] / 2; i++) {
-					//s.printf("\x07 검증 구간 index {}, s {}, r {} ", i, dwread_epd(senddata + i), dwread_epd(receivedata[cp] + i));
+					// s.printf("\x07 验证区间 index {}, s {}, r {} ", i, dwread_epd(senddata + i), dwread_epd(receivedata[cp] + i));
 					if(dwread_epd(senddata + i) != dwread_epd(receivedata[cp] + i)){
 						l_errorcount = 200;
-						//s.printf("\x06 검증 구간 index {}, s {}, r {} ", i, dwread_epd(senddata + i), dwread_epd(receivedata[cp] + i));
+						// s.printf("\x06 验证区间 index {}, s {}, r {} ", i, dwread_epd(senddata + i), dwread_epd(receivedata[cp] + i));
 						l_errorlist[l_errorindex] = i;
 						l_errorindex += 1;
 						//loadstart[cp] = 0;
@@ -353,18 +355,18 @@ function Loop(cp){
 		const parity = recevie / 0x10000;
 		const rval = recevie % 0x10000;
 		if(parity == maxparity){
-			//제대로 받았음
+			// 已正确接收
 			if(rval == 100){
-				//성공
-				//DisplayText("Debug: 성공");
+				// 成功
+				// DisplayText("Debug: 成功");
 				loadstart[cp] = 0;
 				if(IsUserCP()){
 					l_datasendstart = 0;
 					MSQCIsTransfer = 0;
 				}
 			}else if(rval == 200){
-				//오류
-				//DisplayText("Debug: 오류");
+				// 错误
+				// DisplayText("Debug: 错误");
 				//loadstart[cp] = 3;
 				
 				if(IsUserCP()){
@@ -379,8 +381,8 @@ function Loop(cp){
 			}
 		}
 	}else if(loadstart[cp] == 3){
-		//부분 수정 구간
-		//DisplayText("Debug: 부분수정구간 진입");
+		// 部分修改区间
+		// DisplayText("Debug: 进入部分修改区间");
 		/*
 		if(l_errorindex < 100){
 			s.insert(0);
@@ -395,7 +397,7 @@ function Loop(cp){
 		
 
 		var lastreceiveerror = 0;
-		//=======================오류전송=======================
+		// =======================错误发送=======================
 		if(IsUserCP()){
 			const tinedx = (l_loadindex + l_datablockindex * 50) * 6;
 			const p = l_loadindex % 50;
@@ -413,7 +415,7 @@ function Loop(cp){
 				const currentIndex = l_errorlist[tinedx + qw] * 2;
 				const v1 = ReadSendValue(currentIndex);
 				const v2 = ReadSendValue(currentIndex + 1);
-				//현재 인덱스를 알려줌
+				// 告知当前索引
 				SetMSQCSend(i, l_errorlist[tinedx + qw], l_loadindex);
 				SetMSQCSend(i + 1, v1, l_loadindex);
 				SetMSQCSend(i + 2, v2, l_loadindex);
@@ -438,10 +440,10 @@ function Loop(cp){
 			
 			SetMSQCSend(19, l_errorlist[l_errorindex - 1], maxparity);
 		}
-		//=======================오류전송=======================
+		// =======================错误发送=======================
 		
 		
-		//=======================오류받기=======================
+		// =======================接收错误=======================
 		ReadReceiveData(cp);
 		
 		const lasterrorindex = temparray[19] % 0x10000;
@@ -456,7 +458,7 @@ function Loop(cp){
 			const currentIndex = temparray[i] % 0x10000;
 			const v1 = temparray[i + 1] % 0x10000;
 			const v2 = temparray[i + 2] % 0x10000;
-			//현재 인덱스를 알려줌
+			// 告知当前索引
 			if(lasterrorindex != lastreceiveerror){
 				lastreceiveerror = currentIndex;
 			}
@@ -481,11 +483,9 @@ function Loop(cp){
 			
 		}
 		
-		//=======================오류받기=======================
+		// =======================接收错误=======================
 
 	}
 	
 	//f_eprintf("loadstart {} ", loadstart[cp]);
 }
-
-

@@ -7,11 +7,11 @@ Public Class SCASetting
     Private Binding As SCABinding
     Public Sub New()
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
-        '바인딩 하기전에 로그인 정보를 확인
+        ' 在 InitializeComponent() 调用后添加初始化代码。
+        ' 绑定前确认登录信息。
         pjData.TEData.SCArchive.CheckLoginAccount()
         If pjData.TEData.SCArchive.IsLogin Then
             LoginEmail.Text = pjData.TEData.SCArchive.SCAEmail
@@ -52,7 +52,7 @@ Public Class SCASetting
 
     Private Sub UseSCA_Checked(sender As Object, e As RoutedEventArgs)
         If Loadcmp Then
-            '로그인 성공했는지 여부
+            ' 是否登录成功
             If pjData.TEData.SCArchive.IsLogin = False Or
                 MakerID.Text.Trim = "" Or
                 subtitle.Text.Trim = "" Or
@@ -66,7 +66,7 @@ Public Class SCASetting
                 '        ImageLink.Text.Trim = "" Or
                 '        Mapdes.Text.Trim = "" Then
                 '        UseSCA.IsChecked = False
-                '        Warring.Content = "맵 정보를 모두 입력 하세요."
+                ' Warring.Content = "请输入所有地图信息。"
                 '    End If
                 'End If
                 UseSCA.IsChecked = False
@@ -112,7 +112,7 @@ Public Class SCASetting
 
     Private Sub SCALoginButton_Click(sender As Object, e As RoutedEventArgs)
         If pjData.TEData.SCArchive.IsLogin Then
-            '로그인 되어있으면 로그아웃버튼
+            ' 如果已登录，则显示注销按钮。
             SCALoginButton.Content = Tool.GetLanText("SCALogin")
             MapInfor.IsEnabled = False
 
@@ -126,7 +126,7 @@ Public Class SCASetting
             scasetting.ShowDialog()
 
             If scasetting.Result Then
-                '리턴값이 있으면 로그인 성공
+                ' 如果有返回值，则登录成功。
                 SCALoginButton.Content = Tool.GetLanText("SCALogout")
                 MapInfor.IsEnabled = True
 

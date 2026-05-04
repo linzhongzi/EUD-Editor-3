@@ -3,7 +3,7 @@
     Public SelectSampleMap As String
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        '샘플 맵을 읽어온다.
+        ' 读取示例地图。
         For Each Files As String In My.Computer.FileSystem.GetFiles(Tool.SampleDataFolderPath)
             Dim sampleList As New SampleMapList(Files)
 

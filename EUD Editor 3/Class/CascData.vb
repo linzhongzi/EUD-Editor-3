@@ -7,7 +7,7 @@ Public Class CascData
     Private FileHash As Dictionary(Of String, String)
 
     Public Sub New()
-        '해시코드 읽어서 저장하기
+        ' 读取并保存哈希码
         datapath = Tool.StarCraftPath
         FileHash = New Dictionary(Of String, String)
 
@@ -31,7 +31,7 @@ Public Class CascData
     End Sub
 
 
-    Public Function ReadFile(filename As String) As Byte() '파일 읽기
+    Public Function ReadFile(filename As String) As Byte() ' 读取文件
         filename = filename.Replace("\", "/").ToLower
 
         Dim Hash As String

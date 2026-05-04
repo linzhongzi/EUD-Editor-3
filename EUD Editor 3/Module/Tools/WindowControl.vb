@@ -17,23 +17,23 @@ Module WindowControl
 
 
     Public Sub CloseToolWindow()
-        '다른 윈도우들이 하나라도 남아 있는지 판단
+        ' 判断是否至少还有一个其他窗口
         Dim flag As Boolean = False
         Dim MainWindow As Window = Nothing
         For Each win As Window In Application.Current.Windows
             If win.GetType Is GetType(DataEditor) Or win.GetType Is GetType(TriggerEditor) Or win.GetType Is GetType(PluginWindow) Then
-                flag = True '다른 윈도우가 남아있음
+                flag = True ' 还有其他窗口存在
             ElseIf win.GetType Is GetType(MainWindowD) Then
                 MainWindow = win
             End If
         Next
-        If Not flag Then '다른 윈도우가 없음
+        If Not flag Then ' 没有其他窗口
             MainWindow.Visibility = Visibility.Visible
         End If
 
     End Sub
     Public Sub OpenToolWindow()
-        '메인 윈도우 숨기기
+        ' 隐藏主窗口
 
         For Each win As Window In Application.Current.Windows
             If win.GetType Is GetType(MainWindowD) Then
@@ -131,7 +131,7 @@ Module WindowControl
 
 
     Public Sub TECloseAllTabITem(tTEFile As TEFile)
-        '우선 모든 윈도우 돌면서 조사하자
+        ' 首先遍历所有窗口进行检查
         For Each win As Window In Application.Current.Windows
             If win.GetType Is GetType(TriggerEditor) Then
                 Dim MainContent As Object = CType(win, TriggerEditor).MainTab
@@ -152,7 +152,7 @@ Module WindowControl
     End Sub
 
     Public Sub TECloseOtherTabITem(tTEFile As TEFile)
-        '우선 모든 윈도우 돌면서 조사하자
+        ' 首先遍历所有窗口进行检查
         For Each win As Window In Application.Current.Windows
             If win.GetType Is GetType(TriggerEditor) Then
                 Dim MainContent As Object = CType(win, TriggerEditor).MainTab
@@ -174,7 +174,7 @@ Module WindowControl
 
 
     Public Sub TECloseTabITem(tTEFile As TEFile)
-        '우선 모든 윈도우 돌면서 조사하자
+        ' 首先遍历所有窗口进行检查
         For Each win As Window In Application.Current.Windows
             If win.GetType Is GetType(TriggerEditor) Then
                 Dim MainContent As Object = CType(win, TriggerEditor).MainTab
@@ -194,7 +194,7 @@ Module WindowControl
         Next
     End Sub
     Private Function CloseCheckBranch(tTEFile As TEFile, ParentBranch As Object, CloseType As CloseType) As Boolean
-        '우선 모든 윈도우 돌면서 조사하자
+        ' 首先遍历所有窗口进行检查
         While TypeOf ParentBranch IsNot TabablzControl
             Select Case ParentBranch.GetType
                 Case GetType(TabablzControl)
@@ -302,13 +302,13 @@ Namespace WindowMenu
 
         Public Sub Setting()
             If Not pgData.IsCompilng Then
-                If SettiingForm Is Nothing Then '첫 실행일 경우
+                If SettiingForm Is Nothing Then ' 首次运行时
                     SettiingForm = New SettingWindows
                     SettiingForm.ShowDialog()
                 Else
-                    If SettiingForm.IsLoaded Then '열려있을경우
+                    If SettiingForm.IsLoaded Then ' 如果已打开
                         SettiingForm.Activate()
-                    Else '닫혀있을 경우
+                    Else ' 如果已关闭
                         SettiingForm = New SettingWindows
                         SettiingForm.ShowDialog()
                     End If
@@ -391,7 +391,7 @@ Namespace WindowMenu
             If Tool.IsProjectLoad Then
                 ProjectControlBinding.PropertyChangedPack()
 
-                If Not scData.LoadStarCraftData Then '로드가 되어있지 않을 경우 판단
+                If Not scData.LoadStarCraftData Then ' 判断是否未加载
                     If Tool.CustomMsgBox(Tool.GetText("Error NotExistMPQ reset"), MessageBoxButton.OKCancel) = MsgBoxResult.Ok Then
                         Dim opendialog As New System.Windows.Forms.OpenFileDialog With {
                         .Filter = "StarCraft.exe|StarCraft.exe",
@@ -431,7 +431,7 @@ Namespace WindowMenu
                 'Dim TriggerEditorForm As New FastTreeview
                 'TriggerEditorForm.Show()
 
-                If Not scData.LoadStarCraftData Then '로드가 되어있지 않을 경우 판단
+                If Not scData.LoadStarCraftData Then ' 判断是否未加载
                     If Tool.CustomMsgBox(Tool.GetText("Error NotExistMPQ reset"), MessageBoxButton.OKCancel) = MsgBoxResult.Ok Then
                         Dim opendialog As New System.Windows.Forms.OpenFileDialog With {
                         .Filter = "StarCraft.exe|StarCraft.exe",
@@ -465,7 +465,7 @@ Namespace WindowMenu
                         End If
                     Next
 
-                    'flag가 True이면 윈도우 첫 실행이므로 TabItem을 불러와야됨.
+                    ' 如果flag为True，则这是窗口首次运行，因此必须加载TabItem。
                     If Not flag Then
                         Dim TriggerEditorForm As New TriggerEditor
                         TriggerEditorForm.Show()
@@ -481,7 +481,7 @@ Namespace WindowMenu
             If Tool.IsProjectLoad Then
                 ProjectControlBinding.PropertyChangedPack()
 
-                If Not scData.LoadStarCraftData Then '로드가 되어있지 않을 경우 판단
+                If Not scData.LoadStarCraftData Then ' 判断是否未加载
                     If Tool.CustomMsgBox(Tool.GetText("Error NotExistMPQ reset"), MessageBoxButton.OKCancel) = MsgBoxResult.Ok Then
                         Dim opendialog As New System.Windows.Forms.OpenFileDialog With {
                         .Filter = "StarCraft.exe|StarCraft.exe",

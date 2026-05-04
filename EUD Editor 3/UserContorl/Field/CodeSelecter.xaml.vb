@@ -253,10 +253,10 @@ Public Class CodeSelecter
     Public DataLoadCmp As Boolean = False
     Private LoadCmp As Boolean = False
     Public Sub New()
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         Fliter = New tFliter
         factoryPanel.SetValue(WrapPanel.IsItemsHostProperty, True)
         itemTemplate.VisualTree = factoryPanel
@@ -315,7 +315,7 @@ Public Class CodeSelecter
     End Sub
 
 
-    '트리뷰를 다시 설정합니다.
+    ' 重置树视图。
     Private Sub RefreshTreeview(StartIndex As Integer, treeviewitem As TreeViewItem)
         Dim index As Integer = treeviewitem.Tag
 
@@ -353,7 +353,7 @@ Public Class CodeSelecter
         Next
     End Sub
 
-    '리스트를 다시 설정합니다.
+    ' 重置列表。
     Public Sub Refresh(tStartIndex As Integer, Optional tFlag As Integer = 0)
         WireFrameFlag = tFlag
         LastSelectIndex = tStartIndex
@@ -402,7 +402,7 @@ Public Class CodeSelecter
         End Select
     End Sub
 
-    '리스트를 새로 생성합니다.
+    ' 重新生成列表。
     Public Sub ListReset(Optional pagetype As SCDatFiles.DatFiles = SCDatFiles.DatFiles.None, Optional combobox As Boolean = True, Optional _StartIndex As Integer = 0, Optional _tFlag As Integer = 0, Optional _unitFlag As Boolean = False)
         DataLoadCmp = True
         If pagetype = SCDatFiles.DatFiles.None Then
@@ -605,12 +605,12 @@ Public Class CodeSelecter
     End Function
 
 
-    '리스트의 데이터를 다시 설정합니다.
+    ' 重置列表的数据。
     Private Sub ListCreateData(pagetype As SCDatFiles.DatFiles, tStartIndex As Integer, Optional IsTriggerUnit As Boolean = False)
         StartIndex = tStartIndex
 
-        '리스트에 들어갈 거는 리스트이름과 아이콘, 그룹패스뿐임.
-        '이것만 잘 넘겨주면 됨
+        ' 要放入列表的只有列表名称、图标、组路径。
+        ' 只需正确传递这些即可。
         Dim ObjectNames As New List(Of String)
         Dim ObjectImages As New List(Of Border)
 
@@ -831,7 +831,7 @@ Public Class CodeSelecter
                     CodeIndexerList.Items.Clear()
                     'If (pagetype = SCDatFiles.DatFiles.wireframe) Then
                     '    MsgBox(ObjectNames.Count)
-                    '    '    MsgBox("하")
+                    ' '    MsgBox("哈")
                     'End If
 
 
@@ -1078,8 +1078,9 @@ Public Class CodeSelecter
                         Exit While
                     End If
                 End If
-            End While  '부모가 있을 경우
-            '만약에 부모의 자식이 하나도 없을 경우 그 부모도 지운다.(이걸 부모가 TreeView일때까지 반복
+            End While  
+            ' 如果有父级。
+            ' 如果父级没有任何子级，则也删除该父级。（重复此操作直到父级为 TreeView）
 
 
             MoveTreeList(CodeIndexerTree, TargetItem)
@@ -1090,7 +1091,7 @@ Public Class CodeSelecter
             End Try
 
 
-            'TreeviewItemDic(ObjectID).Header = "ㅎㅎ"
+            ' TreeviewItemDic(ObjectID).Header = "ㅎㅎ"
         End If
     End Sub
     Private Function DeleteMe(TargetItem As TreeViewItem) As TreeViewItem
@@ -1109,7 +1110,7 @@ Public Class CodeSelecter
 
 
     'Dim TempTarget As TreeViewItem = parrentTreeview
-    'If TempTarget.Items.Count = 0 Then '부모의 수가 아무것도 없을 경우 자신을 지운다.
+    ' If TempTarget.Items.Count = 0 Then '如果父级数量为0，则删除自身。
 
 
 
@@ -1194,7 +1195,7 @@ Public Class CodeSelecter
 
         Dim CodeItem As New TreeViewItem()
         CodeItem.Style = Application.Current.Resources("BackGroundTreeViewItem")
-        '만약 
+        ' 如果
         If Isbig Then
             If ItempColl.Count = 0 Then
                 If SelectTreeitem Is Nothing Then
@@ -1320,4 +1321,3 @@ Public Class CodeSelecter
     End Sub
 
 End Class
-

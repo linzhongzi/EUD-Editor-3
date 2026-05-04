@@ -1,6 +1,6 @@
 ﻿Partial Public Class GUIScriptEditorUI
     Private Function f_DeleteItem(titem As TreeViewItem)
-        '아이템을 지움
+        ' 删除项目。
 
         Dim scr As ScriptBlock = titem.Tag
         If scr.IsDeleteAble Then
@@ -24,7 +24,7 @@
             Return False
         End If
         TEGUIPage.ObjectSelector.RefreshCurrentList()
-        'MsgBox("아이템삭제")
+        ' MsgBox("删除项目")
 
         pjData.SetDirty(True)
         Return True

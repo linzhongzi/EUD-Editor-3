@@ -97,24 +97,24 @@ Namespace IScript
 
         Public curretgrpMaxFrame As Integer
 
-        '스크립트 ID에 맞는 리스트가 필요.
+        ' 需要与脚本ID匹配的列表。
         'Ex Public IscriptEntry As New List(of isciptD)
         '
-        '각각에 엔트리에는 코드만 들어있음.(나중을 위하여.)
-        '엔트리는 클래스 이므로 해석하는 것도 다 들어있음.
-        '전체 관리자에서 해당 엔트리에게 포인터 또는 자료만 넣어주면 알아서 해석하게 함.
+        ' 每个条目只包含代码。（为以后考虑。）
+        ' 条目是类，因此也包含解释部分。
+        ' 总管理员只需将指针或数据放入相应条目，即可自动解释。
 
-        'iscript포맷
-        '처음 2바이트는 포인터다.
-        '포인터로 간 다음부터는 각각
+        ' iscript格式
+        ' 前2字节是指针。
+        ' 指针指向后，每个部分如下：
         '2byte IscriptNum
         '2byte Pointer
-        '만약 iscriptNum이 &HFFFF면 끝.
+        ' 如果iscriptNum为&HFFFF则结束。
 
 
-        '각 포인터로 간 다음에는 다음을 뜻한다.
-        '4byte SCPE 매직 넘버.
-        '4byte 애니메이션 타입
+        ' 指向每个指针后，表示以下内容：
+        ' 4字节 SCPE 魔法数字。
+        ' 4字节 动画类型
         '0:2
         '1:2
         '2:4
@@ -131,8 +131,8 @@ Namespace IScript
         '28:28
         '29:28
         '
-        '나머지는 다 애니메이션 헤더
-        '헤더 종류는
+        ' 其余都是动画头部
+        ' 头部类型有：
         'Init - Initial animation
         'Death - Death animation
         'GndAttkInit - Initial ground attack animation
@@ -164,7 +164,7 @@ Namespace IScript
 
 
 
-        '해당 헤더로 이동 하면 OPCode가 나옴. OPCode는 다음을 따름.
+        ' 移动到该头部后，会显示OPCode。OPCode遵循以下规则：
         'playfram          0x00 - u16<frame#> - displays a particular frame, adjusted for direction.
         'playframtile      0x01 - u16<frame#> - displays a particular frame dependent on tileset.
         'sethorpos         0x02 - u8<x> - sets the current horizontal offset of the current image overlay.
@@ -309,7 +309,7 @@ Namespace IScript
             LoadIscript(xscript)
         End Sub
 
-        Public Sub LoadIscript(Optional xscript As Boolean = False) '모든 스크립트를 읽는다.
+        Public Sub LoadIscript(Optional xscript As Boolean = False) ' 读取所有脚本。
             Dim memsteram As New MemoryStream(buffer)
             Dim bytereader As New BinaryReader(memsteram)
 
@@ -318,15 +318,15 @@ Namespace IScript
             key.Clear()
             iscriptEntry.Clear()
             If Not xscript Then
-                temp = bytereader.ReadUInt16() '헤더s 오프셋
+                temp = bytereader.ReadUInt16() ' 头部偏移量
                 memsteram.Position = temp
             End If
 
 
             While True
                 Dim id, headeroffset As UInt16
-                id = bytereader.ReadUInt16() '스크립트아이디
-                headeroffset = bytereader.ReadUInt16() '헤더 오프셋
+                id = bytereader.ReadUInt16() ' 脚本ID
+                headeroffset = bytereader.ReadUInt16() ' 头部偏移量
 
                 If id <> &HFFFF Then
                     Dim tempCIscriptEntry As New CIscriptEntry
@@ -440,7 +440,7 @@ Namespace IScript
                             '    Dim bitmap As New Bitmap(256, 256)
                             '    Dim grptool As Graphics
                             '    grptool = Graphics.FromImage(bitmap)
-                            '    grptool.DrawString("스크립트에서 Lo파일을 요구하였으나 " & vbCrLf & "존재하지 않습니다.", DatEditForm.Font, Brushes.Red, New Point(0, 96))
+                            ' grptool.DrawString("脚本要求Lo文件，但" & vbCrLf & "不存在。", DatEditForm.Font, Brushes.Red, New Point(0, 96))
 
                             '    DatEditForm.PictureBox26.Image = bitmap
                             'End If
@@ -455,7 +455,7 @@ Namespace IScript
                             '    Dim bitmap As New Bitmap(256, 256)
                             '    Dim grptool As Graphics
                             '    grptool = Graphics.FromImage(bitmap)
-                            '    grptool.DrawString("스크립트에서 Lo파일을 요구하였으나 " & vbCrLf & "존재하지 않습니다.", DatEditForm.Font, Brushes.Red, New Point(0, 96))
+                            ' grptool.DrawString("脚本要求Lo文件，但" & vbCrLf & "不存在。", DatEditForm.Font, Brushes.Red, New Point(0, 96))
 
                             '    DatEditForm.PictureBox26.Image = bitmap
                             'End If
@@ -478,7 +478,7 @@ Namespace IScript
                     '    Dim bitmap As New Bitmap(256, 256)
                     '    Dim grptool As Graphics
                     '    grptool = Graphics.FromImage(bitmap)
-                    '    grptool.DrawString("스크립트에서 Lo파일을 요구하였으나 " & vbCrLf & "존재하지 않습니다.", DatEditForm.Font, Brushes.Red, New Point(0, 96))
+                    ' grptool.DrawString("脚本要求Lo文件，但" & vbCrLf & "不存在。", DatEditForm.Font, Brushes.Red, New Point(0, 96))
 
                     '    DatEditForm.PictureBox26.Image = bitmap
                      'End If
@@ -524,8 +524,8 @@ Namespace IScript
                             End If
 
                         Case &H1F 'turnccwise
-                            '0~33이다.
-                            '12인데 15를 빼면
+                            ' 是0~33。
+                            ' 如果是12，减去15
 
                             Dim value As Integer = direction - values(0)
 

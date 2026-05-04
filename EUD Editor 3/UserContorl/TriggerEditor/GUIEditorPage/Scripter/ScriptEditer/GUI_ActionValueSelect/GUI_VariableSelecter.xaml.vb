@@ -15,7 +15,7 @@ Public Class GUI_VariableSelecter
     Private VariableFuncName As String
 
     Private Function CheckVar(varname As String, scrlist As List(Of ScriptBlock)) As Boolean
-        '리스트를 선택하는 함수.
+        ' 选择列表的函数。
         If scrlist.Count = 1 Then
             If scrlist(0).value = varname Then
                 Select Case scrlist(0).value2
@@ -37,10 +37,10 @@ Public Class GUI_VariableSelecter
         Return False
     End Function
     Public Sub New(initvalue() As String, _GUIEditor As GUIScriptEditorUI, _dotscr As ScriptBlock)
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         GUIEditor = _GUIEditor
         dotscr = _dotscr
 
@@ -57,7 +57,7 @@ Public Class GUI_VariableSelecter
             flag = True
         End If
 
-        '타입 체크해야됨
+        ' 需要检查类型。
         If Not flag Then
             Dim tf As Boolean = False
             tf = CheckVar(VariableName, tescm.GetLocalVar(dotscr, "", VariableName))
@@ -95,8 +95,8 @@ Public Class GUI_VariableSelecter
 
 
 
-        '해야할것
-        'Object이름  StringBuffer
+        ' 要做的事情
+        ' 对象名称 StringBuffer
 
         'const array = EUDArray(8);
         'array[0] = StringBuffer.alloc();
@@ -139,18 +139,18 @@ Public Class GUI_VariableSelecter
         Dim scrlist As New List(Of ScriptBlock)
         Select Case variablepos.SelectedIndex
             Case 0
-                '전체
+                ' 全局
                 scrlist.AddRange(tescm.GetLocalVar(dotscr, vartype))
                 scrlist.AddRange(tescm.GetGlobalVar(GUIEditor.Script, vartype))
                 scrlist.AddRange(tescm.GetExternVar(GUIEditor.Script, vartype))
             Case 1
-                '로컬
+                ' 局部
                 scrlist.AddRange(tescm.GetLocalVar(dotscr, vartype))
             Case 2
-                '글로벌
+                ' 全局
                 scrlist.AddRange(tescm.GetGlobalVar(GUIEditor.Script, vartype))
             Case 3
-                '외부파일
+                ' 外部文件
                 scrlist.AddRange(tescm.GetExternVar(GUIEditor.Script, vartype))
         End Select
 
@@ -213,17 +213,17 @@ Public Class GUI_VariableSelecter
 
 
         'MsgBox("VariableName : " & VariableName)
-        'MsgBox("선언한 변수 명" & k.value)
-        'k = 변수 선언부, 이 변수의 child를 이용
+        ' MsgBox("声明的变量名" & k.value)
+        ' k = 变量声明部分，利用此变量的 child。
 
-        'MsgBox("선언한 변수의 초기값" & k.child.Count)
-        'k = 변수 선언부, 이 변수의 child를 이용
+        ' MsgBox("声明的变量的初始值" & k.child.Count)
+        ' k = 变量声明部分，利用此变量的 child。
         If k.child.Count = 0 Then
             Return
         End If
 
-        'MsgBox("오브젝트 타입" & k.child(0).ScriptType.ToString)
-        'MsgBox("오브젝트 이름" & k.child(0).name & "," & k.child(0).value & "," & k.child(0).value2)
+        ' MsgBox("对象类型" & k.child(0).ScriptType.ToString)
+        ' MsgBox("对象名称" & k.child(0).name & "," & k.child(0).value & "," & k.child(0).value2)
 
         Dim n As String = ""
         If VariableName.IndexOf(".") >= 0 Then
@@ -231,7 +231,7 @@ Public Class GUI_VariableSelecter
         End If
 
         Dim scr As ScriptBlock = tescm.GetObjectByName(k.child(0).name, GUIEditor.Script, n)
-        '변수명을 이용해 본래 변수 정의 즉 var을 찾아야됨.
+        ' 需要使用变量名找到原始变量定义，即 var。
 
 
         If scr Is Nothing Then
@@ -316,12 +316,12 @@ Public Class GUI_VariableSelecter
         End If
 
         If itemscr.value2 = "object" Then
-            '만약 선택한게 오브젝트일 경우
+            ' 如果选择的是对象。
             VarSelecter.Visibility = Visibility.Collapsed
             FuncSelecter.Visibility = Visibility.Visible
             FuncListReset()
         Else
-            '아닐 경우
+            ' 如果不是。
             RaiseEvent SelectEvent({VariableName, ""}, e)
         End If
         mainlist.SelectedIndex = -1

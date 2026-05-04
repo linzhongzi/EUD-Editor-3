@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net
+Imports System.Reflection
 Imports System.Security.Cryptography
 Imports System.Text
 Imports EUD_Editor_3.IScript
@@ -140,7 +141,7 @@ Partial Public Class BuildData
         Dim NameSapces As New List(Of String)
         For i = 0 To pjData.TEData.SCArchive.CodeDatas.Count - 1
             If pjData.TEData.SCArchive.CodeDatas(i).TypeIndex <> StarCraftArchive.CodeData.CodeType.Deaths Then
-                '변수
+                ' 变量
                 Dim names As String = pjData.TEData.SCArchive.CodeDatas(i).NameSpaceName
                 names = names.Split(".").First
                 names = names.Replace("\", ".")
@@ -159,10 +160,9 @@ Partial Public Class BuildData
         sb.AppendLine("")
 
         'EntryPoint.Count * 4
-        '8(플레이어) * 2(4바이트 맞추기 위해) * (CommandLength + SpaceLength) / 플레이어스페이스
-        '2 * (CommandLength + SpaceLength) / 로컬로딩
-        '2 * (CommandLength + SpaceLength) / 패딩
-        '플레이어함수
+        ' 8(玩家) * 2(4字节匹配) * (CommandLength + SpaceLength) / 玩家空间
+        ' 2 * (CommandLength + SpaceLength) / 本地加载
+        ' 2 * (CommandLength + SpaceLength) / 填充玩家函数
 
 
         sb.AppendLine("const ws = Db(" & workSpace.GetAllCapacity() & ");  // workspace")
@@ -176,9 +176,9 @@ Partial Public Class BuildData
         sb.AppendLine("const FuncReturnTableEPD = EPD(ws + " & workSpace.GetSpaceStartOffset("FuncReturnTable") & ");  // FuncReturnTable")
         sb.AppendLine("const SCAScriptVarEPD = EPD(ws + " & workSpace.GetSpaceStartOffset("ScriptVarSpace") & ");  // SCAScriptVarCount")
 
-        'sb.AppendLine("const ws = Db(" & EntryPoint.Count * 4 + '엔트리포인트
-        '              8 * (CommandLength + SpaceLength) + '일반 값
-        '              (FastLoadCommandLength + SpaceLength) + '패스트 로드
+        ' sb.AppendLine("const ws = Db(" & EntryPoint.Count * 4 + '入口点
+        ' 8 * (CommandLength + SpaceLength) + '正常值
+        ' (FastLoadCommandLength + SpaceLength) + '快速加载
         '              FuncCommandLength + FuncLength * 4 + 'FuncLoad
         '              FuncLength * 4 + 'FuncLoad
         '              SCAScriptVarCount * 4 &'FuncReturnTable
@@ -189,23 +189,23 @@ Partial Public Class BuildData
         'sb.AppendLine("const FuncLength = " & FuncLength & ";  // FuncSpace / 4")
 
         'sb.AppendLine("const FuncCommandEPD = EPD(ws + " & EntryPoint.Count * 4 +
-        '              8 * (CommandLength + SpaceLength) + '일반 값
-        '              (FastLoadCommandLength + SpaceLength) & '패스트 로드
+        ' 8 * (CommandLength + SpaceLength) + '正常值
+        ' (FastLoadCommandLength + SpaceLength) & '快速加载
         '              ");  // FuncOrder")
         'sb.AppendLine("const FuncDataEPD = EPD(ws + " & EntryPoint.Count * 4 +
-        '              8 * (CommandLength + SpaceLength) + '일반 값
-        '              (FastLoadCommandLength + SpaceLength) + '패스트 로드
+        ' 8 * (CommandLength + SpaceLength) + '正常值
+        ' (FastLoadCommandLength + SpaceLength) + '快速加载
         '              FuncCommandLength & 'FuncCommand
         '              ");  // FuncData")
         'sb.AppendLine("const FuncReturnTableEPD = EPD(ws + " & EntryPoint.Count * 4 +
-        '              8 * (CommandLength + SpaceLength) + '일반 값
-        '              (FastLoadCommandLength + SpaceLength) + '패스트 로드
+        ' 8 * (CommandLength + SpaceLength) + '正常值
+        ' (FastLoadCommandLength + SpaceLength) + '快速加载
         '              FuncCommandLength + 'FuncCommand
         '              FuncLength * 4 & 'FuncLoad
         '              ");  // FuncReturnTable")
         'sb.AppendLine("const SCAScriptVarEPD = EPD(ws + " & EntryPoint.Count * 4 +
-        '              8 * (CommandLength + SpaceLength) + '일반 값
-        '              (FastLoadCommandLength + SpaceLength) + '패스트 로드
+        ' 8 * (CommandLength + SpaceLength) + '正常值
+        ' (FastLoadCommandLength + SpaceLength) + '快速加载
         '              FuncCommandLength + 'FuncCommand
         '              FuncLength * 4 + 'FuncLoad
         '              FuncLength * 4 & 'FuncLoad
@@ -267,16 +267,16 @@ Partial Public Class BuildData
 
             Select Case pjData.TEData.SCArchive.CodeDatas(i).TypeIndex
                 Case StarCraftArchive.CodeData.CodeType.Variable
-                    '변수
+                    ' 变量
                     Dim names As String = pjData.TEData.SCArchive.CodeDatas(i).NameSpaceName
                     names = names.Split(".").First
                     names = names.Replace("\", ".")
                     sb.AppendLine("        n" & NameSapces.IndexOf(names) & "." & pjData.TEData.SCArchive.CodeDatas(i).ValueName & "[cp] = 0;")
                 Case StarCraftArchive.CodeData.CodeType.Deaths
-                    '데스값 p, Setto, 0, Unit
+                    ' 死亡值 p, Setto, 0, Unit
                     sb.AppendLine("        SetDeaths(CurrentPlayer, SetTo, 0, " & pjData.TEData.SCArchive.CodeDatas(i).ValueIndex & ");")
                 Case StarCraftArchive.CodeData.CodeType.Array
-                    '배열
+                    ' 数组
                     Dim names As String = pjData.TEData.SCArchive.CodeDatas(i).NameSpaceName
                     names = names.Split(".").First
                     names = names.Replace("\", ".")
@@ -301,7 +301,7 @@ Partial Public Class BuildData
 
 
         sb.AppendLine("    const st = StringBuffer();")
-        'sb.AppendLine("    st.print('값 전달 받음      tagNum :  ',tagNum , ' Value : ' , Value , ' index : ' ,index);")
+        ' sb.AppendLine(" st.print('接收到值 tagNum : ', tagNum, ' Value : ', Value, ' index : ', index);")
 
         sb.AppendLine("    switch (tagNum) {")
 
@@ -309,16 +309,16 @@ Partial Public Class BuildData
             sb.AppendLine("    case " & i & ": {")
             Select Case pjData.TEData.SCArchive.CodeDatas(i).TypeIndex
                 Case StarCraftArchive.CodeData.CodeType.Variable
-                    '변수
+                    ' 变量
                     Dim names As String = pjData.TEData.SCArchive.CodeDatas(i).NameSpaceName
                     names = names.Split(".").First
                     names = names.Replace("\", ".")
                     sb.AppendLine("        n" & NameSapces.IndexOf(names) & "." & pjData.TEData.SCArchive.CodeDatas(i).ValueName & "[cp] = Value;")
                 Case StarCraftArchive.CodeData.CodeType.Deaths
-                    '데스값 p, Setto, 0, Unit
+                    ' 死亡值 p, Setto, 0, Unit
                     sb.AppendLine("        SetDeaths(CurrentPlayer, SetTo, Value, " & pjData.TEData.SCArchive.CodeDatas(i).ValueIndex & ");")
                 Case StarCraftArchive.CodeData.CodeType.Array
-                    '배열
+                    ' 数组
                     Dim names As String = pjData.TEData.SCArchive.CodeDatas(i).NameSpaceName
                     names = names.Split(".").First
                     names = names.Replace("\", ".")
@@ -334,7 +334,7 @@ Partial Public Class BuildData
         sb.AppendLine("    }")
         sb.AppendLine("}")
         sb.AppendLine("")
-        '저장시 메모리에 tagNum을 적는다. 리턴값으로는 전진한 만큼을 기록한다.
+        ' 保存时，将 tagNum写入内存。返回值记录了所取得的进度。
         sb.AppendLine("function SaveDataWriteValue(tagNum, BaseAddress, index) {")
         sb.AppendLine("    const cp = getcurpl();")
         sb.AppendLine("    const indexQ = BaseAddress + index / 2;")
@@ -398,17 +398,17 @@ Partial Public Class BuildData
 
             Select Case pjData.TEData.SCArchive.CodeDatas(i).TypeIndex
                 Case StarCraftArchive.CodeData.CodeType.Variable
-                    '변수
+                    ' 变量
                     Dim names As String = pjData.TEData.SCArchive.CodeDatas(i).NameSpaceName
                     names = names.Split(".").First
                     names = names.Replace("\", ".")
 
                     sb.AppendLine("        const objValue = n" & NameSapces.IndexOf(names) & "." & pjData.TEData.SCArchive.CodeDatas(i).ValueName & "[cp];")
                 Case StarCraftArchive.CodeData.CodeType.Deaths
-                    '데스값
+                    ' 死亡值
                     sb.AppendLine("        const objValue = dwread_epd(" & pjData.TEData.SCArchive.CodeDatas(i).ValueIndex & " * 12 + cp);")
                 Case StarCraftArchive.CodeData.CodeType.Array
-                    '배열
+                    ' 数组
                     Dim names As String = pjData.TEData.SCArchive.CodeDatas(i).NameSpaceName
                     names = names.Split(".").First
                     names = names.Replace("\", ".")
@@ -482,7 +482,7 @@ Partial Public Class BuildData
         'Dim respon As String = httpRequest("getbattleTag", senddata)
 
         'If respon = "NOACCOUNT" Then
-        '    MsgBox(Tool.GetText("Error SCA") & vbCrLf & "계정 정보가 올바르지 않습니다.", MsgBoxStyle.Critical)
+        ' MsgBox(Tool.GetText("Error SCA") & vbCrLf & "账户信息不正确。", MsgBoxStyle.Critical)
         '    Return ""
         'End If
         Dim MakerBattleTag As String
@@ -621,7 +621,7 @@ Partial Public Class BuildData
         sw.Close()
         fs.Close()
 
-        '파일 생성
+        ' 创建文件
         For Each item In pjData.TEData.SCAImageDatas
             item.SaveToFile(EudPlibFilePath & "\scascripttemp\")
         Next

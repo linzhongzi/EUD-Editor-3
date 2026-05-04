@@ -27,8 +27,8 @@
             <Button Content="ㅁㄴㅇ"/>
         </WrapPanel>
         <DockPanel x:Name="varObjectBorder" DockPanel.Dock="Top" >
-            <!-- Object들을 골라야 한다. -->
-            <!-- 고른 Object에서 함수를 선택한다. -->
+            <!-- 必须选择对象. -->
+            <!-- 从选定的对象中选择函数。 -->
             <DockPanel DockPanel.Dock="Top">
                 <CheckBox x:Name="SpFlag" Content="인게임초기화" DockPanel.Dock="Right" Checked="SpFlag_Checked" Unchecked="SpFlag_Unchecked" Visibility="Collapsed"/>
                 <ComboBox x:Name="ObjectFunc" materialDesign:HintAssist.Hint="함수" DockPanel.Dock="Left" Style="{StaticResource MaterialDesignFloatingHintComboBox}" SelectionChanged="ObjectFunc_SelectionChanged">
@@ -41,7 +41,7 @@
             <local:GUI_VarFuncUse x:Name="varFunction"/>
         </DockPanel>
         
-        <!--<CheckBox x:Name="initcb" Content="초기값 사용" DockPanel.Dock="Top" Checked="initcb_Checked" Unchecked="initcb_Unchecked"/>-->
+        <!-- <CheckBox x:Name="initcb" Content="使用初始值" DockPanel.Dock="Top" Checked="initcb_Checked" Unchecked="initcb_Unchecked"/> -->
         <Separator DockPanel.Dock="Top" />
         <local:GUI_ArgEditor x:Name="valueEditPanel" DockPanel.Dock="Top" Margin="5"/>
      

@@ -189,7 +189,7 @@ Public Class MacroManager
         End If
         lua.DoString("LuaPlayerVariable = ""getcurpl()""")
 
-        '스트링을 받아서 Regex를 통해 루아함수를 찾는다.
+        ' 接收字符串并通过Regex查找Lua函数。
         Dim rstr As String = str
 
 
@@ -265,7 +265,7 @@ Public Class MacroManager
                     Exit While
                 End If
 
-                '문자열 감지
+                ' 字符串检测
                 If braceCount >= 1 And newtext(index) = """" Then
                     If Issentence Then
                         If Not (index > 0 And newtext(index - 1) = "\") Then
@@ -281,7 +281,7 @@ Public Class MacroManager
                     If newtext(index) = "(" Then
                         braceCount += 1
                         If (braceCount = 1) Then
-                            '첫 루프는 로직통과
+                            ' 第一个循环执行逻辑。
                             index += 1
                             Continue While
                         End If
@@ -298,7 +298,7 @@ Public Class MacroManager
 
 
                     If braceCount = 1 Then
-                        '밖일 경우
+                        ' 如果是外部情况
                         If newtext(index) = "," Then
                             args.Add(argcontent.Trim())
                             argcontent = ""
@@ -311,7 +311,7 @@ Public Class MacroManager
                 If Issentence Then
                     argcontent = argcontent & newtext(index)
                 Else
-                    'braceCount 0, 1일 경우?
+                    ' braceCount 为 0, 1的情况？
                     If braceCount = 1 Then
                         If (newtext(index) <> ",") Then
                             argcontent = argcontent & newtext(index)
@@ -341,7 +341,7 @@ Public Class MacroManager
                 End If
 
                 If s.Length <= 2 Then
-                    '2보다 커야 ""로 덮힌것.
+                    ' 必须大于2才能被""包裹。
                     quote = True
                 End If
 
@@ -390,7 +390,7 @@ Public Class MacroManager
 
             Dim truestr As String = matches(i).Value
             Dim mstr As String = Mid(truestr, 3, truestr.Length - 4)
-            'Lua프로세싱
+            ' Lua处理
 
 
             Try
@@ -420,7 +420,7 @@ Public Class MacroManager
 
                 macroErrorList.Add(ErrorMsg)
 
-                'Tool.ErrorMsgBox("Lua스크립트오류", ErrorMsg)
+                ' Tool.ErrorMsgBox("Lua脚本错误", ErrorMsg)
                 'MsgBox(ErrorMsg)
                 Continue For
             End Try
@@ -434,7 +434,7 @@ Public Class MacroManager
         Next
 
 
-        '만약 main파일일 경우
+        ' 如果是main文件
         If isMain Then
             For i = 0 To mainPreDefineStr.Count - 1
                 If Not preDefineStr.Contains(mainPreDefineStr(i)) Then
@@ -458,7 +458,7 @@ Public Class MacroManager
                     rstr = rstr.Insert(startindex + vallen, vbCrLf & temp)
 
                 Else
-                    'onPluginStart가 없을 경우 맨 밑에 새로 추가.
+                    ' 如果没有onPluginStart，则在底部新增。
                     rstr = rstr & "function onPluginStart(){" & vbCrLf
                     rstr = rstr & temp & vbCrLf
                     rstr = rstr & "}" & vbCrLf
@@ -480,7 +480,7 @@ Public Class MacroManager
 
                     rstr = rstr.Insert(startindex + vallen, vbCrLf & temp)
                 Else
-                    'onPluginStart가 없을 경우 맨 밑에 새로 추가.
+                    ' 如果没有onPluginStart，则在底部新增。
                     rstr = rstr & "function beforeTriggerExec(){" & vbCrLf
                     rstr = rstr & temp & vbCrLf
                     rstr = rstr & "}" & vbCrLf
@@ -501,7 +501,7 @@ Public Class MacroManager
 
                     rstr = rstr.Insert(startindex + vallen, vbCrLf & temp)
                 Else
-                    'onPluginStart가 없을 경우 맨 밑에 새로 추가.
+                    ' 如果没有onPluginStart，则在底部新增。
                     rstr = rstr & "function afterTriggerExec(){" & vbCrLf
                     rstr = rstr & temp & vbCrLf
                     rstr = rstr & "}" & vbCrLf
@@ -573,7 +573,7 @@ Public Class MacroManager
                 End If
 
                 If line(0) = "@" Then
-                    '커맨드
+                    ' 命令
 
                     Dim commands() As String = line.Split(".")
 
@@ -636,6 +636,25 @@ Public Class MacroManager
             '@param.Chat.TrgString
             '인식할 채팅입니다.
 
+            '@Language.en-US
+            '@Summary
+            ' Recognises [Chat] chat. 
+            '@Group
+            ' Chat Recognition
+            '@param.Player.TrgPlayer
+            ' The target player. 
+            '@param.Chat.TrgString
+            ' The chat to be recognised.
+
+            '@Language.zh-CN
+            '@Summary
+            ' 识别聊天 [Chat]。
+            '@Group
+            ' 聊天识别
+            '@param.Player.TrgPlayer
+            ' 目标玩家。
+            '@param.Chat.TrgString
+            ' 要识别的聊天内容。
 
 
 
@@ -670,7 +689,7 @@ Public Class MacroManager
                 For i = 0 To tstrlist.Count - 1
                     If tstrlist(i).Trim <> "" Then
                         If tstrlist(i)(0) = "$" Then
-                            '숫자
+                            ' 数字
                             Dim n As String = Mid(tstrlist(i), 2, tstrlist(i).Length - 1)
 
                             If IsNumeric(n) Then
@@ -679,7 +698,7 @@ Public Class MacroManager
                                 ArgLists.Add(New ArgBlock(ArgBlock.BlockType.Label, -1, tstrlist(i)))
                             End If
                         Else
-                            '문자
+                            ' 字符
                             ArgLists.Add(New ArgBlock(ArgBlock.BlockType.Label, -1, tstrlist(i)))
                         End If
                     End If
@@ -736,7 +755,7 @@ Public Class MacroManager
             For i = 0 To tstrlist.Count - 1
                 If tstrlist(i).Trim <> "" Then
                     If tstrlist(i)(0) = "$" Then
-                        '숫자
+                        ' 数字
                         Dim n As String = Mid(tstrlist(i), 2, tstrlist(i).Length - 1)
 
                         If IsNumeric(n) Then
@@ -745,7 +764,7 @@ Public Class MacroManager
                             ArgLists.Add(New ArgBlock(ArgBlock.BlockType.Label, -1, tstrlist(i)))
                         End If
                     Else
-                        '문자
+                        ' 字符
                         ArgLists.Add(New ArgBlock(ArgBlock.BlockType.Label, -1, tstrlist(i)))
                     End If
                 End If

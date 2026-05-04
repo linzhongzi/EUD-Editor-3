@@ -51,14 +51,14 @@ Partial Public Class ProjectData
                     End If
                 End If
 
-                '만약 edd로 실행중인 경우
+                ' 如果使用 edd 运行
             End If
             'TERefreshTabITem()
         End If
     End Sub
     Public Sub TERefreshTabITem()
-        'MsgBox("TE리프레시")
-        '우선 모든 윈도우 돌면서 조사하자
+        ' MsgBox("TE刷新")
+        ' 首先遍历查找所有窗口
         For Each win As Window In Application.Current.Windows
             If win.GetType Is GetType(TriggerEditor) Then
                 Dim t As TriggerEditor = win
@@ -79,7 +79,7 @@ Partial Public Class ProjectData
         Next
     End Sub
     Private Function CheckBranch(ParentBranch As Object) As Boolean
-        '우선 모든 윈도우 돌면서 조사하자
+        ' 首先遍历查找所有窗口
         While TypeOf ParentBranch IsNot TabablzControl
             Select Case ParentBranch.GetType
                 Case GetType(TabablzControl)

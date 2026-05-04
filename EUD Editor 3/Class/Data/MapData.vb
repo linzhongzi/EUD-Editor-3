@@ -190,7 +190,7 @@ Public Class MapData
 
 
 
-            '맵의 타당성 확인
+            ' 确认地图的有效性
             Try
                 SearchCHK("TYPE", binary)
                 size = binary.ReadUInt32
@@ -207,12 +207,12 @@ Public Class MapData
                 SearchCHK("OWNR", binary)
 
                 size = binary.ReadUInt32
-                'OWNR 1바이트 씩 12개
-                '03 = 구조가능
-                '05 = 컴퓨터
-                '06 = 사람
-                '07 = 중립
-                '00 = 사용되지 않음 (해당 플레이어가 사용불가인 상태로 되어있다는 뜻.)
+                ' OWNR 1字节 12个
+                ' 03 = 可建造
+                ' 05 = 电脑
+                ' 06 = 人类
+                ' 07 = 中立
+                ' 00 = 未使用（表示该玩家处于不可用状态。）
                 For i = 0 To 7
                     Dim b As Byte = binary.ReadByte()
                     Dim userINFO As UserINFOData = New UserINFOData()
@@ -238,9 +238,9 @@ Public Class MapData
                 SearchCHK("FORC", binary)
 
                 size = binary.ReadUInt32
-                'FORC 1바이트 씩 8개 2바이트씩 4개
-                '1400 0000 = 단락 길이
-                '0001 0203 0000 0000 = 각 플레이어의 소속 세력(Force), (순서대로 Player 1,2,3,4,5,6,7,8)
+                ' FORC 1字节 8个 2字节 4个
+                ' 1400 0000 = 段落长度
+                ' 0001 0203 0000 0000 = 各玩家所属势力(Force)，（按顺序 Player 1,2,3,4,5,6,7,8）
                 '00 = Force 1
                 '01 = Force 2
                 '02 = Force 3
@@ -284,44 +284,44 @@ Public Class MapData
                 size = binary.ReadUInt32
 
                 Dim TEMPIsUPGDefault() As Byte
-                '## (61개) = 각 업그레이드의 허용 상태
-                '   - 00 = 변화값을 따름
-                '   - 01 = 기본값을 따름
+                ' ## (61个) = 每个升级的允许状态
+                ' - 00 = 遵循变化值
+                ' - 01 = 遵循默认值
                 TEMPIsUPGDefault = binary.ReadBytes(62)
 
 
                 Dim TEMPUPGMin(60) As UInteger
-                '#### (61개) = 첫 업그레이드 미네랄 비용
+                ' #### (61个) = 第一次升级的矿物花费
                 For i = 0 To 60
                     TEMPUPGMin(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGADDMin(60) As UInteger
-                '#### (61개) = 추가 업그레이드 미네랄 비용
+                ' #### (61个) = 额外升级的矿物花费
                 For i = 0 To 60
                     TEMPUPGADDMin(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGGas(60) As UInteger
-                '#### (61개) = 첫 업그레이드 가스 비용
+                ' #### (61个) = 第一次升级的气体花费
                 For i = 0 To 60
                     TEMPUPGGas(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGADDGas(60) As UInteger
-                '#### (61개) = 추가 업그레이드 가스 비용
+                ' #### (61个) = 额外升级的气体花费
                 For i = 0 To 60
                     TEMPUPGADDGas(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGTime(60) As UInteger
-                '#### (61개) = 첫 업그레이드 시간
+                ' #### (61个) = 第一次升级的时间
                 For i = 0 To 60
                     TEMPUPGTime(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGADDTime(60) As UInteger
-                '#### (61개) = 추가 업그레이드 시간
+                ' #### (61个) = 额外升级的时间
                 For i = 0 To 60
                     TEMPUPGADDTime(i) = binary.ReadUInt16()
                 Next
@@ -368,30 +368,30 @@ Public Class MapData
 
 
                 Dim TEMPIsTECHDefault() As Byte
-                '0# = 기술의 허용 상태 (00 사용불가, 01 사용가능)
+                ' 0# = 技能的允许状态 (00 不可用, 01 可用)
                 TEMPIsTECHDefault = binary.ReadBytes(44)
 
 
                 Dim TEMPTECHMin(43) As UInteger
-                '#### = 미네랄 비용
+                ' #### = 矿物花费
                 For i = 0 To 43
                     TEMPTECHMin(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPTECHGas(43) As UInteger
-                '#### = 가스 비용
+                ' #### = 气体花费
                 For i = 0 To 43
                     TEMPTECHGas(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPTECHTime(43) As UInteger
-                '#### = 걸리는 시간
+                ' #### = 所需时间
                 For i = 0 To 43
                     TEMPTECHTime(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPTECHADDEnerge(43) As UInteger
-                '##00 = 필요 마나
+                ' ##00 = 所需法力
                 For i = 0 To 43
                     TEMPTECHADDEnerge(i) = binary.ReadUInt16()
                 Next
@@ -440,59 +440,59 @@ Public Class MapData
                 size = binary.ReadUInt32
 
                 Dim TEMPIsUnitDefault() As Byte
-                '## (228개) = 유닛의 순서에 맞게 배열
-                '- 00 (변화값을 따름)
-                '- 01 (기본값을 따름)
+                ' ## (228个) = 按单位顺序排列的数组
+                ' - 00 (遵循变化值)
+                ' - 01 (遵循默认值)
                 TEMPIsUnitDefault = binary.ReadBytes(228)
 
                 Dim TEMPUnitHP(227) As UInteger
-                '00## ##00 (228개) = ????부분은 유닛의 체력
+                ' 00## ##00 (228个) = ????部分是单位的生命值
                 For i = 0 To 227
                     TEMPUnitHP(i) = binary.ReadUInt32()
                 Next
 
                 Dim TEMPUnitSh(227) As UShort
-                '#### (228개) = 쉴드
+                ' #### (228个) = 护盾
                 For i = 0 To 227
                     TEMPUnitSh(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUnitAp() As Byte
-                '## (228개) = 방어력
+                ' ## (228个) = 防御力
                 TEMPUnitAp = binary.ReadBytes(228)
 
                 Dim TEMPUnitBt(227) As UShort
-                '#### (228개) = 생산시간
+                ' #### (228个) = 生产时间
                 For i = 0 To 227
                     TEMPUnitBt(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPMinCost(227) As UShort
-                '#### (228개) = 미네랄 비용
+                ' #### (228个) = 矿物花费
                 For i = 0 To 227
                     TEMPMinCost(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPGasCost(227) As UShort
-                '#### (228개) = 가스 비용
+                ' #### (228个) = 气体花费
                 For i = 0 To 227
                     TEMPGasCost(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUnitstr(227) As UShort
-                '#### (228개) = 문자열 번호
+                ' #### (228个) = 字符串编号
                 For i = 0 To 227
                     TEMPUnitstr(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPWeaDmg(129) As UShort
-                '#### (130개) = 각 무기의 기본 공격력
+                ' #### (130个) = 每个武器的基本攻击力
                 For i = 0 To 129
                     TEMPWeaDmg(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPWeaUmg(129) As UShort
-                '#### (130개) = 업그레이드시 올라가는 공격력
+                ' #### (130个) = 升级时增加的攻击力
                 For i = 0 To 129
                     TEMPWeaUmg(i) = binary.ReadUInt16()
                 Next
@@ -531,7 +531,7 @@ Public Class MapData
 
 
                         Key = "Ground Weapon"
-                        Dim weaponnum As Integer = scData.DefaultDat.Data(SCDatFiles.DatFiles.units, Key, i) '유닛 i의 지상무기와 공중무기 번호를 준다.
+                        Dim weaponnum As Integer = scData.DefaultDat.Data(SCDatFiles.DatFiles.units, Key, i) ' 给出单位i的对地武器和对空武器编号。
 
 
                         If weaponnum <> 130 Then
@@ -545,7 +545,7 @@ Public Class MapData
 
 
                         Key = "Air Weapon"
-                        weaponnum = scData.DefaultDat.Data(SCDatFiles.DatFiles.units, Key, i) '유닛 i의 지상무기와 공중무기 번호를 준다.
+                        weaponnum = scData.DefaultDat.Data(SCDatFiles.DatFiles.units, Key, i) ' 给出单位i的对地武器和对空武器编号。
 
                         If weaponnum <> 130 Then
                             Key = "Damage Amount"
@@ -572,7 +572,7 @@ Public Class MapData
                 Dim strCount As UInteger = binary.ReadUInt32()
                 Dim lastPos As UInteger = mem.Position
 
-                For i = 0 To strCount - 1 '사이즈 만큼 반복
+                For i = 0 To strCount - 1 ' 按大小重复
                     mem.Position = lastPos
 
                     Dim StartPos As UInteger = binary.ReadUInt32()
@@ -603,7 +603,7 @@ Public Class MapData
                 Dim strCount As UInt16 = binary.ReadUInt16()
                 Dim lastPos As UInteger = mem.Position
 
-                For i = 0 To strCount - 1 '사이즈 만큼 반복
+                For i = 0 To strCount - 1 ' 按大小重复
                     mem.Position = lastPos
                     Dim StartPos As UInteger = binary.ReadUInt16()
                     mem.Position = BasePos + StartPos
@@ -662,7 +662,7 @@ Public Class MapData
 
 
 
-            '맵의 타당성 확인
+            ' 确认地图的有效性
             Try
                 SearchCHK("TYPE", binary)
                 size = binary.ReadUInt32
@@ -708,44 +708,44 @@ Public Class MapData
                 size = binary.ReadUInt32
 
                 Dim TEMPIsUPGDefault() As Byte
-                '## (61개) = 각 업그레이드의 허용 상태
-                '   - 00 = 변화값을 따름
-                '   - 01 = 기본값을 따름
+                ' ## (61个) = 每个升级的允许状态
+                ' - 00 = 遵循变化值
+                ' - 01 = 遵循默认值
                 TEMPIsUPGDefault = binary.ReadBytes(62)
 
 
                 Dim TEMPUPGMin(60) As UInteger
-                '#### (61개) = 첫 업그레이드 미네랄 비용
+                ' #### (61个) = 第一次升级的矿物花费
                 For i = 0 To 60
                     TEMPUPGMin(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGADDMin(60) As UInteger
-                '#### (61개) = 추가 업그레이드 미네랄 비용
+                ' #### (61个) = 额外升级的矿物花费
                 For i = 0 To 60
                     TEMPUPGADDMin(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGGas(60) As UInteger
-                '#### (61개) = 첫 업그레이드 가스 비용
+                ' #### (61个) = 第一次升级的气体花费
                 For i = 0 To 60
                     TEMPUPGGas(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGADDGas(60) As UInteger
-                '#### (61개) = 추가 업그레이드 가스 비용
+                ' #### (61个) = 额外升级的气体花费
                 For i = 0 To 60
                     TEMPUPGADDGas(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGTime(60) As UInteger
-                '#### (61개) = 첫 업그레이드 시간
+                ' #### (61个) = 第一次升级的时间
                 For i = 0 To 60
                     TEMPUPGTime(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUPGADDTime(60) As UInteger
-                '#### (61개) = 추가 업그레이드 시간
+                ' #### (61个) = 额外升级的时间
                 For i = 0 To 60
                     TEMPUPGADDTime(i) = binary.ReadUInt16()
                 Next
@@ -792,30 +792,30 @@ Public Class MapData
 
 
                 Dim TEMPIsTECHDefault() As Byte
-                '0# = 기술의 허용 상태 (00 사용불가, 01 사용가능)
+                ' 0# = 技能的允许状态 (00 不可用, 01 可用)
                 TEMPIsTECHDefault = binary.ReadBytes(44)
 
 
                 Dim TEMPTECHMin(43) As UInteger
-                '#### = 미네랄 비용
+                ' #### = 矿物花费
                 For i = 0 To 43
                     TEMPTECHMin(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPTECHGas(43) As UInteger
-                '#### = 가스 비용
+                ' #### = 气体花费
                 For i = 0 To 43
                     TEMPTECHGas(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPTECHTime(43) As UInteger
-                '#### = 걸리는 시간
+                ' #### = 所需时间
                 For i = 0 To 43
                     TEMPTECHTime(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPTECHADDEnerge(43) As UInteger
-                '##00 = 필요 마나
+                ' ##00 = 所需法力
                 For i = 0 To 43
                     TEMPTECHADDEnerge(i) = binary.ReadUInt16()
                 Next
@@ -864,59 +864,59 @@ Public Class MapData
                 size = binary.ReadUInt32
 
                 Dim TEMPIsUnitDefault() As Byte
-                '## (228개) = 유닛의 순서에 맞게 배열
-                '- 00 (변화값을 따름)
-                '- 01 (기본값을 따름)
+                ' ## (228个) = 按单位顺序排列的数组
+                ' - 00 (遵循变化值)
+                ' - 01 (遵循默认值)
                 TEMPIsUnitDefault = binary.ReadBytes(228)
 
                 Dim TEMPUnitHP(227) As UInteger
-                '00## ##00 (228개) = ????부분은 유닛의 체력
+                ' 00## ##00 (228个) = ????部分是单位的生命值
                 For i = 0 To 227
                     TEMPUnitHP(i) = binary.ReadUInt32()
                 Next
 
                 Dim TEMPUnitSh(227) As UShort
-                '#### (228개) = 쉴드
+                ' #### (228个) = 护盾
                 For i = 0 To 227
                     TEMPUnitSh(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUnitAp() As Byte
-                '## (228개) = 방어력
+                ' ## (228个) = 防御力
                 TEMPUnitAp = binary.ReadBytes(228)
 
                 Dim TEMPUnitBt(227) As UShort
-                '#### (228개) = 생산시간
+                ' #### (228个) = 生产时间
                 For i = 0 To 227
                     TEMPUnitBt(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPMinCost(227) As UShort
-                '#### (228개) = 미네랄 비용
+                ' #### (228个) = 矿物花费
                 For i = 0 To 227
                     TEMPMinCost(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPGasCost(227) As UShort
-                '#### (228개) = 가스 비용
+                ' #### (228个) = 气体花费
                 For i = 0 To 227
                     TEMPGasCost(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPUnitstr(227) As UShort
-                '#### (228개) = 문자열 번호
+                ' #### (228个) = 字符串编号
                 For i = 0 To 227
                     TEMPUnitstr(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPWeaDmg(129) As UShort
-                '#### (130개) = 각 무기의 기본 공격력
+                ' #### (130个) = 每个武器的基本攻击力
                 For i = 0 To 129
                     TEMPWeaDmg(i) = binary.ReadUInt16()
                 Next
 
                 Dim TEMPWeaUmg(129) As UShort
-                '#### (130개) = 업그레이드시 올라가는 공격력
+                ' #### (130个) = 升级时增加的攻击力
                 For i = 0 To 129
                     TEMPWeaUmg(i) = binary.ReadUInt16()
                 Next
@@ -955,7 +955,7 @@ Public Class MapData
 
 
                         Key = "Ground Weapon"
-                        Dim weaponnum As Integer = scData.DefaultDat.Data(SCDatFiles.DatFiles.units, Key, i) '유닛 i의 지상무기와 공중무기 번호를 준다.
+                        Dim weaponnum As Integer = scData.DefaultDat.Data(SCDatFiles.DatFiles.units, Key, i) ' 给出单位i的对地武器和对空武器编号。
 
 
                         If weaponnum <> 130 Then
@@ -969,7 +969,7 @@ Public Class MapData
 
 
                         Key = "Air Weapon"
-                        weaponnum = scData.DefaultDat.Data(SCDatFiles.DatFiles.units, Key, i) '유닛 i의 지상무기와 공중무기 번호를 준다.
+                        weaponnum = scData.DefaultDat.Data(SCDatFiles.DatFiles.units, Key, i) ' 给出单位i的对地武器和对空武器编号。
 
                         If weaponnum <> 130 Then
                             Key = "Damage Amount"
@@ -993,7 +993,7 @@ Public Class MapData
                 Dim strCount As UInteger = binary.ReadUInt32()
                 Dim lastPos As UInteger = mem.Position
 
-                For i = 0 To strCount - 1 '사이즈 만큼 반복
+                For i = 0 To strCount - 1 ' 按大小重复
                     mem.Position = lastPos
 
                     Dim StartPos As UInteger = binary.ReadUInt32()
@@ -1022,7 +1022,7 @@ Public Class MapData
                 Dim strCount As UInt16 = binary.ReadUInt16()
                 Dim lastPos As UInteger = mem.Position
 
-                For i = 0 To strCount - 1 '사이즈 만큼 반복
+                For i = 0 To strCount - 1 ' 按大小重复
                     mem.Position = lastPos
 
                     Dim StartPos As UInteger = binary.ReadUInt16()

@@ -43,7 +43,7 @@ Public Class CRequireData
         TotalSize += 4
         For i = 0 To RequireDatas.Count - 1
             If (RequireDatas(i).StartPos > 0 And RequireDatas(i).UseStatus <> RequireUse.DontUse) Or RequireDatas(i).UseStatus = RequireUse.CustomUse Then
-                TotalSize += 2 '시작 부호2개와 끝 부호2개
+                TotalSize += 2 ' 2个起始符号和2个结束符号
                 If Datfile = SCDatFiles.DatFiles.orders Then
                     TotalSize += 2
                 End If
@@ -247,7 +247,7 @@ Public Class CRequireData
 
             _UseStatus = RequireUse.DefaultUse
             ReauireBlocks = New List(Of RequireBlock)
-            'MsgBox("코드시작  인덱스 : " & CodeNum)
+            ' MsgBox("代码开始 索引 : " & CodeNum)
 
             For i = 0 To Codes.Count - 1
                 Dim Code As UShort = Codes(i)
@@ -264,7 +264,7 @@ Public Class CRequireData
                             'MsgBox(Opcode)
                     End Select
 
-                Else '값
+                Else ' 值
                     ReauireBlocks.Add(New RequireBlock(EOpCode._Must_have_, Codes(i)))
                     'MsgBox("MustHave  " & Code)
                 End If
@@ -272,7 +272,7 @@ Public Class CRequireData
 
             Next
 
-            'MsgBox("코드끝")
+            ' MsgBox("代码结束")
         End Sub
 
         Public Sub ReLoad(tCodeNum As Integer, tDatfile As SCDatFiles.DatFiles, Codes As List(Of UShort), tStartPos As UShort)
@@ -285,7 +285,7 @@ Public Class CRequireData
 
             _UseStatus = RequireUse.DefaultUse
             ReauireBlocks = New List(Of RequireBlock)
-            'MsgBox("코드시작  인덱스 : " & CodeNum)
+            ' MsgBox("代码开始 索引 : " & CodeNum)
 
             For i = 0 To Codes.Count - 1
                 Dim Code As UShort = Codes(i)
@@ -302,7 +302,7 @@ Public Class CRequireData
                             'MsgBox(Opcode)
                     End Select
 
-                Else '값
+                Else ' 值
                     ReauireBlocks.Add(New RequireBlock(EOpCode._Must_have_, Codes(i)))
                     'MsgBox("MustHave  " & Code)
                 End If
@@ -310,7 +310,7 @@ Public Class CRequireData
 
             Next
 
-            'MsgBox("코드끝")
+            ' MsgBox("代码结束")
         End Sub
 
         Public Function LagacyGetCodes() As List(Of UShort)
@@ -318,7 +318,7 @@ Public Class CRequireData
 
 
             For i = 0 To ReauireBlocks.Count - 1
-                If ReauireBlocks(i).HasValue Then '값을 가지고 있을 경우
+                If ReauireBlocks(i).HasValue Then ' 如果持有值
                     If ReauireBlocks(i).opCode = EOpCode._Must_have_ Then
                         ReturnCodes.Add(ReauireBlocks(i).Value)
                     Else

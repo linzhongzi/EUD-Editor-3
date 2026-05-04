@@ -62,10 +62,10 @@ Public Class TriggerEditValueSelecterWindow
     Private ArgTypeDetail As Dictionary(Of String, String) = New Dictionary(Of String, String)
 
     Public Sub New()
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         MaxHeight = 0
         MinHeight = 0
 
@@ -167,7 +167,7 @@ Public Class TriggerEditValueSelecterWindow
 
 
 
-        '현재 ArgType
+        ' 当前 ArgType
         Dim cArgType As String = _tCode.Args(ArgIndex).ValueType
         Dim cDefaultArgType As String = _tCode.Args(ArgIndex).DefaultType
 
@@ -175,7 +175,7 @@ Public Class TriggerEditValueSelecterWindow
 
         Dim LastIndex As Integer
         If cArgType = cDefaultArgType Then
-            '기본 값일 경우
+            ' 如果是默认值
             LastIndex = 0
         Else
             Dim IsNoneType As Boolean = True
@@ -185,7 +185,7 @@ Public Class TriggerEditValueSelecterWindow
                     Dim tcbitem As ComboBoxItem = TypeList.Items(i)
                     Dim tTag As String = tcbitem.Tag
                     If tTag = cArgType Then
-                        '타입설정
+                        ' 类型设置
                         LastIndex = i
                         IsNoneType = False
                         Exit For
@@ -208,13 +208,13 @@ Public Class TriggerEditValueSelecterWindow
 
         Me.Left = StartPos.X - PaddingV
 
-        'CtrHeight + Top가 Height보다 큰지 확인
+        ' 检查 CtrHeight + Top 是否大于 Height。
 
         If Me.Height + StartPos.Y + ButtonHeight > height Then
-            '위쪽으로 열어야됨
+            ' 需要向上打开。
             Me.Top = StartPos.Y - Me.Height + PaddingV
         Else
-            '아래로 열어야됨
+            ' 需要向下打开。
             Me.Top = StartPos.Y + ButtonHeight - PaddingV
         End If
 
@@ -262,7 +262,7 @@ Public Class TriggerEditValueSelecterWindow
         LoadCmp = False
 
         If LastSelectType = tCode.Args(ArgIndex).ValueType Then
-            '리프레쉬 하지 않는다.
+            ' 不进行刷新。
             Return
         Else
             LastSelectType = tCode.Args(ArgIndex).ValueType
@@ -502,7 +502,7 @@ Public Class TriggerEditValueSelecterWindow
 
                 Dim cCodeSelecter As CodeSelecter
                 If Dic.ContainsKey(aType) Then
-                    '포함되어 있을 경우 새로 만들지 않는다.
+                    ' 如果已包含，则不新建。
                     For Each a In Dic.Values
                         a.Visibility = Visibility.Collapsed
                     Next
@@ -589,7 +589,7 @@ Public Class TriggerEditValueSelecterWindow
 
                 ArgumentStringPanel.Visibility = Visibility.Visible
             Case "Tbl"
-                '사용자 정의 Arg임
+                ' 是用户自定义 Arg。
                 Width = 250
                 Height = 340
 
@@ -603,7 +603,7 @@ Public Class TriggerEditValueSelecterWindow
                 ListReset()
                 ListboxPanel.Visibility = Visibility.Visible
             Case Else
-                '사용자 정의 Arg임
+                ' 是用户自定义 Arg。
                 Width = 250
                 Height = 340
 
@@ -1016,7 +1016,7 @@ Public Class TriggerEditValueSelecterWindow
 
 
 
-    '인자 번호와 해당 트리거를 넣는다.
+    ' 放入参数编号和相应的触发器。
 
-    '핸들러를 넣어서 리프레시가 가능하게 해준다.
+    ' 放入处理程序以使其可刷新。
 End Class

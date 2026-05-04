@@ -45,9 +45,9 @@ Public Class BGMData
         Private _BGMRelativePath As String
         Public Property BGMPath As String
             Get
-                If Not My.Computer.FileSystem.FileExists(_BGMPath) And _BGMRelativePath <> "" Then '오픈 맵이 존재하지 않을 경우
+                If Not My.Computer.FileSystem.FileExists(_BGMPath) And _BGMRelativePath <> "" Then ' 如果打开的地图不存在
                     Dim tempBgmPath As String = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(pjData.Filename), _BGMRelativePath))
-                    If My.Computer.FileSystem.FileExists(tempBgmPath) Then '상대경로로 존재할 경우
+                    If My.Computer.FileSystem.FileExists(tempBgmPath) Then ' 如果以相对路径存在
                         _BGMPath = tempBgmPath
                     End If
                 End If

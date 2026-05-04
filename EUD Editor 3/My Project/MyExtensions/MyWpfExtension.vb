@@ -2,7 +2,7 @@
 
 Namespace My
     ''' <summary>
-    ''' WPF용 My 네임스페이스에 사용할 수 있는 속성을 정의하는 데 사용되는 모듈입니다.
+    ''' 用于定义 WPF 的 My 命名空间中的可用属性的模块。
     ''' </summary>
     ''' <remarks></remarks>
     <Global.Microsoft.VisualBasic.HideModuleName()> _
@@ -12,7 +12,7 @@ Namespace My
         Private s_Windows As New ThreadSafeObjectProvider(Of MyWindows)
         Private s_Log As New ThreadSafeObjectProvider(Of Global.Microsoft.VisualBasic.Logging.Log)
         ''' <summary>
-        ''' 실행하는 응용 프로그램에 대한 응용 프로그램 개체를 반환합니다.
+        ''' 返回正在运行的应用程序的应用程序对象。
         ''' </summary>
         <Global.System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")>  _
         Friend ReadOnly Property Application() As Application
@@ -21,7 +21,7 @@ Namespace My
             End Get
         End Property
         ''' <summary>
-        ''' 호스트 컴퓨터에 대한 정보를 반환합니다.
+        ''' 返回有关主机的信息。
         ''' </summary>
         <Global.System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")>  _
         Friend ReadOnly Property Computer() As Global.Microsoft.VisualBasic.Devices.Computer
@@ -30,8 +30,8 @@ Namespace My
             End Get
         End Property
         ''' <summary>
-        ''' 현재 사용자에 대한 정보를 반환합니다.  현재 Windows 사용자 자격 증명을 사용하여 응용 프로그램을 실행하려면 
-        ''' My.User.InitializeWithWindowsUser()를 호출하십시오.
+        ''' 返回有关当前用户的信息。要使用当前 Windows 用户凭据运行应用程序，
+        ''' 请调用 My.User.InitializeWithWindowsUser()。
         ''' </summary>
         <Global.System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")>  _
         Friend ReadOnly Property User() As Global.Microsoft.VisualBasic.ApplicationServices.User
@@ -40,7 +40,7 @@ Namespace My
             End Get
         End Property
         ''' <summary>
-        ''' 응용 프로그램 로그를 반환합니다. 응용 프로그램의 구성 파일로 수신기를 구성할 수 있습니다.
+        ''' 返回应用程序日志。可以使用应用程序的配置文件配置侦听器。
         ''' </summary>
         <Global.System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")>  _
         Friend ReadOnly Property Log() As Global.Microsoft.VisualBasic.Logging.Log
@@ -50,7 +50,7 @@ Namespace My
         End Property
 
         ''' <summary>
-        ''' 프로젝트에 정의된 Windows 컬렉션을 반환합니다.
+        ''' 返回项目中定义的 Windows 集合。
         ''' </summary>
         <Global.System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")>  _
         Friend ReadOnly Property Windows() As MyWindows

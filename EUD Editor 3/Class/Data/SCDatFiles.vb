@@ -2,7 +2,7 @@
 
 <Serializable()>
 Public Class SCDatFiles
-    'Dat파일 정의
+    ' Dat文件定义
     Private Datfile As List(Of CDatFile)
 
 
@@ -246,13 +246,13 @@ Public Class SCDatFiles
             Dim br As New BinaryReader(fs)
             Dim sr As New StreamReader(filepath & ".def")
 
-            sr.ReadLine() '헤더
+            sr.ReadLine() ' 头部
             Dim varcount = ReadValue(sr.ReadLine()) 'Varcount
             Dim InputEntrycount = ReadValue(sr.ReadLine()) 'InputEntrycount
             Dim OutputEntrycount = ReadValue(sr.ReadLine()) 'OutputEntrycount
 
-            sr.ReadLine() ' 빈공간
-            sr.ReadLine() ' 값
+            sr.ReadLine() ' 空白区域
+            sr.ReadLine() ' 值
 
             For i = 0 To varcount - 1
                 Paramaters.Add(New CParamater(FIleName, sr, br, Paramaters.Count, InputEntrycount, IsProjectData, IsBindingData))
@@ -283,7 +283,7 @@ Public Class SCDatFiles
         End Property
 
         Private ParamDic As Dictionary(Of String, CParamater)
-        '피라미터들
+        ' 参数
         <Serializable()>
         Public Class CParamater
             'Public ReadOnly Property GetOffsetName() As String
@@ -294,8 +294,8 @@ Public Class SCDatFiles
 
 
 
-            '만약 잘못된 수를 불러올 경우 안전장치 추가해야됨
-            '꼮!!!!!!!!!!!!!! 일단 지금은 바쁘니까 넘어간다.
+            ' 如果检索到错误的代号，需要添加安全措施。
+            ' 一定要!!!!!!!!!!!!!! 现在忙着，先跳过。
             Public Property Data(index As Long) As Long
                 Get
                     index -= VarStart
@@ -383,10 +383,10 @@ Public Class SCDatFiles
 
                 Values = New List(Of Value)
 
-                Dim currentpos As UInteger = br.BaseStream.Position '베이스 스트림을 기억하고
+                Dim currentpos As UInteger = br.BaseStream.Position ' 记住基本流
                 br.BaseStream.Position -= (VarIndex - 1) * Size * (VarEnd - VarStart + 1)
                 For i As Integer = 0 To VarEnd - VarStart
-                    br.BaseStream.Position += (VarIndex - 1) * Size '인덱스 만큼 앞으로 간다.
+                    br.BaseStream.Position += (VarIndex - 1) * Size ' 向前走与索引一样的距离。
 
                     Dim value As UInteger
 
@@ -408,14 +408,14 @@ Public Class SCDatFiles
 
 
                     'If VarArray = 4 Then
-                    '    MsgBox(Hex(br.BaseStream.Position - Size) & vbCrLf & "유닛코드 : " & i & " 이름 : " & ParamaterName & " 값 : " & Values.Last)
+                    ' MsgBox(Hex(br.BaseStream.Position - Size) & vbCrLf & "单位代码 : " & i & " 名称 : " & ParamaterName & " 值 : " & Values.Last)
                     'End If
 
 
-                    br.BaseStream.Position += (VarArray - VarIndex) * Size '인덱스 만큼 앞으로 간다.
+                    br.BaseStream.Position += (VarArray - VarIndex) * Size ' 向前走与索引一样的距离。
                 Next
 
-                '베이스 스트림에서 Size * encount만큼 간 곳으로 되돌린다.
+                ' 返回到从基础流移动了 Size * encount 的位置。
                 br.BaseStream.Position = currentpos + Size * (VarEnd - VarStart + 1)
             End Sub
 

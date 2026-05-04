@@ -48,9 +48,6 @@ Public Class FunctionToolTip
     ' * A
     ' * @Summary.ko-KR
     ' * 유닛을 생성하는 트리거
-    ' *
-    ' * 
-    ' *
     ' * @param.Number.ko-KR
     ' * 생성 될 유닛의 수
     ' * @param.Unit.ko-KR
@@ -59,6 +56,28 @@ Public Class FunctionToolTip
     ' * 생성될 로케이션
     ' * @param.ForPlayer.ko-KR
     ' * 대상 플레이어
+    ' *
+    ' * @Summary.en-US
+    ' * Trigger to create a unit
+    ' * @param.Number.en-US
+    ' * Number of units to be created
+    ' * @param.Unit.en-US
+    ' * Type of unit to be created
+    ' * @param.Where.en-US
+    ' * Location to create the unit
+    ' * @param.ForPlayer.en-US
+    ' * Target player
+    ' *
+    ' * @Summary.zh-CN
+    ' * 生成单位的触发器
+    ' * @param.Number.zh-CN
+    ' * 要生成的单位数量
+    ' * @param.Unit.zh-CN
+    ' * 要生成的单位类型
+    ' * @param.Where.zh-CN
+    ' * 要生成的位置
+    ' * @param.ForPlayer.zh-CN
+    ' * 目标玩家
     '***/ 
     'function CreateUnit(Number, Unit : TrgUnit, Where : TrgLocation, ForPlayer : TrgPlayer){}
 
@@ -95,7 +114,7 @@ Public Class FunctionToolTip
         Dim ReadStatus As ReadStatus
         Dim WriteParamIndex As Integer
         Dim FirstParam As Boolean = False
-        '만약 @지령이 Summary라면
+        ' 如果 @command 是 Summary
         For i = 0 To Lines.Count - 1
             Dim LineStr As String = Lines(i).Replace("*", "").Trim
             If LineStr = "" Then
@@ -448,7 +467,7 @@ Public Class CFunc
 
                 ObjContents = Mid(str, StartIndex, bl - StartIndex)
 
-                'MsgBox(ObjName) '오브젝트 이름
+                ' MsgBox(ObjName) '对象名称
                 'MsgBox(ObjContents)
                 Objects.Add(New CObject(ObjName, ObjContents))
                 changesStr.Add(matches(i).Value & Mid(ObjContents, 2))

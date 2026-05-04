@@ -3,8 +3,8 @@
 Public Class DatBinding
     Implements INotifyPropertyChanged
 
-    '바인딩 할 때 본체도 넘겨주자고.
-    '잘못된 값일 경우 또는 지원안하는 부분일 경우 없에버리기.~
+    ' 绑定时也传递主体。
+    ' 如果是错误值或不支持的部分，则将其移除。~
 
     Private Datfile As SCDatFiles.DatFiles
     Private Parameter As String
@@ -70,27 +70,27 @@ Public Class DatBinding
             Dim returnStr As String = ""
             returnStr = "<0>" & Tool.GetText("datfliename") & " : <2>" & Tool.GetText(Datfilesname(Datfile)) & "(" & Datfilesname(Datfile) & ")" & vbCrLf &
              "<0>" & Tool.GetText("parameter") & " : <2>" & Tool.GetText(Datfilesname(Datfile) & "_" & Parameter) & "(" & Parameter & ")" & vbCrLf
-            'returnStr = returnStr & "인덱스 : " & ObjectID & vbCrLf
-            'returnStr = returnStr & "사이즈 : " & scData.DefaultDat.ParamInfo(Datfile, Parameter, SCDatFiles.EParamInfo.Size) & vbCrLf
+            ' returnStr = returnStr & "索引 : " & ObjectID & vbCrLf
+            ' returnStr = returnStr & "大小 : " & scData.DefaultDat.ParamInfo(Datfile, Parameter, SCDatFiles.EParamInfo.Size) & vbCrLf
 
             Dim ValueType As SCDatFiles.DatFiles = scData.DefaultDat.ParamInfo(Datfile, Parameter, SCDatFiles.EParamInfo.ValueType)
             If ValueType <> SCDatFiles.DatFiles.None Then
                 returnStr = returnStr & "<0>" & Tool.GetText("valuetype") & " : <3>" & Tool.GetText(Datfilesname(ValueType)) & vbCrLf
             End If
-            'returnStr = returnStr & "베이스오프셋 : 0x" & Hex(Tool.GetOffset(Datfile, Parameter)).ToUpper & vbCrLf
+            ' returnStr = returnStr & "基址偏移量 : 0x" & Hex(Tool.GetOffset(Datfile, Parameter)).ToUpper & vbCrLf
 
             If Not pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault Then
                 returnStr = returnStr & "<0>" & Tool.GetText("orgvalue") & " : <3>" & DefaultValue & vbCrLf
             End If
 
             If pjData.IsMapLoading Then
-                If Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then '기본 안 값 쓴다면
+                If Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then ' 如果要写入默认值
                     returnStr = returnStr & "<0>" & Tool.GetText("mapdatavalue") & " : <3>" & pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID) & vbCrLf
                 End If
             End If
 
             'If Not pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault Then
-            '    returnStr = returnStr & "   변경 된 값 : " & pjData.Dat.Data(Datfile, Parameter, ObjectID)
+            ' returnStr = returnStr & "   更改后的值 : " & pjData.Dat.Data(Datfile, Parameter, ObjectID)
             'End If
 
             returnStr = returnStr & vbCrLf & "<0>" & Tool.GetText(Datfilesname(Datfile) & "_" & Parameter & "_ToolTip")
@@ -113,14 +113,14 @@ Public Class DatBinding
                     temprsv = pjData.Dat.Data(Datfile, Parameter, ObjectID)
                     Return tv
                 End If
-                'MsgBox("예외")
+                ' MsgBox("异常")
             End If
-            'MsgBox("데이터 파인딩 겟")
-            '만약 맵데이터에 있는 항목이라면? 
+            ' MsgBox("数据查找获取")
+            ' 如果是地图数据中的项目？
             If pjData.IsMapLoading Then
                 'MsgBox(pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID) & vbCrLf &
                 'pjData.Dat.Data(Datfile, Parameter, ObjectID))
-                If pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault And Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then '기본 안 값 쓴다면
+                If pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault And Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then ' 如果要写入默认值
                     Return pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID)
                 End If
             End If
@@ -132,7 +132,7 @@ Public Class DatBinding
         Set(ByVal tvalue As String)
             If Not (tvalue = pjData.Dat.Data(Datfile, Parameter, ObjectID)) Then
                 pjData.SetDirty(True)
-                'MsgBox("데이터 파인딩 셋")
+                ' MsgBox("数据查找设置")
 
                 Dim tData As Long = pjData.Dat.Data(Datfile, Parameter, ObjectID)
 
@@ -153,7 +153,7 @@ Public Class DatBinding
 
 
 
-                '만약 요주의 데이터들일 경우. Ex라벨에 관련된것.
+                ' 如果是需要注意的数据。例如与标签相关的内容。
                 If Parameter = "Label" Then
                     pjData.BindingManager.UIManager(Datfile, ObjectID).NameRefresh()
                 End If
@@ -166,12 +166,12 @@ Public Class DatBinding
 
     Public Property ValueFlag() As String
         Get
-            'MsgBox("데이터 파인딩 겟")
-            '만약 맵데이터에 있는 항목이라면? 
+            ' MsgBox("数据查找获取")
+            ' 如果是地图数据中的项目？
             If pjData.IsMapLoading Then
                 'MsgBox(pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID) & vbCrLf &
                 'pjData.Dat.Data(Datfile, Parameter, ObjectID))
-                If pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault And Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then '기본 안 값 쓴다면
+                If pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault And Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then ' 如果要写入默认值
                     Return Hex(pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID))
                 End If
             End If
@@ -183,7 +183,7 @@ Public Class DatBinding
         Set(ByVal tvalue As String)
             tvalue = "&H" & tvalue
             If Not (tvalue = pjData.Dat.Data(Datfile, Parameter, ObjectID)) Then
-                'MsgBox("데이터 파인딩 셋")
+                ' MsgBox("数据查找设置")
                 pjData.Dat.Data(Datfile, Parameter, ObjectID) = tvalue
                 pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault = False
                 PropertyChangedPack()
@@ -194,12 +194,12 @@ Public Class DatBinding
     Public Property HPValue() As String
         Get
             Dim returnVal As Long
-            'MsgBox("데이터 파인딩 겟")
-            '만약 맵데이터에 있는 항목이라면? 
+            ' MsgBox("数据查找获取")
+            ' 如果是地图数据中的项目？
             If pjData.IsMapLoading Then
                 'MsgBox(pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID) & vbCrLf &
                 'pjData.Dat.Data(Datfile, Parameter, ObjectID))
-                If pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault And Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then '기본 안 값 쓴다면
+                If pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault And Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then ' 如果要写入默认值
                     returnVal = pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID)
                 Else
                     returnVal = pjData.Dat.Data(Datfile, Parameter, ObjectID)
@@ -210,7 +210,7 @@ Public Class DatBinding
 
 
 
-            If returnVal > 2147483647 Then '음수일 경우
+            If returnVal > 2147483647 Then ' 如果是负数
                 '2147483648 = -2147483648
                 '4294967295 = -1
                 returnVal -= 4294967296
@@ -230,8 +230,8 @@ Public Class DatBinding
                 If Setvalue < Integer.MinValue Then
                     Setvalue = Integer.MinValue
                 End If
-                'MsgBox("데이터 파인딩 셋")
-                If Setvalue < 0 Then '음수일 경우
+                ' MsgBox("数据查找设置")
+                If Setvalue < 0 Then ' 如果是负数
                     '2147483648 = -2147483648
                     '4294967295 = -1
                     Setvalue += 4294967296
@@ -249,12 +249,12 @@ Public Class DatBinding
 
     Public Property Checked() As Boolean
         Get
-            'MsgBox("데이터 파인딩 겟")
-            '만약 맵데이터에 있는 항목이라면? 
+            ' MsgBox("数据查找获取")
+            ' 如果是地图数据中的项目？
             If pjData.IsMapLoading Then
                 'MsgBox(pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID) & vbCrLf &
                 'pjData.Dat.Data(Datfile, Parameter, ObjectID))
-                If pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault And Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then '기본 안 값 쓴다면
+                If pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault And Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then ' 如果要写入默认值
                     Return pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID)
                 End If
             End If
@@ -267,7 +267,7 @@ Public Class DatBinding
 
         Set(ByVal tvalue As Boolean)
             If Not (tvalue = pjData.Dat.Data(Datfile, Parameter, ObjectID)) Then
-                'MsgBox("데이터 파인딩 셋")
+                ' MsgBox("数据查找设置")
                 If tvalue Then
                     pjData.Dat.Data(Datfile, Parameter, ObjectID) = 1
                 Else
@@ -296,7 +296,7 @@ Public Class DatBinding
     End Property
     'Public ReadOnly Property ValueTextBinding As UIManager
     '    Get
-    '        'MsgBox("ㅆ:빋")
+    ' 'MsgBox("ㅆ:빋") ' 音符占位？
     '        Dim valueType As SCDatFiles.DatFiles = pjData.Dat.ParamInfo(Datfile, Parameter, SCDatFiles.EParamInfo.ValueType)
     '        If valueType <> SCDatFiles.DatFiles.None Then
     '            Dim Value As Long = pjData.Dat.Data(Datfile, Parameter, ObjectID)
@@ -396,18 +396,18 @@ Public Class DatBinding
             End If
 
 
-            '맵에서 정의된 것일 경우.
+            ' 如果是地图中定义的情况。
 
-            If IsDefault And Not IsMapDataDefault Then '만약 맵 데이터가 존재 할 경우
+            If IsDefault And Not IsMapDataDefault Then ' 如果存在地图数据
                 Return New SolidColorBrush(pgData.FiledMapEditColor)
             Else
                 If IsDefault Then
 
-                    'MsgBox("회색")
+                    ' MsgBox("灰色")
                     Return New SolidColorBrush(pgData.FiledDefault)
                 Else
 
-                    'MsgBox("빨간색")
+                    ' MsgBox("红色")
                     Return New SolidColorBrush(pgData.FiledEditColor)
                 End If
             End If
@@ -467,10 +467,10 @@ Public Class DatBinding
             Set(ByVal tvalue As Boolean)
                 Dim value As Long = pjData.Dat.Data(Datfile, Parameter, ObjectID)
 
-                '원래 값
+                ' 原值
                 Dim flag As Boolean = (value And Math.Pow(2, FlagIndex))
 
-                If tvalue <> flag Then '값이 변했음
+                If tvalue <> flag Then ' 值已更改
                     If tvalue Then
                         Dim CValue As Long = value + Math.Pow(2, FlagIndex)
                         pjData.Dat.Data(Datfile, Parameter, ObjectID) = CValue
@@ -501,7 +501,7 @@ Public Class DatBinding
 
 
                 'If Not (tvalue = pjData.Dat.Data(Datfile, Parameter, ObjectID)) Then
-                '    'MsgBox("데이터 파인딩 셋")
+                ' 'MsgBox("数据查找设置")
                 '    pjData.Dat.Data(Datfile, Parameter, ObjectID) = tvalue
                 '    pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault = False
 
@@ -512,11 +512,11 @@ Public Class DatBinding
         Public ReadOnly Property MiniBackColor As SolidColorBrush
             Get
                 Dim value As Long = pjData.Dat.Data(Datfile, Parameter, ObjectID)
-                '현재 값
+                ' 当前值
                 Dim flag As Boolean = (value And Math.Pow(2, FlagIndex))
 
                 Dim Truevalue As Long = scData.DefaultDat.Data(Datfile, Parameter, ObjectID)
-                '실제 값
+                ' 实际值
                 Dim Trueflag As Boolean = (Truevalue And Math.Pow(2, FlagIndex))
 
 
@@ -525,7 +525,7 @@ Public Class DatBinding
 
 
                 If Not IsDefault Then
-                    If (flag <> Trueflag) Then '수정된 값일 경우
+                    If (flag <> Trueflag) Then ' 如果是修改后的值
                         Return New SolidColorBrush(pgData.FiledFalgColor)
                     Else
                         If flag Then
@@ -546,16 +546,16 @@ Public Class DatBinding
 
 
 
-                'If IsDefault And Not IsMapDataDefault Then '만약 맵 데이터가 존재 할 경우
+                ' If IsDefault And Not IsMapDataDefault Then '如果存在地图数据
                 '    Return New SolidColorBrush(pgData.FiledMapEditColor)
                 'Else
                 '    If IsDefault Then
 
-                '        'MsgBox("회색")
+                ' 'MsgBox("灰色")
                 '        Return New SolidColorBrush(pgData.FiledDefault)
                 '    Else
 
-                '        'MsgBox("빨간색")
+                ' 'MsgBox("红色")
                 '        Return New SolidColorBrush(pgData.FiledEditColor)
                 '    End If
                 'End If
@@ -576,4 +576,3 @@ Public Class DatBinding
         End Sub
     End Class
 End Class
-

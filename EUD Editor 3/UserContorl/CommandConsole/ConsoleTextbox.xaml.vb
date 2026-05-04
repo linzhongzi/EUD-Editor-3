@@ -40,7 +40,7 @@ Public Class ConsoleTextbox
             Dim MidStr As String = Mid(MainStr, SelectStart - index, 1)
 
             Dim ArgumentIndex As Integer = 0
-            Select Case MidStr'이게 뜰때 에러가 아니라 앞에 function이 있는지 확인까지 해야됨. 
+            Select Case MidStr' 当出现此错误时，需要检查前面是否有 function。
                 Case vbLf
                     Exit While
             End Select
@@ -65,7 +65,7 @@ Public Class ConsoleTextbox
             If tooltips IsNot Nothing Then
                 tooltippanel.Children.Add(tooltips)
             End If
-            'tooltiplabel.Content = "함수 이름: " & funcname & vbCrLf & "인자 번호: " & argumentcount & vbCrLf & LuaManager.GetArgumentDefine(funcname, argumentcount)
+            ' tooltiplabel.Content = "函数名: " & funcname & vbCrLf & "参数编号: " & argumentcount & vbCrLf & LuaManager.GetArgumentDefine(funcname, argumentcount)
             'tooltiplabel.Visibility = Visibility.Visible
         Else
             tooltiplabel.Visibility = Visibility.Collapsed
@@ -249,7 +249,7 @@ Public Class ConsoleTextbox
 
                     Try
                         If LastCommandIndex = LastCommand.Count - 1 Then
-                            '만약 현재 커맨드 인덱스가 마지막위치라면
+                            ' 如果当前命令索引是最后位置
                             LastCommand.Add(ConsoleText.Text)
                             LastCommandIndex += 1
                         Else

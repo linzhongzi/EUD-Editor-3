@@ -3,15 +3,30 @@
  * F
  * @Summary.ko-KR
  * [loc]에 존재하는 [player]의 [unit]을 반환합니다.
- *
  * @param.player.ko-KR
  * 유닛의 소유 플레이어입니다.
- *
  * @param.unit.ko-KR
  * 유닛입니다.
- *
  * @param.loc.ko-KR
  * 로케이션입니다.
+ *
+ * @Summary.en-US
+ * Returns the [unit] belonging to [player] present in [loc].
+ * @param.player.en-US
+ * The owner player of the unit.
+ * @param.unit.en-US
+ * The unit.
+ * @param.loc.en-US
+ * The location.
+ *
+ * @Summary.zh-CN
+ * 返回位于 [loc] 的 [player] 的 [unit]。
+ * @param.player.zh-CN
+ * 指定单位的拥有玩家。
+ * @param.unit.zh-CN
+ * 指定单位.
+ * @param.loc.zh-CN
+ * 指定位置.
 ***/
 function CountAtLoc(player: TrgPlayer, unit: TrgUnit, loc: TrgLocation) {
     // made by Artanis[M] & safhfh & Jpoker & trgk;
@@ -69,16 +84,31 @@ function __PosOrderBase(
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [epd]가 프로토스 방식으로 [building]을 짓습니다.(Working모션이 필요하지 않습니다)  
- *
+ * [loc]로 [epd]가 프로토스 방식으로 [building]을 짓습니다.(Working모션이 필요하지 않습니다)
  * @param.epd.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.loc.ko-KR
  * 명령을 내릴 위치입니다.
- *
  * @param.building.ko-KR
  * 지을 건물입니다.
+ *
+ * @Summary.en-US
+ * [epd] builds [building] at [loc] in Protoss way (does not require Working motion).
+ * @param.epd.en-US
+ * The unit to give order to.
+ * @param.loc.en-US
+ * The location to order.
+ * @param.building.en-US
+ * The building to construct.
+ *
+ * @Summary.zh-CN
+ * [epd] 以Protoss方式在 [loc] 建造 [building]（不需要Working动作）。
+ * @param.epd.zh-CN
+ * 接收命令的单位。
+ * @param.loc.zh-CN
+ * 命令的目标位置。
+ * @param.building.zh-CN
+ * 要建造的建筑。
 ***/
 function BuildProbeEPD(epd, loc: TrgLocation, building: TrgUnit) {
     SetMemoryXEPD(epd + 0x98 / 4, SetTo, building, 0xFFFF);
@@ -89,16 +119,31 @@ function BuildProbeEPD(epd, loc: TrgLocation, building: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [ptr]가 프로토스 방식으로 [building]을 짓습니다.(Working모션이 필요하지 않습니다)  
- *
+ * [loc]로 [ptr]가 프로토스 방식으로 [building]을 짓습니다.(Working모션이 필요하지 않습니다)
  * @param.ptr.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.loc.ko-KR
  * 명령을 내릴 위치입니다.
- *
  * @param.building.ko-KR
  * 지을 건물입니다.
+ *
+ * @Summary.en-US
+ * [ptr] builds [building] at [loc] in Protoss way (does not require Working motion).
+ * @param.ptr.en-US
+ * The unit to give order to.
+ * @param.loc.en-US
+ * The location to order.
+ * @param.building.en-US
+ * The building to construct.
+ *
+ * @Summary.zh-CN
+ * [ptr] 以Protoss方式在 [loc] 建造 [building]（不需要Working动作）。
+ * @param.ptr.zh-CN
+ * 接收命令的单位。
+ * @param.loc.zh-CN
+ * 命令的目标位置。
+ * @param.building.zh-CN
+ * 要建造的建筑。
 ***/
 function BuildProbe(unitPTR, loc: TrgLocation, building: TrgUnit) {
     BuildProbeEPD(EPD(unitPTR), loc, building);
@@ -108,16 +153,31 @@ function BuildProbe(unitPTR, loc: TrgLocation, building: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [epd]가 저그 방식으로 [building]을 짓습니다.(Working모션이 필요하지 않습니다)  
- *
+ * [loc]로 [epd]가 저그 방식으로 [building]을 짓습니다.(Working모션이 필요하지 않습니다)
  * @param.epd.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.loc.ko-KR
  * 명령을 내릴 위치입니다.
- *
  * @param.building.ko-KR
  * 지을 건물입니다.
+ *
+ * @Summary.en-US
+ * [epd] builds [building] at [loc] in Zerg way (does not require Working motion).
+ * @param.epd.en-US
+ * The unit to give order to.
+ * @param.loc.en-US
+ * The location to order.
+ * @param.building.en-US
+ * The building to construct.
+ *
+ * @Summary.zh-CN
+ * [epd] 以Zerg方式在 [loc] 建造 [building]（不需要Working动作）。
+ * @param.epd.zh-CN
+ * 接收命令的单位。
+ * @param.loc.zh-CN
+ * 命令的目标位置。
+ * @param.building.zh-CN
+ * 要建造的建筑。
 ***/
 function BuildDroneEPD(epd, loc: TrgLocation, building: TrgUnit) {
     SetMemoryXEPD(epd + 0x98 / 4, SetTo, building, 0xFFFF);
@@ -128,16 +188,31 @@ function BuildDroneEPD(epd, loc: TrgLocation, building: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [ptr]가 저그 방식으로 [building]을 짓습니다.(Working모션이 필요하지 않습니다)  
- *
+ * [loc]로 [ptr]가 저그 방식으로 [building]을 짓습니다.(Working모션이 필요하지 않습니다)
  * @param.ptr.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.loc.ko-KR
  * 명령을 내릴 위치입니다.
- *
  * @param.building.ko-KR
  * 지을 건물입니다.
+ *
+ * @Summary.en-US
+ * [ptr] builds [building] at [loc] in Zerg way (does not require Working motion).
+ * @param.ptr.en-US
+ * The unit to give order to.
+ * @param.loc.en-US
+ * The location to order.
+ * @param.building.en-US
+ * The building to construct.
+ *
+ * @Summary.zh-CN
+ * [ptr] 以Zerg方式在 [loc] 建造 [building]（不需要Working动作）。
+ * @param.ptr.zh-CN
+ * 接收命令的单位。
+ * @param.loc.zh-CN
+ * 命令的目标位置。
+ * @param.building.zh-CN
+ * 要建造的建筑。
 ***/
 function BuildDrone(unitPTR, loc: TrgLocation, building: TrgUnit) {
     BuildDroneEPD(EPD(unitPTR), loc, building);
@@ -147,16 +222,31 @@ function BuildDrone(unitPTR, loc: TrgLocation, building: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [epd]가 테란 방식으로 [building]을 짓습니다.(Working모션이 필요합니다)  
- *
+ * [loc]로 [epd]가 테란 방식으로 [building]을 짓습니다.(Working모션이 필요합니다)
  * @param.epd.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.loc.ko-KR
  * 명령을 내릴 위치입니다.
- *
  * @param.building.ko-KR
  * 지을 건물입니다.
+ *
+ * @Summary.en-US
+ * [epd] builds [building] at [loc] in Terran way (requires Working motion).
+ * @param.epd.en-US
+ * The unit to give order to.
+ * @param.loc.en-US
+ * The location to order.
+ * @param.building.en-US
+ * The building to construct.
+ *
+ * @Summary.zh-CN
+ * [epd] 以Terran方式在 [loc] 建造 [building]（需要工作动作）。
+ * @param.epd.zh-CN
+ * 接收命令的单位。
+ * @param.loc.zh-CN
+ * 命令的目标位置。
+ * @param.building.zh-CN
+ * 要建造的建筑。
 ***/
 function BuildSCVEPD(epd, loc: TrgLocation, building: TrgUnit) {
     SetMemoryXEPD(epd + 0x98 / 4, SetTo, building, 0xFFFF);
@@ -167,16 +257,31 @@ function BuildSCVEPD(epd, loc: TrgLocation, building: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [ptr]가 테란 방식으로 [building]을 짓습니다.(Working모션이 필요합니다)  
- *
+ * [loc]로 [ptr]가 테란 방식으로 [building]을 짓습니다.(Working모션이 필요합니다)
  * @param.epd.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.loc.ko-KR
  * 명령을 내릴 위치입니다.
- *
  * @param.building.ko-KR
  * 지을 건물입니다.
+ *
+ * @Summary.en-US
+ * [ptr] builds [building] at [loc] in Terran way (requires Working motion).
+ * @param.epd.en-US
+ * The unit to give order to.
+ * @param.loc.en-US
+ * The location to order.
+ * @param.building.en-US
+ * The building to construct.
+ *
+ * @Summary.zh-CN
+ * [ptr] 以Terran方式在 [loc] 建造 [building]（需要工作动作）。
+ * @param.epd.zh-CN
+ * 接收命令的单位。
+ * @param.loc.zh-CN
+ * 命令的目标位置。
+ * @param.building.zh-CN
+ * 要建造的建筑。
 ***/
 function BuildSCV(unitPTR, loc: TrgLocation, building: TrgUnit) {
     BuildSCVEPD(EPD(unitPTR), loc, building);
@@ -186,16 +291,31 @@ function BuildSCV(unitPTR, loc: TrgLocation, building: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [epd]가 [order]을 수행합니다.  
- *
+ * [loc]로 [epd]가 [order]을 수행합니다.
  * @param.epd.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.loc.ko-KR
  * 명령을 내릴 위치입니다.
- *
  * @param.order.ko-KR
  * 수행할 명령입니다.
+ *
+ * @Summary.en-US
+ * [epd] performs [order] at [loc].
+ * @param.epd.en-US
+ * The unit to give order to.
+ * @param.loc.en-US
+ * The location to order.
+ * @param.order.en-US
+ * The order to perform.
+ *
+ * @Summary.zh-CN
+ * [epd] 在 [loc] 执行 [order]。
+ * @param.epd.zh-CN
+ * 接收命令的单位。
+ * @param.loc.zh-CN
+ * 命令的目标位置。
+ * @param.order.zh-CN
+ * 要执行的命令。
 ***/
 function COrderLocEPD(epd, order, loc: TrgLocation) {
     __LocOrderBase(epd, order << 8, loc);
@@ -206,16 +326,31 @@ function COrderLocEPD(epd, order, loc: TrgLocation) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [unitPTR]가 [order]을 수행합니다.  
- *
+ * [loc]로 [unitPTR]가 [order]을 수행합니다.
  * @param.unitPTR.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.loc.ko-KR
  * 명령을 내릴 위치입니다.
- *
  * @param.order.ko-KR
  * 수행할 명령입니다.
+ *
+ * @Summary.en-US
+ * [unitPTR] performs [order] at [loc].
+ * @param.unitPTR.en-US
+ * The unit to give order to.
+ * @param.loc.en-US
+ * The location to order.
+ * @param.order.en-US
+ * The order to perform.
+ *
+ * @Summary.zh-CN
+ * [unitPTR] 在 [loc] 执行 [order]。
+ * @param.unitPTR.zh-CN
+ * 接收命令的单位。
+ * @param.loc.zh-CN
+ * 命令的目标位置。
+ * @param.order.zh-CN
+ * 要执行的命令。
 ***/
 function COrderLoc(unitPTR, order, loc: TrgLocation) {
     __LocOrderBase(EPD(unitPTR), order << 8, loc);
@@ -225,16 +360,31 @@ function COrderLoc(unitPTR, order, loc: TrgLocation) {
  * @Type
  * A
  * @Summary.ko-KR
- * 대상 [targetPTR]에게 [unitEPD]가 [order]을 수행합니다.  
- *
+ * 대상 [targetPTR]에게 [unitEPD]가 [order]을 수행합니다.
  * @param.unitEPD.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.targetPTR.ko-KR
  * 명령의 대상이 될 유닛입니다.
- *
  * @param.order.ko-KR
  * 수행할 명령입니다.
+ *
+ * @Summary.en-US
+ * [unitEPD] performs [order] on [targetPTR].
+ * @param.unitEPD.en-US
+ * The unit to give order to.
+ * @param.targetPTR.en-US
+ * The target unit of the order.
+ * @param.order.en-US
+ * The order to perform.
+ *
+ * @Summary.zh-CN
+ * [unitEPD] 对 [targetPTR] 执行 [order]。
+ * @param.unitEPD.zh-CN
+ * 接收命令的单位。
+ * @param.targetPTR.zh-CN
+ * 命令的目标单位。
+ * @param.order.zh-CN
+ * 要执行的命令。
 ***/
 function COrderUnitEPD(unitEPD, order, targetPTR) {
     bwrite_epd(unitEPD + 0x4D / 4,  1, order);
@@ -245,16 +395,31 @@ function COrderUnitEPD(unitEPD, order, targetPTR) {
  * @Type
  * A
  * @Summary.ko-KR
- * 대상 [targetPTR]에게 [unitPTR]가 [order]을 수행합니다.  
- *
+ * 대상 [targetPTR]에게 [unitPTR]가 [order]을 수행합니다.
  * @param.unitPTR.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.targetPTR.ko-KR
  * 명령의 대상이 될 유닛입니다.
- *
  * @param.order.ko-KR
  * 수행할 명령입니다.
+ *
+ * @Summary.en-US
+ * [unitPTR] performs [order] on [targetPTR].
+ * @param.unitPTR.en-US
+ * The unit to give order to.
+ * @param.targetPTR.en-US
+ * The target unit of the order.
+ * @param.order.en-US
+ * The order to perform.
+ *
+ * @Summary.zh-CN
+ * [unitPTR] 对 [targetPTR] 执行 [order]。
+ * @param.unitPTR.zh-CN
+ * 接收命令的单位。
+ * @param.targetPTR.zh-CN
+ * 命令的目标单位。
+ * @param.order.zh-CN
+ * 要执行的命令。
 ***/
 function COrderUnit(unitPTR, order, targetPTR) {
     COrderUnitEPD(EPD(unitPTR), order, targetPTR);
@@ -265,19 +430,37 @@ function COrderUnit(unitPTR, order, targetPTR) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [epd]가 [order]을 수행합니다.  
- *
+ * [loc]로 [epd]가 [order]을 수행합니다.
  * @param.epd.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.x.ko-KR
  * 명령을 내릴 X위치입니다.
- *
  * @param.y.ko-KR
  * 명령을 내릴 Y위치입니다.
- *
  * @param.order.ko-KR
  * 수행할 명령입니다.
+ *
+ * @Summary.en-US
+ * [epd] performs [order] at the position ([x], [y]).
+ * @param.epd.en-US
+ * The unit to give order to.
+ * @param.x.en-US
+ * The X coordinate to order.
+ * @param.y.en-US
+ * The Y coordinate to order.
+ * @param.order.en-US
+ * The order to perform.
+ *
+ * @Summary.zh-CN
+ * [epd] 在位置 ([x], [y]) 执行 [order]。
+ * @param.epd.zh-CN
+ * 接收命令的单位。
+ * @param.x.zh-CN
+ * 命令的 X 坐标。
+ * @param.y.zh-CN
+ * 命令的 Y 坐标。
+ * @param.order.zh-CN
+ * 要执行的命令。
 ***/
 function COrderPosEPD(epd, order, x, y) {
     __PosOrderBase(epd, order << 8, x, y);
@@ -288,19 +471,37 @@ function COrderPosEPD(epd, order, x, y) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]로 [unitPTR]가 [order]을 수행합니다.  
- *
+ * [loc]로 [unitPTR]가 [order]을 수행합니다.
  * @param.unitPTR.ko-KR
  * 명령을 내릴 유닛입니다.
- *
  * @param.x.ko-KR
  * 명령을 내릴 X위치입니다.
- *
  * @param.y.ko-KR
  * 명령을 내릴 Y위치입니다.
- *
  * @param.order.ko-KR
  * 수행할 명령입니다.
+ *
+ * @Summary.en-US
+ * [unitPTR] performs [order] at the position ([x], [y]).
+ * @param.unitPTR.en-US
+ * The unit to give order to.
+ * @param.x.en-US
+ * The X coordinate to order.
+ * @param.y.en-US
+ * The Y coordinate to order.
+ * @param.order.en-US
+ * The order to perform.
+ *
+ * @Summary.zh-CN
+ * [unitPTR] 在位置 ([x], [y]) 执行 [order]。
+ * @param.unitPTR.zh-CN
+ * 接收命令的单位。
+ * @param.x.zh-CN
+ * 命令的 X 坐标。
+ * @param.y.zh-CN
+ * 命令的 Y 坐标。
+ * @param.order.zh-CN
+ * 要执行的命令。
 ***/
 function COrderPos(unitPTR, order, x, y) {
     __PosOrderBase(EPD(unitPTR), order << 8, x, y);
@@ -310,16 +511,31 @@ function COrderPos(unitPTR, order, x, y) {
  * @Type
  * A
  * @Summary.ko-KR
- * [originLoc]를 중심으로 [targetLoc]을 [angle]만큼 회전합니다. 
- *
+ * [originLoc]를 중심으로 [targetLoc]을 [angle]만큼 회전합니다.
  * @param.targetLoc.ko-KR
  * 회전 시킬 로케이션입니다.
- *
  * @param.originLoc.ko-KR
  * 중심이 되는 로케이션입니다.
- *
  * @param.angle.ko-KR
  * 회전할 각도입니다.
+ *
+ * @Summary.en-US
+ * Rotates [targetLoc] around [originLoc] by [angle].
+ * @param.targetLoc.en-US
+ * The location to rotate.
+ * @param.originLoc.en-US
+ * The center location.
+ * @param.angle.en-US
+ * The angle to rotate.
+ *
+ * @Summary.zh-CN
+ * 将 [targetLoc] 绕 [originLoc] 旋转 [angle] 角度。
+ * @param.targetLoc.zh-CN
+ * 要旋转的位置。
+ * @param.originLoc.zh-CN
+ * 作为中心的位置。
+ * @param.angle.zh-CN
+ * 旋转的角度。
 ***/
 function RotateLocation(targetLoc: TrgLocation, originLoc: TrgLocation, angle) {
     const locTable = EPD(0x58DC4C);
@@ -371,13 +587,25 @@ function RotateLocation(targetLoc: TrgLocation, originLoc: TrgLocation, angle) {
  * @Type
  * A
  * @Summary.ko-KR
- * [epd]의 상태 [flags]를 제거합니다.  
- *
+ * [epd]의 상태 [flags]를 제거합니다.
  * @param.epd.ko-KR
  * 대상 유닛입니다.
- *
  * @param.flags.ko-KR
  * 제거할 상태입니다.
+ *
+ * @Summary.en-US
+ * Removes status [flags] from [epd].
+ * @param.epd.en-US
+ * The target unit.
+ * @param.flags.en-US
+ * The status flags to remove.
+ *
+ * @Summary.zh-CN
+ * 移除 [epd] 的状态 [flags]。
+ * @param.epd.zh-CN
+ * 目标单位。
+ * @param.flags.zh-CN
+ * 要移除的状态。
 ***/
 function RemoveStatusFlagsEPD(epd, flags /*StatusFlags*/) {
     epd += 0xDC / 4;
@@ -388,13 +616,25 @@ function RemoveStatusFlagsEPD(epd, flags /*StatusFlags*/) {
  * @Type
  * A
  * @Summary.ko-KR
- * [unitPTR]의 상태 [flags]를 제거합니다.  
- *
+ * [unitPTR]의 상태 [flags]를 제거합니다.
  * @param.unitPTR.ko-KR
  * 대상 유닛입니다.
- *
  * @param.flags.ko-KR
  * 제거할 상태입니다.
+ *
+ * @Summary.en-US
+ * Removes status [flags] from [unitPTR].
+ * @param.unitPTR.en-US
+ * The target unit.
+ * @param.flags.en-US
+ * The status flags to remove.
+ *
+ * @Summary.zh-CN
+ * 移除 [unitPTR] 的状态 [flags]。
+ * @param.unitPTR.zh-CN
+ * 目标单位。
+ * @param.flags.zh-CN
+ * 要移除的状态。
 ***/
 function RemoveStatusFlags(unitPTR, flags /*StatusFlags*/) {
     RemoveStatusFlagsEPD(EPD(unitPTR), flags);
@@ -404,13 +644,25 @@ function RemoveStatusFlags(unitPTR, flags /*StatusFlags*/) {
  * @Type
  * A
  * @Summary.ko-KR
- * [Player]의 색을 [Color]로 변경합니다.  
- *
+ * [Player]의 색을 [Color]로 변경합니다.
  * @param.Player.ko-KR
  * 대상 플레이어입니다.
- *
  * @param.Color.ko-KR
  * 변경될 색상입니다.
+ *
+ * @Summary.en-US
+ * Changes the color of [Player] to [Color].
+ * @param.Player.en-US
+ * The target player.
+ * @param.Color.en-US
+ * The color to change to.
+ *
+ * @Summary.zh-CN
+ * 将 [Player] 的颜色改为 [Color]。
+ * @param.Player.zh-CN
+ * 目标玩家。
+ * @param.Color.zh-CN
+ * 要更改的颜色。
 ***/
 function SetPColor(Player: TrgPlayer, Color) {
     DoActions(Player.AddNumber(0x581DD6));
@@ -439,13 +691,25 @@ function __SpawnBase(epd, unit: TrgUnit, newUnit: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [epd]를 [newUnit]으로 Cocoon변태 시킵니다.  
- *
+ * [epd]를 [newUnit]으로 Cocoon변태 시킵니다.
  * @param.epd.ko-KR
  * 변태할 유닛입니다.
- *
  * @param.newUnit.ko-KR
  * 태어날 유닛입니다.
+ *
+ * @Summary.en-US
+ * Morphs [epd] into [newUnit] via Cocoon.
+ * @param.epd.en-US
+ * The unit to morph.
+ * @param.newUnit.en-US
+ * The unit to spawn.
+ *
+ * @Summary.zh-CN
+ * 将 [epd] 通过茧形态变异为 [newUnit]。
+ * @param.epd.zh-CN
+ * 要变异的单位。
+ * @param.newUnit.zh-CN
+ * 变异后的单位。
 ***/
 function SpawnCocoonEPD(epd, newUnit: TrgUnit) {
     __SpawnBase(epd, 59, newUnit);
@@ -455,13 +719,25 @@ function SpawnCocoonEPD(epd, newUnit: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [unitPTR]를 [newUnit]으로 Cocoon변태 시킵니다.  
- *
+ * [unitPTR]를 [newUnit]으로 Cocoon변태 시킵니다.
  * @param.unitPTR.ko-KR
  * 변태할 유닛입니다.
- *
  * @param.newUnit.ko-KR
  * 태어날 유닛입니다.
+ *
+ * @Summary.en-US
+ * Morphs [unitPTR] into [newUnit] via Cocoon.
+ * @param.unitPTR.en-US
+ * The unit to morph.
+ * @param.newUnit.en-US
+ * The unit to spawn.
+ *
+ * @Summary.zh-CN
+ * 将 [unitPTR] 通过茧形态变异为 [newUnit]。
+ * @param.unitPTR.zh-CN
+ * 要变异的单位。
+ * @param.newUnit.zh-CN
+ * 变异后的单位。
 ***/
 function SpawnCocoon(unitPTR, newUnit: TrgUnit) {
     __SpawnBase(EPD(unitPTR), 59, newUnit);
@@ -471,13 +747,25 @@ function SpawnCocoon(unitPTR, newUnit: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [epd]를 [newUnit]으로 Egg변태 시킵니다.  
- *
+ * [epd]를 [newUnit]으로 Egg변태 시킵니다.
  * @param.epd.ko-KR
  * 변태할 유닛입니다.
- *
  * @param.newUnit.ko-KR
  * 태어날 유닛입니다.
+ *
+ * @Summary.en-US
+ * Morphs [epd] into [newUnit] via Egg.
+ * @param.epd.en-US
+ * The unit to morph.
+ * @param.newUnit.en-US
+ * The unit to spawn.
+ *
+ * @Summary.zh-CN
+ * 将 [epd] 通过卵形态孵化为 [newUnit]。
+ * @param.epd.zh-CN
+ * 要孵化的单位。
+ * @param.newUnit.zh-CN
+ * 孵化后的单位。
 ***/
 function SpawnEggEPD(epd, newUnit: TrgUnit) {
     __SpawnBase(epd, 36, newUnit);
@@ -487,13 +775,25 @@ function SpawnEggEPD(epd, newUnit: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [unitPTR]를 [newUnit]으로 Egg변태 시킵니다.  
- *
+ * [unitPTR]를 [newUnit]으로 Egg변태 시킵니다.
  * @param.unitPTR.ko-KR
  * 변태할 유닛입니다.
- *
  * @param.newUnit.ko-KR
  * 태어날 유닛입니다.
+ *
+ * @Summary.en-US
+ * Morphs [unitPTR] into [newUnit] via Egg.
+ * @param.unitPTR.en-US
+ * The unit to morph.
+ * @param.newUnit.en-US
+ * The unit to spawn.
+ *
+ * @Summary.zh-CN
+ * 将 [unitPTR] 通过卵形态孵化为 [newUnit]。
+ * @param.unitPTR.zh-CN
+ * 要孵化的单位。
+ * @param.newUnit.zh-CN
+ * 孵化后的单位。
 ***/
 function SpawnEgg(unitPTR, newUnit: TrgUnit) {
     __SpawnBase(EPD(unitPTR), 36, newUnit);
@@ -503,13 +803,25 @@ function SpawnEgg(unitPTR, newUnit: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [epd]를 [newUnit]으로 Larva변태 시킵니다.  
- *
+ * [epd]를 [newUnit]으로 Larva변태 시킵니다.
  * @param.epd.ko-KR
  * 변태할 유닛입니다.
- *
  * @param.newUnit.ko-KR
  * 태어날 유닛입니다.
+ *
+ * @Summary.en-US
+ * Morphs [epd] into [newUnit] via Larva.
+ * @param.epd.en-US
+ * The unit to morph.
+ * @param.newUnit.en-US
+ * The unit to spawn.
+ *
+ * @Summary.zh-CN
+ * 将 [epd] 通过幼虫形态转变为 [newUnit]。
+ * @param.epd.zh-CN
+ * 要变形的单位。
+ * @param.newUnit.zh-CN
+ * 化形后的单位。
 ***/
 function MorphLarvaEPD(epd, newUnit: TrgUnit) {
     if (MemoryXEPD(epd + 0x64/4, Exactly, 35, 0xFFFF)) {
@@ -522,13 +834,25 @@ function MorphLarvaEPD(epd, newUnit: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [unitPTR]를 [newUnit]으로 Larva변태 시킵니다.  
- *
+ * [unitPTR]를 [newUnit]으로 Larva변태 시킵니다.
  * @param.unitPTR.ko-KR
  * 변태할 유닛입니다.
- *
  * @param.newUnit.ko-KR
  * 태어날 유닛입니다.
+ *
+ * @Summary.en-US
+ * Morphs [unitPTR] into [newUnit] via Larva.
+ * @param.unitPTR.en-US
+ * The unit to morph.
+ * @param.newUnit.en-US
+ * The unit to spawn.
+ *
+ * @Summary.zh-CN
+ * 将 [unitPTR] 通过幼虫形态转变为 [newUnit]。
+ * @param.unitPTR.zh-CN
+ * 要变形的单位。
+ * @param.newUnit.zh-CN
+ * 化形后的单位。
 ***/
 function MorphLarva(unitPTR, newUnit: TrgUnit) {
     MorphLarvaEPD(EPD(unitPTR), newUnit);
@@ -538,13 +862,25 @@ function MorphLarva(unitPTR, newUnit: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [epd]에서 [newUnit]을 훈련시킵니다.  
- *
+ * [epd]에서 [newUnit]을 훈련시킵니다.
  * @param.epd.ko-KR
  * 훈련되는 건물입니다.
- *
  * @param.newUnit.ko-KR
  * 생성할 유닛입니다.
+ *
+ * @Summary.en-US
+ * Trains [newUnit] from [epd].
+ * @param.epd.en-US
+ * The building that trains.
+ * @param.newUnit.en-US
+ * The unit to produce.
+ *
+ * @Summary.zh-CN
+ * 从 [epd] 训练 [newUnit]。
+ * @param.epd.zh-CN
+ * 进行训练的建筑。
+ * @param.newUnit.zh-CN
+ * 要生产的单位。
 ***/
 function TrainUnitEPD(epd, newUnit: TrgUnit) {
     const nU_and_lsh16 = newUnit * 65537;
@@ -568,13 +904,25 @@ function TrainUnitEPD(epd, newUnit: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [unitPTR]에서 [newUnit]을 훈련시킵니다.  
- *
+ * [unitPTR]에서 [newUnit]을 훈련시킵니다.
  * @param.unitPTR.ko-KR
  * 훈련되는 건물입니다.
- *
  * @param.newUnit.ko-KR
  * 생성할 유닛입니다.
+ *
+ * @Summary.en-US
+ * Trains [newUnit] from [unitPTR].
+ * @param.unitPTR.en-US
+ * The building that trains.
+ * @param.newUnit.en-US
+ * The unit to produce.
+ *
+ * @Summary.zh-CN
+ * 从 [unitPTR] 训练 [newUnit]。
+ * @param.unitPTR.zh-CN
+ * 进行训练的建筑。
+ * @param.newUnit.zh-CN
+ * 要生产的单位。
 ***/
 function TrainUnit(unitPTR, newUnit: TrgUnit) {
     TrainUnitEPD(EPD(unitPTR), newUnit);
@@ -584,13 +932,25 @@ function TrainUnit(unitPTR, newUnit: TrgUnit) {
  * @Type
  * A
  * @Summary.ko-KR
- * [epd]의 색을 [color]로 바꿉니다.  
- *
+ * [epd]의 색을 [color]로 바꿉니다.
  * @param.epd.ko-KR
  * 대상 유닛입니다.
- *
  * @param.color.ko-KR
  * 변경될 색상입니다.
+ *
+ * @Summary.en-US
+ * Changes the color of [epd] to [color].
+ * @param.epd.en-US
+ * The target unit.
+ * @param.color.en-US
+ * The color to change to.
+ *
+ * @Summary.zh-CN
+ * 将 [epd] 的颜色改为 [color]。
+ * @param.epd.zh-CN
+ * 目标单位。
+ * @param.color.zh-CN
+ * 要更改的颜色。
 ***/
 function SetUnitColorEPD(epd, color) {
     epd += 0x0C/4;
@@ -603,13 +963,25 @@ function SetUnitColorEPD(epd, color) {
  * @Type
  * A
  * @Summary.ko-KR
- * [unitPTR]의 색을 [color]로 바꿉니다.  
- *
+ * [unitPTR]의 색을 [color]로 바꿉니다.
  * @param.unitPTR.ko-KR
  * 대상 유닛입니다.
- *
  * @param.color.ko-KR
  * 변경될 색상입니다.
+ *
+ * @Summary.en-US
+ * Changes the color of [unitPTR] to [color].
+ * @param.unitPTR.en-US
+ * The target unit.
+ * @param.color.en-US
+ * The color to change to.
+ *
+ * @Summary.zh-CN
+ * 将 [unitPTR] 的颜色改为 [color]。
+ * @param.unitPTR.zh-CN
+ * 目标单位。
+ * @param.color.zh-CN
+ * 要更改的颜色。
 ***/
 function SetUnitColor(unitPTR, color) {
     SetUnitColorEPD(EPD(unitPTR), color);
@@ -619,19 +991,37 @@ function SetUnitColor(unitPTR, color) {
  * @Type
  * A
  * @Summary.ko-KR
- * [unitEPD]에 [location]을 구조오프셋 [CUnitOffsetX], [CUnitOFfsetY]의 값 위치로 보냅니다.  
- *
+ * [unitEPD]에 [location]을 구조오프셋 [CUnitOffsetX], [CUnitOFfsetY]의 값 위치로 보냅니다.
  * @param.unitEPD.ko-KR
  * 대상 유닛입니다.
- *
  * @param.location.ko-KR
  * 이동할 로케이션입니다.
- *
  * @param.CUnitOffsetX.ko-KR
  * X좌표로 대입할 구조오프셋입니다.
- *
  * @param.CUnitOffsetY.ko-KR
  * Y좌표로 대입할 구조오프셋입니다.
+ *
+ * @Summary.en-US
+ * Sets [location] to the position stored in struct offsets [CUnitOffsetX] and [CUnitOffsetY] of [unitEPD].
+ * @param.unitEPD.en-US
+ * The target unit.
+ * @param.location.en-US
+ * The location to move.
+ * @param.CUnitOffsetX.en-US
+ * Struct offset to use for X coordinate.
+ * @param.CUnitOffsetY.en-US
+ * Struct offset to use for Y coordinate.
+ *
+ * @Summary.zh-CN
+ * 将 [location] 设置为 [unitEPD] 的结构偏移 [CUnitOffsetX] 和 [CUnitOffsetY] 中存储的位置。
+ * @param.unitEPD.zh-CN
+ * 目标单位。
+ * @param.location.zh-CN
+ * 要移动的位置。
+ * @param.CUnitOffsetX.zh-CN
+ * 用作 X 坐标的结构偏移。
+ * @param.CUnitOffsetY.zh-CN
+ * 用作 Y 坐标的结构偏移。
 ***/
 function SetLocationToUnitEPD(location: TrgLocation, unitEPD, CUnitOffsetX, CUnitOffsetY) {
     if (CUnitOffsetX == CUnitOffsetY) {
@@ -648,19 +1038,37 @@ function SetLocationToUnitEPD(location: TrgLocation, unitEPD, CUnitOffsetX, CUni
  * @Type
  * A
  * @Summary.ko-KR
- * [unitPTR]에 [location]을 구조오프셋 [CUnitOffsetX], [CUnitOFfsetY]의 값 위치로 보냅니다.  
- *
+ * [unitPTR]에 [location]을 구조오프셋 [CUnitOffsetX], [CUnitOFfsetY]의 값 위치로 보냅니다.
  * @param.unitPTR.ko-KR
  * 대상 유닛입니다.
- *
  * @param.location.ko-KR
  * 이동할 로케이션입니다.
- *
  * @param.CUnitOffsetX.ko-KR
  * X좌표로 대입할 구조오프셋입니다.
- *
  * @param.CUnitOffsetY.ko-KR
  * Y좌표로 대입할 구조오프셋입니다.
+ *
+ * @Summary.en-US
+ * Sets [location] to the position stored in struct offsets [CUnitOffsetX] and [CUnitOffsetY] of [unitPTR].
+ * @param.unitPTR.en-US
+ * The target unit.
+ * @param.location.en-US
+ * The location to move.
+ * @param.CUnitOffsetX.en-US
+ * Struct offset to use for X coordinate.
+ * @param.CUnitOffsetY.en-US
+ * Struct offset to use for Y coordinate.
+ *
+ * @Summary.zh-CN
+ * 将 [location] 设置为 [unitPTR] 的结构偏移 [CUnitOffsetX] 和 [CUnitOffsetY] 中存储的位置。
+ * @param.unitPTR.zh-CN
+ * 目标单位。
+ * @param.location.zh-CN
+ * 要移动的位置。
+ * @param.CUnitOffsetX.zh-CN
+ * 用作 X 坐标的结构偏移。
+ * @param.CUnitOffsetY.zh-CN
+ * 用作 Y 坐标的结构偏移。
 ***/
 function SetLocationToUnit(location: TrgLocation, unitPTR, CUnitOffsetX, CUnitOffsetY) {
     SetLocationToUnitEPD(location, EPD(unitPTR), CUnitOffsetX, CUnitOffsetY);
@@ -670,22 +1078,43 @@ function SetLocationToUnit(location: TrgLocation, unitPTR, CUnitOffsetX, CUnitOf
  * @Type
  * A
  * @Summary.ko-KR
- * [location]의 좌표를 ([X], [Y])로, 크기를 [width], [height]로 설정합니다.  
- *
+ * [location]의 좌표를 ([X], [Y])로, 크기를 [width], [height]로 설정합니다.
  * @param.location.ko-KR
  * 이동할 로케이션입니다.
- *
  * @param.X.ko-KR
  * X좌표입니다.
- *
  * @param.Y.ko-KR
  * Y좌표입니다.
- *
  * @param.width.ko-KR
  * 넓이입니다.
- *
  * @param.height.ko-KR
  * 높이입니다.
+ *
+ * @Summary.en-US
+ * Sets the position of [location] to ([X], [Y]) and size to [width] x [height].
+ * @param.location.en-US
+ * The location to set.
+ * @param.X.en-US
+ * X coordinate.
+ * @param.Y.en-US
+ * Y coordinate.
+ * @param.width.en-US
+ * Width.
+ * @param.height.en-US
+ * Height.
+ *
+ * @Summary.zh-CN
+ * 将 [location] 的坐标设置为 ([X], [Y])，大小设置为 [width] x [height]。
+ * @param.location.zh-CN
+ * 要设置的位置。
+ * @param.X.zh-CN
+ * X 坐标。
+ * @param.Y.zh-CN
+ * Y 坐标。
+ * @param.width.zh-CN
+ * 宽度。
+ * @param.height.zh-CN
+ * 高度。
 ***/
 function SetLocation(location: TrgLocation, X, Y, width, height) {
     setloc(location, X, Y);
@@ -696,16 +1125,31 @@ function SetLocation(location: TrgLocation, X, Y, width, height) {
  * @Type
  * A
  * @Summary.ko-KR
- * [Location]의 좌표를 ([X], [Y])만큼 평행이동합니다.  
- *
+ * [Location]의 좌표를 ([X], [Y])만큼 평행이동합니다.
  * @param.location.ko-KR
  * 이동할 로케이션입니다.
- *
  * @param.X.ko-KR
  * X좌표입니다.
- *
  * @param.Y.ko-KR
  * Y좌표입니다.
+ *
+ * @Summary.en-US
+ * Translates [Location] by ([X], [Y]).
+ * @param.location.en-US
+ * The location to move.
+ * @param.X.en-US
+ * X coordinate.
+ * @param.Y.en-US
+ * Y coordinate.
+ *
+ * @Summary.zh-CN
+ * 将 [Location] 的坐标平移 ([X], [Y])。
+ * @param.location.zh-CN
+ * 要移动的位置。
+ * @param.X.zh-CN
+ * X 坐标。
+ * @param.Y.zh-CN
+ * Y 坐标。
 ***/
 function EUDMoveLocation(Location: TrgLocation, X, Y) {
     addloc(Location, X, Y);
@@ -739,19 +1183,37 @@ function ScreenShake(x, y, tempLoc: TrgLocation) {
  * @Type
  * A
  * @Summary.ko-KR
- * [player]의 [epd]를 부대 [hotkey]의 [slot]으로 지정합니다.  
- *
+ * [player]의 [epd]를 부대 [hotkey]의 [slot]으로 지정합니다.
  * @param.player.ko-KR
  * 대상 플레이어입니다.
- *
  * @param.epd.ko-KR
  * 지정할 유닛입니다.
- *
  * @param.hotkey.ko-KR
  * 부대입니다.
- *
  * @param.slot.ko-KR
  * 슬롯입니다.
+ *
+ * @Summary.en-US
+ * Assigns [epd] of [player] to control group [hotkey] slot [slot].
+ * @param.player.en-US
+ * The target player.
+ * @param.epd.en-US
+ * The unit to assign.
+ * @param.hotkey.en-US
+ * The control group (hotkey).
+ * @param.slot.en-US
+ * The slot.
+ *
+ * @Summary.zh-CN
+ * 将 [player] 的 [epd] 分配到编队 [hotkey] 的槽位 [slot]。
+ * @param.player.zh-CN
+ * 目标玩家。
+ * @param.epd.zh-CN
+ * 要分配的单位。
+ * @param.hotkey.zh-CN
+ * 编队（快捷键）。
+ * @param.slot.zh-CN
+ * 槽位。
 ***/
 function hotkeyUnitEPD(epd, player: TrgPlayer, hotkey, slot) {
     epd += 0xA5 / 4;
@@ -770,19 +1232,37 @@ function hotkeyUnitEPD(epd, player: TrgPlayer, hotkey, slot) {
  * @Type
  * A
  * @Summary.ko-KR
- * [player]의 [unitPTR]를 부대 [hotkey]의 [slot]으로 지정합니다.  
- *
+ * [player]의 [unitPTR]를 부대 [hotkey]의 [slot]으로 지정합니다.
  * @param.player.ko-KR
  * 대상 플레이어입니다.
- *
  * @param.unitPTR.ko-KR
  * 지정할 유닛입니다.
- *
  * @param.hotkey.ko-KR
  * 부대입니다.
- *
  * @param.slot.ko-KR
  * 슬롯입니다.
+ *
+ * @Summary.en-US
+ * Assigns [unitPTR] of [player] to control group [hotkey] slot [slot].
+ * @param.player.en-US
+ * The target player.
+ * @param.unitPTR.en-US
+ * The unit to assign.
+ * @param.hotkey.en-US
+ * The control group (hotkey).
+ * @param.slot.en-US
+ * The slot.
+ *
+ * @Summary.zh-CN
+ * 将 [player] 的 [unitPTR] 分配到编队 [hotkey] 的槽位 [slot]。
+ * @param.player.zh-CN
+ * 目标玩家。
+ * @param.unitPTR.zh-CN
+ * 要分配的单位。
+ * @param.hotkey.zh-CN
+ * 编队（快捷键）。
+ * @param.slot.zh-CN
+ * 槽位。
 ***/
 function hotkeyUnit(unitPTR, player: TrgPlayer, hotkey, slot) {
     hotkeyUnitEPD(EPD(unitPTR), player, hotkey, slot);
@@ -805,13 +1285,25 @@ function __GetLocCoord(loc: TrgLocation) {
  * @Type
  * F
  * @Summary.ko-KR
- * [originLoc]로부터 [destLoc]의 동경을 구합니다.  
- *
+ * [originLoc]로부터 [destLoc]의 동경을 구합니다.
  * @param.originLoc.ko-KR
  * 대상 로케이션입니다.
- *
  * @param.destLoc.ko-KR
  * 각도를 구할 목표 로케이션입니다.
+ *
+ * @Summary.en-US
+ * Returns the bearing angle from [originLoc] to [destLoc].
+ * @param.originLoc.en-US
+ * The source location.
+ * @param.destLoc.en-US
+ * The destination location.
+ *
+ * @Summary.zh-CN
+ * 返回从 [originLoc] 到 [destLoc] 的方位角。
+ * @param.originLoc.zh-CN
+ * 源位置。
+ * @param.destLoc.zh-CN
+ * 目标位置。
 ***/
 function LocationAngle(originLoc: TrgLocation, destLoc: TrgLocation) {
     const ox1, oy1, ox2, oy2 = __GetLocCoord(originLoc);
@@ -824,6 +1316,7 @@ function LocationAngle(originLoc: TrgLocation, destLoc: TrgLocation) {
 }
 
 // GetAngle and LocationAngle functions are duplicates..
+// GetAngle과 LocationAngle 함수는 중복됩니다..
 function GetAngle(originLoc: TrgLocation, destLoc: TrgLocation) {
     return LocationAngle(originLoc, destLoc);
 }
@@ -832,13 +1325,25 @@ function GetAngle(originLoc: TrgLocation, destLoc: TrgLocation) {
  * @Type
  * F
  * @Summary.ko-KR
- * [loc1]로부터 [loc2]가 떨어진 거리를 구합니다.  
- *
+ * [loc1]로부터 [loc2]가 떨어진 거리를 구합니다.
  * @param.loc1.ko-KR
  * 대상 로케이션입니다.
- *
  * @param.loc2.ko-KR
  * 거리를 구할 목표 로케이션입니다.
+ *
+ * @Summary.en-US
+ * Returns the distance between [loc1] and [loc2].
+ * @param.loc1.en-US
+ * The first location.
+ * @param.loc2.en-US
+ * The second location.
+ *
+ * @Summary.zh-CN
+ * 返回 [loc1] 与 [loc2] 之间的距离。
+ * @param.loc1.zh-CN
+ * 第一个位置。
+ * @param.loc2.zh-CN
+ * 第二个位置。
 ***/
 function LocationDistance(loc1: TrgLocation, loc2: TrgLocation) {
     const ox1, oy1, ox2, oy2 = __GetLocCoord(loc1);
@@ -858,19 +1363,37 @@ function LocationDistanceVal(variable, loc1: TrgLocation, loc2: TrgLocation) {
  * @Type
  * F
  * @Summary.ko-KR
- * [x1], [y1]로부터 [x2], [y2]가 떨어진 거리를 구합니다.  
- *
+ * [x1], [y1]로부터 [x2], [y2]가 떨어진 거리를 구합니다.
  * @param.x1.ko-KR
  * x좌표1
- * 
  * @param.x2.ko-KR
  * x좌표2
- * 
  * @param.y1.ko-KR
  * y좌표1
- * 
  * @param.y2.ko-KR
  * y좌표2
+ *
+ * @Summary.en-US
+ * Returns the distance between ([x1], [y1]) and ([x2], [y2]).
+ * @param.x1.en-US
+ * X coordinate 1
+ * @param.x2.en-US
+ * X coordinate 2
+ * @param.y1.en-US
+ * Y coordinate 1
+ * @param.y2.en-US
+ * Y coordinate 2
+ *
+ * @Summary.zh-CN
+ * 返回点 ([x1], [y1]) 与 ([x2], [y2]) 之间的距离。
+ * @param.x1.zh-CN
+ * X 坐标 1
+ * @param.x2.zh-CN
+ * X 坐标 2
+ * @param.y1.zh-CN
+ * Y 坐标 1
+ * @param.y2.zh-CN
+ * Y 坐标 2
 ***/
 function Distance(x1, y1, x2, y2) {
     const x = x2 - x1;
@@ -884,16 +1407,31 @@ function Distance(x1, y1, x2, y2) {
  * @Type
  * A
  * @Summary.ko-KR
- * [loc]를 [lenght]만큼 [angle]각도로 이동시킵니다.  
- *
+ * [loc]를 [lenght]만큼 [angle]각도로 이동시킵니다.
  * @param.loc.ko-KR
  * 이동할 로케이션입니다.
- *
  * @param.length.ko-KR
  * 움직일 거리입니다.
- *
  * @param.angle.ko-KR
  * 이동할 각도입니다.
+ *
+ * @Summary.en-US
+ * Moves [loc] by [length] at [angle] degrees.
+ * @param.loc.en-US
+ * The location to move.
+ * @param.length.en-US
+ * The distance to move.
+ * @param.angle.en-US
+ * The angle to move.
+ *
+ * @Summary.zh-CN
+ * 将 [loc] 沿 [angle] 方向移动 [length] 距离。
+ * @param.loc.zh-CN
+ * 要移动的位置。
+ * @param.length.zh-CN
+ * 移动的距离。
+ * @param.angle.zh-CN
+ * 移动的角度。
 ***/
 function PolarLocation(loc: TrgLocation, length, angle) {
     const x, y = lengthdir(length, angle);
@@ -904,22 +1442,44 @@ function PolarLocation(loc: TrgLocation, length, angle) {
  * @Type
  * C
  * @Summary.ko-KR
- * [unitLoc][unitEPD]가 범위 [range]안에서 지면에 [targetLoc][skillOrder]을 사용한 것을 감지합니다. 
- *
+ * [unitLoc][unitEPD]가 범위 [range]안에서 지면에 [targetLoc][skillOrder]을 사용한 것을 감지합니다.
  * @param.unitLoc.ko-KR
  * 스킬을 사용한 유닛에게 부착될 로케이션입니다.
- *
  * @param.unitEPD.ko-KR
  * 스킬을 사용할 유닛입니다.
- *
  * @param.range.ko-KR
  * 스킬을 감지할 범위입니다.
- *
  * @param.targetLoc.ko-KR
  * 스킬이 타격될 위치에 부착될 로케이션입니다.
- *
  * @param.skillOrder.ko-KR
  * 감지할 스킬입니다.
+ *
+ * @Summary.en-US
+ * Detects when [unitEPD] uses [skillOrder] on the ground within [range] and stores the impact location in [targetLoc].
+ * @param.unitLoc.en-US
+ * Location to attach to the unit that used the skill.
+ * @param.unitEPD.en-US
+ * The unit that uses the skill.
+ * @param.range.en-US
+ * The detection range.
+ * @param.targetLoc.en-US
+ * Location to attach to the impact position.
+ * @param.skillOrder.en-US
+ * The skill order to detect.
+ *
+ * @Summary.zh-CN
+ * 检测 [unitEPD] 在 [range] 范围内对地面使用 [skillOrder] 技能，
+ * 并将 [unitLoc] 附加到施法单位的位置，将 [targetLoc] 附加到技能命中位置。
+ * @param.unitLoc.zh-CN
+ * 要附加到施法单位上的位置。
+ * @param.unitEPD.zh-CN
+ * 使用技能的单位。
+ * @param.range.zh-CN
+ * 检测范围。
+ * @param.targetLoc.zh-CN
+ * 要附加到技能命中位置上的坐标。
+ * @param.skillOrder.zh-CN
+ * 要检测的技能命令。
 ***/
 function CheckNoneTargetSkillEPD(
     unitEPD,
@@ -952,22 +1512,44 @@ function CheckNoneTargetSkillEPD(
  * @Type
  * C
  * @Summary.ko-KR
- * [unitLoc][unitPTR]가 범위 [range]안에서 지면에 [targetLoc][skillOrder]을 사용한 것을 감지합니다. 
- *
+ * [unitLoc][unitPTR]가 범위 [range]안에서 지면에 [targetLoc][skillOrder]을 사용한 것을 감지합니다.
  * @param.unitLoc.ko-KR
  * 스킬을 사용한 유닛에게 부착될 로케이션입니다.
- *
  * @param.unitPTR.ko-KR
  * 스킬을 사용할 유닛입니다.
- *
  * @param.range.ko-KR
  * 스킬을 감지할 범위입니다.
- *
  * @param.targetLoc.ko-KR
  * 스킬이 타격될 위치에 부착될 로케이션입니다.
- *
  * @param.skillOrder.ko-KR
  * 감지할 스킬입니다.
+ *
+ * @Summary.en-US
+ * Detects when [unitPTR] uses [skillOrder] on the ground within [range] and stores the impact location in [targetLoc].
+ * @param.unitLoc.en-US
+ * Location to attach to the unit that used the skill.
+ * @param.unitPTR.en-US
+ * The unit that uses the skill.
+ * @param.range.en-US
+ * The detection range.
+ * @param.targetLoc.en-US
+ * Location to attach to the impact position.
+ * @param.skillOrder.en-US
+ * The skill order to detect.
+ *
+ * @Summary.zh-CN
+ * 检测 [unitPTR] 在 [range] 范围内对地面使用 [skillOrder] 技能，
+ * 并将 [unitLoc] 附加到施法单位的位置，将 [targetLoc] 附加到技能命中位置。
+ * @param.unitLoc.zh-CN
+ * 附加到使用技能的单位上的位置。
+ * @param.unitPTR.zh-CN
+ * 使用技能的单位。
+ * @param.range.zh-CN
+ * 检测范围。
+ * @param.targetLoc.zh-CN
+ * 附加到命中地点的坐标位置。
+ * @param.skillOrder.zh-CN
+ * 要检测的技能命令。
 ***/
 function CheckNoneTargetSkill(
     unitPTR,
@@ -992,15 +1574,30 @@ function CheckNoneTargetSkill(
  * A
  * @Summary.ko-KR
  * [location]을 [unitEPD]에게 구조오프셋 [posX]으로 부착합니다.
- *
  * @param.location.ko-KR
  * 유닛에게 부착될 로케이션입니다.
- *
  * @param.unitEPD.ko-KR
  * 대상 유닛입니다.
- *
  * @param.posX.ko-KR
  * 부착될 위치를 결정하는 구조오프셋입니다.
+ *
+ * @Summary.en-US
+ * Attaches [location] to [unitEPD] using struct offset [posX].
+ * @param.location.en-US
+ * The location to attach to the unit.
+ * @param.unitEPD.en-US
+ * The target unit.
+ * @param.posX.en-US
+ * Struct offset that determines the attachment position.
+ *
+ * @Summary.zh-CN
+ * 使用结构偏移 [posX] 将 [location] 附加到 [unitEPD]。
+ * @param.location.zh-CN
+ * 要附加到单位上的位置。
+ * @param.unitEPD.zh-CN
+ * 目标单位。
+ * @param.posX.zh-CN
+ * 决定附加位置的结构偏移。
 ***/
 function SetLocationToUnitSafeEPD(location: TrgLocation, unitEPD, posX) {
     unitEPD += posX/4;
@@ -1013,15 +1610,30 @@ function SetLocationToUnitSafeEPD(location: TrgLocation, unitEPD, posX) {
  * A
  * @Summary.ko-KR
  * [location]을 [unitPTR]에게 구조오프셋 [posX]으로 부착합니다.
- *
  * @param.location.ko-KR
  * 유닛에게 부착될 로케이션입니다.
- *
  * @param.unitPTR.ko-KR
  * 대상 유닛입니다.
- *
  * @param.posX.ko-KR
  * 부착될 위치를 결정하는 구조오프셋입니다.
+ *
+ * @Summary.en-US
+ * Attaches [location] to [unitPTR] using struct offset [posX].
+ * @param.location.en-US
+ * The location to attach to the unit.
+ * @param.unitPTR.en-US
+ * The target unit.
+ * @param.posX.en-US
+ * Struct offset that determines the attachment position.
+ *
+ * @Summary.zh-CN
+ * 使用结构偏移 [posX] 将 [location] 附加到 [unitPTR]。
+ * @param.location.zh-CN
+ * 要附加到单位上的位置。
+ * @param.unitPTR.zh-CN
+ * 目标单位。
+ * @param.posX.zh-CN
+ * 决定附加位置的结构偏移。
 ***/
 function SetLocationToUnitSafe(location: TrgLocation, unitPTR, posX) {
     SetLocationToUnitSafeEPD(location, EPD(unitPTR), posX);
@@ -1031,22 +1643,44 @@ function SetLocationToUnitSafe(location: TrgLocation, unitPTR, posX) {
  * @Type
  * C
  * @Summary.ko-KR
- * [unitLoc][unitEPD]가 범위 [range]안에서 일정한 대상에게 [targetLoc][skillOrder]을 사용한 것을 감지합니다. 
- *
+ * [unitLoc][unitEPD]가 범위 [range]안에서 일정한 대상에게 [targetLoc][skillOrder]을 사용한 것을 감지합니다.
  * @param.unitLoc.ko-KR
  * 스킬을 사용한 유닛에게 부착될 로케이션입니다.
- *
  * @param.unitEPD.ko-KR
  * 스킬을 사용할 유닛입니다.
- *
  * @param.range.ko-KR
  * 스킬을 감지할 범위입니다.
- *
  * @param.targetLoc.ko-KR
  * 스킬이 타격될 위치에 부착될 로케이션입니다.
- *
  * @param.skillOrder.ko-KR
  * 감지할 스킬입니다.
+ *
+ * @Summary.en-US
+ * Detects when [unitEPD] uses [skillOrder] on a specific target within [range] and stores the target location in [targetLoc].
+ * @param.unitLoc.en-US
+ * Location to attach to the unit that used the skill.
+ * @param.unitEPD.en-US
+ * The unit that uses the skill.
+ * @param.range.en-US
+ * The detection range.
+ * @param.targetLoc.en-US
+ * Location to attach to the impact position.
+ * @param.skillOrder.en-US
+ * The skill order to detect.
+ *
+ * @Summary.zh-CN
+ * 检测 [unitEPD] 在 [range] 范围内对地面使用 [skillOrder] 技能，
+ * 并将 [unitLoc] 附加到施法单位的位置，将 [targetLoc] 附加到技能命中位置。
+ * @param.unitLoc.zh-CN
+ * 附加到使用技能的单位上的位置。
+ * @param.unitEPD.zh-CN
+ * 使用技能的单位。
+ * @param.range.zh-CN
+ * 检测范围。
+ * @param.targetLoc.zh-CN
+ * 附加到命中地点的坐标位置。
+ * @param.skillOrder.zh-CN
+ * 要检测的技能命令。
 ***/
 function CheckTargetSkillEPD(
     unitEPD,
@@ -1085,22 +1719,44 @@ function CheckTargetSkillEPD(
  * @Type
  * C
  * @Summary.ko-KR
- * [unitLoc][unitPTR]가 범위 [range]안에서 일정한 대상에게 [targetLoc][skillOrder]을 사용한 것을 감지합니다. 
- *
+ * [unitLoc][unitPTR]가 범위 [range]안에서 일정한 대상에게 [targetLoc][skillOrder]을 사용한 것을 감지합니다.
  * @param.unitLoc.ko-KR
  * 스킬을 사용한 유닛에게 부착될 로케이션입니다.
- *
  * @param.unitPTR.ko-KR
  * 스킬을 사용할 유닛입니다.
- *
  * @param.range.ko-KR
  * 스킬을 감지할 범위입니다.
- *
  * @param.targetLoc.ko-KR
  * 스킬이 타격될 위치에 부착될 로케이션입니다.
- *
  * @param.skillOrder.ko-KR
  * 감지할 스킬입니다.
+ *
+ * @Summary.en-US
+ * Detects when [unitPTR] uses [skillOrder] on a specific target within [range] and stores the target location in [targetLoc].
+ * @param.unitLoc.en-US
+ * Location to attach to the unit that used the skill.
+ * @param.unitPTR.en-US
+ * The unit that uses the skill.
+ * @param.range.en-US
+ * The detection range.
+ * @param.targetLoc.en-US
+ * Location to attach to the impact position.
+ * @param.skillOrder.en-US
+ * The skill order to detect.
+ *
+ * @Summary.zh-CN
+ * 检测 [unitPTR] 在 [range] 范围内对地面使用 [skillOrder] 技能，
+ * 并将 [unitLoc] 附加到施法单位的位置，将 [targetLoc] 附加到技能命中位置。
+ * @param.unitLoc.zh-CN
+ * 附加到使用技能的单位上的位置。
+ * @param.unitPTR.zh-CN
+ * 使用技能的单位。
+ * @param.range.zh-CN
+ * 检测范围。
+ * @param.targetLoc.zh-CN
+ * 附加到命中地点的坐标位置。
+ * @param.skillOrder.zh-CN
+ * 要检测的技能命令。
 ***/
 function CheckTargetSkill(
     unitPTR,
@@ -1117,15 +1773,30 @@ function CheckTargetSkill(
  * C
  * @Summary.ko-KR
  * [unitEPD]가 [location]에 존재하는지 판단합니다. [dummyUnit]
- *
  * @param.unitEPD.ko-KR
  * 대상 유닛입니다.
- *
  * @param.location.ko-KR
  * 대상 로케이션입니다.
- *
  * @param.dummyUnit.ko-KR
  * Bring을 위해 잠시 변경할 유닛ID입니다. 사용하지 않는 UnitID를 사용하세요.
+ *
+ * @Summary.en-US
+ * Determines whether [unitEPD] exists in [location]. Uses [dummyUnit].
+ * @param.unitEPD.en-US
+ * The target unit.
+ * @param.location.en-US
+ * The target location.
+ * @param.dummyUnit.en-US
+ * Temporary unit ID used for Bring. Use an unused UnitID.
+ *
+ * @Summary.zh-CN
+ * 判断 [unitEPD] 是否存在于 [location] 中。使用 [dummyUnit]。
+ * @param.unitEPD.zh-CN
+ * 目标单位。
+ * @param.location.zh-CN
+ * 目标位置。
+ * @param.dummyUnit.zh-CN
+ * 临时用于 Bring 的单位 ID。请使用未使用的 UnitID。
 ***/
 function CBringEPD(unitEPD, location: TrgLocation, dummyUnit: TrgUnit) {
     MoveLocation(location, dummyUnit, AllPlayers, location);
@@ -1142,15 +1813,30 @@ function CBringEPD(unitEPD, location: TrgLocation, dummyUnit: TrgUnit) {
  * C
  * @Summary.ko-KR
  * [unitPTR]가 [location]에 존재하는지 판단합니다. [dummyUnit]
- *
  * @param.unitPTR.ko-KR
  * 대상 유닛입니다.
- *
  * @param.location.ko-KR
  * 대상 로케이션입니다.
- *
  * @param.dummyUnit.ko-KR
  * Bring을 위해 잠시 변경할 유닛ID입니다. 사용하지 않는 UnitID를 사용하세요.
+ *
+ * @Summary.en-US
+ * Determines whether [unitPTR] exists in [location]. Uses [dummyUnit].
+ * @param.unitPTR.en-US
+ * The target unit.
+ * @param.location.en-US
+ * The target location.
+ * @param.dummyUnit.en-US
+ * Temporary unit ID used for Bring. Use an unused UnitID.
+ *
+ * @Summary.zh-CN
+ * 判断 [unitPTR] 是否存在于 [location] 中。使用 [dummyUnit]。
+ * @param.unitPTR.zh-CN
+ * 目标单位。
+ * @param.location.zh-CN
+ * 目标位置。
+ * @param.dummyUnit.zh-CN
+ * 临时用于 Bring 的单位 ID。请使用未使用的 UnitID。
 ***/
 function CBring(unitPTR, location: TrgLocation, dummyUnit: TrgUnit) {
     return CBringEPD(EPD(unitPTR), location, dummyUnit);
@@ -1161,9 +1847,18 @@ function CBring(unitPTR, location: TrgLocation, dummyUnit: TrgUnit) {
  * C
  * @Summary.ko-KR
  * [unitEPD]의 생산대기열을 초기화합니다.
- *
  * @param.unitEPD.ko-KR
  * 대상 유닛입니다.
+ *
+ * @Summary.en-US
+ * Resets the production queue of [unitEPD].
+ * @param.unitEPD.en-US
+ * The target unit.
+ *
+ * @Summary.zh-CN
+ * 重置 [unitEPD] 的生产队列。
+ * @param.unitEPD.zh-CN
+ * 目标单位。
 ***/
 function BuildResetEPD(unitEPD) {
     VProc(unitEPD, list(
@@ -1186,9 +1881,18 @@ function BuildResetEPD(unitEPD) {
  * C
  * @Summary.ko-KR
  * [unitPTR]의 생산대기열을 초기화합니다.
- *
  * @param.unitPTR.ko-KR
  * 대상 유닛입니다.
+ *
+ * @Summary.en-US
+ * Resets the production queue of [unitPTR].
+ * @param.unitPTR.en-US
+ * The target unit.
+ *
+ * @Summary.zh-CN
+ * 重置 [unitPTR] 的生产队列。
+ * @param.unitPTR.zh-CN
+ * 目标单位。
 ***/
 function BuildReset(unitPTR) {
     BuildResetEPD(EPD(unitPTR));
@@ -1199,12 +1903,24 @@ function BuildReset(unitPTR) {
  * C
  * @Summary.ko-KR
  * [unitEPD]가 [unit]을 생산중인지 확인합니다..
- *
  * @param.unitEPD.ko-KR
  * 대상 유닛입니다.
- *
  * @param.unit.ko-KR
  * 확인할 유닛입니다.
+ *
+ * @Summary.en-US
+ * Checks whether [unitEPD] is producing [unit].
+ * @param.unitEPD.en-US
+ * The target unit.
+ * @param.unit.en-US
+ * The unit to check.
+ *
+ * @Summary.zh-CN
+ * 检查 [unitEPD] 是否正在生产 [unit]。
+ * @param.unitEPD.zh-CN
+ * 目标单位。
+ * @param.unit.zh-CN
+ * 要检查的单位。
 ***/
 function BuildCheckEPD(unitEPD, unit: TrgUnit) {
     unitEPD += 0x98 / 4;  // buildQueue
@@ -1236,12 +1952,24 @@ function BuildCheckEPD(unitEPD, unit: TrgUnit) {
  * C
  * @Summary.ko-KR
  * [unitPTR]가 [unit]을 생산중인지 확인합니다..
- *
  * @param.unitPTR.ko-KR
  * 대상 유닛입니다.
- *
  * @param.unit.ko-KR
  * 확인할 유닛입니다.
+ *
+ * @Summary.en-US
+ * Checks whether [unitPTR] is producing [unit].
+ * @param.unitPTR.en-US
+ * The target unit.
+ * @param.unit.en-US
+ * The unit to check.
+ *
+ * @Summary.zh-CN
+ * 检查 [unitPTR] 是否正在生产 [unit]。
+ * @param.unitPTR.zh-CN
+ * 目标单位。
+ * @param.unit.zh-CN
+ * 要检查的单位。
 ***/
 function BuildCheck(unitPTR, unit: TrgUnit) {
     return BuildCheckEPD(EPD(unitPTR), unit);
@@ -1252,21 +1980,42 @@ function BuildCheck(unitPTR, unit: TrgUnit) {
  * A
  * @Summary.ko-KR
  * [player]의 [attackLoc]에서 [attackUnit]이 생산되어 [targetLoc]에서 생산된 [targetUnit]을 공격합니다.
- *
  * @param.player.ko-KR
  * 대상 플레이어입니다.
- *
  * @param.attackLoc.ko-KR
  * 공격 유닛이 생산될 로케이션입니다.
- *
  * @param.targetLoc.ko-KR
  * 피격 유닛이 생산될 로케이션입니다.
- *
  * @param.attackUnit.ko-KR
  * 공격 유닛입니다.
- *
  * @param.targetUnit.ko-KR
  * 피격 유닛입니다.
+ *
+ * @Summary.en-US
+ * Spawns [attackUnit] at [attackLoc] for [player] and attacks [targetUnit] spawned at [targetLoc].
+ * @param.player.en-US
+ * The target player.
+ * @param.attackLoc.en-US
+ * The location where the attacking unit will be spawned.
+ * @param.targetLoc.en-US
+ * The location where the target unit will be spawned.
+ * @param.attackUnit.en-US
+ * The attacking unit.
+ * @param.targetUnit.en-US
+ * The target unit.
+ *
+ * @Summary.zh-CN
+ * 在 [attackLoc] 为 [player] 生成 [attackUnit]，并攻击在 [targetLoc] 生成的 [targetUnit]。
+ * @param.player.zh-CN
+ * 目标玩家。
+ * @param.attackLoc.zh-CN
+ * 攻击单位生成的位置。
+ * @param.targetLoc.zh-CN
+ * 被攻击单位生成的位置。
+ * @param.attackUnit.zh-CN
+ * 攻击单位。
+ * @param.targetUnit.zh-CN
+ * 目标单位。
 ***/
 function AttackGround(
     attackLoc: TrgLocation,
@@ -1300,12 +2049,25 @@ function AttackGround(
  * A
  * @Summary.ko-KR
  * [epd]의 상태 [flags]를 활성화합니다.
- *
  * @param.epd.ko-KR
  * 대상 유닛입니다.
- *
  * @param.flags.ko-KR
  * 활성화할 상태입니다.
+ *
+ * @Summary.en-US
+ * Adds status [flags] to [epd].
+ * @param.epd.en-US
+ * The target unit.
+ * @param.flags.en-US
+ * The status flags to add.
+ *
+ * @Summary.zh-CN
+ * 激活[epd]的状态[flags]。
+
+ * @param.epd.zh-CN
+ * 目标单位。
+ * @param.flags.zh-CN
+ * 要激活的状态。
 ***/
 function AddStatusFlagsEPD(epd, flags /*StatusFlags*/) {
     epd += 0xDC / 4;
@@ -1317,12 +2079,25 @@ function AddStatusFlagsEPD(epd, flags /*StatusFlags*/) {
  * A
  * @Summary.ko-KR
  * [unitPTR]의 상태 [flags]를 활성화합니다.
- *
  * @param.unitPTR.ko-KR
  * 대상 유닛입니다.
- *
  * @param.flags.ko-KR
  * 활성화할 상태입니다.
+ *
+ * @Summary.en-US
+ * Adds status [flags] to [unitPTR].
+ * @param.unitPTR.en-US
+ * The target unit.
+ * @param.flags.en-US
+ * The status flags to add.
+ *
+ * @Summary.zh-CN
+ * 激活[unitPTR]的状态[flags]。
+
+ * @param.unitPTR.zh-CN
+ * 目标单位。
+ * @param.flags.zh-CN
+ * 要激活的状态。
 ***/
 function AddStatusFlags(unitPTR, flags /*StatusFlags*/) {
     unitPTR += 0xDC;
@@ -1334,15 +2109,30 @@ function AddStatusFlags(unitPTR, flags /*StatusFlags*/) {
  * A
  * @Summary.ko-KR
  * [location]의 넓이를 ([width], [height])만큼 넓힙니다.
- *
  * @param.location.ko-KR
  * 대상 로케이션입니다.
- *
  * @param.width.ko-KR
  * 늘어날 넓이입니다.
- *
  * @param.height.ko-KR
  * 늘어날 높이입니다.
+ *
+ * @Summary.en-US
+ * Expands [location] by ([width], [height]).
+ * @param.location.en-US
+ * The target location.
+ * @param.width.en-US
+ * The width to expand.
+ * @param.height.en-US
+ * The height to expand.
+ *
+ * @Summary.zh-CN
+ * 将 [location] 的尺寸扩大 ([width], [height])。
+ * @param.location.zh-CN
+ * 目标位置。
+ * @param.width.zh-CN
+ * 要增加的宽度。
+ * @param.height.zh-CN
+ * 要增加的高度。
 ***/
 function AddSizeLocation(location: TrgLocation, width, height) {
     dilateloc(location, width, height);
@@ -1353,12 +2143,24 @@ function AddSizeLocation(location: TrgLocation, width, height) {
  * A
  * @Summary.ko-KR
  * [ptr]의 소유권을 [NewOwner]에게 넘깁니다..
- *
  * @param.ptr.ko-KR
  * 유닛의 포인터입니다.
- *
  * @param.NewOwner.ko-KR
  * 플레이어 입니다.
+ *
+ * @Summary.en-US
+ * Transfers ownership of [ptr] to [NewOwner].
+ * @param.ptr.en-US
+ * The unit pointer.
+ * @param.NewOwner.en-US
+ * The new owner player.
+ *
+ * @Summary.zh-CN
+ * 将 [ptr] 的所有权转让给 [NewOwner]。
+ * @param.ptr.zh-CN
+ * 单位的指针。
+ * @param.NewOwner.zh-CN
+ * 新的所有者玩家。
 ***/
 function CGive(ptr ,NewOwner: TrgPlayer) {
     const epd = EPD(ptr);

@@ -3,8 +3,8 @@
 Public Class ExtraDatBinding
     Implements INotifyPropertyChanged
 
-    '바인딩 할 때 본체도 넘겨주자고.
-    '잘못된 값일 경우 또는 지원안하는 부분일 경우 없에버리기.~
+    ' 绑定时也传递主体。
+    ' 如果是错误值或不支持的部分，则将其移除。~
 
     Private Datfile As SCDatFiles.DatFiles
     Private Parameter As String
@@ -56,27 +56,27 @@ Public Class ExtraDatBinding
             Dim returnStr As String = ""
             returnStr = "<0>" & Tool.GetText("datfliename") & " : <2>" & Tool.GetText(Datfilesname(Datfile)) & "(" & Datfilesname(Datfile) & ")" & vbCrLf &
              "<0>" & Tool.GetText("parameter") & " : <2>" & Tool.GetText(Datfilesname(Datfile) & "_" & Parameter) & "(" & Parameter & ")" & vbCrLf
-            'returnStr = returnStr & "인덱스 : " & ObjectID & vbCrLf
-            'returnStr = returnStr & "사이즈 : " & scData.DefaultDat.ParamInfo(Datfile, Parameter, SCDatFiles.EParamInfo.Size) & vbCrLf
+            ' returnStr = returnStr & "索引 : " & ObjectID & vbCrLf
+            ' returnStr = returnStr & "大小 : " & scData.DefaultDat.ParamInfo(Datfile, Parameter, SCDatFiles.EParamInfo.Size) & vbCrLf
 
             Dim ValueType As SCDatFiles.DatFiles = scData.DefaultDat.ParamInfo(Datfile, Parameter, SCDatFiles.EParamInfo.ValueType)
             If ValueType <> SCDatFiles.DatFiles.None Then
                 returnStr = returnStr & "<0>" & Tool.GetText("valuetype") & " : <3>" & Tool.GetText(Datfilesname(ValueType)) & vbCrLf
             End If
-            'returnStr = returnStr & "베이스오프셋 : 0x" & Hex(Tool.GetOffset(Datfile, Parameter)).ToUpper & vbCrLf
+            ' returnStr = returnStr & "基址偏移量 : 0x" & Hex(Tool.GetOffset(Datfile, Parameter)).ToUpper & vbCrLf
 
             If Not pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault Then
                 returnStr = returnStr & "<0>" & Tool.GetText("orgvalue") & " : <3>" & DefaultValue & vbCrLf
             End If
 
             If pjData.IsMapLoading Then
-                If Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then '기본 안 값 쓴다면
+                If Not pjData.MapData.DatFile.Values(Datfile, Parameter, ObjectID).IsDefault Then ' 如果要写入默认值
                     returnStr = returnStr & "<0>" & Tool.GetText("mapdatavalue") & " : <3>" & pjData.MapData.DatFile.Data(Datfile, Parameter, ObjectID) & vbCrLf
                 End If
             End If
 
             'If Not pjData.Dat.Values(Datfile, Parameter, ObjectID).IsDefault Then
-            '    returnStr = returnStr & "   변경 된 값 : " & pjData.Dat.Data(Datfile, Parameter, ObjectID)
+            '    returnStr = returnStr & "   更改后的值 : " & pjData.Dat.Data(Datfile, Parameter, ObjectID)
             'End If
 
             returnStr = returnStr & vbCrLf & "<0>" & Tool.GetText(Datfilesname(Datfile) & "_" & Parameter & "_ToolTip")
@@ -311,14 +311,14 @@ Public Class ExtraDatBinding
 
 
 
-            '맵에서 정의된 것일 경우.
+            ' 如果是地图中定义的情况。
 
             If IsDefault Then
-                'MsgBox("회색")
+                ' MsgBox("灰色")
                 Return New SolidColorBrush(pgData.FiledDefault)
             Else
 
-                'MsgBox("빨간색")
+                ' MsgBox("红色")
                 Return New SolidColorBrush(pgData.FiledEditColor)
             End If
 

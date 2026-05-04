@@ -109,7 +109,7 @@ Namespace MGRP
                     'If buffer.Length = 9455 Then
                     '    MsgBox(xpos & "," & pwidth & "," & (opcode And 192) & "," & (opcode And 63))
                     'End If
-                    If opcode >= &HC0 Then '만큼 다음 바이트 출력
+                    If opcode >= &HC0 Then ' 输出下一个字节
                         Dim newxtcode As Byte = binaReader.ReadByte()
 
                         For i = 0 To opcode - &HC1
@@ -492,7 +492,7 @@ Public Class GRP
 
         'MsgBox(framecount)
         Dim framePos As UInteger = memreader.Position
-        For i = 0 To framecount - 1 '프레임 수만큼.
+        For i = 0 To framecount - 1 ' 按帧数。
             Dim TempGRP As GRPFrameData
             memreader.Position = framePos
             TempGRP.frameXOffset = binaryreader.ReadByte()
@@ -524,22 +524,23 @@ Public Class GRP
             Dim nextcode As UInteger
             Dim count As Integer
             Dim temp As UInteger
-            For j = 0 To TempGRP.frameHeight - 1 '가로 줄 수.
+            For j = 0 To TempGRP.frameHeight - 1 ' 水平行数。
                 If TempGRP.frameWidth Mod 4 <> 0 Then
                     tempimageindex = (TempGRP.frameWidth + 4 - (TempGRP.frameWidth Mod 4)) * j
                 End If
 
                 'MsgBox()
                 memreader.Position = TempGRP.IineTableOffset + j * 2
-                temp = binaryreader.ReadUInt16() '상대적 좌표.
-                memreader.Position = TempGRP.IineTableOffset + temp '실제 라인 데이터
-                'IineTableOffset으로 부터 Y만큼 2바이트씩 그게.각 가로줄 하나.
-                '가로줄 하나는 세로줄의 길이를 가지고 있음.
+                temp = binaryreader.ReadUInt16() ' 相对坐标。
+                memreader.Position = TempGRP.IineTableOffset + temp 
+                ' 实际行数据
+                ' Y 值从 IineTableOffset 开始，每个水平线占用 2 个字节。
+                ' 每条水平线的长度与一条垂直线的长度相同。
                 'Grpdata(TempGRP.IineTableOffset)
 
-                'Byte >= 0x80 : (byte - 0x80)만큼 0을 출력
-                '0x80 > byte >= 0x40 : (byte - 0x40)만큼 다음 바이트를 반복해서 출력
-                '0x40 > byte : 다음 byte만큼의 byte를 그대로 출력
+                ' Byte >= 0x80 : 输出 (byte - 0x80) 个 0
+                ' 0x80 > byte >= 0x40 : 重复输出 (byte - 0x40) 次下一个字节
+                ' 0x40 > byte : 按原样输出接下来的 byte 个字节
 
                 'MsgBox("Line " & j)
                 count = 0

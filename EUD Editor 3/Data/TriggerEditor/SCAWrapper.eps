@@ -29,10 +29,10 @@ function Exec(){
 		setcurpl(cp);
 		sca.Exec();
 		
-		//연결 됨
+		// 已连接
 		if (sca.ConnectStatus() == 1 && sca.ConnectionTime() > 96){
 			
-			//로드 진행
+			// 加载进行中
 			if (loadstatus[cp] == 1){
 				if(sca.GetLastMessage() == 4){
 					loadstatus[cp] = 0;
@@ -42,13 +42,14 @@ function Exec(){
 				}else{
 					if ((sca.CommandStatus() == 0) && (IsUseLoadQueue == true) && sca.CheckLoadable()){
 						sca.LoadData(loadslot[cp]);
-						/* 패스트로드 제거
+						/*
+						移除快速加载
 						if(scfl.IsAllSCAUser()){
-							if(scfl.usercommandstatus == 0 && scfl.LoadOrder == 0){
-								sca.LoadFastData(cp, loadslot[cp]);
-							}
+						if(scfl.usercommandstatus == 0 && scfl.LoadOrder == 0){
+						sca.LoadFastData(cp, loadslot[cp]);
+						}
 						}else{
-							sca.LoadData(loadslot[cp]);
+						sca.LoadData(loadslot[cp]);
 						}
 						*/
 					}
@@ -121,7 +122,7 @@ function scaLoadTime(cmpfunc : EUDFuncPtr(1, 0)){
 }
 
 function SetUseDefaultMessage(value){
-	//value가 1이면 기본값쓰기
+	// 如果 value 为 1，则使用默认值
 	sca.SetUseDefaultMessage(value);
 }
 

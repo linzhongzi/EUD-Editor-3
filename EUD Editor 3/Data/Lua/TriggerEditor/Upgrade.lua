@@ -10,17 +10,32 @@
 @param.Amount.Number
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Upgrade]의 현재값을 [Amount]만큼 [Modifier]합니다.
+将 [Player] 中的 [Upgrade] 的当前值通过 [Modifier] 设置为 [Amount].
 @Group
-업그레이드
+升级
 @param.Upgrade.Upgrade
 @param.Player.TrgPlayer
 @param.Modifier.TrgModifier
 @param.Amount.Number
+
+
+@Language.en-US
+@Summary
+[Modifier] s the current value of [Upgrade] for [Player] by [Amount].
+@Group
+Upgrade
+@param.Upgrade.Upgrade
+The upgrade.
+@param.Player.TrgPlayer
+The target player.
+@param.Modifier.TrgModifier
+The modifier.
+@param.Amount.Number
+The amount.
 ]================================]
-function SetUpgrade(Upgrade, Player, Modifier, Amount) --업그레이드/Upgrade,TrgPlayer,TrgModifier,Number/[Player]의 [Upgrade]의 현재값을 [Amount]만큼 [Modifier]합니다.
+function SetUpgrade(Upgrade, Player, Modifier, Amount) -- Upgrade 组/Upgrade, TrgPlayer, TrgModifier, Number/将 [Player] 中的 [Upgrade] 的当前值通过 [Modifier] 设置为 [Amount].
 	Upgrade = ParseUpgrades(Upgrade)
 	Player = ParsePlayer(Player)
     Modifier = ParseModifier(Modifier)
@@ -65,9 +80,20 @@ end
 --[================================[
 @Language.ko-KR
 @Summary
-[Player]의 [Upgrade]의 현재값이 [Comparison] [Amount]인지 확인합니다.
+[Comparison]: [Player]의 [Upgrade]의 현재값이 [Amount]인지 확인합니다.
 @Group
 업그레이드
+@param.Upgrade.Upgrade
+@param.Player.TrgPlayer
+@param.Comparison.TrgComparison
+@param.Amount.Number
+
+
+@Language.zh-CN
+@Summary
+[Comparison]: 确认 [Player] 中 [Upgrade] 的当前值是否为 [Amount] 。
+@Group
+升级
 @param.Upgrade.Upgrade
 @param.Player.TrgPlayer
 @param.Comparison.TrgComparison
@@ -76,15 +102,19 @@ end
 
 @Language.en-US
 @Summary
-[Player]의 [Upgrade]의 현재값이 [Comparison] [Amount]인지 확인합니다.
+[Comparison]: Checks if the current value of [Upgrade] for [Player] is [Amount].
 @Group
-업그레이드
+Upgrade
 @param.Upgrade.Upgrade
+The upgrade.
 @param.Player.TrgPlayer
+The target player.
 @param.Comparison.TrgComparison
+The comparison method.
 @param.Amount.Number
+The amount.
 ]================================]
-function CurrentUpgrade(Upgrade, Player, Comparison, Amount) --업그레이드/Upgrade,TrgPlayer,TrgComparison,Number/[Player]의 [Upgrade]의 현재값이 [Comparison] [Amount]인지 확인합니다.
+function CurrentUpgrade(Upgrade, Player, Comparison, Amount) -- Upgrade 组/Upgrade, TrgPlayer, TrgComparison, Number/[Comparison]: 确认 [Player] 中 [Upgrade] 的当前值是否为 [Amount] 。
 	Upgrade = ParseUpgrades(Upgrade)
 	Player = ParsePlayer(Player)
     Comparison = ParseComparison(Comparison)
@@ -136,15 +166,26 @@ end
 @param.Player.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Upgrade]의 현재값을 반환합니다.
+返回 [Player] 中 [Upgrade] 的当前值。
 @Group
-업그레이드
+升级
 @param.Upgrade.Upgrade
 @param.Player.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Returns the current value of [Upgrade] for [Player].
+@Group
+Upgrade
+@param.Upgrade.Upgrade
+The upgrade.
+@param.Player.TrgPlayer
+The target player.
 ]================================]
-function GetUpgrade(Upgrade, Player) --업그레이드/Upgrade,TrgPlayer/[Player]의 [Upgrade]의 현재값을 반환합니다.
+function GetUpgrade(Upgrade, Player) -- Upgrade 组/Upgrade, TrgPlayer/返回 [Player] 中 [Upgrade] 的当前值。
 	Upgrade = ParseUpgrades(Upgrade)
 	Player = ParsePlayer(Player)
 
@@ -168,17 +209,29 @@ end
 @param.Player.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Upgrade]의 현재값 주소를 반환합니다.
+返回 [Player] 中 [Upgrade] 的当前值的地址。
 @Group
-업그레이드
+升级
 @param.Upgrade.Upgrade
 @param.Player.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Returns the address of the current value of [Upgrade] for [Player].
+@Group
+Upgrade
+@param.Upgrade.Upgrade
+The upgrade.
+@param.Player.TrgPlayer
+The target player.
 ]================================]
-function UpgradeOffset(Upgrade, Player) --업그레이드/Upgrade,TrgPlayer/[Player]의 [Upgrade]의 현재값 주소를 반환합니다.
-	--일반/58D2B0 0 ~ 45
-	--일반/58F32C 46
+function UpgradeOffset(Upgrade, Player) 
+-- Upgrade 组/Upgrade, TrgPlayer/返回 [Player] 中 [Upgrade] 的当前值的地址。
+-- General 组/58D2B0 0~45
+-- General 组/58F32C 46
 	Upgrade = ParseUpgrades(Upgrade) + 0 
 	Player = ParsePlayer(Player)
 
@@ -212,17 +265,32 @@ end
 @param.Amount.Number
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Upgrade]의 최대값을 [Amount]만큼 [Modifier]합니다.
+将 [Player] 的 [Upgrade] 的最大值 [Modifier] 为 [Amount] 。
 @Group
-업그레이드
+升级
 @param.Upgrade.Upgrade
 @param.Player.TrgPlayer
 @param.Modifier.TrgModifier
 @param.Amount.Number
+
+
+@Language.en-US
+@Summary
+[Modifier] s the maximum value of [Upgrade] for [Player] by [Amount].
+@Group
+Upgrade
+@param.Upgrade.Upgrade
+The upgrade.
+@param.Player.TrgPlayer
+The target player.
+@param.Modifier.TrgModifier
+The modifier.
+@param.Amount.Number
+The amount.
 ]================================]
-function SetUpgradeMax(Upgrade, Player, Modifier, Amount) --업그레이드/Upgrade,TrgPlayer,TrgModifier,Number/[Player]의 [Upgrade]의 최대값을 [Amount]만큼 [Modifier]합니다.
+function SetUpgradeMax(Upgrade, Player, Modifier, Amount) -- Upgrade 组/Upgrade,TrgPlayer,TrgModifier,Number/将 [Player] 的 [Upgrade] 的最大值 [Modifier] 为 [Amount] 。
 	Upgrade = ParseUpgrades(Upgrade)
 	Player = ParsePlayer(Player)
     Modifier = ParseModifier(Modifier)
@@ -267,9 +335,20 @@ end
 --[================================[
 @Language.ko-KR
 @Summary
-[Player]의 [Upgrade]의 최대값이 [Comparison] [Amount]인지 확인합니다.
+[Comparison]: [Player]의 [Upgrade]의 최대값이 [Amount]인지 확인합니다.
 @Group
 업그레이드
+@param.Upgrade.Upgrade
+@param.Player.TrgPlayer
+@param.Comparison.TrgComparison
+@param.Amount.Number
+
+
+@Language.zh-CN
+@Summary
+[Comparison]: 确认 [Player] 的 [Upgrade] 的最大值是否为 [Amount] 。
+@Group
+升级
 @param.Upgrade.Upgrade
 @param.Player.TrgPlayer
 @param.Comparison.TrgComparison
@@ -278,15 +357,19 @@ end
 
 @Language.en-US
 @Summary
-[Player]의 [Upgrade]의 최대값이 [Comparison] [Amount]인지 확인합니다.
+[Comparison]: Checks if the maximum value of [Upgrade] for [Player] is [Amount].
 @Group
-업그레이드
+Upgrade
 @param.Upgrade.Upgrade
+The upgrade.
 @param.Player.TrgPlayer
+The target player.
 @param.Comparison.TrgComparison
+The comparison method.
 @param.Amount.Number
+The amount.
 ]================================]
-function CurrentUpgradeMax(Upgrade, Player, Comparison, Amount) --업그레이드/Upgrade,TrgPlayer,TrgComparison,Number/[Player]의 [Upgrade]의 최대값이 [Comparison] [Amount]인지 확인합니다.
+function CurrentUpgradeMax(Upgrade, Player, Comparison, Amount) -- Upgrade 组/Upgrade, TrgPlayer, TrgComparison, Number/[Comparison]: 确认 [Player] 的 [Upgrade] 的最大值是否为 [Amount] 。
 	Upgrade = ParseUpgrades(Upgrade)
 	Player = ParsePlayer(Player)
     Comparison = ParseComparison(Comparison)
@@ -338,15 +421,26 @@ end
 @param.Player.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Upgrade]의 최대값을 반환합니다.
+返回 [Player] 的 [Upgrade] 的最大值。
 @Group
-업그레이드
+升级
 @param.Upgrade.Upgrade
 @param.Player.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Returns the maximum value of [Upgrade] for [Player].
+@Group
+Upgrade
+@param.Upgrade.Upgrade
+The upgrade.
+@param.Player.TrgPlayer
+The target player.
 ]================================]
-function GetUpgradeMax(Upgrade, Player) --업그레이드/Upgrade,TrgPlayer/[Player]의 [Upgrade]의 최대값을 반환합니다.
+function GetUpgradeMax(Upgrade, Player) -- Upgrade 组/Upgrade, TrgPlayer/返回 [Player] 的 [Upgrade] 的最大值。
 	Upgrade = ParseUpgrades(Upgrade)
 	Player = ParsePlayer(Player)
 
@@ -370,17 +464,29 @@ end
 @param.Player.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Upgrade]의 현재값 주소를 반환합니다.
+返回 [Player] 中 [Upgrade] 的当前值的地址。
 @Group
-업그레이드
+升级
 @param.Upgrade.Upgrade
 @param.Player.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Returns the address of the current value of [Upgrade] for [Player].
+@Group
+Upgrade
+@param.Upgrade.Upgrade
+The upgrade.
+@param.Player.TrgPlayer
+The target player.
 ]================================]
-function UpgradeOffsetMax(Upgrade, Player) --업그레이드/Upgrade,TrgPlayer/[Player]의 [Upgrade]의 현재값 주소를 반환합니다.
-	--일반/58D088 0 ~ 45
-	--일반/58F278 46
+function UpgradeOffsetMax(Upgrade, Player) 
+-- Upgrade 组/Upgrade,TrgPlayer/返回 [Player] 中 [Upgrade] 的当前值的地址。
+-- General/58D088 0 ~ 45
+-- General/58F278 46
 	Upgrade = ParseUpgrades(Upgrade) + 0
 	Player = ParsePlayer(Player)
 

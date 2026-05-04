@@ -65,7 +65,7 @@ Partial Public Class CodeEditor
             Dim MidStr As String = Mid(MainStr, SelectStart - index, 1)
 
 
-            Select Case MidStr'이게 뜰때 에러가 아니라 앞에 function이 있는지 확인까지 해야됨. 
+            Select Case MidStr' 当出现此错误时，需要检查前面是否有 function。
                 Case vbLf
                     Exit While
                 Case "("
@@ -164,7 +164,7 @@ Partial Public Class CodeEditor
         Dim IsFuncNameWrite As Boolean = False
         Dim IsImportWrite As Boolean = False
         Dim CompletionPath As Boolean = False
-        '이 경우 자동완성을 조금 다르게 해야됨
+        ' 在这种情况下，自动完成需要稍微不同地处理。
         If CheckFunctionName = "function" Then
             FuncName = ""
             ArgumentIndex = 0
@@ -197,7 +197,7 @@ Partial Public Class CodeEditor
                 CompletionPath = True
             End If
         End If
-        'Log.Text = FunctionStartOffset & "   마지막으로 입력한 글자 : " & TypingStr & vbCrLf & "함수이름 : " & FuncName & "     함수 인자 번호 : " & ArgumentIndex
+        ' Log.Text = FunctionStartOffset & "   最后输入的字符 : " & TypingStr & vbCrLf & "函数名 : " & FuncName & "     函数参数编号 : " & ArgumentIndex
 
         'Log.Text = Log.Text & vbCrLf & "IsFuncNameWrite : " & IsFuncNameWrite
         'Log.Text = Log.Text & vbCrLf & "IsFuncDefWrite : " & IsFuncDefWrite
@@ -217,7 +217,7 @@ Partial Public Class CodeEditor
                                                                                                                                  If TypingStr.IndexOf(".") >= 0 Then
                                                                                                                                      LocalFunc.Init()
                                                                                                                                      LocalFunc.LoadFunc(MainStr, SelectStart)
-                                                                                                                                     '외부함수 불러오는건 여기가아님
+                                                                                                                                     ' 加载外部函数不在此处。
 
                                                                                                                                      ShowCompletion(etext, False, TypingStr, FuncName, ArgumentIndex, True, SpecialFlag.Extern)
                                                                                                                                  Else
@@ -228,7 +228,7 @@ Partial Public Class CodeEditor
                                                                                                                                          Else
                                                                                                                                              LocalFunc.Init()
                                                                                                                                              LocalFunc.LoadFunc(MainStr, SelectStart)
-                                                                                                                                             '외부함수 불러오는건 여기가아님
+                                                                                                                                             ' 加载外部函数不在此处。
 
 
                                                                                                                                              ShowCompletion(etext, False, TypingStr, FuncName, ArgumentIndex, True)
@@ -254,7 +254,7 @@ Partial Public Class CodeEditor
         'selectedValues = DisputeList.FindAll(Function(p) p.ColumnName = "Jewel")
 
 
-        'Log.Text = Log.Text & vbCrLf & "입력된 함수 갯수 : " & LocalFunc.FuncCount
+        ' Log.Text = Log.Text & vbCrLf & "输入的函数个数 : " & LocalFunc.FuncCount
 
         'For i = 0 To LocalFunc.FuncCount - 1
         '    Log.Text = Log.Text & vbCrLf & LocalFunc.GetFuncName(i) & " : " & LocalFunc.GetFuncArgument(i)

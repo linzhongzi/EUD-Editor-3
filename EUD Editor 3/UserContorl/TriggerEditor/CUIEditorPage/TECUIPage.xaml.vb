@@ -67,10 +67,10 @@ Public Class TECUIPage
 
     Public Sub New(tTEFile As TEFile, Optional highLightLine As Integer = -1, Optional startoffset As Integer = 0)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         PTEFile = tTEFile
         tTEFile.ParentPage = Me
 
@@ -166,7 +166,7 @@ Public Class TECUIPage
             End If
 
             If textstring <> scripter.StringText Then
-                '파일이 변형됨
+                ' 文件被修改
                 ExternLoad.Visibility = Visibility.Visible
             End If
 
@@ -199,4 +199,3 @@ Public Class TECUIPage
         End If
     End Sub
 End Class
-

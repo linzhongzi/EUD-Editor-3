@@ -63,7 +63,7 @@ Public Class DotData
     End Function
 
     Public Function GetepsData() As String
-        ' 첫번쨰 인자가 0일경우 white칠하고 1일경우 뒷 배경이 white인것
+        ' 如果第一个参数为0，则涂成白色，如果为1，则背景为白色。
         '"EUDArray(list(0,6,0,0,0,10,0,9))"
         Dim listdata As String = ""
 
@@ -95,6 +95,6 @@ Public Class DotData
         Return "EUDArray(list(" & listdata & "))"
     End Function
 
-    '21색
-    '데이터
+    ' 21色
+    ' 数据
 End Class

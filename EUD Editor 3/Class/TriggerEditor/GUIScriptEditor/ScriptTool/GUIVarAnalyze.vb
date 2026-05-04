@@ -16,7 +16,7 @@
         Return True
     End Function
 
-    '현재 위치로부터 변수들을 구하는 함수들을 만들것
+    ' 将创建从当前位置获取变量的函数。
     Public Function GetLocalVar(normalscr As ScriptBlock, Optional type As String = "", Optional varname As String = "") As List(Of ScriptBlock)
         Dim fname As String = varname
         Dim ftype As String = type
@@ -114,7 +114,7 @@
                         Dim vname As String = rvalue.Split("ᗢ").First
                         vlist.Add(vname)
                     Case "EUDPlayerLoop"
-                        '원래 아무것도 업슴
+                        ' 原本什么都没有
                 End Select
                 For k = 0 To vlist.Count - 1
                     If AddAble(vlist(k).Trim, "var", fname, ftype) Then
@@ -124,8 +124,8 @@
             End If
         End While
 
-        '인덱스가 0이 될대까지 위로 올라감.
-        '인덱스가 0이 되면
+        ' 向上移动直到索引为0。
+        ' 当索引为0时
 
         Return rscr
     End Function
@@ -173,20 +173,20 @@
                 Dim cscr As ScriptBlock = Nothing
 
                 If vtype.Trim = "" Then
-                    '타입이 없음 = 일반 var
+                    ' 无类型 = 普通 var
                     'ScriptBlock.EBlockType.vardefine
                     scrtype = ScriptBlock.EBlockType.vardefine
                     curtype = "var"
                 Else
-                    '타입이 있음 = const var
+                    ' 有类型 = const var
                     If IsNumeric(vtype) Then
-                        '일반 값이 들어있는 상수변수
+                        ' 包含正常值的常量变量
                         scrtype = ScriptBlock.EBlockType.vardefine
                         curtype = "const"
 
                         cscr = New ScriptBlock(ScriptBlock.EBlockType.rawcode, "rawcode", False, False, vtype, GUIEditor)
                     Else
-                        '오브젝트
+                        ' 对象
                         scrtype = ScriptBlock.EBlockType.vardefine
                         curtype = "object"
 
@@ -198,7 +198,7 @@
                         End If
 
                         If objname.IndexOf(".") = -1 Then
-                            '기본 생성자
+                            ' 基本构造函数
                             makestyle = "constructor"
                         Else
                             objname = objname.Split(".").First

@@ -24,7 +24,7 @@ Public Class Lexical_Analyzer
             If IsNumeric(c) Then
                 c = tk.NextChar
                 If c = "x" Then
-                    'hex값
+                    ' 十六进制值
                     Dim v As String = ("0x" & tk.NextHex())
                     tokenlist.Add(New Token(Token.TokenType.TOKEN_NUMBER, tk, v))
                 Else
@@ -160,7 +160,7 @@ Public Class Lexical_Analyzer
                             ElseIf c = "*" Then
                                 Dim commentstr As String = ""
 
-                                '주석시작
+                                ' 注释开始
                                 While (True)
                                     c = tk.NextChar()
                                     If c = "*" Then
@@ -176,7 +176,7 @@ Public Class Lexical_Analyzer
                                 End While
 
                             ElseIf c = "/" Then
-                                '주석시작
+                                ' 注释开始
                                 tokenlist.Add(New Token(Token.TokenType.TOKEN_LINECOMMENT, tk, tk.NextLine()))
                             Else
                                 tokenlist.Add(New Token(Token.TokenType.TOKEN_DIVIDE, tk))
@@ -204,7 +204,7 @@ Public Class Lexical_Analyzer
                             If c = "?" Then
                                 Dim commentstr As String = ""
 
-                                '주석시작
+                                ' 注释开始
                                 While (True)
                                     c = tk.NextChar()
                                     If c = "?" Then
@@ -383,11 +383,11 @@ Public Class Lexical_Analyzer
         Dim rex As New Regex("[a-fA-f0-9]+")
         Return rex.Match(str).Success
     End Function
-    '연산자
-    '숫자
-    '문자열
-    '한라인 주석
-    '두라인 주석
-    '식별자
-    '키워드
+    ' 运算符
+    ' 数字
+    ' 字符串
+    ' 单行注释
+    ' 双行注释
+    ' 标识符
+    ' 关键字
 End Class

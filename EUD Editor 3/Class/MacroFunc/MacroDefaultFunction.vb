@@ -347,7 +347,7 @@
         Select Case Size
             Case 1, 2
                 If IsNumeric(index) Then
-                    '인덱스가 상수일 경우
+                    ' 如果索引是常量
                     Dim rindex As Integer = index * Length
                     Dim f As Integer = rindex Mod 4
 
@@ -389,7 +389,7 @@
                         End If
                     End If
                 Else
-                    '인덱스가 변수 일 경우
+                    ' 如果索引是变量
                     'local ModifierDict = {
                     '    [SetTo] =  7,
                     '    [Add] =  8,
@@ -452,7 +452,7 @@
         Select Case Size
             Case 1, 2
                 If IsNumeric(index) Then
-                    '인덱스가 상수일 경우
+                    ' 如果索引是常量
                     Dim rindex As Integer = index * Length
                     Dim f As Integer = rindex Mod 4
 

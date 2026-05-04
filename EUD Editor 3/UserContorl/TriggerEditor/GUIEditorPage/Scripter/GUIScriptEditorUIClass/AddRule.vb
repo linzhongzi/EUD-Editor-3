@@ -8,11 +8,11 @@
 
 
     Public Function CheckValidated(newscr As ScriptBlock, destscr As ScriptBlock) As Boolean
-        'dest에 new가 들어갈 수 있는지 판단
+        ' 判断 dest 是否可以包含 new。
 
         If destscr Is Nothing Then
-            '함수 및 선언문만 가능
-            'MsgBox("넣는 블럭 : " & newscr.name)
+            ' 仅限函数和声明语句。
+            ' MsgBox("插入块 : " & newscr.name)
             Select Case newscr.ScriptType
                 Case ScriptBlock.EBlockType.rawcode, ScriptBlock.EBlockType.import, ScriptBlock.EBlockType.vardefine,
                      ScriptBlock.EBlockType.fundefine, ScriptBlock.EBlockType.folder, ScriptBlock.EBlockType.objectdefine
@@ -105,7 +105,7 @@
 
 
 
-            'MsgBox("넣는 블럭 : " & newscr.name & vbCrLf & "해당 위치 : " & destscr.name)
+            ' MsgBox("插入块 : " & newscr.name & vbCrLf & "目标位置 : " & destscr.name)
         End If
 
 

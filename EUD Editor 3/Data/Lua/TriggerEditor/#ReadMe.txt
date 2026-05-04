@@ -4,7 +4,7 @@ GetElapsedTime
 BtnRefresh
 SetButton
 
-# Set과 Get이 있는 함수
+# 具有 Set 和 Get 的函数
 UnitsDat
 WeaponsDat
 FlingyDat

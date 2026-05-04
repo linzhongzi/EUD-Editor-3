@@ -4,7 +4,7 @@ Public Class NotDoubleValidationRule
     Inherits ValidationRule
 
     Public Overrides Function Validate(value As Object, cultureInfo As CultureInfo) As ValidationResult
-        '일단 숫자인지 아닌지 판단.
+        ' 先判断是否为数字。
         Try
             Dim number As Double = value
             Return ValidationResult.ValidResult

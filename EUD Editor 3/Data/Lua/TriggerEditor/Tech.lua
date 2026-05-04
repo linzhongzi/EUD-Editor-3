@@ -10,17 +10,32 @@
 @param.Amount.Number
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Tech]의 현재값을 [Amount]만큼 [Modifier]합니다.
+将 [Player] 中的 [Tech] 值 [Modifier] 为 [Amount] 。
 @Group
-테크
+科技
 @param.Tech.Tech
 @param.Player.TrgPlayer
 @param.Modifier.TrgModifier
 @param.Amount.Number
+
+
+@Language.en-US
+@Summary
+[Modifier] s the current value of [Tech] for [Player] by [Amount].
+@Group
+Tech
+@param.Tech.Tech
+The tech.
+@param.Player.TrgPlayer
+The target player.
+@param.Modifier.TrgModifier
+The modifier.
+@param.Amount.Number
+The amount.
 ]================================]
-function SetTech(Tech, Player, Modifier, Amount) --테크/Tech,TrgPlayer,TrgModifier,Number/[Player]의 [Tech]의 현재값을 [Amount]만큼 [Modifier]합니다.
+function SetTech(Tech, Player, Modifier, Amount) -- Tech 组/Tech, TrgPlayer, TrgModifier, Number/将 [Player] 中的 [Tech] 值 [Modifier] 为 [Amount] 。
 	Tech = ParseTechdata(Tech)
 	Player = ParsePlayer(Player)
     Modifier = ParseModifier(Modifier)
@@ -54,9 +69,19 @@ end
 --[================================[
 @Language.ko-KR
 @Summary
-[Player]의 [Tech]의 현재값이 [Comparison] [Amount]인지 확인합니다.
+[Comparison]: [Player]의 [Tech]의 현재값이 [Amount]인지 확인합니다.
 @Group
 테크
+@param.Tech.Tech
+@param.Player.TrgPlayer
+@param.Comparison.TrgComparison
+@param.Amount.Number
+
+@Language.zh-CN
+@Summary
+[Comparison]: 确认 [Player] 中 [Tech] 的当前值是否为 [Amount] 。
+@Group
+科技
 @param.Tech.Tech
 @param.Player.TrgPlayer
 @param.Comparison.TrgComparison
@@ -65,15 +90,19 @@ end
 
 @Language.en-US
 @Summary
-[Player]의 [Tech]의 현재값이 [Comparison] [Amount]인지 확인합니다.
+[Comparison]: Checks if the current value of [Tech] for [Player] is [Amount].
 @Group
-테크
+Tech
 @param.Tech.Tech
+The tech.
 @param.Player.TrgPlayer
+The target player.
 @param.Comparison.TrgComparison
+The comparison method.
 @param.Amount.Number
+The amount.
 ]================================]
-function CurrentTech(Tech, Player, Comparison, Amount) --테크/Tech,TrgPlayer,TrgComparison,Number/[Player]의 [Tech]의 현재값이 [Comparison] [Amount]인지 확인합니다.
+function CurrentTech(Tech, Player, Comparison, Amount) -- Tech 组/Tech, TrgPlayer, TrgComparison, Number/[Comparison]: 确认 [Player] 中 [Tech] 的当前值是否为 [Amount] 。
 	Tech = ParseTechdata(Tech)
 	Player = ParsePlayer(Player)
     Comparison = ParseComparison(Comparison)
@@ -109,15 +138,26 @@ end
 @param.Player.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Tech]의 현재값을 반환합니다.
+返回 [Player] 中 [Tech] 的当前值。
 @Group
-테크
+科技
 @param.Tech.Tech
 @param.Player.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Returns the current value of [Tech] for [Player].
+@Group
+Tech
+@param.Tech.Tech
+The tech.
+@param.Player.TrgPlayer
+The target player.
 ]================================]
-function GetTech(Tech, Player) --테크/Tech,TrgPlayer/[Player]의 [Tech]의 현재값을 반환합니다.
+function GetTech(Tech, Player) -- Tech 组/Tech, TrgPlayer/返回 [Player] 中 [Tech] 的当前值。
 	Tech = ParseTechdata(Tech)
 	Player = ParsePlayer(Player)
 
@@ -143,17 +183,29 @@ end
 @param.Player.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Tech]의 현재값 주소의 EPD를 반환합니다.
+返回 [Player] 中 [Tech] 的当前值地址的转换值(EPD).
 @Group
-테크
+科技
 @param.Tech.Tech
 @param.Player.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Returns the EPD of the address of the current value of [Tech] for [Player].
+@Group
+Tech
+@param.Tech.Tech
+The tech.
+@param.Player.TrgPlayer
+The target player.
 ]================================]
-function TechEPD(Tech, Player) --테크/Tech,TrgPlayer/[Player]의 [Tech]의 현재값 주소의 EPD를 반환합니다.
-	--일반/58D2B0 0 ~ 45
-	--일반/58F32C 46
+function TechEPD(Tech, Player) 
+-- Tech 组/Tech, TrgPlayer/返回 [Player] 中 [Tech] 的当前值地址的转换值(EPD).
+-- General 组/58D2B0 0 ~ 45
+-- General 组/58F32C 46
 	Tech = ParseTechdata(Tech) + 0
 	Player = ParsePlayer(Player)
 
@@ -184,17 +236,29 @@ end
 @param.Player.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Tech]의 현재값 주소를 반환합니다.
+返回 [Player] 中 [Tech] 的当前值地址。
 @Group
-테크
+科技
 @param.Tech.Tech
 @param.Player.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Returns the address of the current value of [Tech] for [Player].
+@Group
+Tech
+@param.Tech.Tech
+The tech.
+@param.Player.TrgPlayer
+The target player.
 ]================================]
-function TechOffset(Tech, Player) --테크/Tech,TrgPlayer/[Player]의 [Tech]의 현재값 주소를 반환합니다.
-	--일반/58D2B0 0 ~ 45
-	--일반/58F32C 46
+function TechOffset(Tech, Player) 
+-- Tech 组/Tech, TrgPlayer/返回 [Player] 中 [Tech] 的当前值地址。
+-- General 组/58D2B0 0 ~ 45
+-- General 组/58F32C 46
 	Tech = ParseTechdata(Tech) + 0
 	Player = ParsePlayer(Player)
 
@@ -228,17 +292,32 @@ end
 @param.Amount.Number
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Tech]의 최대값을 [Amount]만큼 [Modifier]합니다.
+将 [Player] 的 [Tech] 的最大值 [Modifier] 为 [Amount].
 @Group
-테크
+科技
 @param.Tech.Tech
 @param.Player.TrgPlayer
 @param.Modifier.TrgModifier
 @param.Amount.Number
+
+
+@Language.en-US
+@Summary
+[Modifier] s the maximum value of [Tech] for [Player] by [Amount].
+@Group
+Tech
+@param.Tech.Tech
+The tech.
+@param.Player.TrgPlayer
+The target player.
+@param.Modifier.TrgModifier
+The modifier.
+@param.Amount.Number
+The amount.
 ]================================]
-function SetTechMax(Tech, Player, Modifier, Amount) --테크/Tech,TrgPlayer,TrgModifier,Number/[Player]의 [Tech]의 최대값을 [Amount]만큼 [Modifier]합니다.
+function SetTechMax(Tech, Player, Modifier, Amount) -- Tech 组/Tech, TrgPlayer, TrgModifier, Number/将 [Player] 的 [Tech] 的最大值 [Modifier] 为 [Amount].
 	Tech = ParseTechdata(Tech)
 	Player = ParsePlayer(Player)
     Modifier = ParseModifier(Modifier)
@@ -271,9 +350,20 @@ end
 --[================================[
 @Language.ko-KR
 @Summary
-[Player]의 [Tech]의 최대값이 [Comparison] [Amount]인지 확인합니다.
+[Comparison]: [Player]의 [Tech]의 최대값이 [Amount]인지 확인합니다.
 @Group
 테크
+@param.Tech.Tech
+@param.Player.TrgPlayer
+@param.Comparison.TrgComparison
+@param.Amount.Number
+
+
+@Language.zh-CN
+@Summary
+[Comparison]: 确认 [Player] 的 [Tech] 的最大值 [Modifier] 是否为 [Amount].
+@Group
+科技
 @param.Tech.Tech
 @param.Player.TrgPlayer
 @param.Comparison.TrgComparison
@@ -282,15 +372,19 @@ end
 
 @Language.en-US
 @Summary
-[Player]의 [Tech]의 최대값이 [Comparison] [Amount]인지 확인합니다.
+[Comparison]: Checks if the maximum value of [Tech] for [Player] is [Amount].
 @Group
-테크
+Tech
 @param.Tech.Tech
+The tech.
 @param.Player.TrgPlayer
+The target player.
 @param.Comparison.TrgComparison
+The comparison method.
 @param.Amount.Number
+The amount.
 ]================================]
-function CurrentTechMax(Tech, Player, Comparison, Amount) --테크/Tech,TrgPlayer,TrgComparison,Number/[Player]의 [Tech]의 최대값이 [Comparison] [Amount]인지 확인합니다.
+function CurrentTechMax(Tech, Player, Comparison, Amount) -- Tech 组/Tech, TrgPlayer, TrgComparison, Number/[Comparison]: 确认 [Player] 的 [Tech] 的最大值 [Modifier] 是否为 [Amount].
 	Tech = ParseTechdata(Tech)
 	Player = ParsePlayer(Player)
     Comparison = ParseComparison(Comparison)
@@ -326,15 +420,26 @@ end
 @param.Player.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Tech]의 최대값을 반환합니다.
+返回 [Player] 的 [Tech] 的最大值。
 @Group
-테크
+科技
 @param.Tech.Tech
 @param.Player.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Returns the maximum value of [Tech] for [Player].
+@Group
+Tech
+@param.Tech.Tech
+The tech.
+@param.Player.TrgPlayer
+The target player.
 ]================================]
-function GetTechMax(Tech, Player) --테크/Tech,TrgPlayer/[Player]의 [Tech]의 최대값을 반환합니다.
+function GetTechMax(Tech, Player) -- Tech 组/Tech, TrgPlayer/返回 [Player] 的 [Tech] 的最大值。
 	Tech = ParseTechdata(Tech)
 	Player = ParsePlayer(Player)
 
@@ -361,17 +466,29 @@ end
 @param.Player.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]의 [Tech]의 최대값 주소의 EPD를 반환합니다.
+返回 [Player] 中 [Tech] 的地址最大值的转换值(EPD).
 @Group
-테크
+科技
 @param.Tech.Tech
 @param.Player.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Returns the EPD of the address of the maximum value of [Tech] for [Player].
+@Group
+Tech
+@param.Tech.Tech
+The tech.
+@param.Player.TrgPlayer
+The target player.
 ]================================]
-function TechMaxEPD(Tech, Player) --테크/Tech,TrgPlayer/[Player]의 [Tech]의 최대값 주소의 EPD를 반환합니다.
-	--일반/58D088 0 ~ 45
-	--일반/58F278 46
+function TechMaxEPD(Tech, Player) 
+-- tech 组/Tech, TrgPlayer/返回 [Player] 中 [Tech] 的地址最大值的转换值(EPD).
+-- General 组/58D088 0 ~ 45
+-- General 组/58F278 46
 	Tech = ParseTechdata(Tech) + 0
 	Player = ParsePlayer(Player)
 
@@ -402,18 +519,29 @@ end
 @param.Tech.Tech
 @param.Player.TrgPlayer
 
+@Language.zh-CN
+@Summary
+返回 [Player] 的 [Tech] 中最大值的地址。
+@Group
+科技
+@param.Tech.Tech
+@param.Player.TrgPlayer
+
 
 @Language.en-US
 @Summary
-[Player]의 [Tech]의 최ㅐ값 주소를 반환합니다.
+Returns the address of the maximum value of [Tech] for [Player].
 @Group
-테크
+Tech
 @param.Tech.Tech
+The tech.
 @param.Player.TrgPlayer
+The target player.
 ]================================]
-function TechMaxOffset(Tech, Player) --테크/Tech,TrgPlayer/[Player]의 [Tech]의 현재값 주소를 반환합니다.
-	--일반/58D088 0 ~ 45
-	--일반/58F278 46
+function TechMaxOffset(Tech, Player) 
+-- tech 组/Tech, TrgPlayer/返回 [Player] 的 [Tech] 的当前值地址。
+-- General 组/58D088 0 ~ 45
+-- General 组/58F278 46
 	Tech = ParseTechdata(Tech) + 0
 	Player = ParsePlayer(Player)
 

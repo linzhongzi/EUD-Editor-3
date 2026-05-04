@@ -12,7 +12,7 @@ Partial Public Class ProjectData
         Dim lastFileName As String = Filename
 
 
-        If IsSaveAs = True Then '다른이름으로 저장 일 경우 
+        If IsSaveAs = True Then ' 如果是另存为的情况
             Tool.SaveProjectDialog.FileName = SafeFilename
 
             Dim exten As String() = Tool.SaveProjectDialog.Filter.Split("|")
@@ -26,7 +26,7 @@ Partial Public Class ProjectData
 
             Tool.SaveProjectDialog.InitialDirectory = pgData.Setting(ProgramData.TSetting.SavePath)
             If Tool.SaveProjectDialog.ShowDialog() = Forms.DialogResult.OK Then
-                Filename = Tool.SaveProjectDialog.FileName '파일 이름 교체
+                Filename = Tool.SaveProjectDialog.FileName ' 替换文件名
                 pgData.Setting(ProgramData.TSetting.SavePath) = Path.GetDirectoryName(Filename)
             Else
                 Return False
@@ -37,11 +37,11 @@ Partial Public Class ProjectData
             Filename = ""
         End If
 
-        If Filename = "" Then ' 새파일
+        If Filename = "" Then ' 新建文件
             Tool.SaveProjectDialog.FileName = SafeFilename
             Tool.SaveProjectDialog.InitialDirectory = pgData.Setting(ProgramData.TSetting.SavePath)
             If Tool.SaveProjectDialog.ShowDialog() = Forms.DialogResult.OK Then
-                Filename = Tool.SaveProjectDialog.FileName '파일 이름 교체
+                Filename = Tool.SaveProjectDialog.FileName ' 替换文件名
                 pgData.Setting(ProgramData.TSetting.SavePath) = Path.GetDirectoryName(Filename)
             Else
                 Return False

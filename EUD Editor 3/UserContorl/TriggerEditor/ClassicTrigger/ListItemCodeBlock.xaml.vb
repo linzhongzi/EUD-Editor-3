@@ -4,10 +4,10 @@
 
     Public Sub New(_scripter As ScriptEditor, tcode As TriggerCodeBlock)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         _tcode = tcode
         scripter = _scripter
         RefreshItem()
@@ -19,7 +19,7 @@
 
 
 
-        '함수를 재정렬하여 쓴다.
+        ' 重新排列函数后使用。
         Dim t As TriggerFunction = _tcode.GetCodeFunction(scripter)
         Dim isCmpTrigger As Boolean
         Dim IsEmpty As Boolean = False
@@ -32,8 +32,8 @@
 
             Wrap.Children.Add(ttb)
 
-            '없는 함수
-            '그냥 인자들만 출력시킨다.
+            ' 不存在的函数
+            ' 只输出参数。
             isCmpTrigger = False
             IsEmpty = True
         Else
@@ -67,12 +67,12 @@
 
                 Wrap.Children.Add(ttb)
             Else
-                '트리거
+                ' 触发器
                 For i = 0 To t.SortArgList.Count - 1
                     Dim tstr As String = t.SortArgList(i)
 
                     If TriggerFunction.IsArg(tstr) Then
-                        'Arg텍스트
+                        ' Arg文本
                         Dim tindex As Integer = TriggerFunction.GetArgIndex(tstr)
 
                         Dim ttb As New Label
@@ -95,9 +95,9 @@
 
 
         Else
-            '인자들만 나열
+            ' 仅列出参数
             If True Then
-                '설명
+                ' 说明
                 If t IsNot Nothing Then
                     If t.FSummary <> "" Then
                         Dim ttb As New Label
@@ -121,9 +121,9 @@
                 End If
             End If
 
-            '인자들을 나열한다.
+            ' 列出参数。
             For i = 0 To _tcode.Args.Count - 1
-                'Arg텍스트
+                ' Arg文本
                 Dim ttb As New Label
                 ttb.VerticalAlignment = VerticalAlignment.Center
                 ttb.Foreground = tmanager.HighlightBrush

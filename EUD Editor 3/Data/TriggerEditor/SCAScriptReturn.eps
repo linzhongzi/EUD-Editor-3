@@ -52,7 +52,7 @@ object SCAReturnString {
 
     function destructor() {
         foreach(i: EUDLoopRange(this.length)) {
-            dwwrite_epd(this.values + i, 0); // 할당된 값을 0으로 바꾼다.
+            dwwrite_epd(this.values + i, 0); // 将分配的值改为 0。
         }
         ArrayFree(this.values);
     }
@@ -75,7 +75,7 @@ object SCAReturnArray {
             if (MemoryXEPD(types, Exactly, 2, mersenne_gte(3))) {
                 SCAReturnString.free(dwread_epd(values));
             }
-            DoActions(SetMemoryEPD(values, SetTo, 0), SetMemoryEPD(types, SetTo, 0));  // 할당된 값을 0으로 바꾼다.
+            DoActions(SetMemoryEPD(values, SetTo, 0), SetMemoryEPD(types, SetTo, 0));  // 将分配的值改为 0。
         }
         ArrayFree(this.values);
         ArrayFree(this.types);
@@ -83,8 +83,8 @@ object SCAReturnArray {
 };
 
 object SCAReturn {
-    //리턴을 여러개 받을 수 있음.
-    //리턴을 받으면 값 삭제.
+    // 可以接收多个返回值。
+    // 接收返回值后删除值。
     
     var values: EUDArray;
     var types: EUDArray;
@@ -100,33 +100,33 @@ object SCAReturn {
             Trigger(epd.AtLeast(scf.FuncLength), epd.SetNumber(0));
         };
 
-        this.returnindex = maskread_epd(scf.FuncReturnTableEPD + epd, mersenne_gte(100)); // 배열 길이, 최대 100 (0 ~ 127)
+        this.returnindex = maskread_epd(scf.FuncReturnTableEPD + epd, mersenne_gte(100)); // 数组长度，最大 100 (0 ~ 127)
         AdvanceEPD();
 
-        // 시작 리턴 배열
+        // 起始返回数组
         AdvanceEPD();
 
-        this.returncount = maskread_epd(scf.FuncReturnTableEPD + epd, MiniArrayMask); // 리턴 길이, 최대 10 (0 ~ 15)
+        this.returncount = maskread_epd(scf.FuncReturnTableEPD + epd, MiniArrayMask); // 返回长度，最大 10 (0 ~ 15)
         AdvanceEPD();
 
         foreach(i: EUDLoopRange(this.returncount)){
             const values, types = this.values + i, this.types + i;
-            epdswitch(scf.FuncReturnTableEPD + epd, mersenne_gte(3)){ // 변수 종류, 최대 3
+            epdswitch(scf.FuncReturnTableEPD + epd, mersenne_gte(3)){ // 变量类型，最大 3
                 case 1: { //Number = 1
                     AdvanceEPD();
 
-                    repmovsd_epd(values, scf.FuncReturnTableEPD + epd, 1); // 값을 (4 * 1)bytes 만큼 복사한다.
+                    repmovsd_epd(values, scf.FuncReturnTableEPD + epd, 1); // 复制值，大小为 (4 * 1) 字节。
                     SetMemoryEPD(types, SetTo, 1);
                     AdvanceEPD();
                     break;
                 }
                 case 2: { //String = 2
                     AdvanceEPD();
-                    const length = maskread_epd(scf.FuncReturnTableEPD + epd, ArrayMask); // 문자열 길이, 최대 1000 (0 ~ 1023)
+                    const length = maskread_epd(scf.FuncReturnTableEPD + epd, ArrayMask); // 字符串长度，最大 1000 (0 ~ 1023)
                     AdvanceEPD();
 
                     const str = SCAReturnString.alloc(length);
-                    repmovsd_epd(str.values, scf.FuncReturnTableEPD + epd, length); // 값을 (4 * length)bytes 만큼 복사한다.
+                    repmovsd_epd(str.values, scf.FuncReturnTableEPD + epd, length); // 复制值，大小为 (4 * length) 字节。
 
                     foreach(_: EUDLoopRange(length)){
                         AdvanceEPD();
@@ -137,17 +137,17 @@ object SCAReturn {
                 case 3: { //Array = 3
                     AdvanceEPD();
                     
-                    const length = maskread_epd(scf.FuncReturnTableEPD + epd, ArrayMask); // 배열 길이, 최대 1000 (0 ~ 1023)
+                    const length = maskread_epd(scf.FuncReturnTableEPD + epd, ArrayMask); // 数组长度，最大 1000 (0 ~ 1023)
                     AdvanceEPD();
 
                     const arr = SCAReturnArray.alloc(length);
                     foreach(ai: EUDLoopRange(length)) {
                         const arr_values, arr_types = arr.values + ai, arr.types + ai;
-                        epdswitch(scf.FuncReturnTableEPD + epd, mersenne_gte(3)){  // 변수 종류, 최대 3
+                        epdswitch(scf.FuncReturnTableEPD + epd, mersenne_gte(3)){  // 变量类型，最大 3
                             case 1: { //Number = 1
                                 AdvanceEPD();
 
-                                repmovsd_epd(arr_values, scf.FuncReturnTableEPD + epd, 1); // 값을 (4 * 1)bytes 만큼 복사한다.
+                                repmovsd_epd(arr_values, scf.FuncReturnTableEPD + epd, 1); // 复制值，大小为 (4 * 1) 字节。
                                 SetMemoryEPD(arr_types, SetTo, 1);
                                 AdvanceEPD();
                                 break; 
@@ -155,11 +155,11 @@ object SCAReturn {
                             case 2: { //String = 2
                                 AdvanceEPD();
 
-                                const length = maskread_epd(scf.FuncReturnTableEPD + epd, ArrayMask); // 문자열 길이, 최대 1000 (0 ~ 1023)
+                                const length = maskread_epd(scf.FuncReturnTableEPD + epd, ArrayMask); // 字符串长度，最大 1000 (0 ~ 1023)
                                 AdvanceEPD();
 
                                 const str = SCAReturnString.alloc(length);
-                                repmovsd_epd(str.values, scf.FuncReturnTableEPD + epd, length); // 값을 (4 * length)bytes 만큼 복사한다.
+                                repmovsd_epd(str.values, scf.FuncReturnTableEPD + epd, length); // 复制值，大小为 (4 * length) 字节。
 
                                 foreach(_: EUDLoopRange(length)){
                                     AdvanceEPD();
@@ -168,7 +168,7 @@ object SCAReturn {
                                 break;
                             }
                             case 3: { //Array = 3
-                                //이런 경우는 없음
+                                // 不存在这种情况
                                 AdvanceEPD();
                                 break;
                             }
@@ -216,7 +216,7 @@ object SCAReturn {
             if (i > 0) {
                 buffer.append(", ");
             }
-            epdswitch(types, mersenne_gte(3)){ // 변수 종류, 최대 3
+            epdswitch(types, mersenne_gte(3)){ // 变量类型，最大 3
                 case 1: { //Number = 1
                     buffer.appendf("{}", dwread_epd(values));
                     break;
@@ -234,7 +234,7 @@ object SCAReturn {
                         if (ai > 0) {
                             buffer.appendf(", ");
                         }
-                        epdswitch(arr_types, mersenne_gte(3)){  // 변수 종류, 최대 3
+                        epdswitch(arr_types, mersenne_gte(3)){  // 变量类型，最大 3
                             case 1: { //Number = 1
                                 buffer.appendf("{}", dwread_epd(arr_values));
                                 break; 
@@ -259,11 +259,11 @@ object SCAReturn {
 const ReturnSize = 100;
 const returnarray = (SCAReturn * ReturnSize)();
 
-//리턴 값 초기화
+// 初始化返回值
 function ResetReturnObject(rindex){
     const temp = returnarray[rindex];
     if(temp){
-        //값이 존재하므로 free해준다.
+        // 由于值存在，将其释放。
         SCAReturn.free(temp);
         returnarray[rindex] = 0;
     }
@@ -271,7 +271,7 @@ function ResetReturnObject(rindex){
 
 var lastepd = 0;
 
-//리턴 값 처리기
+// 返回值处理器
 function Exec(){
     if(!MemoryEPD(scf.FuncCommandEPD + 1, Exactly, lastepd)){
         const rtoken = SCAReturn.alloc(lastepd);
@@ -284,7 +284,7 @@ function Exec(){
     }
 }
 
-//리턴 성공 했는지 판단
+// 判断返回是否成功
 function IsReturn(rindex){
     if(returnarray[rindex]){
         return true;
@@ -294,5 +294,5 @@ function IsReturn(rindex){
     
 }
 
-//리턴 오브젝트 반환
+// 返回返回对象
 const GetReturnObject = py_eval("lambda x: returnarray[x]");

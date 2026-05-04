@@ -14,7 +14,7 @@
                                         Return False
                                     End If
 
-                                    '해당 플레이어가 ON일경우 True
+                                    ' 如果该玩家为 ON，则为 True
                                     If Player > 7 Then
                                         If trig.ForceEnabled(Player - 8) Then
                                             rval = True

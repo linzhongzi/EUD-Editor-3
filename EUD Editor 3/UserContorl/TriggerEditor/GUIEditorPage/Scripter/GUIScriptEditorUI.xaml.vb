@@ -306,7 +306,7 @@ Public Class GUIScriptEditorUI
             End If
         End If
 
-        'MsgBox("시작")
+        ' MsgBox("开始")
         Dim sucesscount As Integer = 0
         For i = 0 To CopyItemList.Count - 1
             Dim nsb As ScriptBlock = CopyItemList(i) '.DeepCopy
@@ -325,7 +325,7 @@ Public Class GUIScriptEditorUI
                         ssb.InsertChild(addindex, nsb)
                         selectitem.Items.Insert(addindex, ntreeview)
                     End If
-                    'MsgBox("아이템생성 새 창없이")
+                    ' MsgBox("生成项目 不新建窗口")
                     AddInsertTask(ntreeview)
                 End If
             Else
@@ -346,7 +346,7 @@ Public Class GUIScriptEditorUI
                         End If
                         MainTreeview.Items.Insert(addindex, ntreeview)
                     End If
-                    'MsgBox("아이템생성 새 창없이")
+                    ' MsgBox("生成项目 不新建窗口")
                     AddInsertTask(ntreeview)
                 End If
             End If
@@ -355,7 +355,7 @@ Public Class GUIScriptEditorUI
 
         TEGUIPage.ObjectSelector.RefreshCurrentList()
 
-        'MsgBox("끝  걸린시간 : " & time.Subtract(Now).Milliseconds)
+        ' MsgBox("结束 耗时 : " & time.Subtract(Now).Milliseconds)
 
 
 
@@ -587,20 +587,20 @@ Public Class GUIScriptEditorUI
         End If
 
 
-        '복사한 항목이 있냐 없냐 판단
+        ' 判断是否有复制项。
         If CopyItemList IsNot Nothing Then
-            '복사한 아이템이 있을 경우
+            ' 如果有复制项
             PasteItem.IsEnabled = True
             Pastebtn.IsEnabled = True
         Else
-            '복사한 아이템이 없을 경우
+            ' 如果没有复制项
             PasteItem.IsEnabled = False
             Pastebtn.IsEnabled = False
         End If
 
 
         If Not IsItemSelected() Then
-            '선택한 아이템이 없을 경우
+            ' 如果没有所选项目
             FoldUnder.IsEnabled = False
             UnFoldUnder.IsEnabled = False
             CutItem.IsEnabled = False
@@ -618,7 +618,7 @@ Public Class GUIScriptEditorUI
             upbtn.IsEnabled = False
             downbtn.IsEnabled = False
         Else
-            '선택한 아이템이 있을 경우
+            ' 如果有所选项目
             FoldUnder.IsEnabled = True
             UnFoldUnder.IsEnabled = True
             CutItem.IsEnabled = True

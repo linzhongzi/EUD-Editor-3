@@ -59,7 +59,7 @@ Public Class IniClass
         End If
     End Sub
     Public Sub WriteIni()
-        'MsgBox("ini저장")
+        ' MsgBox("ini保存")
         Dim filestream As New FileStream(Filename, FileMode.Create)
         Dim strWriter As New StreamWriter(filestream)
 

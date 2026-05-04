@@ -3,7 +3,7 @@
 
     Public Sub CrlInit()
         '//////////////////////////////
-        '초기화 식
+        ' 初始化表达式
         'Dim values As List(Of String) = GUIScriptManager.SplitText(scr.value)
         ArgExpress.CrlInit(scr)
 
@@ -42,13 +42,13 @@
 
     Public Sub OkayAction(sender As Object, e As RoutedEventArgs)
         '//////////////////////////////
-        '스크립트 갱신
+        ' 更新脚本
         ArgExpress.UpdateValue()
 
     End Sub
     Private Function CheckEditable() As Boolean
         '//////////////////////////////
-        '확인을 누를 수 있는지 확인
+        ' 检查是否可以按确认键。
 
         Return True
     End Function
@@ -59,10 +59,10 @@
     Private dotscr As ScriptBlock
     Public Sub New(tp As GUIScriptEditerWindow, tscr As ScriptBlock, _dotscr As ScriptBlock)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         p = tp
         scr = tscr
         dotscr = _dotscr

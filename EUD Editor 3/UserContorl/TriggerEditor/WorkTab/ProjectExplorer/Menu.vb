@@ -10,7 +10,7 @@ Partial Public Class ProjectExplorer
             RenameTreeview = Nothing
         End If
 
-        '선택한 아이템이 있을 경우
+        ' 如果有所选项目
         If SelectItems.Count > 0 Then
             MenuOpen.IsEnabled = True
             MenuExport.IsEnabled = True
@@ -35,7 +35,7 @@ Partial Public Class ProjectExplorer
             'ToCUI.Visibility = Visibility.Collapsed
         End If
 
-        '마지막으로 선택한 아이템이 있을 경우
+        ' 如果有最后选择的项目
         If LastSelectItem IsNot Nothing Then
             MenuRename.IsEnabled = True
         Else
@@ -43,7 +43,7 @@ Partial Public Class ProjectExplorer
         End If
 
 
-        '마지막으로 선택한 아이템이 폴더 일 경우
+        ' 如果最后选择的项目是文件夹。
         If LastSelectItem IsNot Nothing Then
             If IsFolder(LastSelectItem) Then
                 MenuAdd.Visibility = Visibility.Visible
@@ -57,7 +57,7 @@ Partial Public Class ProjectExplorer
                 MenuAdd.Visibility = Visibility.Collapsed
                 MenuepsFileView.Visibility = Visibility.Visible
 
-                '커넥트확인
+                ' 检查连接。
                 If SelectItems.Count = 1 And GetFile(LastSelectItem).FileType <> TEFile.EFileType.Setting Then
 
                     If GetFile(LastSelectItem).Scripter.CheckConnect Then
@@ -91,7 +91,7 @@ Partial Public Class ProjectExplorer
 
 
 
-        '마지막으로 선택한 아이템이 폴더 일 경우
+        ' 如果最后选择的项目是文件夹。
         If LastSelectItem IsNot Nothing Then
             If IsFolder(LastSelectItem) And CopyItems.Count > 0 Then
                 MenuPaste.IsEnabled = True
@@ -320,15 +320,15 @@ Partial Public Class ProjectExplorer
     End Sub
 
     Private Sub FileCreate(tTEFile As TEFile)
-        '파일 생성
+        ' 创建文件
         If LastSelectItem Is Nothing Then
             AddNewFile(MainTreeview.Items(0), tTEFile)
 
-            'TEData.PFIles.Add(New TEFile("안녕하삼", True))
+            ' TEData.PFIles.Add(New TEFile("你好", True))
         Else
-            If IsFolder(LastSelectItem) Then '폴더 일 경우
+            If IsFolder(LastSelectItem) Then ' 如果是文件夹。
                 AddNewFile(LastSelectItem, tTEFile)
-                'GetFile(LastSelectItem).Files.Add(New TEFile("안녕하삼", True))
+                ' GetFile(LastSelectItem).Files.Add(New TEFile("你好", True))
             End If
         End If
         pjData.SetDirty(True)
@@ -417,7 +417,7 @@ Partial Public Class ProjectExplorer
         TERefreshSetting()
     End Sub
     Private Sub AddCT()
-        'MsgBox("클래식트리거 추가")
+        ' MsgBox("添加经典触发器")
         FileCreate(New TEFile(Tool.GetText("NewClassicScript"), TEFile.EFileType.ClassicTrigger))
         TERefreshSetting()
     End Sub
@@ -428,15 +428,15 @@ Partial Public Class ProjectExplorer
 
 
     Private Sub AddFolder(tTEFile As TEFile)
-        '선택이 없을 경우
+        ' 如果没有选择。
         If LastSelectItem Is Nothing Then
             AddNewFolder(MainTreeview.Items(0), tTEFile)
 
-            'TEData.PFIles.Add(New TEFile("안녕하삼", True))
+            ' TEData.PFIles.Add(New TEFile("你好", True))
         Else
-            If IsFolder(LastSelectItem) Then '폴더 일 경우
+            If IsFolder(LastSelectItem) Then ' 如果是文件夹。
                 AddNewFolder(LastSelectItem, tTEFile)
-                'GetFile(LastSelectItem).Files.Add(New TEFile("안녕하삼", True))
+                ' GetFile(LastSelectItem).Files.Add(New TEFile("你好", True))
             End If
         End If
 

@@ -10,10 +10,10 @@
 
         Dim BackUpFile As String = ""
         If backupFiles.Length < BackupCount Then
-            '단순 파일 추가
+            ' 简单添加文件
             BackUpFile = BackUpPath & BackUpFileName & backupFiles.Length
         Else
-            '가장 예전파일에 덮어쓰기
+            ' 覆盖到最旧的文件
             Dim dd As Date = Now
             For Each f As String In backupFiles
                 Dim fileinfo As New IO.FileInfo(f)

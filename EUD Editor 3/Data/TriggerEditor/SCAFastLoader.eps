@@ -7,10 +7,10 @@ var LoadSCAID = 0;
 var LoadOrder = 0;
 var LoadSlot = 0;
 var MSQCFLCondition = 0;
-var MSQCLocalLoadingStatus = 0; //MSQC전송용 LocalLoadingStatus
-const MSQCLoadingStatus = PVariable(); //MSQC전송용 LoadingStatus
+var MSQCLocalLoadingStatus = 0; // 用于 MSQC 传输的 LocalLoadingStatus
+const MSQCLoadingStatus = PVariable(); // 用于 MSQC 传输的 LoadingStatus
 
-const PlayerLoadingStatus = PVariable(); //받은 값 저장용
+const PlayerLoadingStatus = PVariable(); // 用于存储接收到的值
 
 var MSQCSCAIDCondition = 0;
 const MSQCSCAIDHIGH = PVariable();
@@ -75,7 +75,7 @@ function IsAllSCAUser(){
 
 var loadsecorder = 0;
 function Exec(){
-    //유저 정보를 수집
+    // 收集用户信息
 	const localplayer = getuserplayerid();
 	const UserExist = PVariable();
 	for(var p ; p < 8 ; p++){
@@ -108,12 +108,12 @@ function Exec(){
 		if(SCAID[cp] == 0){
 			if(localplayer == cp){
 				if(MSQCSCAIDCondition == 0){
-					//연결되어 있을 경우 런처에서 작성한 LocalSCAID를 읽는다.
-					LocalSCAID = dwread_epd(Addr_LocalSCAID);// 메모리에서 직접 읽기
+					// 如果已连接，则读取启动器中写入的 LocalSCAID。
+					LocalSCAID = dwread_epd(Addr_LocalSCAID);// 直接从内存读取
 
 					if(LocalSCAID != 0){
-						const LocalSCAIDHIGH = wread_epd(Addr_LocalSCAID, 2);// 메모리에서 직접 읽기
-						const LocalSCAIDLOW = wread_epd(Addr_LocalSCAID, 0);// 메모리에서 직접 읽기
+						const LocalSCAIDHIGH = wread_epd(Addr_LocalSCAID, 2);// 直接从内存读取
+						const LocalSCAIDLOW = wread_epd(Addr_LocalSCAID, 0);// 直接从内存读取
 						MSQCLocalSCAIDHIGH = LocalSCAIDHIGH;
 						MSQCLocalSCAIDLOW = LocalSCAIDLOW;
 						MSQCSCAIDCondition = 1;
@@ -130,7 +130,7 @@ function Exec(){
 			}
 		}
 
-		//데이터 로드중이 아니면 커맨드를 0으로 복구한다.
+		// 如果未在加载数据，则将命令恢复为 0。
 		if(LoadOrder == 0){
 			if(sct.SCACommand[cp] == 6){
 				sct.SCACommand[cp] = 0;
@@ -142,31 +142,31 @@ function Exec(){
 
 
 	if(usercount == scausercount){
-		//모든 유저가 연결된 상태
+		// 所有用户已连接的状态
 	}else{
-		//한명이라도 연결이 끊킨 상태
+		// 至少有一名用户断开连接的状态
 		loadsecorder = 0;
 		LoadPlayer = 0;
 		LoadOrder = 0;
 		LoadSCAID = 0;
 		LoadSlot = 0;
-		//런처도 반영해주야됨.
+		// 需要也反映到启动器。
 	}
 
 	if(LoadOrder >= 1){
 		var lastLoadingStatus = 0xFFFFFFFF;
 		foreach(cp : EUDLoopPlayer("Human")){			
-			//데이터 전송 중 일때 다 왔는지 확인하기.
-			//LocalLoadingStatus를 확인해서 값이 있으면 MSQC를 통해 LoadingStatus로 전송하기.
+			// 数据传输过程中检查是否全部完成。
+			// 检查 LocalLoadingStatus，如果有值，则通过 MSQC 发送到 LoadingStatus。
 			
-			//LoadingStatus가 옳은 값이면 데이터가 공유화 된것
+			// 如果 LoadingStatus 是正确的值，则表示数据已共享
 			//if(MSQCLoadingStatus[cp] == 0 || MSQCLoadingStatus[cp] >= 65536){
 			if(loadsecorder == 0){
 				if(localplayer == cp){
 					const LoadingStatus = wread_epd(Addr_LocalLoadingStatus, 0);
 					if(LoadingStatus != 0 && LoadingStatus != PlayerLoadingStatus[cp]){
-						//연결되어 있을 경우 런처에서 작성한 LocalSCAID를 읽는다.
-						MSQCLocalLoadingStatus = LoadingStatus;// 메모리에서 직접 읽기
+						// 如果已连接，则读取启动器中写入的 LocalSCAID。
+						MSQCLocalLoadingStatus = LoadingStatus;// 直接从内存读取
 						MSQCFLCondition = 1;
 					}
 				}
@@ -174,8 +174,8 @@ function Exec(){
 				if(localplayer == cp){
 					const LoadingStatus = wread_epd(Addr_LocalLoadingStatus, 0);
 					if(LoadingStatus == 0 && LoadingStatus != PlayerLoadingStatus[cp]){
-						//연결되어 있을 경우 런처에서 작성한 LocalSCAID를 읽는다.
-						MSQCLocalLoadingStatus = LoadingStatus;// 메모리에서 직접 읽기
+						// 如果已连接，则读取启动器中写入的 LocalSCAID。
+						MSQCLocalLoadingStatus = LoadingStatus;// 直接从内存读取
 						MSQCFLCondition = 1;
 					}
 				}
@@ -189,10 +189,10 @@ function Exec(){
 			}
 
 			if(lastLoadingStatus == 0xFFFFFFFF){
-				//마지막 로딩이 없을 경우 현재플레이어로 등록
+				// 如果没有最后一次加载，则注册为当前玩家
 				lastLoadingStatus = PlayerLoadingStatus[cp];
 			}else if(lastLoadingStatus != 0xFFFF0000){
-				//로딩 된 상태인데 값이 다를 경우 에러로 대입
+				// 如果已加载但值不同，则视为错误
 				if(lastLoadingStatus != PlayerLoadingStatus[cp]){
 					lastLoadingStatus = 0xFFFF0000;
 				}
@@ -209,22 +209,22 @@ function Exec(){
 			// 	}
 			// }
 
-			// //모든 유저가 로딩이 끝났는지 판단
+			// 判断所有用户是否加载完毕
 			// if(LoadOrder == 1){
 
 			// }
 		}
 
 		if((loadsecorder == 0) && (lastLoadingStatus != 0xFFFFFFFF) && (lastLoadingStatus != 0xFFFF0000) && (lastLoadingStatus != 0)){
-			//Sec를 1대입.
+			// 将 Sec 赋值为 1。
 			loadsecorder = 1;
 			LoadOrder = 2;
-			//MSQCLocalLoadingStatus = 0;// 메모리에서 직접 읽기
+			// MSQCLocalLoadingStatus = 0;// 直接从内存读取
 		}
 		
 		if((loadsecorder == 1) && (lastLoadingStatus == 0)){
 			MSQCFLCondition = 0;
-			//로드완료
+			// 加载完成
 			const len = dwread_epd(Addr_DataSpace);
 
 			setcurpl(LoadPlayer);
@@ -280,19 +280,19 @@ function Exec(){
 function DataFastLoad(Player, Slot) {
     if (usercount == scausercount) {
         if (usercommandstatus == 0 && LoadOrder == 0) {
-			//모든유저에게 적용해야됨
+			// 需要应用到所有用户
 			foreach(cp : EUDLoopPlayer("Human")){
             	sct.SCACommand[cp] = 6;
 				usercommandstatus += 6;
 			}
 
-			//시작 세팅
+			// 开始设置
 			LoadPlayer = Player;
 			LoadOrder = 1;
 			LoadSCAID = SCAID[Player];
 			LoadSlot = Slot;
 
-			//SCA로 넘겨주기
+			// 传递给 SCA
 			dwwrite_epd(Addr_LoadingSCAID, LoadSCAID);
 			dwwrite_epd(Addr_LoadingOrder, LoadOrder);
 			dwwrite_epd(Addr_LoadSlot, LoadSlot);

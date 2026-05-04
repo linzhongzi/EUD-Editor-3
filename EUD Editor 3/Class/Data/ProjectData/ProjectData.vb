@@ -714,7 +714,7 @@ Public Class ProjectData
 
                 'Return SaveData.Dat.Group(SCDatFiles.DatFiles.units, index) & RealName
             End If
-            'Return index & "미상"
+            ' Return index & "未知"
         End Get
     End Property
 
@@ -743,19 +743,19 @@ Public Class ProjectData
             Next
 
             Return returnStr
-            'Return index & "미상"
+            ' Return index & "未知"
         End Get
     End Property
 
     Public ReadOnly Property UnitFullName(index As Byte) As String
         Get
             Return scData.GetStat_txt(index, True)
-            'Return index & "미상"
+            ' Return index & "未知"
         End Get
     End Property
 
     Public Sub New()
-        '초기화
+        ' 初始化
         SaveData = New SaveableData
         TriggerEditorTempData = New TriggerEditorTempData
 
@@ -783,7 +783,7 @@ Public Class ProjectData
         tIsLoad = True
         tIsDirty = False
         Filename = _filename
-        'MsgBox("로드 프로젝트 초기화")
+        ' MsgBox("加载项目初始化")
         If My.Computer.FileSystem.FileExists(SaveData.OpenMapName) Then
             _MapData = New MapData(SaveData.OpenMapName)
             IsMapLoading = _MapData.LoadComplete
@@ -814,7 +814,7 @@ Public Class ProjectData
 
 
     Public Function CloseFile() As Boolean
-        If IsDirty Then '파일이 변형되었을 경우
+        If IsDirty Then ' 如果文件被修改
             Dim dialog As MsgBoxResult = Tool.CustomMsgBox(Tool.GetText("ColseSaveMsg").Replace("%S1", SafeFilename), MessageBoxButton.YesNoCancel)
             If dialog = MsgBoxResult.Yes Then
                 If Save() Then
@@ -840,6 +840,6 @@ Public Class ProjectData
         Return True
     End Function
 
-    '일단 코드불러오는거 먼저 하자. stat_txt.bin을 불러오고 그걸 바탕으로 만들자.(이미지나 스프라이트를 제외하고는 한글 이름으로 가능하니까 이미지나 스프라이트는 데이터로 준비)
+    ' 先加载代码。加载stat_txt.bin，并以此为基础创建。（除了图形或子图形（Sprite）外，可以用韩文名称，所以图形和子图形需要准备数据）
 
 End Class

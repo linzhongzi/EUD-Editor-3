@@ -154,13 +154,13 @@ Public Class CodeGrouping
                 ReDim GroupCode(SCWeaponCount)
                 ReDim ToolTip(SCWeaponCount)
 
-                '저그
-                '   공중
-                '   지상
-                '   공중지상
-                '   마법
-                '테란
-                '프로토스
+                ' 虫族
+                ' 空中
+                ' 地面
+                ' 对空对地
+                ' 魔法
+                ' 人族
+                ' 神族
 
                 'Ground Weapon
                 'Air Weapon
@@ -259,26 +259,26 @@ Public Class CodeGrouping
                         type1v = 4
                     Else
                         flag -= 1
-                        If (flag And 1) = 1 Then '저그
+                        If (flag And 1) = 1 Then ' 虫族
                             type1v = 0
-                        ElseIf (flag And 2) = 2 Then '테란
+                        ElseIf (flag And 2) = 2 Then ' 人族
                             type1v = 1
-                        ElseIf (flag And 4) = 4 Then '프로토스
+                        ElseIf (flag And 4) = 4 Then ' 神族
                             type1v = 2
-                        Else '자연
+                        Else ' 自然
                             type1v = 3
                         End If
                     End If
 
-                    If (type2v And 3) = 3 Then '공중 지상
+                    If (type2v And 3) = 3 Then ' 对空对地
                         type2v = 2
-                    ElseIf (type2v And 1) = 1 Then '지상
+                    ElseIf (type2v And 1) = 1 Then ' 地面
                         type2v = 0
-                    ElseIf (type2v And 2) = 2 Then '지상
+                    ElseIf (type2v And 2) = 2 Then ' 地面
                         type2v = 1
                     End If
 
-                    If WeaponSpell(i) <> 45 And WeaponSpell(i) <> 0 Then '스펠일 경우
+                    If WeaponSpell(i) <> 45 And WeaponSpell(i) <> 0 Then ' 如果是法术
                         type1v = tempDat.Data(SCDatFiles.DatFiles.techdata, "Race", WeaponSpell(i) - 1)
                         type2v = 3
                     End If
@@ -317,7 +317,7 @@ Public Class CodeGrouping
 
                     Dim Flags() As String = unitpullname.Split("|")
                     Dim GroupPath As String = ""
-                    'Dim imgSource As ImageSource = New BitmapImage(New Uri("C:\Users\이정훈\Desktop\제목 없음.png"))
+                    ' Dim imgSource As ImageSource = New BitmapImage(New Uri("C:\Users\李正勋\Desktop\无标题.png"))
                     'Dim bitmap As New Image
                     'bitmap.Source = imgSource
 
@@ -351,28 +351,28 @@ Public Class CodeGrouping
 
 
                     Dim Race As Byte
-                    If (flag And 1) = 1 Then '저그
+                    If (flag And 1) = 1 Then ' 虫族
                         Race = 0
-                    ElseIf (flag And 2) = 2 Then '테란
+                    ElseIf (flag And 2) = 2 Then ' 人族
                         Race = 1
-                    ElseIf (flag And 4) = 4 Then '프로토스
+                    ElseIf (flag And 4) = 4 Then ' 神族
                         Race = 2
-                    ElseIf (flag And &H80) = &H80 Then '자연
+                    ElseIf (flag And &H80) = &H80 Then ' 自然
                         Race = 3
-                    Else '미분류
+                    Else ' 未分类
                         Race = 4
                     End If
                     GroupPath = Type1(Race) & "\"
 
                     If 0 <= Race And Race <= 2 Then
-                        If Flags(1) = "*" Then '일반 유닛
+                        If Flags(1) = "*" Then ' 普通单位
                             GroupPath = GroupPath & Flags(2) & "\"
                         Else
                             ToolTip(i) = Flags(1)
                             GroupPath = GroupPath & TypeKeyname(3)
                         End If
                     ElseIf Race = 3 Then
-                        If Flags(1) <> "*" Then '일반 유닛
+                        If Flags(1) <> "*" Then ' 普通单位
                             ToolTip(i) = Flags(1)
                         End If
                         GroupPath = GroupPath & Flags(2) & "\"

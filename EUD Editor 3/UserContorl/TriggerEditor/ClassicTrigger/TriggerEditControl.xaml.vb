@@ -8,10 +8,10 @@
     Private IsLoad As Boolean = False
     Public Sub New(_scripter As ScriptEditor, trg As Trigger)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         scripter = _scripter
         ptrg = trg
         CommentTB.Text = ptrg.CommentStringProperty
@@ -58,7 +58,7 @@
         IsLoad = True
     End Sub
     Public Sub TriggerCodeEditOkayEvent(sender As TriggerCodeBlock, e As RoutedEventArgs)
-        'Okay가 옴
+        ' Okay 到来
         Dim tlist As ListBox
         Dim ttriglist As List(Of TriggerCodeBlock)
         If GetPageIndex = 1 Then
@@ -71,14 +71,14 @@
 
 
         If IsEditOpen Then
-            '편집으로 열었음
+            ' 以编辑方式打开
             Dim tCodeBlock As TriggerCodeBlock = sender
 
 
             tCodeBlock.CopyTo(ttriglist(LastSelectListBoxIndex))
             CType(CType(tlist.Items(LastSelectListBoxIndex), ListBoxItem).Content, ListItemCodeBlock).RefreshItem()
         Else
-            '새창으로 열었음
+            ' 以新窗口打开
             Dim tCodeBlock As TriggerCodeBlock = sender
 
 
@@ -167,7 +167,7 @@
             copybtn.IsEnabled = True
             deletebtn.IsEnabled = True
 
-            '맨 위인지 확인
+            ' 确认是否在最顶部
             upbtn.IsEnabled = True
             downbtn.IsEnabled = True
 

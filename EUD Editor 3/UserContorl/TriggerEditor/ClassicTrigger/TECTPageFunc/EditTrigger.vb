@@ -14,8 +14,8 @@
 
 
 
-            '편집기 열기
-            '편집기에 들어갈 trg
+            ' 打开编辑器
+            ' 要放入编辑器的 trg
             Dim edittrg As Trigger = trg.DeepCopy()
             EditWindow.Visibility = Visibility.Visible
 
@@ -38,14 +38,14 @@
                                                           End If
                                                       Next
                                                       If Not tcheck Then
-                                                          '모든 트리거가 꺼져있어서 추가불가능
+                                                          ' 所有触发器都已关闭，无法添加。
                                                           Return
                                                       End If
 
 
 
                                                       edittrg.CopyTo(trg)
-                                                      'trg를 수정한다.
+                                                      ' 修改 trg。
                                                       'GetTrgBlock(TListBox.SelectedItem).Refresh()
 
                                                       PlayerListReset()

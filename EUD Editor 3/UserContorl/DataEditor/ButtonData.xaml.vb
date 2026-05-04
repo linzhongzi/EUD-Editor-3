@@ -35,10 +35,10 @@ Public Class ButtonData
     Private images As List(Of Image)
 
     Public Sub New(tObjectID As Integer)
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         borders = New List(Of Border)
         images = New List(Of Image)
 
@@ -365,7 +365,7 @@ Public Class ButtonData
             DefaultInfor.Visibility = Visibility.Visible
             ButtonAction.Visibility = Visibility.Visible
 
-            '선택 작업
+            ' 选择操作
             BtnLocation.Text = SelectButton.pos
             BIconSelecter.Value = SelectButton.icon
             UseStrSelecter.Value = SelectButton.enaStr

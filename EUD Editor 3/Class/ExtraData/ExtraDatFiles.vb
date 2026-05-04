@@ -13,7 +13,7 @@ Public Class ExtraDatFiles
     Private _ButtonSet() As Byte
     Private _DefaultButtonSet() As Boolean
 
-    '기타 뎃파일들의 그룹, 툴팁 등을 관리.
+    ' 管理其他dat文件的组、工具提示等。
     Public Property Group(key As SCDatFiles.DatFiles, index As Integer) As String
         Get
             Return GroupDic(key)(index)
@@ -120,7 +120,7 @@ Public Class ExtraDatFiles
 
 
     Public Class SReqDATA
-        '요구사항 각 내용.
+        ' 需求各项内容。
         Public pos As UInt16
         Public Code As List(Of UShort)
     End Class

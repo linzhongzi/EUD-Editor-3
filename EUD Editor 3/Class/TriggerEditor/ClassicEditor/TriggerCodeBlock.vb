@@ -21,7 +21,7 @@ Public Class TriggerCodeBlock
 
         Dim rstr As String = ""
         If Not IsLuaCode Then
-            '루아코드 바깥
+            ' Lua代码外部
             If FType = TriggerFunction.EFType.Lua Then
                 rstr = "<?"
                 firstCode = True
@@ -120,7 +120,7 @@ Public Class TriggerCodeBlock
 
 
     Public Sub LoadArgText(_scripter As ScriptEditor)
-        'ArgText를 미리 불러온다.
+        ' 提前加载ArgText。
         If _LoadedArgString Is Nothing Then
             _LoadedArgString = New List(Of String)
         End If
@@ -130,14 +130,14 @@ Public Class TriggerCodeBlock
         Dim tfun As TriggerFunction = GetCodeFunction(_scripter)
         If tfun IsNot Nothing Then
             If tfun.Args.Count <> Args.Count Then
-                '함수 인자 횟수 조절
+                ' 调整函数参数个数
                 If tfun.Args.Count < Args.Count Then
-                    '인자가 더 많음
+                    ' 参数过多
                     For i = tfun.Args.Count To Args.Count - 1
                         Args.RemoveAt(Args.Count - 1)
                     Next
                 Else
-                    '인자가 더 적음
+                    ' 参数过少
                     For i = Args.Count To tfun.Args.Count - 1
                         Dim tArg As New ArgValue(tfun.Args(i).AType)
 
@@ -152,7 +152,7 @@ Public Class TriggerCodeBlock
 
             For i = 0 To Args.Count - 1
                 If Args(i).IsInit Then
-                    '초기값일 경우 타입과 이름을 가져온다.
+                    ' 如果是初始值，则获取类型和名称。
                     Dim v As String = tfun.Args(i).AName
 
                     _LoadedArgString.Add(v)
@@ -160,9 +160,9 @@ Public Class TriggerCodeBlock
                     Dim v As String = Args(i).GetEditorText
 
                     'If Args(i).IsArgNumber Then
-                    '    v = Args(i).ValueNumber & "숫자"
+                    ' v = Args(i).ValueNumber & "数字"
                     'Else
-                    '    v = Args(i).ValueString & "텍스트"
+                    ' v = Args(i).ValueString & "文本"
                     'End If
 
                     _LoadedArgString.Add(v)
@@ -171,7 +171,7 @@ Public Class TriggerCodeBlock
         Else
             For i = 0 To Args.Count - 1
                 If Args(i).IsInit Then
-                    '초기값일 경우 타입과 이름을 가져온다.
+                    ' 如果是初始值，则获取类型和名称。
                     Dim v As String = Args(i).ValueType
 
                     _LoadedArgString.Add(v)
@@ -179,9 +179,9 @@ Public Class TriggerCodeBlock
                     Dim v As String = Args(i).GetEditorText
 
                     'If Args(i).IsArgNumber Then
-                    '    v = Args(i).ValueNumber & "숫자"
+                    ' v = Args(i).ValueNumber & "数字"
                     'Else
-                    '    v = Args(i).ValueString & "텍스트"
+                    ' v = Args(i).ValueString & "文本"
                     'End If
 
                     _LoadedArgString.Add(v)
@@ -196,7 +196,7 @@ Public Class TriggerCodeBlock
     Public Function GetEditorText(_scripter As ScriptEditor) As String
         Dim rstr As String = ""
 
-        '함수를 재정렬하여 쓴다.
+        ' 重新排列函数后使用。
         Dim t As TriggerFunction = GetCodeFunction(_scripter)
         Dim isCmpTrigger As Boolean
         Dim IsEmpty As Boolean = False
@@ -204,8 +204,8 @@ Public Class TriggerCodeBlock
         If t Is Nothing Then
             rstr = rstr & FName & vbCrLf & "존재하지 않거나 참조할 수 없는 함수입니다."
 
-            '없는 함수
-            '그냥 인자들만 출력시킨다.
+            ' 不存在的函数
+            ' 只输出参数。
             isCmpTrigger = False
             IsEmpty = True
         Else
@@ -227,12 +227,12 @@ Public Class TriggerCodeBlock
                     End If
                 End If
             Else
-                '트리거
+                ' 触发器
                 For i = 0 To t.SortArgList.Count - 1
                     Dim tstr As String = t.SortArgList(i)
 
                     If TriggerFunction.IsArg(tstr) Then
-                        'Arg텍스트
+                        ' Arg文本
                         Dim tindex As Integer = TriggerFunction.GetArgIndex(tstr)
 
                         rstr = rstr & "[" & LoadedArgString(tindex) & "]"
@@ -244,9 +244,9 @@ Public Class TriggerCodeBlock
 
 
         Else
-            '인자들만 나열
+            ' 仅列出参数
             If True Then
-                '설명
+                ' 说明
                 If t IsNot Nothing Then
                     If t.FSummary <> "" Then
                         If Not IsEmpty Then
@@ -261,9 +261,9 @@ Public Class TriggerCodeBlock
                 End If
             End If
 
-            '인자들을 나열한다.
+            ' 列出参数。
             For i = 0 To Args.Count - 1
-                'Arg텍스트
+                ' Arg文本
                 rstr = rstr & "[" & LoadedArgString(i) & "]"
             Next
         End If
@@ -316,14 +316,14 @@ Public Class TriggerCodeBlock
     Public FName As String
     Public FGroup As String
 
-    '값도 들어있어야됨.
+    ' 值也必须包含在内。
 
 
 
 
-    '유저 함수나 외부함수일 경우
-    '참조할 수 있는 이름만 기록.
-    '그 이름을 통해 찾아가기
+    ' 如果是用户函数或外部函数的情况
+    ' 仅记录可引用的名称。
+    ' 通过该名称查找
 
 
     Public Sub New()
@@ -335,7 +335,7 @@ Public Class TriggerCodeBlock
     Public Sub SetFunction(tfun As TriggerFunction)
         IsLockedFunction = False
 
-        '함수를 지정
+        ' 指定函数
         FName = tfun.FName
         FType = tfun.FType
         FGroup = tfun.FGroup
@@ -343,7 +343,7 @@ Public Class TriggerCodeBlock
 
     Public Sub Refresh(_scripter As ScriptEditor)
         'GetCodeFunction
-        '코드를 완전 초기화
+        ' 完全初始化代码
         If Args Is Nothing Then
             Args = New List(Of ArgValue)
         End If
@@ -371,7 +371,7 @@ Public Class TriggerCodeBlock
 
 
     Public Sub CopyTo(toTrg As TriggerCodeBlock)
-        '해당 트리거의 내용을 toTrg에 넣는다.
+        ' 将该触发器的内容放入toTrg。
         IsLockedFunction = False
 
         toTrg.FName = Me.FName

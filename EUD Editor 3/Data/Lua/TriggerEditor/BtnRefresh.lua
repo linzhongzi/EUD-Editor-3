@@ -5,12 +5,18 @@
 @Group
 일반
 
+@Language.zh-CN
+@Summary
+重新绘制按钮。
+@Group
+普通用户组
+
 
 @Language.en-US
 @Summary
-Refresh the button.
+Redraws the button.
 @Group
-Basic
+General
 ]================================]
 function BtnRefresh()
 	echo([[if (Memory(0x628438, AtLeast, 0x59CCA8)) {

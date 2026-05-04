@@ -1,5 +1,5 @@
 ﻿Partial Public Class Parser
-    '네임스페이스를 얻는 함수
+    ' 获取命名空间的函数
 
     Public NameSpaces As List(Of String)
     Public Function GetNameSpace() As List(Of String)

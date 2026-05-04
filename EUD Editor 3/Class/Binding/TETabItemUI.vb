@@ -68,9 +68,9 @@ Public Class TETabItemUI
 
 
 
-            '닫기
-            '모든 문서 닫기
-            '이 창을 제외하고 모든 문서 닫기
+            ' 关闭
+            ' 关闭所有文档
+            ' 关闭除此外的所有文档
             'CloseBox
             'CloseBoxMultiple
 

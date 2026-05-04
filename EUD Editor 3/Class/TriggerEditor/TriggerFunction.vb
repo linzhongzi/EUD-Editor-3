@@ -3,7 +3,7 @@ Imports System.Text
 Imports System.Text.RegularExpressions
 
 Public Class TriggerManager
-    'TE에 관련된 트리거를 관리하는 클래스
+    ' 管理与TE相关的触发器的类
     Public HighlightBrush As SolidColorBrush = New SolidColorBrush(Color.FromRgb(232, 90, 113))
     Public Function GetTriggerList(ftype As TriggerFunction.EFType, Scripter As ScriptEditor) As List(Of TriggerFunction)
         Select Case ftype
@@ -16,9 +16,9 @@ Public Class TriggerManager
             Case TriggerFunction.EFType.Lua
                 Return LuaList
             Case TriggerFunction.EFType.UserFunc
-                'TODO:UserFunc 만들어야됨
+                ' TODO:需要创建UserFunc
             Case TriggerFunction.EFType.ExternFunc
-                'TODO:UserFunc ExternFunc만들어야됨
+                ' TODO:需要创建UserFunc ExternFunc
 
                 If Scripter.GetType Is GetType(ClassicTriggerEditor) Then
                     Dim t As List(Of TriggerFunction) = CType(Scripter, ClassicTriggerEditor).ImportFuncs
@@ -69,7 +69,7 @@ Public Class TriggerManager
 
 
         If tdata.IsFile Then
-            '파일 일 경우
+            ' 如果是文件
             rstrlist.Add(fname)
         Else
             For i = 0 To tdata.FileCount - 1
@@ -113,7 +113,7 @@ Public Class TriggerManager
         fs.Close()
 
 
-        '루아함수 변형
+        ' Lua函数变化
         For i = 0 To macro.FunctionList.Count - 1
             Dim func As MacroManager.LuaFunction = macro.FunctionList(i)
 
@@ -138,7 +138,7 @@ Public Class TriggerManager
 
 
 
-        '함수 분류
+        ' 函数分类
         For i = 0 To funclist.Count - 1
             Select Case funclist(i).FType
                 Case TriggerFunction.EFType.Action
@@ -150,7 +150,7 @@ Public Class TriggerManager
             End Select
         Next
 
-        '기본 TEFile로드
+        ' 加载默认的 TEFile
         Dim folderpath As String = BuildData.GetTriggerEditorFolderPath
 
         For Each files As String In My.Computer.FileSystem.GetFiles(folderpath)
@@ -217,21 +217,21 @@ Public Class TriggerManager
                     If st.Peek = "(" Then
                         st.Pop()
                     Else
-                        '오류
+                        ' 错误
                         Exit While
                     End If
                 Case "}"
                     If st.Peek = "{" Then
                         st.Pop()
                     Else
-                        '오류
+                        ' 错误
                         Exit While
                     End If
                 Case "]"
                     If st.Peek = "[" Then
                         st.Pop()
                     Else
-                        '오류
+                        ' 错误
                         Exit While
                     End If
             End Select
@@ -306,7 +306,7 @@ Public Class TriggerManager
                         st.Pop()
                         'sb.Append(c)
                     Else
-                        '오류
+                        ' 错误
                         Exit While
                     End If
             End Select
@@ -419,7 +419,7 @@ Public Class TriggerFunction
             Return rTrg
         End If
 
-        '툴팁
+        ' 工具提示
         Dim tooltiplist() As String = Tooltipstr.Split(vbCrLf)
 
         Dim IsType As Boolean = False
@@ -431,14 +431,14 @@ Public Class TriggerFunction
         For i = 0 To tooltiplist.Count - 1
             Dim tstr As String = tooltiplist(i).Replace(vbCrLf, "").Replace(vbCr, "").Replace(vbLf, "")
             If i = 0 Then
-                '첫줄
+                ' 第一行
                 If tstr = "/***" Then
                     Continue For
                 Else
                     Exit For
                 End If
             ElseIf i = tooltiplist.Count - 1 Then
-                '끝줄
+                ' 最后一行
                 If tstr = "***/" Then
                     Continue For
                 Else
@@ -543,7 +543,7 @@ Public Class TriggerFunction
         Return rTrg
     End Function
 
-    '모든 TE에 관련된 트리거를 관리하는 클래스
+    ' 管理与所有TE相关的触发器的类
     Public Enum EFType
         Action
         Condition
@@ -589,11 +589,11 @@ Public Class TriggerFunction
     End Class
 
 
-    '코드가 완벽한 틀을 하였는가.
+    ' 代码是否具有完整框架。
     Public IsCmpTrigger As Boolean = False
     Public SortArgList As New List(Of String)
     Public Sub SetArgComment()
-        '코맨트로부터 Arg를 추출하여 정렬.
+        ' 从注释中提取并排序Arg。
         SortArgList.Clear()
 
         Dim tsummary As String = FSummary
@@ -608,7 +608,7 @@ Public Class TriggerFunction
         End If
 
 
-        'FSummary에서 Arg를 가져옴
+        ' 从FSummary中获取Arg。
         For i = 0 To Args.Count - 1
             Dim aname As String = "[" & Args(i).AName.Trim & "]"
 

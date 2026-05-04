@@ -38,7 +38,7 @@ Public Class LagacySaveLoad
             Case ".e2s", ".e2p"
                 Dim iszipfile As Boolean = False
 
-                '파일이 존재할 경우 파일의 확장자를 확인해라
+                ' 如果文件存在，则检查文件的扩展名
                 If extension = ".e2p" Then
                     iszipfile = True
                 End If
@@ -140,7 +140,7 @@ Public Class LagacySaveLoad
 
                     For i = 0 To 249
                         If FindSetting(Section_BtnSET, "BtnUse" & i) = True Then
-                            'MsgBox("버튼번호 : " & i & "   기본 설정 : " & pjData.ExtraDat.DefaultButtonSet(i))
+                            ' MsgBox("按钮编号 : " & i & "   默认设置 : " & pjData.ExtraDat.DefaultButtonSet(i))
                             'pjData.ExtraDat.DefaultButtonSet(i) = False 'FindSetting(Section_BtnSET, "BtnUse" & i)
                             pjData.ExtraDat.ButtonData.GetButtonSet(i).IsDefault = False
 
@@ -177,7 +177,7 @@ Public Class LagacySaveLoad
                             End If
 
                             pjData.ExtraDat.RequireData(DatTyps(i)).RequireObjectUsed(j) = reqvalue
-                            If reqvalue = CRequireData.RequireUse.CustomUse Then '커스텀 유즈일 경우
+                            If reqvalue = CRequireData.RequireUse.CustomUse Then ' 如果是自定义使用的情况
                                 Dim codes As New List(Of UShort)
                                 For p As Integer = 0 To FindSetting(Section_ReqSET, "ReqCount" & i & "," & j) - 1
                                     codes.Add(FindSetting(Section_ReqSET, "ReqData" & i & "," & j & "," & p))
@@ -296,7 +296,7 @@ Public Class LagacySaveLoad
                 '    SCDBMaker = FindSetting(Section_SCDBSET, "SCDBMaker")
                 '    SCDBMapName = FindSetting(Section_SCDBSET, "SCDBMapName")
 
-                '    '호환성
+                ' '兼容性
                 '    If SCDBLoc.Count <> SCDBLocLoad.Count Then
                 '        SCDBLoc.Clear()
                 '        SCDBLocLoad.Clear()
@@ -367,7 +367,7 @@ Public Class LagacySaveLoad
         '    Dim issavefilezip As Boolean = False
 
         '    If MapName.EndsWith(".e2p") Then
-        '        '집 파일이면
+        ' '如果是压缩文件
         '        issavefilezip = True
         '    End If
 
@@ -658,7 +658,7 @@ ProjectMTXMDATAArray : " & vbCrLf)
         '    If issavefilezip = True Then
         '        If isnewfile = True Then
         '            Dim foldername As String = MapName.Replace(".e2p", "")
-        '            '세이브파일 폴더에 파일들을 몽땅 넣어버린다.
+        ' '将所有文件放入存档文件文件夹中。
         '            Directory.CreateDirectory(foldername & "\Resource")
         '            Directory.CreateDirectory(foldername & "\Map")
         '            Directory.CreateDirectory(foldername & "\eudplibdata")
@@ -666,8 +666,8 @@ ProjectMTXMDATAArray : " & vbCrLf)
         '            Directory.CreateDirectory(foldername & "\Sound")
         '            Directory.CreateDirectory(foldername & "\temp")
 
-        '            '이름을 모두 상대주소로 저장해 버린다.
-        '            '우선 맵 먼저
+        ' '将所有名称保存为相对地址。
+        ' '先处理地图
         '            MoveFileAll(foldername)
         '        Else
         '            Dim foldername As String = MapName.Replace("\" & GetSafeName(MapName), "")
@@ -677,7 +677,7 @@ ProjectMTXMDATAArray : " & vbCrLf)
         '            Directory.CreateDirectory(foldername & "\Grp")
         '            Directory.CreateDirectory(foldername & "\Sound")
         '            Directory.CreateDirectory(foldername & "\temp")
-        '            '일단 할건 없는 거로...
+        ' '暂时无事可做...
         '            MoveFileAll(foldername)
 
         '            DeleteDumpFileAll()

@@ -234,10 +234,10 @@ Public Class ListSelecter
 
     Private LoadCmp As Boolean = False
     Public Sub New()
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         Fliter = New tFliter
         factoryPanel.SetValue(WrapPanel.IsItemsHostProperty, True)
         itemTemplate.VisualTree = factoryPanel
@@ -407,8 +407,8 @@ Public Class ListSelecter
     End Function
 
     Private Sub ListResetData(pagetype As SCDatFiles.DatFiles, StartIndex As Integer)
-        '리스트에 들어갈 거는 리스트이름과 아이콘, 그룹패스뿐임.
-        '이것만 잘 넘겨주면 됨
+        ' 要放入列表的只有列表名称、图标、组路径。
+        ' 只需正确传递这些即可。
         Dim ObjectNames As New List(Of String)
         Dim ObjectImages As New List(Of Border)
 
@@ -500,7 +500,7 @@ Public Class ListSelecter
                     ObjectNames.Add(cname)
                 Next
             Case SCDatFiles.DatFiles.ButtonData
-                '어캐작성하노 ㅋㅋ 
+                ' 怎么写呢 哈哈
                 For i = 0 To SCUnitCount - 1
                     Dim tGraphics As Integer = pjData.Dat.Data(SCDatFiles.DatFiles.units, "Graphics", i)
                     Dim tSprite As Integer = pjData.Dat.Data(SCDatFiles.DatFiles.flingy, "Sprite", tGraphics)
@@ -735,14 +735,15 @@ Public Class ListSelecter
                         Exit While
                     End If
                 End If
-            End While  '부모가 있을 경우
-            '만약에 부모의 자식이 하나도 없을 경우 그 부모도 지운다.(이걸 부모가 TreeView일때까지 반복
+            End While  
+            ' 如果有父级。
+            ' 如果父级没有任何子级，则也删除该父级。（重复此操作直到父级为 TreeView）
 
 
 
             MoveTreeList(CodeIndexerTree, TargetItem)
             CodeIndexerTree.Items.Add(TargetItem)
-            'TreeviewItemDic(ObjectID).Header = "ㅎㅎ"
+            ' TreeviewItemDic(ObjectID).Header = "ㅎㅎ"
         End If
     End Sub
     Private Function DeleteMe(TargetItem As TreeViewItem) As TreeViewItem
@@ -761,7 +762,7 @@ Public Class ListSelecter
 
 
     'Dim TempTarget As TreeViewItem = parrentTreeview
-    'If TempTarget.Items.Count = 0 Then '부모의 수가 아무것도 없을 경우 자신을 지운다.
+    ' If TempTarget.Items.Count = 0 Then '如果父级数量为0，则删除自身。
 
 
 
@@ -842,7 +843,7 @@ Public Class ListSelecter
         Next
 
         Dim CodeItem As New TreeViewItem()
-        '만약 
+        ' 如果
         If Isbig Then
             If ItempColl.Count = 0 Then
                 If SelectTreeitem Is Nothing Then
@@ -964,4 +965,3 @@ Public Class ListSelecter
     End Sub
 
 End Class
-

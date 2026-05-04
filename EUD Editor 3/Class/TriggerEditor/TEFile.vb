@@ -3,7 +3,7 @@ Imports System.Runtime.Serialization.Formatters.Binary
 
 <Serializable>
 Public Class TEFile
-    '프로젝트 각 파일들
+    ' 项目各文件
     Public Enum EFileType
         Folder
         CUIEps
@@ -19,17 +19,17 @@ Public Class TEFile
     End Enum
 
 
-    '형태가 폴더 이거나 파일 이거나 둘 중 하나
-    '파일 안에는 파일이 들어 있을 수 있는 구조.
+    ' 形式可以是文件夹或文件。
+    ' 文件中可以包含文件的结构。
 
     <NonSerialized>
     Public ParentPage As TECUIPage
 
 
 
-    '========================이전 데이터 저장용========================
+    ' ========================保存之前数据========================
     Private _IsExpaned As Boolean
-    '프로그램 끌때 항목 저장. 지금은 임시로 True로
+    ' 程序关闭时保存项目。现在暂时设为True。
     Public Property IsExpanded As Boolean
         Get
             Return _IsExpaned
@@ -385,4 +385,3 @@ Public Class TEFile
         Return False
     End Function
 End Class
-

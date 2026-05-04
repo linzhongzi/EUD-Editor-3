@@ -38,7 +38,7 @@ Module BuildErrorHandling
 
 
         If mcol.Count = 0 Then
-            '일반 에러
+            ' 一般错误
             Dim Errorregex As New Regex("\[Error\](.*)Traceback \(most recent call last\):")
             mcol = Errorregex.Matches(ErrorLog)
             Dim Description As String = ""

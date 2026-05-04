@@ -272,7 +272,7 @@ Public Class GRPManager
 
     Private Function LoadSDGRP() As Boolean
         If isSDGLoad Then
-            '프로그램에서 완전히 그래픽을 로드한 경우
+            ' 当程序完全加载图形时
             Return False
         End If
 
@@ -282,7 +282,7 @@ Public Class GRPManager
 
 
 
-        '데이터를 추출하는 과정
+        ' 提取数据的过程
         Dim pos As UInteger = 0
         Dim bytes As Byte() = Tool.CascData.ReadFileCascStorage("SD/mainSD.anim")
         If bytes.Count = 0 Then
@@ -294,7 +294,7 @@ Public Class GRPManager
         BReader.ReadUint32(pos, bytes) 'unsigned Int magic; // "ANIM"
         BReader.ReadUint16(pos, bytes) 'unsigned Short version; // Version? 0x0101, 0x0202, 0x0204
         BReader.ReadUint16(pos, bytes) 'unsigned Short unk2; // 0 -- more bytes for version?
-        Dim layercount As UInt16 = BReader.ReadUint16(pos, bytes) 'unsigned Short layers; 레이어의 갯수
+        Dim layercount As UInt16 = BReader.ReadUint16(pos, bytes) ' unsigned Short layers; 图层的数量
         Dim entrycount As UInt16 = BReader.ReadUint16(pos, bytes) 'unsigned Short entries;
 
         Dim layerstrs As New List(Of String)
@@ -336,7 +336,7 @@ Public Class GRPManager
             Dim maingrpheight As Integer
 
             Dim frameinfoptr As UInteger = BReader.ReadUint32(pos, bytes)
-            '프레임들 쫙 있음
+            ' 存在帧列表
 
 
             Dim mainbitsource As ByteBitmap = Nothing
@@ -443,7 +443,7 @@ Public Class GRPManager
                 BReader.ReadUint32(pos, bytes) 'unsigned Int magic; // "ANIM"
                 BReader.ReadUint16(pos, bytes) 'unsigned Short version; // Version? 0x0101, 0x0202, 0x0204
                 BReader.ReadUint16(pos, bytes) 'unsigned Short unk2; // 0 -- more bytes for version?
-                Dim layercount As UInt16 = BReader.ReadUint16(pos, bytes) 'unsigned Short layers; 레이어의 갯수
+                Dim layercount As UInt16 = BReader.ReadUint16(pos, bytes) ' unsigned Short layers; 图层的数量
                 Dim entrycount As UInt16 = BReader.ReadUint16(pos, bytes) 'unsigned Short entries;
 
                 Dim layerstrs As New List(Of String)
@@ -561,7 +561,7 @@ Public Class GRPManager
                 BReader.ReadUint32(pos, bytes) 'unsigned Int magic; // "ANIM"
                 BReader.ReadUint16(pos, bytes) 'unsigned Short version; // Version? 0x0101, 0x0202, 0x0204
                 BReader.ReadUint16(pos, bytes) 'unsigned Short unk2; // 0 -- more bytes for version?
-                Dim layercount As UInt16 = BReader.ReadUint16(pos, bytes) 'unsigned Short layers; 레이어의 갯수
+                Dim layercount As UInt16 = BReader.ReadUint16(pos, bytes) ' unsigned Short layers; 图层的数量
                 Dim entrycount As UInt16 = BReader.ReadUint16(pos, bytes) 'unsigned Short entries;
 
                 Dim layerstrs As New List(Of String)
@@ -650,7 +650,7 @@ Public Class GRPManager
         Loadddsgrp("HD2/Carbot/unit/wirefram/grpwire.dds.grp", CTGrpFrame, False)
         Loadddsgrp("HD2/Carbot/unit/wirefram/tranwire.dds.grp", CTTranFrame, False)
 
-        '프레임들 쫙 있음
+        ' 存在帧列表
 
         isCarbotGLoad = True
 

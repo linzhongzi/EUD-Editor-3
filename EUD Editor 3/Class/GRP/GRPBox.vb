@@ -11,27 +11,27 @@ Public Class GRPBox
     Private FObjectID As Integer
     Private Timer As System.Windows.Forms.Timer
 
-    'GRP여러개가 한 공간에서 그려짐, 이미지스크립트도 같이 돌아감.,
+    ' 多个GRP在一个空间内绘制，图形脚本也同时运行。
 
-    'GRP들이 여러개 있음
-    '각각의 GRP들은 이미지스크립트를 통해 GRP를 생성 할 수 있음
-    'GRP들은 이미지 스크립트에 의해 사라질 수 있음.
+    ' 存在多个GRP
+    ' 每个GRP可以通过图形脚本创建GRP。
+    ' GRP可以通过图形脚本消失。
 
     Private SelectionImage As SCImage
 
     Public Sub ChangeIScriptType(IScrptIndex As Integer)
-        '이미지 스크립트 포인터를 교체한다.
+        ' 替换图形脚本指针。
     End Sub
 
     Public Sub New(ImageNum As Integer, tImageBox As Grid, tGRPImageBox As GRPImageBox, AnimHeaderIndex As Integer, Optional tFlag As GRPImageBox.BoxType = GRPImageBox.BoxType.Image, Optional tFObjectID As Integer = 0)
-        '자채적으로 데이터를 읽고 쓴다.
+        ' 自行读写数据。
         ImageBox = tImageBox
         ImageID = ImageNum
         GRPImageBox = tGRPImageBox
         FObjectID = tFObjectID
         Flag = tFlag
 
-        '처음 시작한다. 
+        ' 开始。
         Images = New List(Of SCImage)
 
 
@@ -67,9 +67,9 @@ Public Class GRPBox
         End Select
 
 
-        '=========테스트============
+        ' =========测试============
         'Images.Add(New SCImage(scData.GetGrp(213), 0, Me))
-        '=========테스트============
+        ' =========测试============
 
 
         Timer = New Forms.Timer
@@ -163,7 +163,7 @@ Public Class GRPBox
                 Dim UnitSizeDown As Integer = pjData.Dat.Data(SCDatFiles.DatFiles.units, "Unit Size Down", FObjectID)
 
 
-                '건물 생산 크기
+                ' 建筑生产大小
                 Dim stareditborder As New Border
                 stareditborder.HorizontalAlignment = HorizontalAlignment.Left
                 stareditborder.VerticalAlignment = VerticalAlignment.Top
@@ -176,7 +176,7 @@ Public Class GRPBox
                 'GRP.FillRectangle(New SolidBrush(Color.FromArgb(100, 183, 240, 177)), New Rectangle(128 - StarEditBoxWidth \ 2, 128 - StarEditBoxHeight \ 2, StarEditBoxWidth, StarEditBoxHeight))
                 'grp.DrawRectangle(New Pen(Color.FromArgb(255, 183, 240, 177)), New Rectangle(128 - StarEditBoxWidth \ 2, 128 - StarEditBoxHeight \ 2, StarEditBoxWidth, StarEditBoxHeight))
 
-                '유닛 크기 끝선
+                ' 单位大小终点
                 Dim unitsizeborder As New Border
                 unitsizeborder.HorizontalAlignment = HorizontalAlignment.Left
                 unitsizeborder.VerticalAlignment = VerticalAlignment.Top
@@ -188,7 +188,7 @@ Public Class GRPBox
                 ImageBox.Children.Add(unitsizeborder)
 
 
-                '에드온
+                ' 附加组件
                 If FObjectID >= SCMenCount And (AddonHorizontal <> 0 Or AddonVertical <> 0) Then
                     Dim addonborder As New Border
                     addonborder.HorizontalAlignment = HorizontalAlignment.Left

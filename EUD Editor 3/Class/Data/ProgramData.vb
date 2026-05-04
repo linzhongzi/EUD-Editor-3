@@ -2,7 +2,7 @@
 Imports MaterialDesignThemes.Wpf
 
 Public Class ProgramData
-    '<주 버전>.<부 버전>.<빌드 번호>.<수정>
+    ' <主版本>.<子版本>.<构建号>.<修订>
     Public ReadOnly Property Version As System.Version = Reflection.Assembly.GetExecutingAssembly().GetName().Version '"0.0.1"
     Public ReadOnly Property RecommendeuddraftVersion As New System.Version(0, 10, 1, 6)
 
@@ -68,7 +68,7 @@ Public Class ProgramData
 
 
 
-    '사용자 지정 컬러
+    ' 用户自定义颜色
     Public Property PFiledDefault As Color
     Public Property PFiledEditColor As Color
     Public Property PFiledMapEditColor As Color

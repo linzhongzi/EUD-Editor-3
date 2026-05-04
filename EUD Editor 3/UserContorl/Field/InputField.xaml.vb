@@ -385,16 +385,16 @@
 
 
                 'If Parameter = "Infestation" Then
-                '    MsgBox("시작")
-                '    MsgBox("오브젝트아이디 : " & ObjectID)
-                '    MsgBox("값 : " & pjData.BindingManager.DatBinding(DatFile, Parameter, ObjectID).Value)
+                ' MsgBox("开始")
+                ' MsgBox("对象ID : " & ObjectID)
+                ' MsgBox("值 : " & pjData.BindingManager.DatBinding(DatFile, Parameter, ObjectID).Value)
                 'End If
 
 
 
 
                 'If Parameter = "Infestation" Then
-                '    MsgBox("끝")
+                ' MsgBox("结束")
                 'End If
         End Select
 

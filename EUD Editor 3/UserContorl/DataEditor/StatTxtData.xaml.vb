@@ -5,10 +5,10 @@
 
 
     Public Sub New(tObjectID As Integer)
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         DataContext = pjData
         ObjectID = tObjectID
 
@@ -100,7 +100,7 @@
 
 
 
-        '컬러박스 정리
+        ' 整理颜色框
         PreviewText.TextColred(MainTextBox.Text)
     End Sub
 
@@ -208,10 +208,10 @@
 
 
 
-            If ShortCombobox.SelectedIndex = 0 Then '선택이 안되어 있을 경우, 즉 처음일 경우
+            If ShortCombobox.SelectedIndex = 0 Then ' 如果未选择，即首次。
                 CurrentText = "<" & scData.ASCIICode(&H61) & "><" & Hex(LimitCombobx.SelectedIndex - 1).PadLeft(2, "0") & ">" & CurrentText
             Else
-                If LimitCombobx.SelectedIndex = 0 Then '둘다 0으로 선택되었을 경우
+                If LimitCombobx.SelectedIndex = 0 Then ' 如果两者都选为0时
                     CurrentText = StringTool.ChangeCharAt(1, CurrentText, "")
                     CurrentText = StringTool.ChangeCharAt(0, CurrentText, "")
                     ShortCombobox.SelectedIndex = 0
@@ -235,10 +235,10 @@
             Dim tcomboboxitem As ComboBoxItem = ShortCombobox.SelectedItem
             Dim SelectText As String = scData.ASCIICode(tcomboboxitem.Tag)
 
-            If LimitCombobx.SelectedIndex = 0 Then '선택이 안되어 있을 경우, 즉 처음일 경우
+            If LimitCombobx.SelectedIndex = 0 Then ' 如果未选择，即首次。
                 CurrentText = "<" & SelectText & ">" & "<00>" & CurrentText
             Else
-                If ShortCombobox.SelectedIndex = 0 Then '둘다 0으로 선택되었을 경우
+                If ShortCombobox.SelectedIndex = 0 Then ' 如果两者都选为0时
                     CurrentText = StringTool.ChangeCharAt(1, CurrentText, "")
                     CurrentText = StringTool.ChangeCharAt(0, CurrentText, "")
                     LimitCombobx.SelectedIndex = 0

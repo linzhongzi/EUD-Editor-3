@@ -1,9 +1,9 @@
 ﻿Public Class SCAWorkSpace
 
 
-    'sb.AppendLine("const ws = Db(" & EntryPoint.Count * 4 + '엔트리포인트
-    '8 * (CommandLength + SpaceLength) + '일반 값
-    '(FastLoadCommandLength + SpaceLength) + '패스트 로드
+    ' sb.AppendLine("const ws = Db(" & EntryPoint.Count * 4 + '入口点
+    ' 8 * (CommandLength + SpaceLength) + '正常值
+    ' (FastLoadCommandLength + SpaceLength) + '快速加载
     'FuncCommandLength + FuncLength * 4 + 'FuncLoad
     'FuncLength * 4 + 'FuncLoad
     'SCAScriptVarCount * 4 &'FuncReturnTable

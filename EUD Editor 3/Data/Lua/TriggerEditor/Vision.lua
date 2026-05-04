@@ -9,16 +9,29 @@
 @param.State.TrgSwitchState
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]에게 [DestPlayer]의 시야를 [State]합니다.
+给 [Player] 提供 [DestPlayer] 的视野，状态为 [State] 。
 @Group
-시야
+视野
 @param.Player.TrgPlayer
 @param.DestPlayer.TrgPlayer
 @param.State.TrgSwitchState
+
+
+@Language.en-US
+@Summary
+Sets the vision of [DestPlayer] for [Player] to [State].
+@Group
+Vision
+@param.Player.TrgPlayer
+The player receiving vision.
+@param.DestPlayer.TrgPlayer
+The player whose vision is given.
+@param.State.TrgSwitchState
+The state (give/remove).
 ]================================]
-function SetVision(Player, DestPlayer, State) --시야/TrgPlayer,TrgPlayer,TrgSwitchState/[Player]에게 [DestPlayer]의 시야를 [State]합니다.
+function SetVision(Player, DestPlayer, State) -- Vision 组/TrgPlayer, TrgPlayer, TrgSwitchState/给 [Player] 提供 [DestPlayer] 的视野，状态为 [State] 。
 	State = ParseSwitchState(State)
 	Player = ParsePlayer(Player)
 	DestPlayer = ParsePlayer(DestPlayer)
@@ -52,15 +65,26 @@ end
 @param.DestPlayer.TrgPlayer
 
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-[Player]가 [DestPlayer]를 볼 수 있는지 확인합니다.
+确认 [Player] 是否可以看到 [DestPlayer] 。
 @Group
-시야
+视野
 @param.Player.TrgPlayer
 @param.DestPlayer.TrgPlayer
+
+
+@Language.en-US
+@Summary
+Checks if [Player] can see [DestPlayer].
+@Group
+Vision
+@param.Player.TrgPlayer
+The player.
+@param.DestPlayer.TrgPlayer
+The player to check visibility of.
 ]================================]
-function GetVision(Player, DestPlayer) --시야/TrgPlayer,TrgPlayer/[Player]가 [DestPlayer]를 볼 수 있는지 확인합니다.
+function GetVision(Player, DestPlayer) -- Vision 组/TrgPlayer, TrgPlayer/确认 [Player] 是否可以看到 [DestPlayer] 。
 	Player = ParsePlayer(Player)
 	DestPlayer = ParsePlayer(DestPlayer)
 	offsetEPD = VisionEPD(DestPlayer)
@@ -86,14 +110,23 @@ end
 @param.Player.TrgPlayer
 
 
+@Language.zh-CN
+@Summary
+返回 [Player] 的视野参数的偏移地址。
+@Group
+视野
+@param.Player.TrgPlayer
+
+
 @Language.en-US
 @Summary
-[Player]의 시야 오프셋을 반환합니다.
+Returns the vision offset for [Player].
 @Group
-시야
+Vision
 @param.Player.TrgPlayer
+The target player.
 ]================================]
-function VisionEPD(Player) --시야/TrgPlayer/[Player]의 시야 오프셋을 반환합니다.
+function VisionEPD(Player) -- Vision 组/TrgPlayer/返回 [Player] 的视野参数的偏移地址。
 	Player = ParsePlayer(Player)
 
 	if IsNumber(Player) then

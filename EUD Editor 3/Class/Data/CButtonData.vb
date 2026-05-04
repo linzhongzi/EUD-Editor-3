@@ -25,8 +25,8 @@ Public Class CButtonSets
         'ReDim ProjectBtnUSE(btnobjectnum - 1)
 
         For i = 0 To SCButtonCount - 1
-            btncount = br.ReadUInt32() '버튼 수
-            btnadress = br.ReadUInt32() '버튼 주소
+            btncount = br.ReadUInt32() ' 按钮数量
+            btnadress = br.ReadUInt32() ' 按钮地址
 
             ButtonSets(i) = New CButtonSet(btnadress, i)
 
@@ -95,22 +95,22 @@ Public Class CButtonSet
         BuildingBuild_Protoss
         BuildingBuild_Addon
     End Enum
-    '기본 커맨드
-    '이동 가능한 건물 커맨드
-    '버러우 커맨드
-    '채취자 커맨드
-    '운송수단 커맨드
-    '빈 버튼
-    '유닛 훈련
-    '유닛 훈련 - 변태
-    '업글 연구
-    '기술 연구
-    '기술 사용
-    '건물 변태
-    '건물 건설 - 변태
-    '건물 건설 - 테란
-    '건물 건설 - 프로토스
-    '건물 건설 - 애드온
+    ' 基本命令
+    ' 可移动建筑命令
+    ' 遁地命令
+    ' 采集者命令
+    ' 运输工具命令
+    ' 空按钮
+    ' 单位训练
+    ' 单位训练 - 虫族
+    ' 升级研究
+    ' 技能研究
+    ' 技能使用
+    ' 建筑变形
+    ' 建筑建造 - 虫族
+    ' 建筑建造 - 人族
+    ' 建筑建造 - 神族
+    ' 建筑建造 - 附加组件
     Public Function GetBytesArrayString() As String
         Dim returnstr As String = ""
 

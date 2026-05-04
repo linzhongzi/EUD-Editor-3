@@ -2,8 +2,8 @@
 
 Public Class UIManager
     Implements INotifyPropertyChanged
-    '바인딩 할 때 본체도 넘겨주자고.
-    '잘못된 값일 경우 또는 지원안하는 부분일 경우 없에버리기.~
+    ' 绑定时也传递主体。
+    ' 如果是错误值或不支持的部分，则将其移除。~
 
     Private Datfile As SCDatFiles.DatFiles
     Private ObjectID As Integer
@@ -38,7 +38,7 @@ Public Class UIManager
     Public Sub NameRefresh()
         NotifyPropertyChanged("Name")
         NotifyPropertyChanged("TabName")
-        '이때 발동
+        ' 此时触发
     End Sub
 
     Public Sub BackColorRefresh()

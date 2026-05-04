@@ -2,8 +2,8 @@
 Imports System.Runtime.Serialization.Formatters.Binary
 
 Partial Public Class ProjectData
-    '여기에 모든게 들어간다
-    '스타 dat데이터를 클래스로 만들어 관리하자.
+    ' 这里包含所有内容。
+    ' 将星际dat数据创建为类进行管理。
     Public Shared Sub Load(isNewfile As Boolean, ByRef _pjdata As ProjectData)
         If isNewfile Then
             _pjdata = New ProjectData
@@ -17,14 +17,14 @@ Partial Public Class ProjectData
 
             LoadProjectDialog.InitialDirectory = pgData.Setting(ProgramData.TSetting.OpenPath)
             If LoadProjectDialog.ShowDialog() = Forms.DialogResult.OK Then
-                tFilename = LoadProjectDialog.FileName '파일 이름 교체
+                tFilename = LoadProjectDialog.FileName ' 替换文件名
                 pgData.Setting(ProgramData.TSetting.OpenPath) = Path.GetDirectoryName(tFilename)
             Else
                 Exit Sub
             End If
 
             If Tool.IsProjectLoad() Then
-                '꺼야됨
+                ' 必须关闭
                 If Not _pjdata.CloseFile Then
                     Exit Sub
                 End If
@@ -36,7 +36,7 @@ Partial Public Class ProjectData
 
     Public Shared Sub LoadWithCheckOepn(tFilename As String, ByRef _pjdata As ProjectData)
         If Tool.IsProjectLoad() Then
-            '꺼야됨
+            ' 必须关闭
             If Not _pjdata.CloseFile Then
                 Exit Sub
             End If
@@ -77,7 +77,7 @@ Partial Public Class ProjectData
                 TeFileRefresh(mainTEFile)
 
                 'If _pjdata.SaveData.LastVersion.ToString <> pgData.Version.ToString Then
-                '    Tool.ErrorMsgBox("테스트 버전은 다른 버전의 세이브 파일을 열 수 없습니다")
+                '    Tool.ErrorMsgBox("测试版无法打开其他版本的存档文件")
                 '    pjData.CloseFile()
                 'End If
             Else

@@ -305,7 +305,7 @@ Public Class RequireListBox
 
 
         listboxitem.Content = ListItem
-        '만든 아이템에데가 오브젝트 연결해서 알아서 바뀌도록...
+        ' 将创建的项目与对象连接，使其自动更改...
 
         RequireList.Insert(InsertIndex, tItem)
         MainListBox.Items.Insert(InsertIndex, listboxitem)
@@ -413,7 +413,7 @@ Public Class RequireListBox
         Dim ListItem As New RequireListBoxItem(tItem)
 
         listboxitem.Content = ListItem
-        '만든 아이템에데가 오브젝트 연결해서 알아서 바뀌도록...
+        ' 将创建的项目与对象连接，使其自动更改...
 
         RequireList.Insert(InsertIndex, tItem)
         MainListBox.Items.Insert(InsertIndex, listboxitem)
@@ -458,10 +458,11 @@ Public Class RequireListBox
 
 
 
-        If IsClick Then '만약 클릭 중 일경우
-            '아이템이 선택 중일 경우. 그 아이템을 드래그 아이템으로 지정.
+        If IsClick Then 
+        ' 如果正在点击。
+        ' 如果项目被选中，则将其指定为拖动项目。
             If DragSelectItem Is Nothing Then
-                If MainListBox.SelectedItem IsNot Nothing Then '드래그 아이템이 지정되어 있지 않을 경우
+                If MainListBox.SelectedItem IsNot Nothing Then ' 如果未指定拖动项目
                     DragSelectindex = MainListBox.SelectedIndex
                     DragSelectItem = MainListBox.SelectedItem
                     DragSelctData = RequireList(DragSelectindex)
@@ -481,7 +482,7 @@ Public Class RequireListBox
 
                     DragImage.Child = listboxitem
                 End If
-            Else '드래그 중
+            Else ' 拖动中
                 DragImage.Visibility = Visibility.Visible
                 DragImage.Margin = New Thickness(e.GetPosition(MainListBox).X + 5, e.GetPosition(MainListBox).Y + 5, 0, 0)
 
@@ -626,7 +627,7 @@ Public Class RequireListBox
 
 
             listboxitem.Content = ListItem
-            '만든 아이템에데가 오브젝트 연결해서 알아서 바뀌도록...
+            ' 将创建的项目与对象连接，使其自动更改...
 
             RequireList.Insert(InsertIndex, tItem)
             MainListBox.Items.Insert(InsertIndex, listboxitem)

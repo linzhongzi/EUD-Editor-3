@@ -55,17 +55,19 @@
                         </MenuItem>
                         <MenuItem x:Name="MenuExport" Header="{StaticResource MenuExport}" Icon="{materialDesign:PackIcon Kind=FileUploadOutline}" Click="MenuExport_Click"/>
 
-                        <!--<Separator x:Name="GUISeparator"/>
-                        <MenuItem x:Name="ToGUI" Header="GUI로 변환" Click="ToGUI_Click"/>
-                        <MenuItem x:Name="ToCUI" Header="CUI로 변환" Click="ToCUI_Click"/>-->
+                        <!--
+                        <Separator x:Name="GUISeparator"/>
+                        <MenuItem x:Name="ToGUI" Header="转换为 GUI" Click="ToGUI_Click"/>
+                        <MenuItem x:Name="ToCUI" Header="转换为 CUI" Click="ToCUI_Click"/>
+                        -->
                         <Separator x:Name="Separator1"/>
                         <MenuItem x:Name="MenuCut" Header="{StaticResource Cut}" InputGestureText="Ctrl+X" Icon="{materialDesign:PackIcon Kind=ContentCut}" Click="CutItem_Click"/>
                         <MenuItem x:Name="MenuCopy" Header="{StaticResource Copy}" InputGestureText="Ctrl+C" Icon="{materialDesign:PackIcon Kind=ContentCopy}" Click="CopyItem_Click"/>
                         <MenuItem x:Name="MenuPaste" Header="{StaticResource Paste}" InputGestureText="Ctrl+V" Icon="{materialDesign:PackIcon Kind=ContentPaste}" Click="PasteItem_Click"/>
-                        <!--폴더에 있어야 함-->
+                        <!-- 必须在文件夹中 -->
 
                         <MenuItem x:Name="MenuRename" Header="{StaticResource Rename}" Icon="{materialDesign:PackIcon Kind=Textbox}" InputGestureText="Ctrl+R" Click="RenameBtn_Click"/>
-                        <!--폴더에 있어야 함-->
+                        <!-- 必须在文件夹中 -->
                         <Separator x:Name="Separator2"/>
                         <MenuItem x:Name="MenuDelete" Header="{StaticResource CodeDelete}" InputGestureText="Delete" Icon="{materialDesign:PackIcon Kind=Eraser}" Click="MenuDelete_Click"/>
 

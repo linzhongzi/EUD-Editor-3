@@ -65,7 +65,7 @@
                     ssb.InsertChild(addindex, nsb)
                     selectitem.Items.Insert(addindex, ntreeview)
                 End If
-                'MsgBox("아이템생성 새 창없이")
+                ' MsgBox("生成项目 不新建窗口")
                 AddInsertTask(ntreeview)
                 SetRepeatCount(1)
 
@@ -90,7 +90,7 @@
                     TreeAddItems(ntreeview)
                     'MainTreeview.Items.Insert(addindex, ntreeview)
                 End If
-                'MsgBox("아이템생성 새 창없이")
+                ' MsgBox("生成项目 不新建窗口")
                 AddInsertTask(ntreeview)
                 SetRepeatCount(1)
 
@@ -195,7 +195,7 @@
                         parentScriptBlock.InsertChild(insertIndex, insertScriptBlock)
                         parentTreeviewitem.Items.Insert(insertIndex, ntreeview)
                     End If
-                    'MsgBox("아이템생성 창 있음")
+                    ' MsgBox("生成项目 有窗口")
                     AddInsertTask(ntreeview)
                     SetRepeatCount(1)
 
@@ -213,7 +213,7 @@
                         InsertItems(insertIndex, insertScriptBlock)
                         TreeAddItems(ntreeview)
                     End If
-                    'MsgBox("아이템생성 창 있음")
+                    ' MsgBox("生成项目 有窗口")
                     AddInsertTask(ntreeview)
                     SetRepeatCount(1)
 
@@ -235,7 +235,7 @@
                 TEGUIPage.ObjectSelector.RefreshCurrentList()
         End Select
         If Not IsCreateOpen Then
-            'MsgBox("오케이이벤트 : " & scr.ValueCoder & vbCrLf & "바뀌기 전 이벤트 : " & LastScrOrgin.ValueCoder)
+            ' MsgBox("确认事件 : " & scr.ValueCoder & vbCrLf & "更改前事件 : " & LastScrOrgin.ValueCoder)
             AddEditTask(scr, LastScrOrigin, LastTreeview)
             SetRepeatCount(1)
         End If

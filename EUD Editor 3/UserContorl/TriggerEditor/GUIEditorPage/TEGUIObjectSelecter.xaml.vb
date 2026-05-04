@@ -87,7 +87,7 @@
             Else
                 Filters.Add(ScriptGroup, "")
             End If
-            If LastSelectGroup <> ScriptGroup Then '이전 선택과 다를 경우
+            If LastSelectGroup <> ScriptGroup Then ' 如果与之前选择的不同
                 LastSelectGroup = ScriptGroup
 
                 ToolBoxListRefresh(ScriptGroup, ScriptEditor.GetSelectScriptBlock)
@@ -310,7 +310,7 @@
                 Next
                 'ToolTreeviewBox.Items.Add(New Separator)
 
-                '외부파일 돌린다.
+                ' 运行外部文件。
                 'Dim CFunc As List(Of CFunc) = tescm.GetExternFunc(ScriptEditor.Script)
                 ScriptEditor.Script.ExternLoader()
 
@@ -427,7 +427,7 @@
     End Sub
 
     Public Sub ListRefresh() 'SelectItem As TriggerScript)
-        '선택한 아이템에 따라 표시되는 항목이 바뀜 
+        ' 根据所选项目，显示的项目会改变。
     End Sub
 
 

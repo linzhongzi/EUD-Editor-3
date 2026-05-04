@@ -75,7 +75,7 @@
         argwindow.Left = cpos.X + Scripter.TEGUIPage.ActualWidth / 2 - argwindow.Width / 2
 
 
-        'ArgSelecter를 건내줘야되 그래야 리프레쉬됨
+        ' 必须传递 ArgSelecter，这样才能刷新。
         'GUI_ArgEditor
 
 
@@ -140,7 +140,7 @@
         functab.Visibility = Visibility.Collapsed
         ArgExpressTab.Visibility = Visibility.Collapsed
         Select Case typecomboboxSelectedIndex
-            Case 0 '기본
+            Case 0 ' 基本
                 If scr.ScriptType <> ScriptBlock.EBlockType.constVal Then
                     Dim nsb As New ScriptBlock(ScriptBlock.EBlockType.constVal, "Number", True, False, "0", scr.Scripter)
 
@@ -169,7 +169,7 @@
                         Exit For
                     End If
                 Next
-            Case 1 '변수
+            Case 1 ' 变量
                 Vartab.Visibility = Visibility.Visible
 
                 '"const"
@@ -196,7 +196,7 @@
                 AddHandler ListSelecter.SelectEvent, AddressOf VariableListSelect
                 bd.Child = ListSelecter
                 bd.Visibility = Visibility.Visible
-            Case 2 '함수
+            Case 2 ' 函数
                 functab.Visibility = Visibility.Visible
 
 
@@ -227,7 +227,7 @@
                 AddHandler ListSelecter.SelectEvent, AddressOf FuncListSelect
                 bd.Child = ListSelecter
                 bd.Visibility = Visibility.Visible
-            Case 3 '수식
+            Case 3 ' 表达式
                 ArgExpressTab.Visibility = Visibility.Visible
 
                 If scr.ScriptType <> ScriptBlock.EBlockType.exp Then
@@ -239,7 +239,7 @@
 
                 ArgExpress.CrlInit(scr)
 
-            Case 4 '사용자정의
+            Case 4 ' 用户自定义
                 CountTextbox.Visibility = Visibility.Visible
 
                 If scr.ScriptType <> ScriptBlock.EBlockType.rawcode Then
@@ -333,7 +333,7 @@
         scr.name = vtype
         RaiseEvent BtnRefresh("Next", e)
 
-        '현재 선택한 인자가 몇번째 인자인지 조사.
+        ' 检查当前选择的参数是第几个参数。
     End Sub
 
 
@@ -373,7 +373,7 @@
 
 
         RaiseEvent BtnRefresh("", e)
-        '현재 선택한 인자가 몇번째 인자인지 조사.
+        ' 检查当前选择的参数是第几个参数。
     End Sub
     Private Sub VarUseFunc_Change(sender As Object, e As RoutedEventArgs)
         RaiseEvent BtnRefresh("", e)
@@ -388,7 +388,7 @@
 
 
         RaiseEvent BtnRefresh("", e)
-        '현재 선택한 인자가 몇번째 인자인지 조사.
+        ' 检查当前选择的参数是第几个参数。
     End Sub
 
 

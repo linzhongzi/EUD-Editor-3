@@ -10,17 +10,28 @@
 대상 플레이어입니다.
 
 
+@Language.zh-CN
+@Summary
+返回目标 [Player] 的 [Unit] 的死亡值。
+@Group
+普通用户组
+@param.Unit.TrgUnit
+这是将获得死亡值的单位。
+@param.Player.TrgPlayer
+目标玩家。
+
+
 @Language.en-US
 @Summary
-[Player]의 [Unit] 데스값을 반환합니다.
+Returns the death count of [Unit] for [Player].
 @Group
-일반
+General
 @param.Unit.TrgUnit
-데스값을 가져올 유닛입니다.
+The unit to get the death count for.
 @param.Player.TrgPlayer
-대상 플레이어입니다.
+The target player.
 ]================================]
-function GetDeaths(Unit, Player) -- 일반/TrgUnit,TrgPlayer/[Player]의 [Unit] 데스값을 반환합니다.
+function GetDeaths(Unit, Player) -- General 组/TrgUnit, TrgPlayer/返回目标 [Player] 的 [Unit] 的死亡值。
     Unit = ParseUnit(Unit)
     Player = ParsePlayer(Player)
 

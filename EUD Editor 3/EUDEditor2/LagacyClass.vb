@@ -9,7 +9,7 @@ Public Class LagacyClass
     End Sub
 
     Public Shared Function STRdecToHec(inputstr As String) As String
-        '<십진수>를 <16진수>로 바꾸자
+        ' 将<十进制数>转换为<十六进制数>
         Dim tRegex As New Regex("<\d+>")
 
         Dim matches As Match = tRegex.Match(inputstr)
@@ -35,7 +35,7 @@ Public Class LagacyClass
 
 
     Public Shared Function STRhecTodec(inputstr As String) As String
-        '<십진수>를 <16진수>로 바꾸자
+        ' 将<十进制数>转换为<十六进制数>
         Dim tRegex As New Regex("<[\dA-Fa-f]+>")
 
         Dim matches As Match = tRegex.Match(inputstr)

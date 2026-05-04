@@ -29,7 +29,7 @@ Partial Public Class BuildData
                         If pos <> 0 Then
 
                             If i = 4 Then
-                                filebinaryw.Write(CUShort(ObjID)) '시작 부호 입력
+                                filebinaryw.Write(CUShort(ObjID)) ' 输入起始符号
                             End If
 
 
@@ -43,13 +43,13 @@ Partial Public Class BuildData
                         pjData.ExtraDat.RequireData(Datfiles(i)).GetRequireObject(ObjID).StartPos = 0
                     Case CRequireData.RequireUse.AlwaysUse
                         If i = 4 Then
-                            filebinaryw.Write(CUShort(ObjID)) '시작 부호 입력
+                            filebinaryw.Write(CUShort(ObjID)) ' 输入起始符号
                         End If
                         pjData.ExtraDat.RequireData(Datfiles(i)).GetRequireObject(ObjID).StartPos = fileCreator.Position \ 2 - StartOffset
                         filebinaryw.Write(CUShort(&HFFFF))
                     Case CRequireData.RequireUse.AlwaysCurrentUse
                         If i = 4 Then
-                            filebinaryw.Write(CUShort(ObjID)) '시작 부호 입력
+                            filebinaryw.Write(CUShort(ObjID)) ' 输入起始符号
                         End If
 
                         pjData.ExtraDat.RequireData(Datfiles(i)).GetRequireObject(ObjID).StartPos = fileCreator.Position \ 2 - StartOffset
@@ -59,7 +59,7 @@ Partial Public Class BuildData
                         filebinaryw.Write(CUShort(&HFFFF))
                     Case CRequireData.RequireUse.CustomUse
                         If i = 4 Then
-                            filebinaryw.Write(CUShort(ObjID)) '시작 부호 입력
+                            filebinaryw.Write(CUShort(ObjID)) ' 输入起始符号
                         End If
 
                         pjData.ExtraDat.RequireData(Datfiles(i)).GetRequireObject(ObjID).StartPos = fileCreator.Position \ 2 - StartOffset

@@ -96,7 +96,7 @@ Partial Public Class TECTPage
                 End If
             Next
             If Not tcheck Then
-                '모든 트리거가 꺼져있어서 추가불가능
+                ' 所有触发器都已关闭，无法添加。
                 Continue For
             End If
 
@@ -115,7 +115,7 @@ Partial Public Class TECTPage
             'End If
 
 
-            '플레이어가 해당 페이지에 있는지 없는지 여부
+            ' 玩家是否存在于该页面
 
 
 

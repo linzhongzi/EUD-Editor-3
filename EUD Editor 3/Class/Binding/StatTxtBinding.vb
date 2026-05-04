@@ -26,7 +26,7 @@ Public Class StatTxtBinding
         Set(ByVal tvalue As String)
             If Not (tvalue = pjData.ExtraDat.Stat_txt(ObjectID)) Then
                 pjData.SetDirty(True)
-                'MsgBox("데이터 파인딩 셋")
+                ' MsgBox("数据查找设置")
                 pjData.ExtraDat.Stat_txt(ObjectID) = tvalue
                 NotifyPropertyChanged("Value")
                 pjData.BindingManager.UIManager(SCDatFiles.DatFiles.stattxt, ObjectID).NameRefresh()
@@ -35,14 +35,14 @@ Public Class StatTxtBinding
                 If ObjectID < 228 Then
                     pjData.BindingManager.UIManager(SCDatFiles.DatFiles.units, ObjectID).NameRefresh()
                 End If
-                '해당 라벨을 쓰는 것들에게 전부 리프레시 명령을 내려야함..
+                ' 必须向所有使用该标签的对象发送刷新命令。
                 Dim CodeGroup As CodeConnectGroup = pjData.BindingManager.CodeConnectGroup(SCDatFiles.DatFiles.stattxt)
                 For i = 0 To CodeGroup.Count - 1
                     Dim DatFile As SCDatFiles.DatFiles = CodeGroup.GetDatType(i)
                     Dim ParamName As String = CodeGroup.GetParamName(i)
 
                     For k = 0 To SCCodeCount(DatFile) - 1
-                        If pjData.Dat.Data(DatFile, ParamName, k) = ObjectID Then '현재 이 Stat를 사용중일 경우
+                        If pjData.Dat.Data(DatFile, ParamName, k) = ObjectID Then ' 如果当前正在使用此Stat
                             pjData.BindingManager.UIManager(DatFile, k).NameRefresh()
                         End If
                     Next

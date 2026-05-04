@@ -30,11 +30,11 @@ Public Class Trigger
 
 
 
-    '플레이어
+    ' 玩家
     Public PlayerEnabled(7) As Boolean
 
 
-    '플레이어
+    ' 玩家
     Public ForceEnabled(6) As Boolean
     'AllPlayers
     'Force1
@@ -65,7 +65,7 @@ Public Class Trigger
     End Property
 
 
-    '트리거의 별칭(주석)
+    ' 触发器的别名（注释）
     Public Property CommentStringProperty As String
         Get
             Return CommentString
@@ -319,7 +319,7 @@ Public Class Trigger
 
 
     Public Sub CopyTo(toTrg As Trigger)
-        '해당 트리거의 내용을 toTrg에 넣는다.
+        ' 将该触发器的内容放入toTrg。
 
 
         toTrg.IsPreserved = IsPreserved

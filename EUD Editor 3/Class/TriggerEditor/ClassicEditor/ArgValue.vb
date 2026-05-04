@@ -9,10 +9,10 @@ Public Class ArgValue
     Public ValueString2 As String
     Public ValueNumber As Long
 
-    '코드로 출력될대 Number이나 String에 있는 값을 출력한다.
+    ' 输出代码时，输出Number或String中的值。
     Public IsArgNumber As Boolean
 
-    '언어를 설정을 따르는지
+    ' 是否遵循语言设置
     Public IsLangageable As Boolean
 
     Public IsQuotation As Boolean
@@ -36,7 +36,7 @@ Public Class ArgValue
 
     Private Function LuaCover(str As String)
         If str.Length >= 2 Then
-            '2개보다 길면 
+            ' 如果长于2个
 
             If str.Last = """" And str.First = """" Then
                 str = str.Substring(1, str.Length - 2)
@@ -56,10 +56,10 @@ Public Class ArgValue
             End If
         ElseIf ValueType = "Function" Then
             If CodeBlock Is Nothing Then
-                '함수지정 안됨
+                ' 未指定函数
                 v = "FuncNoSelect"
             Else
-                '함수
+                ' 函数
                 v = CodeBlock.GetCodeText(0, _scripter, isLuaCover)
                 If isLuaCover Then
                     If CodeBlock.FType <> TriggerFunction.EFType.Lua Then
@@ -140,7 +140,7 @@ Public Class ArgValue
 
 
     Public Sub CopyTo(toArg As ArgValue)
-        '해당 트리거의 내용을 toTrg에 넣는다.
+        ' 将该触发器的内容放入toTrg。
 
         toArg.DefaultType = DefaultType
         toArg.ValueType = ValueType

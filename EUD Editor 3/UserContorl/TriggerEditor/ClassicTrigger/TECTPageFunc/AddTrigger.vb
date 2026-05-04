@@ -4,8 +4,8 @@
     End Sub
 
     Public Sub AddTrigger()
-        '원래는 window를 새로 열어야됨
-        '편집기 열기
+        ' 原本应该打开新窗口。
+        ' 打开编辑器
 
         pjData.SetDirty(True)
 
@@ -35,7 +35,7 @@
                                                       End If
                                                   Next
                                                   If Not tcheck Then
-                                                      '모든 트리거가 꺼져있어서 추가불가능
+                                                      ' 所有触发器都已关闭，无法添加。
                                                       Return
                                                   End If
 

@@ -5,8 +5,8 @@
     Private DragSelectItem As TreeViewItem
 
     Private Function CheckDragable() As Boolean
-        '선택한 블럭들이 타입이 일치하는지 판단
-        '선택한 블럭들 중에 삭제나 이동, 추가가 불가능한 블럭이 있는지 판단
+        ' 判断所选块类型是否一致。
+        ' 判断所选块中是否有无法删除、移动或添加的块。
 
         Return True
     End Function
@@ -50,11 +50,11 @@
                 log.Text = log.Text & vbCrLf & "현재 선택한 블럭 : " & DragSelectItem.Tag & "  드래그 완료  IsTop : " & IsTop
 
                 If SelectItems.IndexOf(DragSelectItem) < 0 Then
-                    '드래그 한 곳이 선택한 블럭이 아닐 경우!
+                    ' 如果拖动的位置不是所选块！
 
 
                     For i = 0 To SelectItems.Count - 1
-                        '드래그 한 곳이 선택한 블럭의 자식이 아닐 경우!
+                        ' 如果拖动的位置不是所选块的子项！
                         If CheckChild(SelectItems(i), DragSelectItem) Then
                             For k = 0 To SelectItems.Count - 1
                                 DeleteItem(SelectItems(k))
@@ -70,14 +70,14 @@
         End If
     End Sub
     Private Function CheckChild(parent As TreeViewItem, Child As TreeViewItem) As Boolean
-        'Parent의 자식들을 모두 순환!
+        ' 循环遍历父级的所有子级！
         For i = 0 To parent.Items.Count - 1
-            '자식들 중에 Child가 있으면 False반환!
+            ' 如果子级中有 Child，则返回 False！
             If CType(parent.Items(i), TreeViewItem) Is Child Then
                 Return False
             End If
 
-            '부모의 자식들에게도 해당 함수 적용
+            ' 也对父级的子级应用该函数。
             If Not CheckChild(parent.Items(i), Child) Then
                 Return False
             End If

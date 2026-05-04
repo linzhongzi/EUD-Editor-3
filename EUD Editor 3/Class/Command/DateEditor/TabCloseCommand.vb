@@ -26,8 +26,8 @@ Public Class TabCloseCommand
         Dim CurrentIndex As Integer = ParentTab.Items.IndexOf(CurrentTab)
         Dim ParentSize As Integer = ParentTab.Items.Count
 
-        '0 1 2(현재) 3 4 5 6
-        '카운트 = 7
+        ' 0 1 2(当前) 3 4 5 6
+        ' 计数 = 7
 
         Select Case PType
             Case CommandType.RightClose

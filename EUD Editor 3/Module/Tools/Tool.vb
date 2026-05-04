@@ -244,12 +244,12 @@ Namespace Tool
 
 
         Private TextBlockColorTable() As SolidColorBrush = {
-        Nothing, '기본
-        New SolidColorBrush(Color.FromRgb(86, 156, 214)),'연파
-         New SolidColorBrush(Color.FromRgb(128, 193, 132)), '연초 enum색
-         New SolidColorBrush(Color.FromRgb(72, 180, 142)),'청록
-         New SolidColorBrush(Color.FromRgb(181, 206, 168)), '연초2
-         New SolidColorBrush(Color.FromRgb(255, 167, 167))} '붉은색 (주의)
+        Nothing, ' 基本
+        New SolidColorBrush(Color.FromRgb(86, 156, 214)),' 烟蓝
+         New SolidColorBrush(Color.FromRgb(128, 193, 132)), ' 烟绿
+         New SolidColorBrush(Color.FromRgb(72, 180, 142)),' 青绿
+         New SolidColorBrush(Color.FromRgb(181, 206, 168)), ' 烟绿2
+         New SolidColorBrush(Color.FromRgb(255, 167, 167))} ' 红色 (警告)
         Public Function TextColorBlock(textstr As String, Optional colorinvert As Boolean = True) As TextBlock
             Dim TextBlcck As New TextBlock
 
@@ -375,13 +375,13 @@ Namespace Tool
         Public Function GetRelativePath(BasePath As String, RelativePath As String) As String
             Dim resultPath As String = ""
 
-            'MsgBox("원본 주소 :" & BasePath & vbCrLf & "대상 주소 :" & RelativePath)
+            ' MsgBox("原地址 :" & BasePath & vbCrLf & "目标地址 :" & RelativePath)
             Dim BaseSplit() As String = BasePath.Split("\")
             Dim RelativeSplit() As String = RelativePath.Split("\")
 
             For index = 0 To Math.Min(BaseSplit.Count, RelativeSplit.Count) - 1
                 If index = 0 And BaseSplit(index) <> RelativeSplit(index) Then
-                    'MsgBox("드라이버가 다르잖아 ㅅㅂ..")
+                    ' MsgBox("驱动程序不同啊..")
                     Return RelativePath
                 End If
                 If BaseSplit(index) <> RelativeSplit(index) Then
@@ -399,18 +399,18 @@ Namespace Tool
                 End If
             Next
 
-            'zzz\ asd \ c \ ㅎㅎ.txt
-            '4개
+            ' zzz\ asd \ c \ 哈哈.txt
+            ' 4个
 
-            'zzz\ asd \ bcx \ aqw \ zxv \ 하이.txt
-            '6개
+            ' zzz\ asd \ bcx \ aqw \ zxv \ 嗨.txt
+            ' 6个
 
-            '..\..\..\c\ㅎㅎ.txt
+            ' ..\..\..\c\哈哈.txt
 
-            '2부터 다름.
+            ' 从2开始不同。
 
-            '6 - 2 - 1 = 3개의 ..\를 넣고
-            '4 - 2 = 2의 주소부터 넣는다.
+            ' 放入 6 - 2 - 1 = 3 个 ..\ 然后
+            ' 从 4 - 2 = 2 的地址开始输入。
 
             'MsgBox(resultPath)
             Return resultPath
@@ -575,7 +575,7 @@ Namespace Tool
 
 
         Public Function CreateMapSet(sWindow As SettingWindows) As Boolean
-            '우선 맵의 유형을 정한다.
+            ' 首先确定地图的类型。
             Dim sampleWindow As New SampleMapSetting
             sampleWindow.Owner = sWindow
 
@@ -587,7 +587,7 @@ Namespace Tool
 
 
 
-            '맵을 저장할 위치를 정한다.
+            ' 确定保存地图的位置。
             Dim savedialog As New System.Windows.Forms.SaveFileDialog With {
             .Filter = Tool.GetText("SCX Fliter"),
             .Title = Tool.GetText("SCX Save Select"),
@@ -596,7 +596,7 @@ Namespace Tool
 
 
             Dim LastOpenMapName As String = pjData.OpenMapName
-            '맵이 저장맵이랑 이름이 같은지 검사해야됨.
+            ' 必须检查地图是否与保存地图名称相同。
             If savedialog.ShowDialog() = Forms.DialogResult.OK Then
                 If pjData.SaveMapName = savedialog.FileName Then
                     Tool.ErrorMsgBox(Tool.GetText("Error OpenMap is not SaveMap"))
@@ -609,7 +609,7 @@ Namespace Tool
 
 
 
-            '맵을 생성합니다.
+            ' 创建地图。
             My.Computer.FileSystem.CopyFile(sampleWindow.SelectSampleMap, savedialog.FileName, True)
             pjData.OpenMapName = savedialog.FileName
             Return True
@@ -618,16 +618,16 @@ Namespace Tool
 
 
 
-            ''맵이 플텍맵인지 아닌지 검사해야됨.
+            ' '必须检查地图是否为保护地图。
             'pjData.OpenMapName = savedialog.FileName
             'If pjData.IsMapLoading Then
             '    Return True
             'Else
             '    pjData.OpenMapName = LastOpenMapName
-            '    '샘플맵이 프로텍트 맵입니다.
+            ' '示例地图是保护地图。
 
 
-            '    '생성된 맵을 다시 삭제합니다.
+            ' '删除生成的地图。
             '    My.Computer.FileSystem.DeleteFile(savedialog.FileName)
 
 
@@ -643,15 +643,15 @@ Namespace Tool
             .InitialDirectory = pgData.Setting(ProgramData.TSetting.OpenMapPath)
             }
             Dim LastOpenMapName As String = pjData.OpenMapName
-            '맵이 플텍맵인지 아닌지 검사해야됨.
-            '맵이 저장맵이랑 이름이 같은지 검사해야됨.
+            ' 必须检查地图是否为保护地图。
+            ' 必须检查地图是否与保存地图名称相同。
             If opendialog.ShowDialog() = Forms.DialogResult.OK Then
                 If pjData.SaveMapName = opendialog.FileName Then
                     Tool.ErrorMsgBox(Tool.GetText("Error OpenMap is not SaveMap"))
                     Return False
                 End If
 
-                '맵이 플텍맵인지 아닌지 검사해야됨.
+                ' 必须检查地图是否为保护地图。
                 pjData.OpenMapName = opendialog.FileName
                 If pjData.IsMapLoading Then
                     pgData.Setting(ProgramData.TSetting.OpenMapPath) = Path.GetDirectoryName(opendialog.FileName)
@@ -673,7 +673,7 @@ Namespace Tool
          }
 
 
-            '맵이 오픈맵이랑 이름이 같은지 검사해야됨.
+            ' 必须检查地图是否与开放地图名称相同。
             If savedialog.ShowDialog() = Forms.DialogResult.OK Then
                 If pjData.OpenMapName = savedialog.FileName Then
                     Tool.ErrorMsgBox(Tool.GetText("Error OpenMap is not SaveMap"))
@@ -930,7 +930,7 @@ Namespace Tool
             Dim p As New Process()
             p.StartInfo.FileName = GetRegSettingFile
             p.StartInfo.UseShellExecute = True
-            p.StartInfo.Verb = "runas" 'Verb를 runas로 (관리자 권한으로 실행 명령)
+            p.StartInfo.Verb = "runas" ' 将Verb设置为runas（以管理员权限运行命令）
             p.StartInfo.Arguments = Argument
 
             p.Start()
@@ -1047,7 +1047,7 @@ Namespace TabItemTool
 
             If TabContent.Items.Count <> 0 Then
                 Dim ChangesTabItem As TabItem = TabContent.Items(0)
-                If ChangesTabItem.Content.GetType() = TabTypeArray(Datfile) Then '같은거 일 경우
+                If ChangesTabItem.Content.GetType() = TabTypeArray(Datfile) Then ' 如果是相同的情况
                     Dim TGrid As Grid = ChangesTabItem.Header
                     Dim TabText As TextBlock = TGrid.Children.Item(0)
 

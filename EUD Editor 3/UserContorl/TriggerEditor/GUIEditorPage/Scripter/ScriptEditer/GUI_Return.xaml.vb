@@ -4,7 +4,7 @@
     Private EditValues As ScriptBlock
     Public Sub CrlInit()
         '//////////////////////////////
-        '초기화 식
+        ' 初始化表达式
         EditValues = scr.child(0).DeepCopy
 
         valueEditPanel.Init(p._GUIScriptEditorUI.TEGUIPage.ValueSelecter, dotscr, p._GUIScriptEditorUI, True)
@@ -16,18 +16,18 @@
         isload = True
     End Sub
     Public Sub AgrbtnRefresh(sender As String, e As RoutedEventArgs)
-        'sender.Last 선택한 값
+        ' sender.Last 所选值
         returnVal.Text = "반환 값 : " & EditValues.ValueCoder
     End Sub
 
     Public Sub OkayAction(sender As Object, e As RoutedEventArgs)
         '//////////////////////////////
-        '스크립트 갱신
+        ' 更新脚本
         scr.child(0).DuplicationBlock(EditValues)
     End Sub
     Private Function CheckEditable() As Boolean
         '//////////////////////////////
-        '확인을 누를 수 있는지 확인
+        ' 检查是否可以按确认键。
 
         Return True
     End Function
@@ -38,10 +38,10 @@
     Private dotscr As ScriptBlock
     Public Sub New(tp As GUIScriptEditerWindow, tscr As ScriptBlock, _dotscr As ScriptBlock)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         p = tp
         scr = tscr
         dotscr = _dotscr

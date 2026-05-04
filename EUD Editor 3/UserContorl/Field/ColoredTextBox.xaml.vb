@@ -7,19 +7,19 @@ Imports MaterialDesignColors
 Public Class ColoredTextBox
     Public Sub New()
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         KorFont = New FontFamily(New Uri("pack://application:,,,/resources/"), "./#Kostar")
     End Sub
     Private KorFont As FontFamily
     Public Sub New(text As String)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         TextColred(text)
         KorFont = New FontFamily(New Uri("pack://application:,,,/resources/"), "./#Kostar")
     End Sub
@@ -77,7 +77,7 @@ Public Class ColoredTextBox
 
 
             If Value.Length > 2 Then
-                '색 코드 아님
+                ' 不是颜色代码
                 Dim index As Integer = scData.GetASCIIIndex(Value)
                 Dim changedString As String = ""
 
@@ -91,18 +91,18 @@ Public Class ColoredTextBox
                     matchlist.Add(Value, changedString)
                 End If
             Else
-                '색 코드 일수있음
+                ' 可能是颜色代码
                 Try
                     Dim ColorCode As Integer
                     ColorCode = "&H" & Value
                     If ColorCode > ColorTable.Count - 1 Then
-                        '색 코드가 아님
+                        ' 不是颜色代码
                         If Not matchlist.ContainsKey(Value) Then
                             matchlist.Add(Value, Chr(ColorCode))
                         End If
                         Continue For
                     Else
-                        '색코드임
+                        ' 是颜色代码
                         If ColorTable(ColorCode) = Nothing Then
                             If Not matchlist.ContainsKey(Value) Then
                                 matchlist.Add(Value, Chr(ColorCode))
@@ -143,7 +143,7 @@ Public Class ColoredTextBox
             Dim colorcode As Integer = 1
 
             If strtext(0) = "ꁠ" Then
-                '색코드가 입력되어 있을 경우
+                ' 如果输入了颜色代码
 
                 colorcode = strtext.Substring(1, 2)
                 inputText = strtext.Substring(3)

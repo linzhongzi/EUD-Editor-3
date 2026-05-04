@@ -19,11 +19,11 @@
         End If
 
 
-        '자채적으로 데이터를 읽고 쓴다.
+        ' 自行读写数据。
         GRPBox = New GRPBox(ImageNum, ImageBox, Me, AnimHeaderIndex, Flag, TFObjectID)
     End Sub
     Public Sub ChangeIScriptType(IScrptIndex As Integer)
-        '재생 중인 이미지 스크립트 종류를 교체한다.
+        ' 替换正在播放的图形脚本类型。
         If GRPBox IsNot Nothing Then
             GRPBox.ChangeIScriptType(IScrptIndex)
         End If

@@ -139,7 +139,7 @@ Public Class TECTPage
     End Sub
 
     Public Sub Init()
-        '트리거 리스트를 정리
+        ' 整理触发器列表
         'TListBox.Items.Clear()
         RefreshGlobalObject()
         AnimationInit()
@@ -148,7 +148,7 @@ Public Class TECTPage
         PlayerListReset()
         SetPlayerListIndex(0)
 
-        '트리거 리셋하는 페이지
+        ' 重置触发器的页面
         RefreshTriggerPage()
 
 
@@ -276,10 +276,10 @@ Public Class TECTPage
     End Sub
     Public Sub New(tTEFile As TEFile, Optional SelectTrig As Integer = -1)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         PTEFile = tTEFile
         Scripter = PTEFile.Scripter
         'TextEditor.Init(tTEFile)
@@ -406,7 +406,7 @@ Public Class TECTPage
             t.vtype = nVartype
             t.vinit = nVarinit
 
-            '편집창열기!
+            ' 打开编辑窗口！
 
 
             Dim tlist As ListBoxItem = GlobalList.SelectedItem
@@ -432,7 +432,7 @@ Public Class TECTPage
             'var,pvar,array,varray
 
 
-            '편집창열기!
+            ' 打开编辑窗口！
 
             Dim dv As New DefineVariable(nVarname, nVartype, nVarinit, "")
 
@@ -645,7 +645,7 @@ Public Class TECTPage
             Dim editfolder As String = ImportCombobox.Text
 
 
-            '편집창열기!
+            ' 打开编辑窗口！
 
 
             titem.vname = editname
@@ -662,7 +662,7 @@ Public Class TECTPage
             'var,pvar,array,varray
 
 
-            '편집창열기!
+            ' 打开编辑窗口！
             Dim tlistitems As New ListBoxItem
             Dim nDefineImport As New DefineImport(nVarname, editfolder)
 

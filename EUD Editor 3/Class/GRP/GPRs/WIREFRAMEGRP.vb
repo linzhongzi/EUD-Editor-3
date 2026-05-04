@@ -14,7 +14,7 @@ Public Class WIREFRAMEGRP
 
     Public Overrides Function LoadGRP(bitmap As ByteBitmap, framedata As List(Of FrameData), grpfile As String, GRPSize As Size) As Boolean
         mainbitmap = bitmap
-        '4개를 겹쳐그려야함.
+        ' 需要重叠绘制4个。
         Return True
     End Function
 

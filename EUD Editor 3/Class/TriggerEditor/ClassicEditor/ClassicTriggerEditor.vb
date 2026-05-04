@@ -10,15 +10,15 @@ Public Class ClassicTriggerEditor
 
 
 
-    '모든 트리거가 모여있음
+    ' 包含所有触发器
     Public TriggerListCollection As New ObservableCollection(Of Trigger)
 
 
-    '모든 트리거가 모여있음
+    ' 包含所有触发器
     Public TriggerList As List(Of Trigger)
 
 
-    '임포트된 파일들 모음
+    ' 导入的文件集合
     Public ImportFiles As New List(Of DefineImport)
 
     Public Sub RefreshData()
@@ -29,7 +29,7 @@ Public Class ClassicTriggerEditor
     Public Sub LoadInit()
         If TriggerListCollection Is Nothing Then
             TriggerListCollection = New ObservableCollection(Of Trigger)
-            '아무것도 없을 경우 구버전이므로 콜랙션으로 업데이트 해준다.
+            ' 如果没有，则是旧版本，因此用集合更新。
             For Each item In TriggerList
                 TriggerListCollection.Add(item)
             Next
@@ -51,7 +51,7 @@ Public Class ClassicTriggerEditor
         If ImportFuncs Is Nothing Then
             ImportFuncs = New List(Of TriggerFunction)
         End If
-        '테스트
+        ' 测试
         If ImportVars Is Nothing Then
             ImportVars = New List(Of DefineVariable)
         End If
@@ -87,7 +87,7 @@ Public Class ClassicTriggerEditor
 
 
 
-    '글로벌 변수 모음
+    ' 全局变量集合
     Public globalVar As New List(Of DefineVariable)
 
 

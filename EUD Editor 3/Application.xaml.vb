@@ -1,7 +1,7 @@
 ﻿Class Application
 
-    ' Startup, Exit 및 DispatcherUnhandledException 같은 응용 프로그램 수준 이벤트는
-    ' 이 파일에서 처리할 수 있습니다.
+    ' 可以在该文件中处理应用程序级别的事件，如tartup, Exit和DispatcherUnhandledException。
+    ' 您可以在该文件中对其进行处理。
 
     Private Sub Application_DispatcherUnhandledException(ByVal sender As Object, ByVal e As System.Windows.Threading.DispatcherUnhandledExceptionEventArgs)
         'e.Handled = False

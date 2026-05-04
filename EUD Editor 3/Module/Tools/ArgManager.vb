@@ -17,7 +17,7 @@ Module ArgManager
 
                 Return strs
             Case "TrgModifier"
-                '상수
+                ' 常量
                 Dim strs() As String = {"SetTo", "Add", "Subtract"}
 
                 Return strs
@@ -152,7 +152,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "TrgUnit"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCUnitCount - 1
                     strs.Add(pjData.EngStat_txt(i, True) & "⫥[" & i & "] " & pjData.CodeLabel(SCDatFiles.DatFiles.units, i, True))
                 Next
@@ -207,7 +207,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Tbl"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCtbltxtCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.stattxt, i))
                 Next
@@ -215,7 +215,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Weapon"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCWeaponCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.weapons, i))
                 Next
@@ -223,7 +223,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Flingy"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCFlingyCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.flingy, i))
                 Next
@@ -231,7 +231,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Sprite"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCSpriteCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.sprites, i))
                 Next
@@ -239,7 +239,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Image"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCImageCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.images, i))
                 Next
@@ -247,7 +247,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Upgrade"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCUpgradeCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.upgrades, i))
                 Next
@@ -255,7 +255,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Tech"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCTechCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.techdata, i))
                 Next
@@ -263,7 +263,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Order"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCOrderCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.orders, i))
                 Next
@@ -271,7 +271,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Icon"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCIconCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.Icon, i))
                 Next
@@ -279,7 +279,7 @@ Module ArgManager
                 Return strs.ToArray
             Case "Portrait"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCPortdataCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.portdata, i))
                 Next

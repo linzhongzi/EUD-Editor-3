@@ -98,9 +98,9 @@
     <sys:String x:Key="euddraftVersion1">현재 버전 :</sys:String>
     <sys:String x:Key="euddraftVersion2">권장버전 :</sys:String>
 
-    <!--<sys:String x:Key="SaveFliter">EUD Editor 3 저장 파일|*.e3s</sys:String>-->
+    <!-- <sys:String x:Key="SaveFliter">EUD Editor 3 保存文件|*.e3s</sys:String> -->
     <sys:String x:Key="SaveFliter">EUD Editor 3 저장 파일|*.e3s|EUD Editor 2 저장 파일|*.e2s</sys:String>
-    <!--<sys:String x:Key="LoadFliter">EUD Editor 저장 파일|*.e3s</sys:String>-->
+    <!-- <sys:String x:Key="LoadFliter">EUD Editor 保存文件|*.e3s</sys:String> -->
     <sys:String x:Key="LoadFliter">EUD Editor 저장 파일|*.e3s;*.e2s;|EUD Editor 3 저장 파일|*.e3s|EUD Editor 2 저장 파일|*.e2s</sys:String>
 
 
@@ -801,10 +801,10 @@
     <sys:String x:Key="FG_AlwaysCurrentUseToolTip">코드 전체를 조건 허용으로 변경합니다. 사용 유닛은 바뀌지 않고 조건만 허용됩니다.</sys:String>
     <sys:String x:Key="FG_CustomUseToolTip">사용자정의</sys:String>
 
-    <!--색 코드-->
+    <!-- 颜色代码 -->
     <sys:String x:Key="ColorNames">기본 색 사용|Pale Blue|Yellow|White|Grey|Red|Green|Red (P1)|NULL|NULL|&lt;1&gt;투명|&lt;1&gt;Remove beyond|NULL|Blue (P2)|Teal (P3)|Purple (P4)|Orange (P5)|Right Aling|Center Align|&lt;1&gt;투명|Brown (P6)|white (P7)|Yellow (P8)|Green (P9)|Brighter Yellow (P10)|Cyan|Pinkish (P11)|Dark Cyan (P12)|Greygreen|BlueGrey|Truquoise</sys:String>
 
-    <!--버튼셋-->
+    <!-- 按钮组 -->
     <sys:String x:Key="buttonSetEtcGroup">기타 버튼</sys:String>
     <sys:String x:Key="buttonSet">버튼셋</sys:String>
     <sys:String x:Key="button">버튼데이터</sys:String>
@@ -828,7 +828,7 @@
     <sys:String x:Key="BtnNewIndex">기본 커맨드|이동 가능한 건물 커맨드|버로우 커맨드|채취 커맨드|운송 커맨드|빈 버튼셋|유닛 훈련|유닛 훈련 (변태)|업그레이드 연구|기술 연구|기술 사용|건물 변태|건물 건설 (저그)|건물 건설 (테란)|건물 건설 (프로토스)|건물 건설 - 애드온</sys:String>
 
 
-    <!--트리거에디터-->
+    <!-- 触发器编辑 -->
     <sys:String x:Key="NewFolder">새 폴더</sys:String>
     <sys:String x:Key="NewEpsScript">새epScript파일</sys:String>
     <sys:String x:Key="NewSCAScript">새SCAScript파일</sys:String>
@@ -847,7 +847,7 @@
     <sys:String x:Key="SearchText">찾기</sys:String>
     <sys:String x:Key="TextEditor">텍스트 에디터</sys:String>
 
-    <!--트리거에디터 설정-->
+    <!-- 触发器编辑器设置 -->
     <sys:String x:Key="TE_CompileSetting">컴파일 설정</sys:String>
     <sys:String x:Key="TE_MainScriptSetting">시작 파일 설정</sys:String>
 

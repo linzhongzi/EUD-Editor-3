@@ -149,7 +149,7 @@ Public Class TriggerEditorData
 
         If cTEFile.IsFile Then
             If cTEFile.FileName = Link(LinkIndex) Then
-                '해당 파일일 경우
+                ' 如果是该文件
                 Return cTEFile
             End If
         Else
@@ -157,7 +157,7 @@ Public Class TriggerEditorData
                 Dim fName As String = cTEFile.Folders(i).FileName
 
                 If fName = Link(LinkIndex) Then
-                    '해당 폴더일 경우
+                    ' 如果是该文件夹
                     tTEFile = GetTEFile(cTEFile.Folders(i), Link, LinkIndex + 1)
                     Exit For
                 End If
@@ -166,7 +166,7 @@ Public Class TriggerEditorData
                 Dim fName As String = cTEFile.Files(i).FileName
 
                 If fName = Link(LinkIndex) Then
-                    '해당 폴더일 경우
+                    ' 如果是该文件夹
                     Return cTEFile.Files(i)
                 End If
             Next
@@ -253,7 +253,7 @@ Public Class TriggerEditorTempData
     End Sub
 
     Private Sub TESaveTabITem()
-        '우선 모든 윈도우 돌면서 조사하자
+        ' 首先遍历所有窗口进行检查
         For Each win As Window In Application.Current.Windows
             If win.GetType Is GetType(TriggerEditor) Then
                 Dim MainContent As Object = CType(win, TriggerEditor).MainTab
@@ -272,7 +272,7 @@ Public Class TriggerEditorTempData
         Next
     End Sub
     Private Function CheckBranch(ParentBranch As Object) As Boolean
-        '우선 모든 윈도우 돌면서 조사하자
+        ' 首先遍历所有窗口进行检查
         While TypeOf ParentBranch IsNot TabablzControl
             Select Case ParentBranch.GetType
                 Case GetType(TabablzControl)

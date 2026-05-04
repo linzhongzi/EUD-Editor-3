@@ -10,9 +10,9 @@ Public Class SaveableData
     Private mRelativeSaveMapName As String
     Public Property OpenMapName As String
         Get
-            If Not My.Computer.FileSystem.FileExists(mOpenMapName) And mRelativeOpenMapName <> "" Then '오픈 맵이 존재하지 않을 경우
+            If Not My.Computer.FileSystem.FileExists(mOpenMapName) And mRelativeOpenMapName <> "" Then ' 如果打开的地图不存在
                 Dim tempOpenMapName As String = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(pjData.Filename), mRelativeOpenMapName))
-                If My.Computer.FileSystem.FileExists(tempOpenMapName) Then '상대경로로 존재할 경우
+                If My.Computer.FileSystem.FileExists(tempOpenMapName) Then ' 如果以相对路径存在
                     mOpenMapName = tempOpenMapName
                 End If
             End If
@@ -27,9 +27,9 @@ Public Class SaveableData
     Public Property SaveMapName As String
         Get
             If mSaveMapName <> "" Then
-                If Not My.Computer.FileSystem.DirectoryExists(Path.GetDirectoryName(mSaveMapName)) And mRelativeSaveMapName <> "" Then '저장맵의 폴더가 존재하지 않을 경우
+                If Not My.Computer.FileSystem.DirectoryExists(Path.GetDirectoryName(mSaveMapName)) And mRelativeSaveMapName <> "" Then ' 如果保存地图的文件夹不存在
                     Dim tempSaveMapName As String = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(pjData.Filename), mRelativeSaveMapName))
-                    If My.Computer.FileSystem.DirectoryExists(Path.GetDirectoryName(tempSaveMapName)) Then '상대경로로 존재할 경우
+                    If My.Computer.FileSystem.DirectoryExists(Path.GetDirectoryName(tempSaveMapName)) Then ' 如果以相对路径存在
                         mSaveMapName = tempSaveMapName
                     End If
                 End If

@@ -28,7 +28,7 @@ Partial Public Class ProjectExplorer
 
 
             If FliterText <> "" Then
-                '만약 Child의 Items가 0이고 Child의 TEfFiles가 0이면 Child죽이기
+                ' 如果 Child 的 Items 为 0 且 Child 的 TEfFiles 为 0，则删除 Child。
                 If child.Items.Count = 0 Then
                     Dim pparent As TreeViewItem = child.Parent
                     pparent.Items.Remove(child)

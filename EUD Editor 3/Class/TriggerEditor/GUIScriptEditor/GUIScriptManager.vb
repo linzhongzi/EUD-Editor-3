@@ -600,12 +600,12 @@ Public Class GUIScriptManager
                 'strb.Append("////")
                 Select Case svalue
                     Case "constructor"
-                        '// 인게임 초기화 해당 코드에서 매번 초기화합니다(전역 스코프면 게임 시작 때).
-                        '// 함수 리턴값처럼 게임 안에서 정해지는 값도 넣을 수 있습니다.
+                        ' // 游戏内初始化 每次都在该代码中初始化（如果是全局作用域，则在游戏开始时）。
+                        ' // 可以放入像函数返回值一样在游戏中确定的值。
                         'Const a = [getuserplayerid(), 0, 0];
                         'Const b = VArray(GetTBLAddr(1), GetTBLAddr(2), GetTBLAddr(3));
 
-                        '// 컴파일시간 초기화 맵에 삽입될 때 초기화합니다. 상수 표현식만 넣을 수 있습니다.
+                        ' // 编译时初始化 在插入地图时初始化。只能放入常量表达式。
                         'Const a = EUDArray(List(1, 2, 3, 4));
                         'Const b = EUDVArray(4)(List(EPD(a), EPD(a) + 1, EPD(a) + 2, EPD(a) + 3));
                         Select Case sname
@@ -888,7 +888,7 @@ Public Class GUIScriptManager
                     End If
                 End If
 
-                '액션,조건등
+                ' 动作、条件等
         End Select
         If isValCover And sscr.ScriptType <> ScriptBlock.EBlockType.constVal Then
             strb.Append("""")

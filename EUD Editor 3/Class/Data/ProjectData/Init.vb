@@ -8,7 +8,7 @@
         SaveData.ExtraDat = New ExtraDatFiles
         SaveData.TEData = New TriggerEditorData
         SaveData.EdsBlocks = New BuildData.EdsBlock
-        'MsgBox("프로젝트 초기화")
+        ' MsgBox("项目初始化")
     End Sub
 
 
@@ -18,8 +18,8 @@
 
 
 
-        '=======0.9.XX.XX버전 호환성========
-        'TEChatEvnet추가됨
+        ' =======0.9.XX.XX版本兼容性========
+        ' TEChatEvent已添加
         If StringTool.CheckOldVersion(SaveVersion, 0, 9) Then
             Dim HaveChatBlock As Boolean = False
             For i = 0 To EdsBlock.Blocks.Count - 1
@@ -37,8 +37,8 @@
         '====================================
 
 
-        '=======0.11.XX.XX버전 호환성========
-        'Switch 기능 변경
+        ' =======0.11.XX.XX版本兼容性========
+        ' Switch功能变更
         If StringTool.CheckOldVersion(SaveVersion, 0, 11) Then
             Dim mainTEFile As TEFile = TEData.PFIles
 
@@ -52,7 +52,7 @@
         '====================================
 
 
-        '=======0.16.XX.XX버전 호환성========
+        ' =======0.16.XX.XX版本兼容性========
         If TEData.SCArchive.FuncSpace < 4000 Then
             TEData.SCArchive.FuncSpace = 4000
         End If

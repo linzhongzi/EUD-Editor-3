@@ -8,10 +8,10 @@ Public Class SCASettingWindows
 
     Public Sub New()
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         LoginPage.Visibility = Visibility.Visible
         LoginAlert.Visibility = Visibility.Collapsed
 
@@ -20,7 +20,7 @@ Public Class SCASettingWindows
 
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        '샘플 맵을 읽어온다.
+        ' 读取示例地图。
 
     End Sub
 
@@ -77,7 +77,7 @@ Public Class SCASettingWindows
             pjData.TEData.SCArchive.SavePassWord(email, pw)
         End If
 
-        '성공하면
+        ' 如果成功。
         pjData.TEData.SCArchive.SCAEmail = EmailTextBox.Text
         pjData.TEData.SCArchive.IsLogin = True
         pjData.TEData.SCArchive.TempPassWord = pw
@@ -102,7 +102,7 @@ Public Class SCASettingWindows
             pjData.TEData.SCArchive.SavePassWord(email, PW)
         End If
 
-        '성공하면
+        ' 如果成功。
         pjData.TEData.SCArchive.SCAEmail = EmailTextBox.Text
         pjData.TEData.SCArchive.IsLogin = True
         pjData.TEData.SCArchive.TempPassWord = pw

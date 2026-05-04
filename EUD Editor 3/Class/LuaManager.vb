@@ -99,7 +99,7 @@ Public Class LuaManager
 
         RegFunction("Log", "log", "<1>function <0>log(str)" & vbCrLf & "로그를 입력합니다.")
 
-        'RegFunction("SetDat", "setdat", "<1>function <0>setdat(datfile =<2>" & DatIndex & "<0>, param , objectid, value)" & vbCrLf & "Dat데이터를 수정합니다.",
+        ' RegFunction("SetDat", "setdat", "<1>function <0>setdat(datfile =<2>" & DatIndex & "<0>, param , objectid, value)" & vbCrLf & "修改Dat数据。",
         '            {"datfile", "param", "objectid", "value"})
 
         RegFunction("SetDat", "setdat", "<1>function <0>setdat(datfile, param , objectid, value)" & vbCrLf & "Dat데이터를 수정합니다.",

@@ -362,7 +362,7 @@ Public Class ScriptBlock
         End If
 
 
-        '만약 마지막 define된 arg의 이름이 *로 시작 할 경우
+        ' 如果最后一个define的参数名称以 * 开头
 
         'Dim funcargs As Integer = GetFuncArgsCount()
         'If funcargs <> -1 Then

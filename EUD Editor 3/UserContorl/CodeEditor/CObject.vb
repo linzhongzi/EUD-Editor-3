@@ -24,7 +24,7 @@
 
 
 
-    'LoadFunc를 통해 CObject의 내용물을 넣는다!
+    ' 通过 LoadFunc 插入 CObject 的内容！
 
 
     Public Sub New(tObjName As String, InitStr As String)

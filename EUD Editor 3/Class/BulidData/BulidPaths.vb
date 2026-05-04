@@ -98,14 +98,14 @@
 
             Try
                 If pjData.TempFileLoc = "0" Then
-                    '기본 데이터 폴더 사용할 경우.
+                    ' 使用默认数据文件夹的情况。
                     Return Tool.GetDirectoy("Data\temp\BuildData_" & Tool.StripFileName(pjData.SafeFilename.Split(".").First))
                 ElseIf pjData.TempFileLoc = "1" Then
-                    '맵 폴더가 같을 경우
+                    ' 如果地图文件夹相同
                     Return Tool.GetDirectory(pjData.OpenMapdirectory & "\BuildData_", Tool.StripFileName(pjData.SafeFilename.Split(".").First))
 
                 ElseIf pjData.TempFileLoc = "2" Then
-                    '맵 폴더가 같을 경우
+                    ' 如果地图文件夹相同
                     Return Tool.GetDirectory(System.IO.Path.GetDirectoryName(pjData.Filename) & "\BuildData_", Tool.StripFileName(pjData.SafeFilename.Split(".").First))
                 Else
                     Return Tool.GetDirectory(pjData.TempFileLoc, "\BuildData_" & Tool.StripFileName(pjData.SafeFilename.Split(".").First))

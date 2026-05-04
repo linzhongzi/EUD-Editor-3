@@ -34,7 +34,7 @@
         Return rtoken
     End Function
 
-    '무조건 넘어감
+    ' 无条件通过
     Public Function CheckNextToken(type As Token.TokenType) As Token
         Dim rtoken As Token = RawList(index)
 
@@ -61,7 +61,7 @@
         End If
     End Function
 
-    '토큰이 참일 경우 넘어감
+    ' 如果令牌为真，则通过
     Public Function CheckBlockToken(type As Token.TokenType) As Boolean
         Dim rtoken As Token = RawList(index)
 

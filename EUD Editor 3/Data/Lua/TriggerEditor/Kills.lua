@@ -14,21 +14,36 @@
 설정할 유닛입니다.
 
 
+@Language.zh-CN
+@Summary
+被 [Player] 杀死的 [Unit] 的次数 [Modifier] 为 [Amount].
+@Group
+普通用户组
+@param.Player.TrgPlayer
+目标玩家。
+@param.Modifier.TrgModifier
+修改函数。
+@param.Amount.Number
+修改值。
+@param.Unit.TrgUnit
+要修改的单位。
+
+
 @Language.en-US
 @Summary
-[Player]가 [Unit]을 죽인 수를 [Amount]만큼 [Modifier]합니다.
+[Modifier] s the number of [Unit] killed by [Player] by [Amount].
 @Group
-일반
+General
 @param.Player.TrgPlayer
-대상 플레이어입니다.
+The target player.
 @param.Modifier.TrgModifier
-조절할 방법입니다.
+The method of adjustment.
 @param.Amount.Number
-설정할 값입니다.
+The value to set.
 @param.Unit.TrgUnit
-설정할 유닛입니다.
+The unit to set.
 ]================================]
-function SetKills(Player, Modifier, Amount, Unit) --일반/TrgPlayer,TrgModifier,Number,TrgUnit/[Player]의 [Unit]이 죽은 수를 [Amount]만큼 [Modifier]합니다.
+function SetKills(Player, Modifier, Amount, Unit) -- General 组/TrgPlayer, TrgModifier, Number, TrgUnit/被 [Player] 杀死的 [Unit] 的次数 [Modifier] 为 [Amount].
 	Player = ParsePlayer(Player)
     Modifier = ParseModifier(Modifier)
     Unit = ParseUnit(Unit)
@@ -50,17 +65,28 @@ end
 대상 플레이어입니다.
 
 
+@Language.zh-CN
+@Summary
+读取被 [Player] 杀死的 [Unit] 的次数
+@Group
+普通用户组
+@param.Unit.TrgUnit
+要读取的单位。
+@param.Player.TrgPlayer
+目标玩家。
+
+
 @Language.en-US
 @Summary
-[Player]가 [Unit]이 죽은 수를 읽습니다.
+Reads the number of [Unit] killed by [Player].
 @Group
-일반
+General
 @param.Unit.TrgUnit
-설정할 유닛입니다.
+The unit to set.
 @param.Player.TrgPlayer
-대상 플레이어입니다.
+The target player.
 ]================================]
-function GetKills(Unit, Player) --일반/TrgUnit,TrgPlayer/[Player]의 [Unit]이 죽은 수를 읽습니다.
+function GetKills(Unit, Player) -- General 组/TrgUnit, TrgPlayer/读取被 [Player] 杀死的 [Unit] 的次数
 	Player = ParsePlayer(Player)
     Unit = ParseUnit(Unit)
     OffsetEPD = KillsEPD(Unit, Player)
@@ -80,17 +106,28 @@ end
 대상 플레이어입니다.
 
 
+@Language.zh-CN
+@Summary
+返回被 [Player] 杀死的 [Unit] 的数值的地址。
+@Group
+普通用户组
+@param.Unit.TrgUnit
+要读取的单位。
+@param.Player.TrgPlayer
+目标玩家。
+
+
 @Language.en-US
 @Summary
-[Player]가 [Unit]을 죽인 수의 주소를 반환합니다.
+Returns the address of the number of [Unit] killed by [Player].
 @Group
-일반
+General
 @param.Unit.TrgUnit
-설정할 유닛입니다.
+The unit to set.
 @param.Player.TrgPlayer
-대상 플레이어입니다.
+The target player.
 ]================================]
-function KillsEPD(Unit, Player) --일반/TrgUnit,TrgPlayer/[Player]의 [Unit]이 죽은 수의 주소를 반환합니다.
+function KillsEPD(Unit, Player) -- General 组/TrgUnit, TrgPlayer/返回被 [Player] 杀死的 [Unit] 的数值的地址。
 	Player = ParsePlayer(Player)
     Unit = ParseUnit(Unit)
 

@@ -32,7 +32,7 @@ Partial Public Class BuildData
             Dim sb As New StringBuilder
 
             Dim checkdic As List(Of EdsBlockType) = New List(Of EdsBlockType)
-            'pBlocks가 다 있나 확인
+            ' 检查是否所有pBlocks都存在
             For i = 0 To pBlocks.Count - 1
                 If checkdic.IndexOf(pBlocks(i).BType) = -1 Then
                     checkdic.Add(pBlocks(i).BType)
@@ -144,10 +144,10 @@ Partial Public Class BuildData
                     Case EdsBlockType.DataDumper
                         sb.AppendLine("[dataDumper]")
                         If pjData.UseCustomtbl Then
-                            'tbl 파일 쓰기
+                            ' 写入tbl文件
                             sb.AppendLine(Tool.GetRelativePath(EdsFilePath, tblFilePath) & " : 0x6D5A30, copy")
                         End If
-                        'RequireData 쓰기
+                        ' 写入RequireData
                         'sb.Append(Tool.GetRelativePath(EdsFilePath, requireFilePath) & " : 0x" & Hex(Tool.GetOffset("Vanilla") + 500) & ", copy")
                     Case EdsBlockType.TEMSQC
                         If pjData.TEData.UseMSQC Then

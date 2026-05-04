@@ -156,7 +156,7 @@ Public Class GUIScriptEditor
                 ExternFile.Add(New ExternFile(fTEFile, n))
             End If
         Next
-        'MsgBox("Extern로드, 함수, 변수, 오브젝트를 불러옴")
+        ' MsgBox("加载Extern，加载函数、变量、对象")
     End Sub
 
 

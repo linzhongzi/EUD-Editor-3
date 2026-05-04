@@ -24,7 +24,7 @@
                                 </ContentPresenter>
                             </Border>
                             <ControlTemplate.Triggers>
-                                <!-- 트리거 -->
+                                <!-- 触发器 -->
                                 <Trigger Property="IsEnabled" Value="False">
                                     <Setter TargetName="Border" Property="Background" Value="#FFACACAC" />
                                     <Setter TargetName="Border" Property="BorderBrush" Value="{x:Null}" />
@@ -117,19 +117,19 @@
 
             <Button x:Name="BtnSetting" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{StaticResource RoundButtonTemplate}" Click="BtnSetting_Click" Background="White">
                 <Image  Source="Icon/settings.png"/>
-                <!-- 세팅-->
+                <!-- 设置 -->
             </Button>
             <Button x:Name="BtnNewfile" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{StaticResource RoundButtonTemplate}" Click="BtnNewFile_Click" Background="White">
                 <Image  Source="Icon/file.png"/>
-                <!-- 새파일-->
+                <!-- 新建文件 -->
             </Button>
             <Button x:Name="BtnOpenFile" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{StaticResource RoundButtonTemplate}" Click="BtnLoad_Click" Background="White">
                 <Image  Source="Icon/folder-open.png"/>
-                <!-- 열기-->
+                <!-- 打开 -->
             </Button>
             <Button x:Name="BtnSave" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" Click="BtnSave_Click" Background="White">
                 <Image  Source="Icon/content-save.png"/>
-                <!-- 저장-->
+                <!-- 保存 -->
                 <Button.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="저장" Click="MenuItemSave_Click"/>
@@ -139,17 +139,17 @@
             </Button>
             <Button x:Name="BtnClose" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" IsEnabled="False"  Style="{StaticResource RoundButtonTemplate}" Click="BtnClose_Click" Background="White">
                 <Image  Source="Icon/close-outline.png"/>
-                <!-- 닫기-->
+                <!-- 关闭 -->
             </Button>
 
 
             <Button x:Name="Btn_scmd" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" ToolTip="{DynamicResource ToolTip OpenMapEditor}" Click="Btn_scmd_Click" Background="White">
                 <Image  Source="Icon/earth.png" />
-                <!-- SCMD로열기-->
+                <!-- 使用 SCMD 打开 -->
             </Button>
             <Button x:Name="Btn_insert" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" ToolTip="{DynamicResource ToolTip Compile}" Click="Btn_insert_Click" Background="White">
                 <Image  Source="Icon/arrow-right-drop-circle.png"/>
-                <!-- 삽입-->
+                <!-- 插入 -->
             </Button>
             <Button x:Name="Btn_DatEdit" Grid.Column="7" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{StaticResource RoundButtonTemplate}" ToolTip="{DynamicResource ToolTip DE}" Click="BtnDataEditor_Click" Background="White" >
                 <Image  Source="Icon/DatEditIcon.png"/>
@@ -157,16 +157,16 @@
             </Button>
             <Button x:Name="Btn_TriggerEdit" Grid.Column="8" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" ToolTip="{DynamicResource ToolTip TE}" Click="Btn_TriggerEdit_Click" Background="White">
                 <Image  Source="Icon/matrix.png"/>
-                <!-- 트리거-->
+                <!-- 触发器 -->
             </Button>
             <Button x:Name="Btn_Plugin" Grid.Column="9" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" IsEnabled="False" Style="{StaticResource RoundButtonTemplate}" ToolTip="{DynamicResource ToolTip Plugin}" Click="Btn_Plugin_Click" Background="White">
                 <Image  Source="Icon/tune.png"/>
-                <!-- 플러그인-->
+                <!-- 插件 -->
             </Button>
 
             <Button x:Name="Btn_ShutDown" Grid.Column="10" Grid.Row="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Style="{StaticResource RoundButtonTemplate}" Click="ButClose_Click" Background="White">
                 <Image  Source="Icon/power.png"/>
-                <!-- 종료-->
+                <!-- 结束 -->
             </Button>
 
 

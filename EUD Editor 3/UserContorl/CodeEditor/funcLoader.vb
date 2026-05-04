@@ -22,7 +22,7 @@ Partial Public Class CodeEditor
 
                 Return strs
             Case "TrgModifier"
-                '상수
+                ' 常量
                 Dim strs() As String = {"SetTo", "Add", "Subtract"}
 
                 Return strs
@@ -157,7 +157,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "TrgUnit"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCUnitCount - 1
                     strs.Add(pjData.EngStat_txt(i))
                 Next
@@ -210,7 +210,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "Weapon"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCWeaponCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.weapons, i))
                 Next
@@ -218,7 +218,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "Flingy"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCFlingyCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.flingy, i))
                 Next
@@ -226,7 +226,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "Sprite"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCSpriteCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.sprites, i))
                 Next
@@ -234,7 +234,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "Image"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCImageCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.images, i))
                 Next
@@ -242,7 +242,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "Upgrade"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCUpgradeCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.upgrades, i))
                 Next
@@ -250,7 +250,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "Tech"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCTechCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.techdata, i))
                 Next
@@ -258,7 +258,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "Order"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCOrderCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.orders, i))
                 Next
@@ -266,7 +266,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "Icon"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCIconCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.Icon, i))
                 Next
@@ -274,7 +274,7 @@ Partial Public Class CodeEditor
                 Return strs.ToArray
             Case "Portrait"
                 Dim strs As New List(Of String)
-                '스트링
+                ' 字符串
                 For i = 0 To SCPortdataCount - 1
                     strs.Add(pjData.CodeLabel(SCDatFiles.DatFiles.portdata, i))
                 Next
@@ -390,7 +390,7 @@ Partial Public Class CodeEditor
                         data.Add(New TECompletionData(0, """" & tstr & """", """" & tstr & """", tb, TextEditor, TECompletionData.EIconType.StarStringConst))
                     Next
                 Case "TrgUnit"
-                    '스트링
+                    ' 字符串
                     For i = 0 To SCUnitCount - 1
                         Dim tb As New TextBox
                         tb.Text = "[" & i & "] " & pjData.EngStat_txt(i)
@@ -437,12 +437,12 @@ Partial Public Class CodeEditor
             data.Add(New TECompletionData(20, Tool.TEEpsDefaultFunc, i, TextEditor, TECompletionData.EIconType.Auto))
         Next
 
-        'KeyWord추가
+        ' 添加Keyword
         For i = 0 To KeyWords.Count - 1
             data.Add(New TECompletionData(30, KeyWords(i), KeyWords(i), Nothing, TextEditor, TECompletionData.EIconType.KeyWord))
         Next
 
-        'StarKeyWord추가
+        ' 添加StarKeyWord
         For i = 0 To StarKeyWords.Count - 1
             data.Add(New TECompletionData(25, StarKeyWords(i), StarKeyWords(i), Nothing, TextEditor, TECompletionData.EIconType.StarKeyWord))
         Next
@@ -469,14 +469,14 @@ Partial Public Class CodeEditor
             If VarName = LocalFunc.GetVariableNames(i) Then
                 Dim VarType As String = LocalFunc.GetVariableType(i)
                 If VarType.IndexOf("(") >= 0 Then
-                    'Object나 함수인 경우
+                    ' 如果是对象或函数
                     Dim ObjectName As String = VarType.Split("(").First
 
 
 
 
 
-                    '다른거 다 조사하기
+                    ' 检查其他所有内容
                     For k = 0 To LocalFunc.ObjectCount - 1
                         If ObjectName = LocalFunc.GetObject(k).ObjName Then
                             Dim tempfunc As CFunc = LocalFunc.GetObject(k).Functions
@@ -604,7 +604,7 @@ Partial Public Class CodeEditor
                         data.Add(New TECompletionData(0, """" & tstr & """", """" & tstr & """", tb, TextEditor, TECompletionData.EIconType.StarStringConst))
                     Next
                 Case "TrgUnit"
-                    '스트링
+                    ' 字符串
                     For i = 0 To SCUnitCount - 1
                         Dim tb As New TextBox
                         tb.Text = "[" & i & "] " & pjData.UnitInGameName(i)
@@ -642,7 +642,7 @@ Partial Public Class CodeEditor
 
 
 
-        'KeyWord추가
+        ' 添加Keyword
         For i = 0 To LuaKeyWords.Count - 1
             data.Add(New TECompletionData(30, LuaKeyWords(i), LuaKeyWords(i), Nothing, TextEditor, TECompletionData.EIconType.LuaKeyWord))
         Next
@@ -810,49 +810,49 @@ Public Class TECompletionData
     Public Enum EIconType
         Auto
 
-        '키워드
+        ' 关键字
         KeyWord
         LuaKeyWord
         SettingValue
         Funcname
         StarKeyWord
 
-        '에디터 설정 값(AtLeast, AtMost, Enabled등등
+        ' 编辑器设置值(AtLeast, AtMost, Enabled等)
         StarConst
 
-        '스타 스트링 값
+        ' 星号字符串值
         StarStringConst
 
-        '액션들
+        ' 动作
         Action
 
-        '조건들
+        ' 条件
         Condiction
 
-        'eps기본 함수
+        ' eps基本函数
         plibFunction
 
-        '로컬 함수
+        ' 局部函数
         localFunction
 
-        '로컬 변수들
+        ' 局部变量
         Variable
 
         NameSpace_
 
 
-        '로컬 항목 및 매개 변수
-        '상수
-        '속성
-        '필드
-        '매서드
-        '인터페이스
-        '클래스
-        '모듈
-        '구조
-        '열거형
-        '네임스페이스
-        '키워드
+        ' 局部项及参数
+        ' 常量
+        ' 属性
+        ' 字段
+        ' 方法
+        ' 接口
+        ' 类
+        ' 模块
+        ' 结构
+        ' 枚举
+        ' 命名空间
+        ' 关键字
     End Enum
 
 
@@ -954,7 +954,7 @@ Public Class TECompletionData
         End Get
     End Property
 
-    '검색기준
+    ' 搜索标准
     Public Property Text As String Implements ICompletionData.Text
 
     Public ReadOnly Property Content As Object Implements ICompletionData.Content

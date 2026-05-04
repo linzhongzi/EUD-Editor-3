@@ -11,7 +11,7 @@ Partial Public Class BuildData
         sb.AppendLine("def onPluginStart():")
         sb.AppendLine("    DoActions([  # Basic DatFile Actions")
 
-        '기본 Dat파일 저장
+        ' 保存默认Dat文件
         For DatFile = 0 To SCDatFiles.DatFiles.orders
             For Pindex = 0 To pjData.Dat.DatFileList(DatFile).ParameterList.Count - 1
                 Dim ParameterData As SCDatFiles.CDatFile.CParamater = pjData.Dat.DatFileList(DatFile).ParameterList(Pindex)
@@ -39,7 +39,7 @@ Partial Public Class BuildData
                     Dim RealOffset As UInteger = CalOffset - CalOffset Mod 4
 
                     Try
-                        If pjData.MapData.DatFile.GetDatFile(DatFile).GetParamValue(Parameter, ObjectID).IsDefault Then '맵 데이터가 없을 경우
+                        If pjData.MapData.DatFile.GetDatFile(DatFile).GetParamValue(Parameter, ObjectID).IsDefault Then ' 如果没有地图数据
                             OldValue = scData.DefaultDat.GetDatFile(DatFile).ParameterList(Pindex).PureData(ObjectID).Data
                         Else
                             OldValue = pjData.MapData.DatFile.GetDatFile(DatFile).ParameterList(Pindex).PureData(ObjectID).Data
@@ -108,7 +108,7 @@ Partial Public Class BuildData
         sb.AppendLine("    except NameError:")
         sb.AppendLine("        pass")
 
-        '와이어프레임, 버튼셋, 요구사항, 상태플래그
+        ' 线框图、按钮设置、要求、状态标志
         Try
             WriteStatusInfor(sb)
         Catch ex As Exception
@@ -123,7 +123,7 @@ Partial Public Class BuildData
         sb.AppendLine("    addrEPD = EPD(0x" & Hex(Tool.GetOffset("FG_ReqUnit")) & ")")
         sb.AppendLine("    f_repmovsd_epd(addrEPD, EPD(inputData_db), inputDwordN)")
 
-        'sb.AppendLine("    DoActions([ # RequreData 포인터 작성")
+        ' sb.AppendLine(" DoActions([ # RequreData 创建指针")
         'sb.AppendLine("        SetMemory(0x" & Hex(Tool.GetOffset("Vanilla") + 500) & ", SetTo, 0x" & Hex(Tool.GetOffset("FG_ReqUnit")) & ")")
         'sb.AppendLine("    ])")
 
@@ -178,7 +178,7 @@ Partial Public Class BuildData
 
 
     Private Sub WriteWireFrame(sb As StringBuilder)
-        '바뀐게 있는지 체크.
+        ' 检查是否有更改。
 
         File.Copy(Tool.DataPath("TriggerEditor\wireframe.eps"), WireFrameEpsFilePath, True)
         sb.AppendLine("try:")
@@ -225,7 +225,9 @@ Partial Public Class BuildData
                 Dim grpnewframe As Byte = pjData.ExtraDat.GrpFrame(i)
 
                 If firstWireframe Then
-                    sb.AppendLine("else:") 'euddraft 0.9.8.6부터 지원 (와프 초기화 트리거 용량 최소화)
+                    sb.AppendLine("else:") 
+                    ' 从euddraft 0.9.8.6开始支持（使用最小化 Warp 来初始化触发器的容量占用）。
+                    ' ' 触发器优化技术 - 在 EUD（扩展单位死亡）脚本中，Warp 是一种用于优化触发器执行效率的方法，通过特殊的编码方式来减少触发器占用的容量
                     firstWireframe = False
                 End If
 
@@ -280,7 +282,7 @@ Partial Public Class BuildData
 
         'Dim grpframecount As UInt16
 
-        'sb.AppendLine("    # 와이어 프레임")
+        ' sb.AppendLine("    # 线框图（Wire Frame）")
 
         ''#########################################################################################
 
@@ -429,7 +431,7 @@ Partial Public Class BuildData
 
     '    Dim grpframecount As UInt16
 
-    '    sb.AppendLine("    # 와이어 프레임")
+    ' sb.AppendLine("    # 线框图（Wire Frame）")
 
     '    '#########################################################################################
 

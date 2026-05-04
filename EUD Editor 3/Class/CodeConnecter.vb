@@ -8,12 +8,13 @@ Public Class CodeConnecter
     Private ObjectID As Integer
 
     Public Event CollectionChanged As NotifyCollectionChangedEventHandler Implements INotifyCollectionChanged.CollectionChanged
-    'Dat종류, 오브젝트 아이디만 있으면 됨
+    ' Dat类型，只需对象ID即可
 
-    'Dat종류에 따른 출처들을 미리 정리해두자
-    'ex Dat종류 Weapon의 경우, 모든 유닛들의 UnitDat_GroundWeapon을 조사하여 오브젝트 아이디가 같으면 해당 아이디를 보유한 유닛을 추가.
+    ' 提前整理好每种Dat类型的来源。
+    ' 例如，对于Dat类型Weapon，检查所有单位的UnitDat_GroundWeapon，
+    ' 如果对象ID相同，则添加拥有该ID的单位。
 
-    '이 관계를 이용하여 연결된 오브젝트의 이름도 변경해주면 좋겠음
+    ' 利用此关系，最好也更改连接到的对象的名称。
     Private itemCollection As List(Of CodeCollection)
 
 
@@ -235,18 +236,18 @@ Public Class CodeConnectGroup
             End If
         End Get
     End Property
-    '코드 종속 관계
-    '유닛 - 유닛_부가유닛12, 유닛_감염유닛
-    '무기 - 유닛_공중지상무기, 명령_목표지정시
-    '비행정보 - 유닛_비행정보, 무기_그래픽
-    '스프라이트 - 비행정보_스프라이트
-    '이미지 - 유닛_생산모습, 스프라이트_이미지
-    '업그레이드 - 유닛_방어구, 무기_업그레이드
-    '기술 - 무기_사용안함, 명령_에너지
-    '명령 - 유닛_사람.컴터기본.원상태로.유닛공격.공격이동, 명령_불명확명령
-    '텍스트 - 유닛_이름,계급 ,무기_이름, 에러메세지, 업그레이드_이름, 기술_이름, 명령_이름
+    ' 代码依赖关系
+    ' 单位 - 单位_附加单位12, 单位_感染单位
+    ' 武器 - 单位_对空对地武器, 命令_指定目标时
+    ' 投掷 - 单位_投掷, 武器_图形
+    ' 子图形 - 投掷_子图形（Sprite）
+    ' 图形 - 单位_生产模样, 子图形_图形
+    ' 升级 - 单位_护甲, 武器_升级
+    ' 技能 - 武器_不使用, 命令_能量
+    ' 命令 - 单位_人类.电脑基本.恢复原状.单位攻击.攻击移动, 命令_未知命令
+    ' 文本 - 单位_名称,阶级, 武器_名称, 错误消息, 升级_名称, 技能_名称, 命令_名称
 
-    'ex 만약 업그레이드를 바꾸면 해당 방어구와 무기업그레이드의 ValueText가 바뀌어야함
-    'ex 유닛_생산모습을 바꾸면 바꾸기 전의 이미지에한테 Refresh명령을 내려야함 바꾸기 후에도
+    ' 例如，如果更改升级，则相应的护甲和武器升级的ValueText必须更改。
+    ' 例如，如果更改unit_product模样，则必须向更改前的图形发送Refresh命令，更改后也是如此。
 
 End Class

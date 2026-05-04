@@ -43,6 +43,6 @@ Public Class SCAScriptImageData
         Return bi
     End Function
 
-    '21색
-    '데이터
+    ' 21色
+    ' 数据
 End Class

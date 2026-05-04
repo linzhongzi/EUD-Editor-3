@@ -28,7 +28,7 @@ Partial Public Class MacroManager
 
 
     Private Sub BuildStart()
-        'MsgBox("빌드 시작")
+        ' MsgBox("构建开始")
         MSQCItems.Clear()
         ChatEventItems.Clear()
 
@@ -41,7 +41,7 @@ Partial Public Class MacroManager
         afterStr.Clear()
     End Sub
     Private Sub BuildEnd()
-        'MsgBox("빌드 끝")
+        ' MsgBox("构建结束")
         'AddMSQCPlugin("NotTyping ; KeyDown("..Key.. ") : EUDArray, 1")
     End Sub
 
@@ -86,7 +86,7 @@ Partial Public Class MacroManager
     End Function
 
     Private Function CheckIsPattern(str As String) As Boolean
-        '^시작.*중간.*끝$
+        ' ^开始.*中间.*结束$
         Dim regex As New Regex("\^[^\.\*\$]*\.\*[^\.\*\$]*\.\*[^\.\*\$]*\$")
         Return regex.Match(str).Success
     End Function

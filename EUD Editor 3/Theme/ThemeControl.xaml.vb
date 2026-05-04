@@ -21,11 +21,11 @@ Public Class ThemeControl
         MaterialDesignColor.YellowSecondary, MaterialDesignColor.AmberSecondary, MaterialDesignColor.OrangeSecondary, MaterialDesignColor.DeepOrangeSecondary,
         MaterialDesignColor.Lime, MaterialDesignColor.Lime, MaterialDesignColor.Lime}
     Public Sub New()
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
-        '밝기
+        ' 在 InitializeComponent() 调用后添加初始化代码。
+        ' 亮度
         If pgData.Setting(ProgramData.TSetting.Theme) = "Dark" Then
             ToggleBtn.IsChecked = True
         Else

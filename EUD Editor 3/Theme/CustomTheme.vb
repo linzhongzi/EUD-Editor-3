@@ -70,11 +70,11 @@ Public Class CustomTheme
 
         ColorPicker.ColorToHSV(color, h, s, v)
 
-        If s < 0.3 And v > 0.7 Then '밝음
+        If s < 0.3 And v > 0.7 Then ' 亮
             Return Colors.Black
         End If
 
-        If v <= 0.7 Then '어두움
+        If v <= 0.7 Then ' 暗
             Return Colors.White
         End If
 

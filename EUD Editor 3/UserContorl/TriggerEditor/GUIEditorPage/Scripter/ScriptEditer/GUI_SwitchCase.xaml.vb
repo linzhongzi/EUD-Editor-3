@@ -1,19 +1,19 @@
 ﻿Public Class GUI_SwitchCase
     Public Sub CrlInit()
         '//////////////////////////////
-        '초기화 식
+        ' 初始化表达式
         vtb.Text = scr.value
         breakcb.IsChecked = scr.flag
     End Sub
     Public Sub OkayAction(sender As Object, e As RoutedEventArgs)
         '//////////////////////////////
-        '스크립트 갱신
+        ' 更新脚本
         scr.value = vtb.Text
         scr.flag = breakcb.IsChecked
     End Sub
     Private Function CheckEditable() As Boolean
         '//////////////////////////////
-        '확인을 누를 수 있는지 확인
+        ' 检查是否可以按确认键。
         If vtb.Text.Trim = "" Then
             Return False
         End If
@@ -25,10 +25,10 @@
     Private scr As ScriptBlock
     Public Sub New(tp As GUIScriptEditerWindow, tscr As ScriptBlock)
 
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         p = tp
         scr = tscr
 

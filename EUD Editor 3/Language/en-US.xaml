@@ -804,10 +804,10 @@
     <sys:String x:Key="FG_AlwaysCurrentUseToolTip">All codes makes Current Use.</sys:String>
     <sys:String x:Key="FG_CustomUseToolTip">User Custom</sys:String>
 
-    <!--색 코드-->
+    <!-- Colour code -->
     <sys:String x:Key="ColorNames">Using Default Color|Pale Blue|Yellow|White|Grey|Red|Green|Red (P1)|NULL|NULL|&lt;1&gt;Invisible|&lt;1&gt;Remove beyond|NULL|Blue (P2)|Teal (P3)|Purple (P4)|Orange (P5)|Right Align|Center Align|&lt;1&gt;Invisible|Brown (P6)|white (P7)|Yellow (P8)|Green (P9)|Brighter Yellow (P10)|Cyan|Pinkish (P11)|Dark Cyan (P12)|Greygreen|BlueGrey|Truquoise</sys:String>
 
-    <!--버튼셋-->
+    <!-- Button group -->
     <sys:String x:Key="buttonSetEtcGroup">Etc Button</sys:String>
     <sys:String x:Key="buttonSet">Buttonset</sys:String>
     <sys:String x:Key="button">Button Data</sys:String>
@@ -831,7 +831,7 @@
     <sys:String x:Key="BtnNewIndex">Basic Command|Flying Building Command|Burrow Command|Gather Command|Transport Command|Empty Button|Train Unit|Train Unit - Mutation|Upgrade Research|Tech Research|Activate Tech|Mutation Building|Build - Mutation|Build - Terran|Build - Protoss|Build - Addon</sys:String>
 
 
-    <!--트리거에디터-->
+    <!-- Trigger Editor -->
     <sys:String x:Key="NewFolder">New Folder</sys:String>
     <sys:String x:Key="NewEpsScript">epScript</sys:String>
     <sys:String x:Key="NewSCAScript">SCAScript</sys:String>
@@ -850,7 +850,7 @@
     <sys:String x:Key="SearchText">Search</sys:String>
     <sys:String x:Key="TextEditor">Text Editor</sys:String>
 
-    <!--트리거에디터 설정-->
+    <!-- Trigger Editor Settings -->
     <sys:String x:Key="TE_CompileSetting">Setting Compile</sys:String>
     <sys:String x:Key="TE_MainScriptSetting">Setting Main File</sys:String>
 

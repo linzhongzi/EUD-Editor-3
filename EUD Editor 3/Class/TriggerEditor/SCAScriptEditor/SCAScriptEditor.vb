@@ -68,9 +68,9 @@ Public Class SCAScriptEditor
     End Function
     Public Overrides Property ConnectFile() As String
         Get
-            If Not My.Computer.FileSystem.FileExists(_ConnectFile) And _ConnectRelativeFile <> "" Then '오픈 맵이 존재하지 않을 경우
+            If Not My.Computer.FileSystem.FileExists(_ConnectFile) And _ConnectRelativeFile <> "" Then ' 如果打开的地图不存在
                 Dim tempConnectFileName As String = Path.GetFullPath(Path.Combine(Path.GetDirectoryName(pjData.Filename), _ConnectRelativeFile))
-                If My.Computer.FileSystem.FileExists(tempConnectFileName) Then '상대경로로 존재할 경우
+                If My.Computer.FileSystem.FileExists(tempConnectFileName) Then ' 如果以相对路径存在
                     _ConnectFile = tempConnectFileName
                 End If
             End If

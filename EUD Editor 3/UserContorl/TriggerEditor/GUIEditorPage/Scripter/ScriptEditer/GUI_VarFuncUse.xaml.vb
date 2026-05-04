@@ -142,12 +142,12 @@ Public Class GUI_VarFuncUse
         If flag Then
             'method
 
-            'varname을 이용해 변수를 먼저 찾아가야됨
-            '.은 항상 있음.
+            ' 需要使用 varname 先找到变量。
+            ' . 总是存在的。
             '.
             Dim tstr() As String = varname.Split(".")
             If tstr.Count = 1 Then
-                '변수가 내부에 있음
+                ' 变量存在于内部。
 
                 Dim scrlist As New List(Of ScriptBlock)
                 scrlist.AddRange(tescm.GetLocalVar(dotscr, "object", varname))
@@ -166,7 +166,7 @@ Public Class GUI_VarFuncUse
                     Return
                 End If
             ElseIf tstr.Count = 2 Then
-                '변수가 외부에 있음
+                ' 变量存在于外部。
 
                 Dim spacename As String = tstr(0)
                 varname = tstr(1)
@@ -194,7 +194,7 @@ Public Class GUI_VarFuncUse
         Dim isExternObj As Boolean
         Dim ttstr() As String = objname.Split(".")
         If ttstr.Count = 1 Then
-            '오브젝트가 바로있음
+            ' 对象直接存在。
 
             Dim scrlist As New List(Of ScriptBlock)
             scrlist.AddRange(tescm.GetGlobalObject(GUIEditorUI.Script))
@@ -215,7 +215,7 @@ Public Class GUI_VarFuncUse
                 Return
             End If
         Else
-            '오브젝트가 외부에있음
+            ' 对象存在于外部。
 
             Dim spacename As String = ttstr(0)
             objname = ttstr(1)
@@ -268,7 +268,7 @@ Public Class GUI_VarFuncUse
                 If argument.Trim <> "" Then
                     argcount = argument.Split(",").Count
                 End If
-                '만약 마지막 define된 arg의 이름이 *로 시작 할 경우
+                ' 如果最后一个 define 的参数名称以 * 开头
                 'If scr.child.Count <> argcount Then
                 '    If methodfunc.child.Count < scr.child.Count Then
                 '        For i = 0 To scr.child.Count - argcount - 1
@@ -298,7 +298,7 @@ Public Class GUI_VarFuncUse
 
             Else
                 Dim argsb As List(Of ScriptBlock) = tescm.GetFuncArgs(methodfunc)
-                '만약 마지막 define된 arg의 이름이 *로 시작 할 경우
+                ' 如果最后一个 define 的参数名称以 * 开头
                 'If scr.child.Count <> argsb.Count Then
                 '    If methodfunc.child.Count < scr.child.Count Then
                 '        For i = 0 To scr.child.Count - argsb.Count - 1
@@ -649,7 +649,7 @@ Public Class GUI_VarFuncUse
         argwindow.Left = cpos.X + GUIEditorUI.TEGUIPage.ActualWidth / 2 - argwindow.Width / 2
 
 
-        'ArgSelecter를 건내줘야되 그래야 리프레쉬됨
+        ' 必须传递 ArgSelecter，这样才能刷新。
         'GUI_ArgEditor
 
 

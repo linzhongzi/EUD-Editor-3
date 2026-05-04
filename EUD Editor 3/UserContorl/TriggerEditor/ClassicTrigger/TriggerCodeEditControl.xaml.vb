@@ -118,7 +118,7 @@ Public Class TriggerCodeEditControl
     End Sub
 
     Private Sub Button_Click_3(sender As Object, e As RoutedEventArgs)
-        '리스트 선택 버튼
+        ' 列表选择按钮
         FunctionSelectBtnClick()
         BtnRefresh()
     End Sub
@@ -177,7 +177,7 @@ Public Class TriggerCodeEditControl
                                                   If CurrentPageType = SelType Then
                                                       Dim itemColl As ItemCollection
                                                       If TList(index).FGroup <> "" Then
-                                                          '그룹이 있을 경우
+                                                          ' 如果有组
                                                           itemColl = GetCodeListGroup(TList(index).FGroup).Items
                                                       Else
                                                           itemColl = CodeList.Items
@@ -196,7 +196,7 @@ Public Class TriggerCodeEditControl
 
 
 
-                                                      'SelectTBlock이랑 비교해야됨
+                                                      ' 需要与 SelectTBlock 进行比较
                                                       If SelectTBlock IsNot Nothing Then
                                                           Dim t As TriggerFunction = SelectTBlock.GetCodeFunction(MainScriptEditor)
                                                           If t IsNot Nothing Then
@@ -284,7 +284,7 @@ Public Class TriggerCodeEditControl
     Private Function GetCodeListGroup(GroupName As String) As TreeViewItem
         For i = 0 To CodeList.Items.Count - 1
             If CType(CodeList.Items(i), TreeViewItem).Header = GroupName Then
-                '같은 그룹이면
+                ' 如果是同一组
                 Return CodeList.Items(i)
             End If
         Next
@@ -395,7 +395,7 @@ Public Class TriggerCodeEditControl
 
         SelectTBlock.SetFunction(CType(CodeList.SelectedItem, TreeViewItem).Tag)
         SelectTBlock.Refresh(MainScriptEditor)
-        '코드를 선택
+        ' 选择代码
         FuncRefresh()
         BtnRefresh()
     End Sub
@@ -410,7 +410,7 @@ Public Class TriggerCodeEditControl
             Return
         End If
 
-        '버튼을 리프레시한다.
+        ' 刷新按钮。
         For i = 0 To SelectTBlock.Args.Count - 1
             If SelectTBlock.Args(i).IsInit Then
                 Okay_Btn.IsEnabled = False
@@ -420,7 +420,7 @@ Public Class TriggerCodeEditControl
 
         Okay_Btn.IsEnabled = True
 
-        '인자들의 설정여부를 확인한다.
+        ' 确认参数是否已设置。
     End Sub
 
     Private Sub CodeList_MouseDoubleClick(sender As Object, e As MouseButtonEventArgs)

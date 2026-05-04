@@ -7,13 +7,21 @@ SCA
 @param.logtext.string
 출력할 텍스트입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-SCA런처의 로그 창에 특정 텍스트를 출력합니다.
+在 SCA 启动器的日志窗口中打印特定文本。
 @Group
 SCA
 @param.logtext.string
-출력할 텍스트입니다.
+这是要打印的文本。
+
+@Language.en-US
+@Summary
+Prints specific text in the SCA launcher's log window.
+@Group
+SCA
+@param.logtext.string
+This is the text to print.
 ]================================]
 function sca_log_print(logtext)
 end
@@ -27,13 +35,21 @@ SCA
 @param.logtext.string
 출력할 텍스트입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-SCA런처의 로그 창에 에러 텍스트를 출력합니다.
+在 SCA 启动器的日志窗口中打印错误文本。
 @Group
 SCA
 @param.logtext.string
-출력할 텍스트입니다.
+这是要打印的文本。
+
+@Language.en-US
+@Summary
+Prints error text in the SCA launcher's log window.
+@Group
+SCA
+@param.logtext.string
+This is the text to print.
 ]================================]
 function sca_log_error_print(logtext)
 end
@@ -55,21 +71,37 @@ SCA
 @param.table.table
 값을 넘길 테이블입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-값을 맵으로 반환하는 함수입니다.
-맵에서 Lua 함수를 호출 시 자동으로 사용됩니다.
-수동으로 호출하여 값을 여러 개 넘기는 식의 이용이 가능합니다.
-반환 테이블의 인덱스가 10개를 넘길 수 없으며 배열은 사용 가능하나
-이중 배열은 사용 불가능합니다.
+这是函数，它返回类型为 map 的值。
+在地图中调用 Lua 函数时自动使用。
+可以通过手动调用它并传递多个值来使用它。
+返回表中索引的个数不能超过 10 个，可以使用数组，
+但不能使用 double 数组。
 @Group
 SCA
 @param.funcnum.int
-로그 출력 용 함수 번호입니다.
+这是日志输出的函数编号。
 @param.returnindex.int
-반환 받을 때 사용하는 index 값입니다.
+这是接收返回时使用的 index 值。
 @param.table.table
-값을 넘길 테이블입니다.
+这是用来传递值的表格。
+
+@Language.en-US
+@Summary
+A function that returns values as a map.
+It is automatically used when calling Lua functions from a map.
+It can be used by calling it manually to pass multiple values.
+The return table index cannot exceed 10, and while arrays are allowed,
+double arrays are not.
+@Group
+SCA
+@param.funcnum.int
+The function number for log output.
+@param.returnindex.int
+The index value used when receiving the return value.
+@param.table.table
+The table to pass values to.
 ]================================]
 function sys_return_val(funcnum, returnindex, table)
 end
@@ -81,9 +113,15 @@ end
 @Group
 SCA
 
+@Language.zh-CN
+@Summary
+检索 SCAIDs 列表当前正在玩的玩家。
+@Group
+SCA
+
 @Language.en-US
 @Summary
-현재 플레이중인 플레이어들의 SCAID 리스트를 불러옵니다.
+Loads the list of SCAIDs of the players currently playing.
 @Group
 SCA
 ]================================]
@@ -97,9 +135,15 @@ end
 @Group
 SCA
 
+@Language.zh-CN
+@Summary
+开始覆盖。
+@Group
+SCA
+
 @Language.en-US
 @Summary
-오버레이를 시작합니다.
+Start the overlay.
 @Group
 SCA
 ]================================]
@@ -113,9 +157,15 @@ end
 @Group
 SCA
 
+@Language.zh-CN
+@Summary
+退出覆盖。
+@Group
+SCA
+
 @Language.en-US
 @Summary
-오버레이를 종료합니다.
+Exit the overlay.
 @Group
 SCA
 ]================================]
@@ -133,15 +183,25 @@ SCA
 @param.value.uint
 저장할 값입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-유즈맵에서 저장된 변수를 씁니다.
+把一个变量写入用户地图中。
 @Group
 SCA
 @param.key.string
-변수의 이름입니다.
+变量名称。
 @param.value.uint
-저장할 값입니다.
+保存值。
+
+@Language.en-US
+@Summary
+Writes a variable saved in a custom map.
+@Group
+SCA
+@param.key.string
+The name of the variable.
+@param.value.uint
+The value to save.
 ]================================]
 function sca_write_script_variable(key, value)
 end
@@ -155,13 +215,21 @@ SCA
 @param.key.string
 변수의 이름입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-유즈맵에 저장된 변수를 값을 읽습니다.
+读取用户地图中存储的变量的值。
 @Group
 SCA
 @param.key.string
-변수의 이름입니다.
+变量名称。
+
+@Language.en-US
+@Summary
+Reads the value of a variable stored in a custom map.
+@Group
+SCA
+@param.key.string
+The name of the variable.
 ]================================]
 function sca_read_script_variable(key)
 end
@@ -179,17 +247,33 @@ SCA
 @param.isencryption.bool
 암호화 여부입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-로컬 저장 폴더에 파일을 씁니다. 내 문서의 SCArchive폴더에 저장됩니다.
+将文件写入本地存储文件夹。
+它保存在我的文档的 SCArchive 文件夹中。
 @Group
 SCA
 @param.filename.string
-파일 이름입니다. 특수문자는 들어 갈 수 없습니다.
+这是文件名。
+不能包含特殊字符。
 @param.data.table
-넣을 데이터 입니다.
+这是要插入的数据。
 @param.isencryption.bool
-암호화 여부입니다.
+加密与否。
+
+@Language.en-US
+@Summary
+Writes a file to the local save folder.
+It is saved in the SCArchive folder in My Documents.
+@Group
+SCA
+@param.filename.string
+The file name.
+Special characters cannot be included.
+@param.data.table
+The data to be inserted.
+@param.isencryption.bool
+Whether to encrypt.
 ]================================]
 function sca_write_file(filename, data, isencryption)
 end
@@ -205,15 +289,29 @@ SCA
 @param.isencryption.bool
 암호화 여부입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-로컬 저 폴더의 파일을 읽습니다. 내 문서의 SCArchive폴더에 있는 파일을 읽습니다.
+从本地文件夹读取文件。
+读取我的文档中 SCArchive 文件夹中的文件。
 @Group
 SCA
 @param.filename.string
-파일 이름입니다. 특수문자는 들어 갈 수 없습니다.
+这是文件名。
+不能包含特殊字符。
 @param.isencryption.bool
-암호화 여부입니다.
+加密与否。
+
+@Language.en-US
+@Summary
+Reads a file from the local save folder.
+Reads a file in the SCArchive folder in My Documents.
+@Group
+SCA
+@param.filename.string
+The file name.
+Special characters cannot be included.
+@param.isencryption.bool
+Whether it is encrypted.
 ]================================]
 function sca_read_file(filename, isencryption)
 end
@@ -227,29 +325,45 @@ SCA
 @param.key.string
 오브젝트의 이름입니다.
 @param.a.byte
-투명도. (0~255)
+투명도.(0~255)
 @param.r.byte
-빨강. (0~255)
+빨강.(0~255)
 @param.g.byte
-초록. (0~255)
+초록.(0~255)
 @param.b.byte
-파랑. (0~255)
+파랑.(0~255)
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-브러쉬를 추가합니다.
+添加画笔。
 @Group
 SCA
 @param.key.string
-오브젝트의 이름입니다.
+对象名称。
 @param.a.byte
-투명도. (0~255)
+透明度(0~255)
 @param.r.byte
-빨강. (0~255)
+红色(0~255)
 @param.g.byte
-초록. (0~255)
+绿色(0~255)
 @param.b.byte
-파랑. (0~255)
+蓝色(0~255)
+
+@Language.en-US
+@Summary
+Adds a brush.
+@Group
+SCA
+@param.key.string
+The name of the object.
+@param.a.byte
+Transparency.(0~255)
+@param.r.byte
+Red.(0~255)
+@param.g.byte
+Green.(0~255)
+@param.b.byte
+Blue.(0~255)
 ]================================]
 function sca_add_brush(key, a, r, g, b)
 end
@@ -265,15 +379,25 @@ SCA
 @param.control.control
 화면에 넣을 컨트롤 입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-컨트롤을 화면에 넣습니다.
+将控件放在屏幕上。
 @Group
 SCA
 @param.window.string
-컨트롤을 넣을 창입니다.
+这是您将放置控件的窗口。
 @param.control.control
-화면에 넣을 컨트롤 입니다.
+这是放置在屏幕上的控件。
+
+@Language.en-US
+@Summary
+Places a control on the screen.
+@Group
+SCA
+@param.window.string
+The window to place the control in.
+@param.control.control
+The control to place on the screen.
 ]================================]
 function sca_add_object(window, control)
 end
@@ -289,15 +413,25 @@ SCA
 @param.key.string
 컨트롤의 이름입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-화면에서 컨트롤을 찾아 반환합니다.
+查找并返回屏幕上的控件。
 @Group
 SCA
 @param.window.string
-컨트롤을 찾을 창입니다.
+在其中查找控件的窗口。
 @param.key.string
-컨트롤의 이름입니다.
+控件名称。
+
+@Language.en-US
+@Summary
+Finds and returns a control on the screen.
+@Group
+SCA
+@param.window.string
+The window to find the control in.
+@param.key.string
+The name of the control.
 ]================================]
 function sca_get_object(window, key)
 end
@@ -313,15 +447,25 @@ SCA
 @param.key.string
 컨트롤의 이름입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-화면에서 컨트롤을 찾아 제거합니다
+找到并删除屏幕上的控件
 @Group
 SCA
 @param.window.string
-컨트롤을 찾을 창입니다.
+要查找控件的窗口。
 @param.key.string
-컨트롤의 이름입니다.
+控件名称。
+
+@Language.en-US
+@Summary
+Finds and removes a control from the screen.
+@Group
+SCA
+@param.window.string
+The window to find the control in.
+@param.key.string
+The name of the control.
 ]================================]
 function sca_remove_object(window, key)
 end
@@ -337,15 +481,25 @@ SCA
 @param.options.string
 컨트롤의 속성입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-버튼을 생성합니다.
+创建一个按钮。
 @Group
 SCA
 @param.key.string
-컨트롤의 이름입니다.
+控件名称。
 @param.options.string
-컨트롤의 속성입니다.
+控件选项。
+
+@Language.en-US
+@Summary
+Creates a button.
+@Group
+SCA
+@param.key.string
+The name of the control.
+@param.options.string
+The properties of the control.
 ]================================]
 function sca_create_button(key, options)
 end
@@ -361,15 +515,25 @@ SCA
 @param.options.string
 컨트롤의 속성입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-창을 생성합니다.
+创建一个窗口。
 @Group
 SCA
 @param.key.string
-컨트롤의 이름입니다.
+控件名称。
 @param.options.string
-컨트롤의 속성입니다.
+控件选项。
+
+@Language.en-US
+@Summary
+Creates a window.
+@Group
+SCA
+@param.key.string
+The name of the control.
+@param.options.string
+The properties of the control.
 ]================================]
 function sca_create_window(key, options)
 end
@@ -385,15 +549,25 @@ SCA
 @param.options.string
 컨트롤의 속성입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-이미지를 생성합니다.
+创建图形。
 @Group
 SCA
 @param.key.string
-컨트롤의 이름입니다.
+控件名称。
 @param.options.string
-컨트롤의 속성입니다.
+控件选项。
+
+@Language.en-US
+@Summary
+Creates an image.
+@Group
+SCA
+@param.key.string
+The name of the control.
+@param.options.string
+The properties of the control.
 ]================================]
 function sca_create_image(key, options)
 end
@@ -409,15 +583,25 @@ SCA
 @param.options.string
 컨트롤의 속성입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-TextLabel을 생성합니다.
+创建一个 TextLabel.
 @Group
 SCA
 @param.key.string
-컨트롤의 이름입니다.
+控件名称。
 @param.options.string
-컨트롤의 속성입니다.
+控件选项。
+
+@Language.en-US
+@Summary
+Creates a TextLabel.
+@Group
+SCA
+@param.key.string
+The name of the control.
+@param.options.string
+The properties of the control.
 ]================================]
 function sca_create_textlabel(key, options)
 end
@@ -435,13 +619,21 @@ SCA
 @param.key.string
 사운드의 key입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드가 재생 중인지 확인합니다.
+检查是否正在播放带有 key 的声音。
 @Group
 SCA
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
+
+@Language.en-US
+@Summary
+Checks if a sound with the key is playing.
+@Group
+SCA
+@param.key.string
+The key of the sound.
 ]================================]
 function sca_is_sound_playing(key)
 end
@@ -455,13 +647,21 @@ SCA
 @param.key.string
 사운드의 key입니다.
 
-@Language.en-US
-key를 가진 사운드가 존재 중인지 확인합니다.
+@Language.zh-CN
+@Summary
+确认是否存在 key 的声音。
 @Group
-SCA@Summary
-
+SCA
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
+
+@Language.en-US
+@Summary
+Checks if a sound with the key exists.
+@Group
+SCA
+@param.key.string
+The key of the sound.
 ]================================]
 function sca_is_sound_exist(key)
 end
@@ -475,13 +675,22 @@ SCA
 @param.volume.float
 음량입니다. 0~1이 범위입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-스크립트에서 출력하는 음량을 조절합니다.
+调整脚本的音量输出。
 @Group
 SCA
 @param.volume.float
-음량입니다. 0~1이 범위입니다.
+这是音量。
+范围：0~1。
+
+@Language.en-US
+@Summary
+Adjusts the volume output from the script.
+@Group
+SCA
+@param.volume.float
+The volume. Range is 0~1.
 ]================================]
 function sca_set_script_volume(volume)
 end
@@ -497,15 +706,26 @@ SCA
 @param.volume.float
 음량입니다. 0~1이 범위입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-특정 사운드에서 출력하는 음량을 조절합니다.
+调节特定声音的音量输出。
 @Group
 SCA
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
 @param.volume.float
-음량입니다. 0~1이 범위입니다.
+这是音量。
+范围：0~1。
+
+@Language.en-US
+@Summary
+Adjusts the volume output from a specific sound.
+@Group
+SCA
+@param.key.string
+The key of the sound.
+@param.volume.float
+The volume. Range is 0~1.
 ]================================]
 function sca_set_sound_volume(key, volume)
 end
@@ -519,13 +739,22 @@ SCA
 @param.key.string
 사운드의 key입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드를 중지합니다. 재생 시점이 초기화됩니다.
+使用 key 停止声音。
+当前播放位置被重置。
 @Group
 SCA
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
+
+@Language.en-US
+@Summary
+Stops the sound with the key. The playback position is reset.
+@Group
+SCA
+@param.key.string
+The key of the sound.
 ]================================]
 function sca_sound_stop(key)
 end
@@ -539,13 +768,21 @@ SCA
 @param.key.string
 사운드의 key입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드를 다시 재생합니다.
+再次使用 key 播放声音。
 @Group
 SCA
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
+
+@Language.en-US
+@Summary
+Plays the sound with the key again.
+@Group
+SCA
+@param.key.string
+The key of the sound.
 ]================================]
 function sca_sound_resume(key)
 end
@@ -559,13 +796,21 @@ SCA
 @param.key.string
 사운드의 key입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드를 멈춥니다.
+使用 key 停止声音。
 @Group
 SCA
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
+
+@Language.en-US
+@Summary
+Pauses the sound with the key.
+@Group
+SCA
+@param.key.string
+The key of the sound.
 ]================================]
 function sca_sound_pause(key)
 end
@@ -581,15 +826,25 @@ SCA
 @param.frame.int
 완료 될 때 까지의 프레임입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드를 서서히 킵니다.
+用 key 慢慢增大音量。
 @Group
 SCA
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
 @param.frame.int
-완료 될 때 까지의 프레임입니다.
+直到完成时的的帧数。
+
+@Language.en-US
+@Summary
+Fades in the sound with the key.
+@Group
+SCA
+@param.key.string
+The key of the sound.
+@param.frame.int
+The number of frames until completion.
 ]================================]
 function sca_sound_fadein(key)
 end
@@ -605,15 +860,25 @@ SCA
 @param.frame.int
 완료 될 때 까지의 프레임입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드를 서서히 끕니다.
+使用 key 逐渐减小声音。
 @Group
 SCA
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
 @param.frame.int
-완료 될 때 까지의 프레임입니다.
+直到完成时的的帧数。
+
+@Language.en-US
+@Summary
+Fades out the sound with the key.
+@Group
+SCA
+@param.key.string
+The key of the sound.
+@param.frame.int
+The number of frames until completion.
 ]================================]
 function sca_sound_fadeout(key)
 end
@@ -633,19 +898,34 @@ SCA
 @param.volume.float
 시작 음량 크기입니다. 0~1의 값을 가집니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드가 재생 중인지 확인합니다.
+扮演 soundfile 为 key.
 @Group
 SCA
 @param.soundfile.SoundFile
-사운드파일의 이름입니다.
+这是声音文件的名称。
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
 @param.type.string
-'se','me','bgs','bgm'
+'se', 'me', 'bgs', 'bgm'
 @param.volume.float
-시작 음량 크기입니다. 0~1의 값을 가집니다.
+这是起始音量级别。
+它的值为 0~1.
+
+@Language.en-US
+@Summary
+Plays a soundfile with the key.
+@Group
+SCA
+@param.soundfile.SoundFile
+The name of the sound file.
+@param.key.string
+The key of the sound.
+@param.type.string
+'se', 'me', 'bgs', 'bgm'
+@param.volume.float
+The starting volume level. Takes a value from 0 to 1.
 ]================================]
 function sca_soundplay(soundfile ,key, type, volume)
 end
@@ -667,19 +947,37 @@ SCA
 @param.range.table
 {{x, y, range},{x, y, range},...}
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드가 재생 중인지 확인합니다.
+使用 key 播放音乐文件 .
+您可以设置范围。
 @Group
 SCA
 @param.soundfile.SoundFile
-사운드파일의 이름입니다.
+声音文件的名称。
 @param.key.string
-사운드의 key입니다.
+声音的 key.
 @param.type.string
-'se','me','bgs','bgm'
+'se', 'me', 'bgs', 'bgm'
 @param.volume.float
-시작 음량 크기입니다. 0~1의 값을 가집니다.
+这是起始音量级别。
+它的值为 0~1.
+@param.range.table
+{{x, y, range}, {x, y, range}, ...}
+
+@Language.en-US
+@Summary
+Plays a soundfile with the key. Range can be set.
+@Group
+SCA
+@param.soundfile.SoundFile
+The name of the sound file.
+@param.key.string
+The key of the sound.
+@param.type.string
+'se', 'me', 'bgs', 'bgm'
+@param.volume.float
+The starting volume level. Takes a value from 0 to 1.
 @param.range.table
 {{x, y, range},{x, y, range},...}
 ]================================]
@@ -695,13 +993,21 @@ SCA
 @param.key.string
 사운드의 key입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드의 rangetable을 가져옵니다.
+使用 key 获取声音的 rangetable.
 @Group
 SCA
 @param.key.string
-사운드의 key입니다.
+这是声音的 key.
+
+@Language.en-US
+@Summary
+Gets the range table of the sound with the key.
+@Group
+SCA
+@param.key.string
+The key of the sound.
 ]================================]
 function sca_get_rangetable(key)
 end
@@ -713,9 +1019,15 @@ end
 @Group
 SCA
 
+@Language.zh-CN
+@Summary
+禁止当前玩家离开地图。
+@Group
+SCA
+
 @Language.en-US
 @Summary
-현재 플레이어를 해당 맵에서 Ban합니다.
+Bans the current player from the map.
 @Group
 SCA
 ]================================]
@@ -732,17 +1044,29 @@ SCA
 @param.slot.string
 저장할 슬롯입니다.
 @param.data.string
-data[key] = data:index의 형태로 저장할 값을 넘겨줍니다. 서버에 등록되지 않은 key로도 저장됩니다.
+data [key]= data:index의 형태로 저장할 값을 넘겨줍니다. 서버에 등록되지 않은 key로도 저장됩니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-SCA서버에 데이터를 저장합니다.
+将 SCA 数据保存在服务器上。
 @Group
 SCA
 @param.slot.string
-저장할 슬롯입니다.
+这是要保存的槽位。
 @param.data.string
-data[key] = data:index의 형태로 저장할 값을 넘겨줍니다. 서버에 등록되지 않은 key로도 저장됩니다.
+以 data [key]= data:index 的形式传递保存值。
+它还保存为未在服务器上注册的 keys。
+
+@Language.en-US
+@Summary
+Saves data to the SCA server.
+@Group
+SCA
+@param.slot.string
+The slot to save to.
+@param.data.string
+Passes the value to save in the form data [key]= data:index.
+It is also saved with keys not registered on the server.
 ]================================]
 function sca_save(slot, data)
 end
@@ -756,17 +1080,29 @@ SCA
 @param.slot.string
 읽어올 슬롯입니다.
 @param.loadtags.string
-loadtags[i] = key의 형태로 저장할 값을 넘겨줍니다. 서버에 등록되지 않은 key는 읽어 올 수 없습니다.
+loadtags [i]= key의 형태로 저장할 값을 넘겨줍니다. 서버에 등록되지 않은 key는 읽어 올 수 없습니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-SCA서버에서 데이터를 읽어옵니다.
+SCA 从服务器读取数据。
 @Group
 SCA
 @param.slot.string
-읽어올 슬롯입니다.
+这是要读取的槽位。
 @param.loadtags.string
-loadtags[i] = key의 형태로 저장할 값을 넘겨줍니다. 서버에 등록되지 않은 key는 읽어 올 수 없습니다.
+以 loadtags [i]= key 的形式传递保存值。
+未在服务器上注册的 keys 无法读取。
+
+@Language.en-US
+@Summary
+Reads data from the SCA server.
+@Group
+SCA
+@param.slot.string
+The slot to read from.
+@param.loadtags.string
+Passes the value to read in the form loadtags [i]= key.
+Keys not registered on the server cannot be read.
 ]================================]
 function sca_load(slot, loadtags)
 end
@@ -778,9 +1114,15 @@ SCA 글로벌 데이터를 로드합니다.
 @Group
 SCA
 
+@Language.zh-CN
+@Summary
+加载 SCA 全局数据。
+@Group
+SCA
+
 @Language.en-US
 @Summary
-SCA 글로벌 데이터를 로드합니다.
+Loads SCA global data.
 @Group
 SCA
 ]================================]
@@ -794,9 +1136,15 @@ SCA 서버의 시간을 가져옵니다.
 @Group
 SCA
 
+@Language.zh-CN
+@Summary
+获取 SCA 服务器时间。
+@Group
+SCA
+
 @Language.en-US
 @Summary
-SCA 서버의 시간을 가져옵니다.
+Gets the SCA server time.
 @Group
 SCA
 ]================================]
@@ -814,20 +1162,33 @@ SCA
 @param.slot.int
 읽어올 슬롯입니다.
 @param.loadtags.table
-loadtags[i] = key의 형태로 저장할 값을 넘겨줍니다. 서버에 등록되지 않은 key는 읽어 올 수 없습니다.
+loadtags [i]= key의 형태로 저장할 값을 넘겨줍니다. 서버에 등록되지 않은 key는 읽어 올 수 없습니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드의 rangetable을 가져옵니다.
+使用 key 获取声音的 rangetable.
 @Group
 SCA
 @param.scaid.uint
-불러올 유저의 scaid입니다.
+要加载的用户是 scaid.
 @param.slot.int
-읽어올 슬롯입니다.
+这是要读取的槽位。
 @param.loadtags.table
-loadtags[i] = key의 형태로 저장할 값을 넘겨줍니다. 서버에 등록되지 않은 key는 읽어 올 수 없습니다.
+以 loadtags [i]= key 的形式传递保存值。
+未在服务器上注册的 keys 无法读取。
 
+@Language.en-US
+@Summary
+Gets the range table of the sound with the key.
+@Group
+SCA
+@param.scaid.uint
+The scaid of the user to load.
+@param.slot.int
+The slot to read from.
+@param.loadtags.table
+Passes the value to read in the form loadtags [i]= key.
+Keys not registered on the server cannot be read.
 ]================================]
 function sca_load_from_scaid(scaid, slot, loadtags)
 end
@@ -840,24 +1201,36 @@ SCA 순위표를 가져옵니다.
 SCA
 @param.loadtags.table
 읽어 올 tag를 설정합니다.
-datakey[i] = key의 형태입니다.
+datakey [i]= key의 형태입니다.
 @param.start.int
 첫 순위입니다.
 @param.end.int
 마지막 순위입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-SCA 순위표를 가져옵니다.
+获取 SCA 排行榜。
 @Group
 SCA
 @param.loadtags.table
-읽어 올 tag를 설정합니다.
-datakey[i] = key의 형태입니다.
+设置 tags 来读取。
+它的形式为 datakey [i]= key.
 @param.start.int
-첫 순위입니다.
+第一名。
 @param.end.int
-마지막 순위입니다.
+最后一名。。
+
+@Language.en-US
+@Summary
+Gets the SCA ranking table.
+@Group
+SCA
+@param.loadtags.table
+Sets the tags to read. In the form datakey [i]= key.
+@param.start.int
+The first rank.
+@param.end.int
+The last rank.
 ]================================]
 function sca_get_scoreboard(loadtags, start, end)
 end
@@ -870,7 +1243,7 @@ key를 가진 사운드의 rangetable을 가져옵니다.
 SCA
 @param.loadtags.table
 읽어 올 tag를 설정합니다.
-loadtags[i] = key의 형태입니다.
+loadtags [i]= key의 형태입니다.
 @param.searchtag.string
 검색할 기준의 값입니다.
 @param.min.int
@@ -878,21 +1251,34 @@ loadtags[i] = key의 형태입니다.
 @param.max.int
 최대 값입니다.
 
-@Language.en-US
+@Language.zh-CN
 @Summary
-key를 가진 사운드의 rangetable을 가져옵니다.
+使用 key 获取声音的 rangetable.
 @Group
 SCA
 @param.loadtags.table
-읽어 올 tag를 설정합니다.
-loadtags[i] = key의 형태입니다.
+设置 tags 进行读取。
+它的形式为 loadtags [i]= key.
 @param.searchtag.string
-검색할 기준의 값입니다.
+用于搜索的值。
 @param.min.int
-최소 값입니다.
+这是最小值。
 @param.max.int
-최대 값입니다.
+这是最大值。
+
+@Language.en-US
+@Summary
+Gets the range table of the sound with the key.
+@Group
+SCA
+@param.loadtags.table
+Sets the tags to read. In the form loadtags [i]= key.
+@param.searchtag.string
+The value to search by.
+@param.min.int
+The minimum value.
+@param.max.int
+The maximum value.
 ]================================]
 function sca_search_user(loadtags, searchtag, min, max)
 end
-

@@ -6,18 +6,18 @@ Imports System.Windows.Threading
 
 Partial Public Class BuildData
 
-    '1. 일단 내장된 파일을 빌드할때 뺴내는 형식에서
-    '파일을 내장하지 않고 외부에 빼놓는다
-    '2. 외부에 빼놓은 파일을 사용하지 않고 플립설치폴더나 직접 위치를 지정해 해당 플러그인을 기본으로 사용가능
+    ' 1. 从内嵌文件在构建时提取的形式
+    ' 不内嵌文件，而是提取到外部
+    ' 2. 不使用外部提取的文件，而是使用翻转安装文件夹或直接指定位置，使该插件默认可用
 
-    '3. 임시파일을 어디다가 생성할지 결정, 폴더가 없을 경우 기본 폴더에 저장
-    '맵 파일 위치와 동일한 부분으로 설정 할 경우 맵 파일들이 자동으로 상대경로로 저장!
+    ' 3. 决定在何处创建临时文件，如果文件夹不存在，则保存在默认文件夹中。
+    ' 如果设置为与地图文件相同的位置，则地图文件将自动保存为相对路径！
 
-    '임시파일 지정 방식 설정이 사용자 지정일 경우
-    '만약 지정한 폴더가 맵폴더와 같으면 상대경로로 저장한다.
+    ' 如果临时文件指定方式为用户指定
+    ' 如果指定的文件夹与地图文件夹相同，则以相对路径保存。
 
-    '맵폴더로 지정되어 있으면 맵두개의 폴더가 같으면 상대 경로로 저장
-    '맵 두개가 다른 폴더면 기본 폴더에 저장
+    ' 如果指定为地图文件夹，则如果两个地图的文件夹相同，则以相对路径保存。
+    ' 如果两个地图的文件夹不同，则保存在默认文件夹中。
     Private MainThread As BackgroundWorker
 
     Private eudplibShutDown As Boolean
@@ -31,15 +31,15 @@ Partial Public Class BuildData
             End If
         Else
             eudplibShutDown = False
-            If pjData.IsDirty And pjData.Filename <> "" Then ' 새파일
+            If pjData.IsDirty And pjData.Filename <> "" Then ' 新建文件
                 pjData.Save()
             End If
 
 
 
             'Tool.GetRelativePath(EudPlibFilePath & "\EUDEditor.eds", pjData.OpenMapName)
-            'Tool.GetRelativePath("zzz\asd\c\ㅎㅎ.txt", "zzz\asd\bcx\aqw\zxv\하이.txt")
-            'Tool.GetRelativePath("zzz\asd\bcx\aqw\zxv\하이.txt", "zzz\asd\c\ㅎㅎ.txt")
+            ' Tool.GetRelativePath("zzz\asd\c\哈哈.txt", "zzz\asd\bcx\aqw\zxv\嗨.txt")
+            ' Tool.GetRelativePath("zzz\asd\bcx\aqw\zxv\嗨.txt", "zzz\asd\c\哈哈.txt")
 
             If CheckBuildable() Then
                 If Not SoundConverter() Then
@@ -66,14 +66,14 @@ Partial Public Class BuildData
                 Me.IsEdd = isEdd
 
                 If pjData.TEData.SCArchive.IsUsed Then
-                    '로그인이 되어 있을 경우
+                    ' 如果已登录
                     If pjData.TEData.SCArchive.IsLogin Then
                         If Not pjData.TEData.SCArchive.CheckLoginAccount() Then
                             Dim SCALoginWindow As New SCASettingWindows
 
                             SCALoginWindow.ShowDialog()
 
-                            '로그인 실패하면
+                            ' 如果登录失败
                             If Not SCALoginWindow.Result Then
                                 Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "계정 정보가 올바르지 않습니다. SCA사용이 해제됩니다.")
                                 pgData.IsCompilng = False
@@ -89,7 +89,7 @@ Partial Public Class BuildData
 
                         SCALoginWindow.ShowDialog()
 
-                        '로그인 실패하면
+                        ' 如果登录失败
                         If Not SCALoginWindow.Result Then
                             Tool.ErrorMsgBox(Tool.GetText("Error SCA") & vbCrLf & "계정 정보가 올바르지 않습니다. SCA사용이 해제됩니다.")
                             pgData.IsCompilng = False
@@ -115,7 +115,7 @@ Partial Public Class BuildData
                 'MainThread = New System.Threading.Thread(AddressOf BuildProgress)
                 'MainThread.Start(isEdd)
             End If
-            'MsgBox("최종 폴더 :" & TempFloder)
+            ' MsgBox("最终文件夹 :" & TempFloder)
         End If
     End Sub
 
@@ -151,7 +151,7 @@ Partial Public Class BuildData
 
 
 
-    '빌드가 가능한지 판단(필수 프로그램 연결)
+    ' 判断是否可以构建（连接必需程序）
     Private Function CheckBuildable() As Boolean
         If Not My.Computer.FileSystem.FileExists(pjData.OpenMapName) Then
             If Tool.CustomMsgBox(Tool.GetText("Error OpenMap is not exist reset"), MessageBoxButton.OKCancel) = MsgBoxResult.Ok Then
@@ -256,9 +256,9 @@ Partial Public Class BuildData
 
 
 
-    '########################### 빌드 작업 메인 함수 ############################
+    ' ########################### 构建工作主函数 ############################
     Private Sub BuildProgress(isEdd As Boolean)
-        '일단 프로그램 못끄게 막고 빌드중이라는 문구와 함께 진행 바 넣어야됨
+        ' 先阻止程序关闭，并显示“正在构建”的提示和进度条。
         isFreezeUse = False
 
         pgData.IsCompilng = True
@@ -284,12 +284,12 @@ Partial Public Class BuildData
 
 
 
-        '각각의 임시파일들을 만들어야함
+        ' 必须创建各个临时文件
         If pjData.TEData.SCArchive.IsUsed Then
             GetEntryPoint()
         End If
 
-        'Req데이터 작성
+        ' 写入Req数据
         WriteRequireData()
 
 
@@ -309,21 +309,21 @@ Partial Public Class BuildData
 
 
 
-        'Dat설정 파일을 저장하는 py제작
+        ' 创建一个 Python 脚本来保存数据配置文件
         WriteDatFile()
         WriteExtraDatFile()
 
-        'Tbl파일 작성(옵션에 따라)
+        ' 写入Tbl文件（根据选项）
         If pjData.UseCustomtbl Then
             WriteTbl()
         End If
 
 
-        'TE관련 삽입
-        'MSQC, 채팅인식, 언리미터, AI스크립트교체
-        'CT(Tbl옵션에 따라)
+        ' 插入TE相关内容
+        ' MSQC, 聊天识别, Unlimiter, AI脚本替换
+        ' CT（根据Tbl选项）
 
-        'eds파일을 만들고 해당 파일 실행
+        ' 创建eds文件并运行该文件
         Try
             WriteedsFile(isEdd)
         Catch ex As Exception
@@ -427,7 +427,7 @@ Partial Public Class BuildData
                 StandardError = ErrorString
 
                 If InStr(StandardError, "zipimport.ZipImportError: can't decompress data; zlib not available") <> 0 Then
-                    'MsgBox("빌드 실패. 재시도 합니다  재시도 횟수: " & RestartCount & vbCrLf & StandardOutput & StandardError)
+                    ' MsgBox("构建失败。重试中，重试次数: " & RestartCount & vbCrLf & StandardOutput & StandardError)
                     StandardError = ""
                     RestartCount += 1
                     Continue While
@@ -435,7 +435,7 @@ Partial Public Class BuildData
                 'Dim tempstr() As String = StandardOutput.Split(vbCrLf)
 
                 'MsgBox(tempstr(tempstr.Count - 2))
-                '임시 판단
+                ' 临时判断
                 If (StandardOutput.IndexOf("Output scenario.chk") < 0) And (StandardOutput.IndexOf("출력된 scenario.chk 크기") < 0) Then
                     If eudplibShutDown Then
                         'Tool.CustomMsgBox(Tool.GetText("Error CompileStop"), MessageBoxButton.OK, MessageBoxImage.Error)
@@ -446,7 +446,7 @@ Partial Public Class BuildData
                     End If
                     Return False
                 Else
-                    '빌드 성공했을 경우
+                    ' 如果构建成功
                     If pjData.ViewLog Then
                         GetMainWindow.LogTextBoxView(StandardOutput, False)
                     End If

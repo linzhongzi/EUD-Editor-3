@@ -7,7 +7,7 @@ Partial Public Class TECTPage
         CopyTrigger()
     End Sub
     Public Sub CopyTrigger()
-        '바로 복사해서 붙여넣는다.
+        ' 直接复制粘贴。
 
         If TListBox.SelectedItem IsNot Nothing Then
             Dim SelectList As New List(Of Trigger)

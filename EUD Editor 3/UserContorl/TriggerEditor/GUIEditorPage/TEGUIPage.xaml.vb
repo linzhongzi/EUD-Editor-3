@@ -13,10 +13,10 @@ Public Class TEGUIPage
     End Function
 
     Public Sub New(tTEFile As TEFile, Optional SelectTrigIndex As Integer = -1)
-        ' 디자이너에서 이 호출이 필요합니다.
+        ' 设计器需要此调用。
         InitializeComponent()
 
-        ' InitializeComponent() 호출 뒤에 초기화 코드를 추가하세요.
+        ' 在 InitializeComponent() 调用后添加初始化代码。
         PTEFile = tTEFile
 
         Script.SetTEGUIPage(Me)
@@ -76,11 +76,11 @@ Public Class TEGUIPage
 
     Public Sub SaveData()
         Script.Save()
-        'MsgBox("세이브 : " & TEFile.FileName)
+        ' MsgBox("保存 : " & TEFile.FileName)
     End Sub
     Private Sub UserControl_Unloaded(sender As Object, e As RoutedEventArgs)
         Script.Save()
-        'MsgBox("세이브 : " & TEFile.FileName)
+        ' MsgBox("保存 : " & TEFile.FileName)
     End Sub
 
     Private Sub ObjectSelector_ItemSelect(sender As Object, e As RoutedEventArgs)

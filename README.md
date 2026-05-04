@@ -41,6 +41,7 @@ https://github.com/linzhongzi/BingsuCodeEditor/tree/0.19.6
 ## Tag 版本
 * 0.19.6.0:	首次创建，未修改任何代码与配置。基于 EUD-Editor-3 Master 2025.05.27(8af35b1) 的提交创建分支。
 * 0.19.6.1:	统一Nuget包位置。尚未翻译中文为韩文。修正编译错误。
+* 0.19.6.2	修正韩英注释，添加中文翻译。
 
 --------------------------------------------------------------------------------
 
@@ -52,7 +53,7 @@ https://www.bilibili.com/video/BV1SmmGYLEY8/?vd_source=3a5440c76763b1446854d8958
 ## 工程目录结构:
 
 ```
-EUD-Editor-3-0.19.6.1 Source\
+EUD-Editor-3 Source\
 ├── BingsuCodeEditor\
 │   ├── BingsuBlocklyEpsEditor\
 │   ├── BingsuCodeEditor\ 
@@ -73,9 +74,9 @@ EUD-Editor-3-0.19.6.1 Source\
 设置 - Default - Graphics - Remastered
 
 文件:
-EUD-Editor-3-0.19.6.1-kor Source\Data\GRPDATA
+EUD-Editor-3 Source.zip\Data\GRPDATA
 
 这个文件是在操作后自动生成的，如果选择 Remastered 时出错，可从其它地方拷贝一个相同文件。 
 
-原代码的换行符如何没有从 Linux 格式转成 Windows 格式，会导致 0.19.6.1 变慢，且选择 Remastered 时会异常。
+原代码的换行符如何没有从 Linux 格式转成 Windows 格式，会导致 EUD-Editor-3 变慢，且选择 Remastered 时会异常。
 

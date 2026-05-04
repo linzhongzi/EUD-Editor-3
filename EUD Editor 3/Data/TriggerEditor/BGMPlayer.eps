@@ -4,6 +4,12 @@ import BGMFlexible as bgm;
  * @Type
  * A
  * @Summary.ko-KR
+ * 초기화 함수입니다. onPluginStart에서 한번 호출해야 합니다.
+ *
+ * @Summary.en-US
+ * This is the initialization function. It should be called once in onPluginStart.
+ *
+ * @Summary.zh-CN
  * 初始化函数。需要在onPluginStart中调用一次。
 ***/
 function loadSound(){
@@ -21,6 +27,12 @@ object Player{
 	 * @Type
 	 * A
 	 * @Summary.ko-KR
+	 * 처음 트랙으로 돌아갑니다.
+	 *
+	 * @Summary.en-US
+	 * Returning to the first track.
+	 *
+	 * @Summary.zh-CN
 	 * 返回第一首曲目。
 	***/
 	function ResetTrack(){
@@ -34,9 +46,18 @@ object Player{
 	 * @Type
 	 * A
 	 * @Summary.ko-KR
-	 * 设置要播放的BGM。
-	 *
+	 * 플레이할 BGM을 설정합니다.
 	 * @param.bindex.ko-KR
+	 * 재생할 BGM의 인덱스입니다.
+	 *
+	 * @Summary.en-US
+	 * Set the BGM to play.
+	 * @param.bindex.en-US
+	 * This is the index of the BGM to be played.
+	 *
+	 * @Summary.zh-CN
+	 * 设置要播放的BGM。
+	 * @param.bindex.zh-CN
 	 * 要播放的BGM索引。
 	***/
 	function SetBGM(bindex /*BGM*/){
@@ -65,8 +86,17 @@ object Player{
 	 * @Type
 	 * A
 	 * @Summary.ko-KR
-	 * 设置要播放的BGM。
+	 * 플레이할 BGM을 설정합니다.
+	 * @param.bindex.ko-KR
+	 * 재생할 BGM의 인덱스입니다.
 	 *
+	 * @Summary.en-US
+	 * Sets the BGM to play.
+	 * @param.bindex.en-US
+	 * The index of the BGM to play.
+	 *
+	 * @Summary.zh-CN
+	 * 设置要播放的BGM。
 	 * @param.bindex.ko-KR
 	 * 要播放的BGM索引。
 	***/
@@ -92,6 +122,12 @@ object Player{
 	 * @Type
 	 * A
 	 * @Summary.ko-KR
+	 * BGM을 재생합니다. 반복해서 호출해야 재생됩니다.
+	 *
+	 * @Summary.en-US
+	 * The BGM will play. It must be called repeatedly to keep playing.
+	 *
+	 * @Summary.zh-CN
 	 * 播放BGM。需要反复调用才能播放。
 	***/
 	function Play(){
@@ -139,6 +175,12 @@ var bgmindex;
  * @Type
  * A
  * @Summary.ko-KR
+ * 처음 트랙으로 돌아갑니다.
+ *
+ * @Summary.en-US
+ * Returning to the first track.
+ *
+ * @Summary.zh-CN
  * 返回第一首曲目。
 ***/
 function ResetTrack(){
@@ -152,9 +194,18 @@ function ResetTrack(){
  * @Type
  * A
  * @Summary.ko-KR
- * 设置要播放的BGM。
- *
+ * 플레이할 BGM을 설정합니다.
  * @param.bindex.ko-KR
+ * 재생할 BGM의 인덱스입니다.
+ *
+ * @Summary.en-US
+ * Set the BGM to play.
+ * @param.bindex.en-US
+ * This is the index of the BGM to be played.
+ *
+ * @Summary.zh-CN
+ * 设置要播放的BGM。
+ * @param.bindex.zh-CN
  * 要播放的BGM索引。
 ***/
 function SetBGM(bindex /*BGM*/){
@@ -181,6 +232,12 @@ function SetBGM(bindex /*BGM*/){
  * @Type
  * A
  * @Summary.ko-KR
+ * BGM을 재생합니다. 반복해서 호출해야 재생됩니다.
+ *
+ * @Summary.en-US
+ * The BGM will play. It must be called repeatedly to keep playing.
+ *
+ * @Summary.zh-CN
  * 播放BGM。需要反复调用才能播放。
 ***/
 function Play(){

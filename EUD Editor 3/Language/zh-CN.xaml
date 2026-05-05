@@ -255,8 +255,8 @@
 
 
     <sys:String x:Key="MuteSound">静音</sys:String>
-    <sys:String x:Key="TopMost">总在最前</sys:String>
-    <sys:String x:Key="TopMostOption">总在最前开启</sys:String>
+    <sys:String x:Key="TopMost">置顶窗口</sys:String>
+    <sys:String x:Key="TopMostOption">在顶部窗口开启</sys:String>
     <sys:String x:Key="Transparency">透明度</sys:String>
 
     <sys:String x:Key="CommandExpander">命令提示符</sys:String>
@@ -510,7 +510,7 @@
 
 
     <sys:String x:Key="sprites_Image File">实体图</sys:String>
-    <sys:String x:Key="sprites_Health Bar">生命条</sys:String>
+    <sys:String x:Key="sprites_Health Bar">血条</sys:String>
     <sys:String x:Key="sprites_Unknown2">未知</sys:String>
     <sys:String x:Key="sprites_Is Visible">可见</sys:String>
     <sys:String x:Key="sprites_Sel.Circle Image">选择圈图形</sys:String>
@@ -530,10 +530,10 @@
     <sys:String x:Key="images_Remapping_V">无重映射|ofire.pcx（橙色）|gfire.pcx（绿色）|bfire.pcx（蓝色）|bexpl.pcx（蓝色2）|特殊（自身隐形）|（崩溃）|（崩溃）|（未知8）|（未知9）</sys:String>
 
     <sys:String x:Key="images_Iscript ID">脚本 ID</sys:String>
-    <sys:String x:Key="images_Shield Overlay">护盾覆盖</sys:String>
-    <sys:String x:Key="images_Attack Overlay">攻击覆盖</sys:String>
-    <sys:String x:Key="images_Damage Overlay">伤害覆盖</sys:String>
-    <sys:String x:Key="images_Special Overlay">特殊覆盖</sys:String>
+    <sys:String x:Key="images_Shield Overlay">护盾叠加</sys:String>
+    <sys:String x:Key="images_Attack Overlay">攻击叠加</sys:String>
+    <sys:String x:Key="images_Damage Overlay">伤害叠加</sys:String>
+    <sys:String x:Key="images_Special Overlay">特殊叠加</sys:String>
     <sys:String x:Key="images_Landing Dust Overlay">着陆叠加层</sys:String>
     <sys:String x:Key="images_Lift-Off Overlay">升起叠加层</sys:String>
 
@@ -694,7 +694,7 @@
     <sys:String x:Key="flingy_Movement Control_ToolTip">指控制相关运动物体（外观）的形式。\n0：Flingy.dat 使运动遵循上面可以设置的最大速度、加速度和停止距离。\n1：武器类型的弹道运动参数遵循上面设置的项目，但其中一些遵循 Iscript 应用的项目。\n2：使 Iscript.bin 图形选项卡中设置的 IscriptID 脚本中设置的速度跟随。上面设置的任何内容都将被忽略。</sys:String>
 
     <sys:String x:Key="sprites_Image File_ToolTip">精灵引用的实体图。单击“转到”切换到相应的图形选项卡。</sys:String>
-    <sys:String x:Key="sprites_Health Bar_ToolTip">选择精灵时显示的生命条的大小。</sys:String>
+    <sys:String x:Key="sprites_Health Bar_ToolTip">选择精灵时显示的血条的大小。</sys:String>
     <sys:String x:Key="sprites_Unknown2_ToolTip">此数据未使用。</sys:String>
     <sys:String x:Key="sprites_Is Visible_ToolTip">精灵在游戏中是否可见。</sys:String>
     <sys:String x:Key="sprites_Sel.Circle Image_ToolTip">选择精灵时显示的选择圈的实体图。取决于大小和形状。</sys:String>
@@ -707,7 +707,7 @@
     <sys:String x:Key="images_Use Full Iscript_ToolTip">检查当前实体图是否引用 Iscript 并激活所有脚本内容。</sys:String>
     <sys:String x:Key="images_Draw If Cloaked_ToolTip">检查当前实体图是否在隐形（不可见）状态下显示形状。</sys:String>
     <sys:String x:Key="images_Draw Function_ToolTip">选择当前实体图的显示类型：\n0：显示 GRP 文件。\n1：禁用。\n2：显示单位的轮廓，类似于敌方隐形显示。\n3：显示变暗的实体图，如己方单位隐形显示。\n4：与第 3 相同。\n5：与第 3 相同。\n6：与第 3 类似，但不是隐形状态。\n7：显示实体图如未通电状态。\n8：显示实体图如 EMP 冲击波的特效，显示为白色。\n9：应用重映射颜色。不起作用。\n10：显示较暗的实体图，如阴影。\n11：禁用。\n12：神族建筑完成时的扭曲效果。\n13：显示左右反转。\n14：禁用。\n15：图形不可见，用绿色边缘指示。边缘始终可见。\n16：显示蓝色，如幻象单位，但不是幻象单位。\n17：与第 12 相同。</sys:String>
-    <sys:String x:Key="images_Remapping_ToolTip">在上述显示类型为 9 时适用：重映射时颜色叠加（图形的某些部分未完全覆盖）。\n0：显示默认实体图。\n1：将图形覆盖为黄色调色板。\n2：将图形覆盖为绿色调色板。\n3：将图形覆盖为蓝色调色板。（深蓝）\n4：将图形覆盖为蓝色调色板。（浅蓝）\n5：变为暗色，如隐形效果。\n6~9：星际争霸崩溃。</sys:String>
+    <sys:String x:Key="images_Remapping_ToolTip">在上述显示类型为 9 时适用：重映射时颜色叠加（图形的某些部分未完全覆盖）。\n0：显示默认实体图。\n1：将图形重映射为黄色调色板。\n2：将图形重映射为绿色调色板。\n3：将图形重映射为蓝色调色板。（深蓝）\n4：将图形重映射为蓝色调色板。（浅蓝）\n5：变为暗色，如隐形效果。\n6~9：星际争霸崩溃。</sys:String>
     <sys:String x:Key="images_Iscript ID_ToolTip">实体图引用的 Iscript ID。</sys:String>
     <sys:String x:Key="images_Shield Overlay_ToolTip">指示当前护盾单位受到攻击时的护盾命中实体图位置数据。</sys:String>
     <sys:String x:Key="images_Attack Overlay_ToolTip">指示当前单位攻击时覆盖特殊攻击效果的位置数据。</sys:String>
@@ -758,7 +758,7 @@
     <sys:String x:Key="orders_Unknown12_ToolTip">可能影响多种事物的未知数据。</sys:String>
     <sys:String x:Key="orders_Targeting_ToolTip">检查指定武器的目标状态。例如，如果您指定“漩涡”，则应用漩涡的目标数据。如果漩涡对移动单位无效，则当前命令目标不能是移动单位。</sys:String>
     <sys:String x:Key="orders_Energy_ToolTip">显示执行命令所需能量花费的技术/魔法索引号。如果此处为“召回”，则需要足够的能量才能施放召回。</sys:String>
-    <sys:String x:Key="orders_Animation_ToolTip">显示 Iscript 部件的命令。修改 Iscript 时不能完全正常工作。</sys:String>
+    <sys:String x:Key="orders_Animation_ToolTip">显示 Iscript 的命令分集。修改 Iscript 时不能完全正常工作。</sys:String>
     <sys:String x:Key="orders_Highlight_ToolTip">启用时的按钮图形。</sys:String>
     <sys:String x:Key="orders_Unknown17_ToolTip">可能影响多种事物的未知数据。</sys:String>
     <sys:String x:Key="orders_Obscured Order_ToolTip">当移动被各种迷雾、障碍物和装饰物阻挡时，执行该命令。</sys:String>
@@ -984,7 +984,7 @@
     <sys:String x:Key="TrgArgAlliedVictory">盟友胜利</sys:String>
     <sys:String x:Key="TrgArgAtLeast">至少</sys:String>
     <sys:String x:Key="TrgArgAtMost">至多</sys:String>
-    <sys:String x:Key="TrgArgExactly">正好</sys:String>
+    <sys:String x:Key="TrgArgExactly">刚好</sys:String>
     <sys:String x:Key="TrgArgSetTo">设为</sys:String>
     <sys:String x:Key="TrgArgAdd">添加</sys:String>
     <sys:String x:Key="TrgArgSubtract">减去</sys:String>

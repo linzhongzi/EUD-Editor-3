@@ -5877,7 +5877,7 @@ function EUDLoopNewUnit(allowance) { }
  * Runs the newly created CUnit (structure offset) once. Yields the CUnit.
  *
  * @Summary.zh-CN
- * 运行一次新创建的 CUnit（结构偏移量）。生成 CUnit。
+ * 运行一次新创建的 CUnit（结构偏移）。生成 CUnit。
 ***/
 function EUDLoopNewCUnit() { }
 

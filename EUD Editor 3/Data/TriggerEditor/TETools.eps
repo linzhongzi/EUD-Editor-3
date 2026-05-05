@@ -1013,15 +1013,15 @@ function SetUnitColor(unitPTR, color) {
  * Struct offset to use for Y coordinate.
  *
  * @Summary.zh-CN
- * 将 [location] 设置为 [unitEPD] 的结构偏移 [CUnitOffsetX] 和 [CUnitOffsetY] 中存储的位置。
+ * 将 [location] 设置为 [unitEPD] 的偏移量 [CUnitOffsetX] 和 [CUnitOffsetY] 中存储的位置。
  * @param.unitEPD.zh-CN
  * 目标单位。
  * @param.location.zh-CN
  * 要移动的位置。
  * @param.CUnitOffsetX.zh-CN
- * 用作 X 坐标的结构偏移。
+ * 用作 X 坐标的偏移量。
  * @param.CUnitOffsetY.zh-CN
- * 用作 Y 坐标的结构偏移。
+ * 用作 Y 坐标的偏移量。
 ***/
 function SetLocationToUnitEPD(location: TrgLocation, unitEPD, CUnitOffsetX, CUnitOffsetY) {
     if (CUnitOffsetX == CUnitOffsetY) {
@@ -1060,15 +1060,15 @@ function SetLocationToUnitEPD(location: TrgLocation, unitEPD, CUnitOffsetX, CUni
  * Struct offset to use for Y coordinate.
  *
  * @Summary.zh-CN
- * 将 [location] 设置为 [unitPTR] 的结构偏移 [CUnitOffsetX] 和 [CUnitOffsetY] 中存储的位置。
+ * 将 [location] 设置为 [unitPTR] 的偏移量 [CUnitOffsetX] 和 [CUnitOffsetY] 中存储的位置。
  * @param.unitPTR.zh-CN
  * 目标单位。
  * @param.location.zh-CN
  * 要移动的位置。
  * @param.CUnitOffsetX.zh-CN
- * 用作 X 坐标的结构偏移。
+ * 用作 X 坐标的偏移量。
  * @param.CUnitOffsetY.zh-CN
- * 用作 Y 坐标的结构偏移。
+ * 用作 Y 坐标的偏移量。
 ***/
 function SetLocationToUnit(location: TrgLocation, unitPTR, CUnitOffsetX, CUnitOffsetY) {
     SetLocationToUnitEPD(location, EPD(unitPTR), CUnitOffsetX, CUnitOffsetY);
@@ -1591,13 +1591,13 @@ function CheckNoneTargetSkill(
  * Struct offset that determines the attachment position.
  *
  * @Summary.zh-CN
- * 使用结构偏移 [posX] 将 [location] 附加到 [unitEPD]。
+ * 使用偏移量 [posX] 将 [location] 附加到 [unitEPD]。
  * @param.location.zh-CN
  * 要附加到单位上的位置。
  * @param.unitEPD.zh-CN
  * 目标单位。
  * @param.posX.zh-CN
- * 决定附加位置的结构偏移。
+ * 决定附加位置的偏移量。
 ***/
 function SetLocationToUnitSafeEPD(location: TrgLocation, unitEPD, posX) {
     unitEPD += posX/4;
@@ -1627,13 +1627,13 @@ function SetLocationToUnitSafeEPD(location: TrgLocation, unitEPD, posX) {
  * Struct offset that determines the attachment position.
  *
  * @Summary.zh-CN
- * 使用结构偏移 [posX] 将 [location] 附加到 [unitPTR]。
+ * 使用偏移量 [posX] 将 [location] 附加到 [unitPTR]。
  * @param.location.zh-CN
  * 要附加到单位上的位置。
  * @param.unitPTR.zh-CN
  * 目标单位。
  * @param.posX.zh-CN
- * 决定附加位置的结构偏移。
+ * 决定附加位置的偏移量。
 ***/
 function SetLocationToUnitSafe(location: TrgLocation, unitPTR, posX) {
     SetLocationToUnitSafeEPD(location, EPD(unitPTR), posX);

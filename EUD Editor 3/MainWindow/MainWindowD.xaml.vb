@@ -138,10 +138,10 @@ Public Class MainWindowD
             SettiingForm.MainTab.RemoveFromSource(SettiingForm.EditorPage)
             SettiingForm.Title = Tool.GetText("Donate")
             SettiingForm.MainTab.IsHeaderPanelVisible = "False"
-            SettiingForm.MinWidth = 0
-            SettiingForm.MinHeight = 0
-            SettiingForm.Width = 300
-            SettiingForm.Height = 200
+            SettiingForm.MinWidth = 300
+            SettiingForm.MinHeight = 200
+            SettiingForm.Width = 550
+            SettiingForm.Height = 400
             SettiingForm.ShowDialog()
             Me.Visibility = Visibility.Visible
         End If

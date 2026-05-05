@@ -9,7 +9,7 @@
              mc:Ignorable="d"
              Background="{DynamicResource MaterialDesignPaper}" 
              Foreground="{DynamicResource MaterialDesignBody}"
-             Height="450" Width="700"
+             Height="460" Width="700"
              MouseEnter="UserControl_MouseEnter">
     <UserControl.Resources>
         <Style x:Key="myLBStyle" TargetType="{x:Type ListBoxItem}">

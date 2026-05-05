@@ -165,7 +165,7 @@
 
                     <Label Content="{StaticResource RegSetting}" HorizontalAlignment="Left" VerticalAlignment="Top" />
                     <StackPanel Margin="5">
-                        <DockPanel Width="220" HorizontalAlignment="Left" >
+                        <DockPanel Width="300" HorizontalAlignment="Left" >
                             <Button DockPanel.Dock="Right" x:Name="exeConnectbtn" Content="{StaticResource RegSettingBtn}" Click="ExeConnectbtn_Click" Margin="30,1,1,1"  Height="26"/>
                             <CheckBox x:Name="regCheck" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" Style="{StaticResource MaterialDesignCheckBox}" Content="{StaticResource RegSettingCheckbox}"  Unchecked="CheckBox_Unchecked" Checked="CheckBox_Checked"/>
                         </DockPanel>

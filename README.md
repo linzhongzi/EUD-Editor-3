@@ -32,9 +32,9 @@ https://github.com/Buizz/EUD-Editor-3/blob/master/EUD%20Editor%203/PatchNote.txt
 
 ## Fork 版本说明
 * Fork 并创建分支:
-https://github.com/linzhongzi/EUD-Editor-3/tree/0.19.6
+https://github.com/linzhongzi/EUD-Editor-3/tree/zh-CN
 * 依赖分支:
-https://github.com/linzhongzi/BingsuCodeEditor/tree/0.19.6
+https://github.com/linzhongzi/BingsuCodeEditor/tree/zh-CN
 
 --------------------------------------------------------------------------------
 

@@ -415,7 +415,7 @@
     <sys:String x:Key="units_AI Internal_V">忽略“战略自杀任务” AI。|不会变成“警戒”状态</sys:String>
 
     <sys:String x:Key="units_Special Ability Flags">特殊能力标志</sys:String>
-    <sys:String x:Key="units_Special Ability Flags_V">建筑物|建筑物附件|可飞行|资源采集者|单位子部件|可飞行建筑|英雄单位|自动恢复生命值|动画覆盖|隐形单位|一个蛋孵化两个单位|独立单位|资源回收点|资源矿脉|人型机器|反隐形能力|生物单位|需要虫族菌毯|未使用|需要神族水晶塔|可钻地|拥有技能者|永久隐形|可运载兵员|忽略人口检查|使用中型技能覆盖图|使用大型技能覆盖图|自动攻击|战斗反应能力|单位无敌|机械单位|可生产单位</sys:String>
+    <sys:String x:Key="units_Special Ability Flags_V">建筑物|建筑物附件|可飞行|资源采集者|单位子部件|可飞行建筑|英雄单位|自动恢复生命值|动画覆盖|隐形单位|一个蛋孵化两个单位|独立单位|资源回收仓|资源矿脉|人型机器|反隐形能力|生物单位|需要虫族菌毯|未使用|需要神族水晶塔|可钻地|拥有技能者|永久隐形|可运载兵员|忽略人口检查|使用中型技能覆盖图|使用大型技能覆盖图|自动攻击|战斗反应能力|单位无敌|机械单位|可生产单位</sys:String>
 
     <sys:String x:Key="units_Target Acquisition Range">发现目标范围</sys:String>
     <sys:String x:Key="units_Sight Range">可视范围</sys:String>
@@ -619,7 +619,7 @@
     <sys:String x:Key="units_AI Internal_ToolTip">指定单位的内部 AI。可以忽略“战略自杀任务” AI 命令，或防止警戒命令状态（目标被摧毁后返回原位）。</sys:String>
 
 
-    <sys:String x:Key="units_Special Ability Flags_ToolTip">这是单位的特殊独特能力数据。您可以检查生命自动恢复、永久隐形、空中单位化等。\n人型机器: 如虫族女皇变异技能无法作用在神族农民身上，因为它是机器人。\n机械单位: 被视为武器和技能（例如人族技能封锁）可以作用的机械类型目标。它也可以被SCV维修。\n资源矿脉: 属于PowerUps一类的可拾取物品。\n战斗反应: 如果单位看到敌人，它会移动到敌人那里并攻击，如果它被无法接近的敌人攻击（例如，一个空中单位，而它没有空中武器），它会逃跑。仅当单位的空闲 AI 指令设置为警戒时才有效。</sys:String>
+    <sys:String x:Key="units_Special Ability Flags_ToolTip">这是单位的特殊独特能力数据。您可以检查生命自动恢复、永久隐形、空中单位化等。\n人型机器: 如虫族女皇变异技能无法作用在神族农民身上，因为它是机器人。\n机械单位: 被视为武器和技能（例如人族技能封锁）可以作用的机械类型目标。它也可以被SCV维修。\n资源回收仓: 使一座建筑（并且只能是建筑）成为工人可以归还资源的地方。同时，也使得无法将建筑放置/落在具有“资源矿脉”属性的单位旁边。\n资源矿脉: 地图上可被采集的水晶等。允许/不允许在StarEdit中设置单位的资源容量，但不会使单位存储除原始资源之外的其他资源。未选中时，会将原始资源容量设为0，但工人仍会尝试采集它。防止“资源回收仓”被放置在其旁边。\n战斗反应: 如果单位看到敌人，它会移动到敌人那里并攻击，如果它被无法接近的敌人攻击（例如，一个空中单位，而它没有空中武器），它会逃跑。仅当单位的空闲 AI 指令设置为警戒时才有效。</sys:String>
     <sys:String x:Key="units_Target Acquisition Range_ToolTip">航母的拦截机出击或金甲的圣甲虫发射的距离。也决定了近战单位的攻击范围和医疗兵的治疗范围。如果将值留为 0，游戏将使用现有武器数据作为距离数据。此处距离值 1 与现有武器数据中的距离值 2 相同。</sys:String>
     <sys:String x:Key="units_Sight Range_ToolTip">视野可见的距离（1 单位）。大于 &lt;5&gt;11 的值会导致游戏崩溃！&lt;0&gt;</sys:String>
     <sys:String x:Key="units_Armor Upgrade_ToolTip">可以指定单位的护甲受哪种护甲升级的影响。</sys:String>
